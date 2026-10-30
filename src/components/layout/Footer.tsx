@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'wouter';
-import { ArrowUpRight, Shield } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 import { useClientConfig } from '../../context/ClientConfigContext';
 
 export const Footer: React.FC = () => {
@@ -9,13 +9,11 @@ export const Footer: React.FC = () => {
   return (
     <footer
       style={{
-        backgroundColor: 'rgba(14, 12, 10, 0.45)',
-        backdropFilter: 'blur(20px)',
-        WebkitBackdropFilter: 'blur(20px)',
-        color: 'var(--color-dark-text-primary)',
-        borderTop: '1px solid rgba(255, 255, 255, 0.08)',
-        paddingTop: 'var(--space-12)',
-        paddingBottom: 'var(--space-8)',
+        backgroundColor: '#F3EFEA',
+        color: '#1A1816',
+        borderTop: '1px solid #EAE5DC',
+        paddingTop: 'var(--space-16)',
+        paddingBottom: 'var(--space-10)',
         marginTop: 'auto',
         position: 'relative',
         zIndex: 10
@@ -26,9 +24,9 @@ export const Footer: React.FC = () => {
           style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
-            gap: 'var(--space-8)',
-            paddingBottom: 'var(--space-10)',
-            borderBottom: '1px solid rgba(255, 255, 255, 0.08)'
+            gap: 'var(--space-10)',
+            paddingBottom: 'var(--space-12)',
+            borderBottom: '1px solid #EAE5DC'
           }}
         >
           {/* Brand Column */}
@@ -36,28 +34,28 @@ export const Footer: React.FC = () => {
             <span
               style={{
                 fontFamily: 'var(--font-serif)',
-                fontSize: '1.65rem',
+                fontSize: '1.85rem',
                 letterSpacing: '0.12em',
-                fontWeight: 300,
-                color: 'var(--color-dark-text-primary)',
+                fontWeight: 400,
+                color: '#1A1816',
                 display: 'block',
-                marginBottom: 'var(--space-2)'
+                marginBottom: 'var(--space-3)'
               }}
             >
               {config.brand.brandName}
             </span>
             <p
               style={{
-                color: 'rgba(255, 255, 255, 0.65)',
-                fontSize: '0.82rem',
-                lineHeight: 1.6,
-                maxWidth: '280px',
+                color: '#6E6860',
+                fontSize: '0.9rem',
+                lineHeight: 1.7,
+                maxWidth: '300px',
                 marginBottom: 'var(--space-4)'
               }}
             >
               {config.brand.description}
             </p>
-            <div className="badge badge-gold" style={{ fontSize: '0.65rem', padding: '2px 8px' }}>
+            <div className="badge badge-gold" style={{ fontSize: '0.68rem', padding: '4px 12px' }}>
               {config.brand.badge}
             </div>
           </div>
@@ -67,29 +65,29 @@ export const Footer: React.FC = () => {
             <h4
               style={{
                 fontSize: '0.75rem',
-                letterSpacing: '0.18em',
+                letterSpacing: '0.22em',
                 textTransform: 'uppercase',
                 color: 'var(--color-accent-gold)',
                 fontFamily: 'var(--font-sans)',
-                fontWeight: 500,
+                fontWeight: 600,
                 marginBottom: 'var(--space-4)'
               }}
             >
-              Exhibition &amp; Works
+              Residences &amp; Portfolio
             </h4>
-            <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: 'var(--space-2)' }}>
+            <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: 'var(--space-3)' }}>
               <li>
                 <Link
-                  href="/catalogue"
+                  href="/residences"
                   style={{
-                    color: 'rgba(255, 255, 255, 0.72)',
-                    fontSize: '0.82rem',
+                    color: '#3D3934',
+                    fontSize: '0.88rem',
                     transition: 'color var(--transition-fast)'
                   }}
-                  onMouseEnter={(e) => (e.currentTarget.style.color = '#ffffff')}
-                  onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255, 255, 255, 0.72)')}
+                  onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--color-accent-gold)')}
+                  onMouseLeave={(e) => (e.currentTarget.style.color = '#3D3934')}
                 >
-                  Master Catalogue
+                  Master Residences
                 </Link>
               </li>
               {config.features.enableCollections && (
@@ -97,49 +95,63 @@ export const Footer: React.FC = () => {
                   <Link
                     href="/collections"
                     style={{
-                      color: 'rgba(255, 255, 255, 0.72)',
-                      fontSize: '0.82rem',
+                      color: '#3D3934',
+                      fontSize: '0.88rem',
                       transition: 'color var(--transition-fast)'
                     }}
-                    onMouseEnter={(e) => (e.currentTarget.style.color = '#ffffff')}
-                    onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255, 255, 255, 0.72)')}
+                    onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--color-accent-gold)')}
+                    onMouseLeave={(e) => (e.currentTarget.style.color = '#3D3934')}
                   >
-                    Architectural Collections
+                    Curated Collections
                   </Link>
                 </li>
               )}
               {config.features.enableCraftsmanshipStory && (
                 <li>
                   <Link
-                    href="/craftsmanship"
+                    href="/vision"
                     style={{
-                      color: 'rgba(255, 255, 255, 0.72)',
-                      fontSize: '0.82rem',
+                      color: '#3D3934',
+                      fontSize: '0.88rem',
                       transition: 'color var(--transition-fast)'
                     }}
-                    onMouseEnter={(e) => (e.currentTarget.style.color = '#ffffff')}
-                    onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255, 255, 255, 0.72)')}
+                    onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--color-accent-gold)')}
+                    onMouseLeave={(e) => (e.currentTarget.style.color = '#3D3934')}
                   >
-                    Materiality &amp; Craftsmanship
+                    Architectural Vision
                   </Link>
                 </li>
               )}
               {config.features.enableInspirationRooms && (
                 <li>
                   <Link
-                    href="/inspiration"
+                    href="/lifestyle"
                     style={{
-                      color: 'rgba(255, 255, 255, 0.72)',
-                      fontSize: '0.82rem',
+                      color: '#3D3934',
+                      fontSize: '0.88rem',
                       transition: 'color var(--transition-fast)'
                     }}
-                    onMouseEnter={(e) => (e.currentTarget.style.color = '#ffffff')}
-                    onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255, 255, 255, 0.72)')}
+                    onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--color-accent-gold)')}
+                    onMouseLeave={(e) => (e.currentTarget.style.color = '#3D3934')}
                   >
-                    Room Inspirations
+                    Curated Lifestyle
                   </Link>
                 </li>
               )}
+              <li>
+                <Link
+                  href="/contact"
+                  style={{
+                    color: '#3D3934',
+                    fontSize: '0.88rem',
+                    transition: 'color var(--transition-fast)'
+                  }}
+                  onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--color-accent-gold)')}
+                  onMouseLeave={(e) => (e.currentTarget.style.color = '#3D3934')}
+                >
+                  Private Client Contact
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -148,21 +160,21 @@ export const Footer: React.FC = () => {
             <h4
               style={{
                 fontSize: '0.75rem',
-                letterSpacing: '0.18em',
+                letterSpacing: '0.22em',
                 textTransform: 'uppercase',
                 color: 'var(--color-accent-gold)',
                 fontFamily: 'var(--font-sans)',
-                fontWeight: 500,
+                fontWeight: 600,
                 marginBottom: 'var(--space-4)'
               }}
             >
-              Atelier &amp; Showroom
+              Sales Gallery &amp; Enquiries
             </h4>
-            <div style={{ color: 'rgba(255, 255, 255, 0.72)', fontSize: '0.82rem', lineHeight: 1.6 }}>
-              <p style={{ marginBottom: 'var(--space-1)' }}>
+            <div style={{ color: '#6E6860', fontSize: '0.88rem', lineHeight: 1.7 }}>
+              <p style={{ marginBottom: 'var(--space-2)' }}>
                 {config.contact.showroomAddress}
               </p>
-              <p style={{ marginBottom: 'var(--space-3)' }}>
+              <p style={{ marginBottom: 'var(--space-4)' }}>
                 {config.contact.visitingHours}
               </p>
               <Link
@@ -171,15 +183,17 @@ export const Footer: React.FC = () => {
                   display: 'inline-flex',
                   alignItems: 'center',
                   gap: 'var(--space-2)',
-                  color: 'var(--color-accent-gold)',
-                  fontSize: '0.78rem',
-                  letterSpacing: '0.1em',
+                  color: '#1A1816',
+                  fontSize: '0.82rem',
+                  letterSpacing: '0.12em',
                   textTransform: 'uppercase',
-                  fontWeight: 500
+                  fontWeight: 600
                 }}
+                onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--color-accent-gold)')}
+                onMouseLeave={(e) => (e.currentTarget.style.color = '#1A1816')}
               >
-                <span>Request Appointment</span>
-                <ArrowUpRight size={13} />
+                <span>Schedule Private Viewing</span>
+                <ArrowUpRight size={14} />
               </Link>
             </div>
           </div>
@@ -193,30 +207,26 @@ export const Footer: React.FC = () => {
             alignItems: 'center',
             justifyContent: 'space-between',
             gap: 'var(--space-4)',
-            paddingTop: 'var(--space-6)',
-            fontSize: '0.75rem',
-            color: 'rgba(255, 255, 255, 0.5)'
+            paddingTop: 'var(--space-8)',
+            fontSize: '0.82rem',
+            color: '#6E6860'
           }}
         >
           <div>
             &copy; {new Date().getFullYear()} {config.brand.brandName} {config.brand.tagline}. All architectural rights reserved.
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-6)' }}>
-            <Link
-              href="/admin"
+            <span
               style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '6px',
-                color: 'rgba(255, 255, 255, 0.5)',
+                color: 'var(--color-accent-gold)',
                 fontSize: '0.72rem',
-                letterSpacing: '0.08em',
-                textTransform: 'uppercase'
+                letterSpacing: '0.2em',
+                textTransform: 'uppercase',
+                fontWeight: 600
               }}
             >
-              <Shield size={11} />
-              <span>Admin Portal Area</span>
-            </Link>
+              {config.brand.badge}
+            </span>
           </div>
         </div>
       </div>

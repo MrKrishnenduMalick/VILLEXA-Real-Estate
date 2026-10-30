@@ -1,39 +1,38 @@
-import { SiteConfiguration, HeroConfig, ShowroomMediaConfig, BrandSettings } from '../types/content';
-import { supabase, isSupabaseConfigured } from './supabaseClient';
+import { SiteConfiguration } from '../types/content';
 import { getClientConfig } from '../config/clientConfig';
 
 const activeClient = getClientConfig();
 
 const defaultSiteConfig: SiteConfiguration = {
   hero: {
-    kicker: 'HAUTE ÉBÉNISTERIE & ARCHITECTURE',
-    title: 'Pure Architectural Form Meets Bespoke Craftsmanship',
-    subtitle: `${activeClient.brand.brandName} curates timeless interior masterworks. Sculptural silhouettes, organic materials, and deliberate proportions crafted for refined living spaces.`,
-    primaryCtaLabel: 'Explore Catalogue',
-    primaryCtaLink: '/catalogue',
-    secondaryCtaLabel: 'Request Commission',
-    secondaryCtaLink: '/contact',
+    kicker: 'BILEKSA PRIVATE RESIDENCES',
+    title: 'Where Architecture Becomes Home',
+    subtitle: 'Discover exceptional residences shaped by space, light and timeless design.',
+    primaryCtaLabel: 'Explore Residences',
+    primaryCtaLink: '/residences',
+    secondaryCtaLabel: 'Discover Our Vision',
+    secondaryCtaLink: '/vision',
     mediaType: 'frames',
-    mediaUrl: '/hero-frames/frame-00001.webp',
-    posterUrl: '/hero-frames/frame-00001.webp',
+    mediaUrl: '/real-estate-hero-frames/frame-00001.webp',
+    posterUrl: '/real-estate-hero-frames/frame-00001.webp',
     frameSequence: {
-      version: '1.0.0',
-      frameCount: 384,
-      width: 1600,
-      height: 900,
-      framePattern: '/hero-frames/frame-{index}.webp',
-      firstFrame: '/hero-frames/frame-00001.webp',
-      finalFrame: '/hero-frames/frame-00384.webp',
-      manifestUrl: '/hero-frames/manifest.json',
-      totalSizeBytes: 40199840,
+      version: '2.0.0',
+      frameCount: 240,
+      width: 1280,
+      height: 720,
+      framePattern: '/real-estate-hero-frames/frame-{index}.webp',
+      firstFrame: '/real-estate-hero-frames/frame-00001.webp',
+      finalFrame: '/real-estate-hero-frames/frame-00240.webp',
+      manifestUrl: '/real-estate-hero-frames/manifest.json',
+      totalSizeBytes: 11145560,
       isPublished: true,
-      publishedAt: '2026-10-18T00:00:00.000Z'
+      publishedAt: '2026-10-31T00:00:00.000Z'
     }
   },
   showroomMedia: {
     enabled: false,
-    sectionTitle: 'The Atelier Atmosphere',
-    sectionSubtitle: 'An intimate glimpse into our material joinery and spatial compositions.',
+    sectionTitle: 'The Residential Atmosphere',
+    sectionSubtitle: 'An intimate glimpse into our architectural living and spatial compositions.',
     videoUrl: null,
     posterUrl: null,
     autoPlay: false,
@@ -56,9 +55,9 @@ export const siteConfigService = {
   getLocalFallback(): SiteConfiguration {
     try {
       if (typeof window !== 'undefined' && window.localStorage) {
-        const storedHero = window.localStorage.getItem('villexa_site_config_hero');
-        const storedShowroom = window.localStorage.getItem('villexa_site_config_showroom_media');
-        const storedBrand = window.localStorage.getItem('villexa_site_config_brand');
+        const storedHero = window.localStorage.getItem('bileksa_site_config_hero') || window.localStorage.getItem('villexa_site_config_hero');
+        const storedShowroom = window.localStorage.getItem('bileksa_site_config_showroom_media') || window.localStorage.getItem('villexa_site_config_showroom_media');
+        const storedBrand = window.localStorage.getItem('bileksa_site_config_brand') || window.localStorage.getItem('villexa_site_config_brand');
         const parsedHero = storedHero ? JSON.parse(storedHero) : defaultSiteConfig.hero;
         return {
           hero: {
@@ -77,43 +76,7 @@ export const siteConfigService = {
   },
 
   async getSiteConfig(): Promise<SiteConfiguration> {
-    if (!isSupabaseConfigured) return this.getLocalFallback();
-
-    try {
-      const { data, error } = await supabase.from('site_settings').select('key, value');
-      if (error || !data) return this.getLocalFallback();
-
-      const heroRow = data.find((r) => r.key === 'hero');
-      const showroomRow = data.find((r) => r.key === 'showroom_media');
-      const brandRow = data.find((r) => r.key === 'brand');
-
-      const heroData = (heroRow?.value as HeroConfig) || defaultSiteConfig.hero;
-      const hero: HeroConfig = {
-        ...defaultSiteConfig.hero,
-        ...heroData,
-        frameSequence: heroData.frameSequence || defaultSiteConfig.hero.frameSequence
-      };
-
-      const config: SiteConfiguration = {
-        hero,
-        showroomMedia: (showroomRow?.value as ShowroomMediaConfig) || defaultSiteConfig.showroomMedia,
-        brand: (brandRow?.value as BrandSettings) || defaultSiteConfig.brand
-      };
-
-      // Cache locally for offline resilience
-      try {
-        if (typeof window !== 'undefined' && window.localStorage) {
-          if (heroRow?.value) window.localStorage.setItem('villexa_site_config_hero', JSON.stringify(hero));
-          if (showroomRow?.value) window.localStorage.setItem('villexa_site_config_showroom_media', JSON.stringify(showroomRow.value));
-          if (brandRow?.value) window.localStorage.setItem('villexa_site_config_brand', JSON.stringify(brandRow.value));
-        }
-      } catch {
-        // Ignore cache storage errors
-      }
-
-      return config;
-    } catch {
-      return this.getLocalFallback();
-    }
+    // Pure static frontend mode: instant reliable local resolution
+    return this.getLocalFallback();
   }
 };

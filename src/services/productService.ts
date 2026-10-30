@@ -1,190 +1,45 @@
 import { Product, ProductCategory } from '../types/product';
-import { supabase, isSupabaseConfigured } from './supabaseClient';
+import { INAUGURAL_CATALOGUE, INAUGURAL_CATALOGUE_BY_SLUG } from '../config/inauguralCatalogue';
 
 /**
- * PUBLIC PRODUCT SERVICE
- * Reads strictly published products via RLS policies.
- * When database is unconfigured or has no published items, returns empty array ([]),
- * triggering the deliberate luxury empty states.
+ * PUBLIC PRODUCT SERVICE (Static Frontend Architecture)
+ * Serves static catalog items with zero backend dependencies.
  */
+
+const STATIC_CATEGORIES: ProductCategory[] = [
+  { id: 'villas', slug: 'villas', name: 'Private Villas', sortOrder: 1, productCount: 3 },
+  { id: 'apartments', slug: 'apartments', name: 'Luxury Apartments', sortOrder: 2, productCount: 3 },
+  { id: 'penthouses', slug: 'penthouses', name: 'Sky Penthouses', sortOrder: 3, productCount: 2 },
+  { id: 'developments', slug: 'developments', name: 'Master Developments', sortOrder: 4, productCount: 1 }
+];
 
 export const productService = {
   /**
    * Fetch all published products
    */
   async getPublishedProducts(): Promise<Product[]> {
-    if (!isSupabaseConfigured) return [];
-
-    try {
-      const { data, error } = await supabase
-        .from('products')
-        .select('*, categories(*), collections(*), product_media(*)')
-        .eq('status', 'published')
-        .order('sort_order', { ascending: true });
-
-      if (error || !data) return [];
-
-      return data.map((item) => ({
-        id: item.id,
-        slug: item.slug,
-        sku: item.sku,
-        name: item.name,
-        categoryId: item.category_id || '',
-        categoryName: item.categories?.name || 'Unassigned',
-        collectionId: item.collection_id || undefined,
-        collectionName: item.collections?.name || undefined,
-        regularPrice: item.regular_price ? Number(item.regular_price) : null,
-        salePrice: item.sale_price ? Number(item.sale_price) : null,
-        currency: item.currency || 'USD',
-        showPricePublicly: item.show_price_publicly ?? true,
-        isEnquiryOnly: item.is_enquiry_only ?? false,
-        shortDescription: item.short_description,
-        fullDescription: item.full_description,
-        materials: item.materials,
-        careInstructions: item.care_instructions || undefined,
-        dimensions: item.dimensions || undefined,
-        finishes: [],
-        primaryImageUrl: item.primary_image_url || null,
-        galleryImages: item.product_media?.filter((m: { type: string }) => m.type === 'image').map((m: { public_url: string }) => m.public_url) || [],
-        galleryMedia: item.product_media?.filter((m: { type: string }) => m.type === 'image').map((m: { public_url: string; storage_path?: string; metadata?: any }) => ({ url: m.public_url, storagePath: m.storage_path, metadata: m.metadata })) || [],
-        videoUrl: item.product_media?.find((m: { type: string }) => m.type === 'video')?.public_url || null,
-        videoPosterUrl: (item.product_media?.find((m: { type: string }) => m.type === 'video')?.metadata as any)?.posterUrl || item.product_media?.find((m: { type: string }) => m.type === 'video')?.thumbnail_url || null,
-        videoMedia: item.product_media?.find((m: { type: string }) => m.type === 'video') ? {
-          url: item.product_media.find((m: { type: string }) => m.type === 'video').public_url,
-          storagePath: item.product_media.find((m: { type: string }) => m.type === 'video').storage_path,
-          posterUrl: (item.product_media.find((m: { type: string }) => m.type === 'video').metadata as any)?.posterUrl || item.product_media.find((m: { type: string }) => m.type === 'video').thumbnail_url || undefined,
-          metadata: item.product_media.find((m: { type: string }) => m.type === 'video').metadata
-        } : null,
-        preferredViewer: (item.preferred_viewer === 'video' || item.product_media?.some((m: { type: string; metadata?: any }) => m.type === 'video' && m.metadata?.is_preferred_viewer)) ? 'video' : (item.preferred_viewer === 'glb_3d' ? 'glb_3d' : 'gallery'),
-        glbConfig: item.product_media?.find((m: { type: string }) => m.type === 'glb_model') ? {
-          modelUrl: item.product_media.find((m: { type: string }) => m.type === 'glb_model').public_url,
-          autoRotate: true
-        } : undefined,
-        glbMedia: item.product_media?.find((m: { type: string }) => m.type === 'glb_model') ? {
-          url: item.product_media.find((m: { type: string }) => m.type === 'glb_model').public_url,
-          storagePath: item.product_media.find((m: { type: string }) => m.type === 'glb_model').storage_path,
-          metadata: item.product_media.find((m: { type: string }) => m.type === 'glb_model').metadata
-        } : null,
-        tags: item.tags || [],
-        isFeatured: item.is_featured ?? false,
-        sortOrder: item.sort_order ?? 0,
-        seoTitle: item.seo_title || undefined,
-        seoDescription: item.seo_description || undefined,
-        status: item.status,
-        createdAt: item.created_at,
-        updatedAt: item.updated_at
-      }));
-    } catch (err) {
-      console.error('Error fetching published products:', err);
-      return [];
-    }
+    return INAUGURAL_CATALOGUE;
   },
 
   /**
-   * Fetch single product by slug (only where published)
+   * Fetch single product by unique slug
    */
   async getProductBySlug(slug: string): Promise<Product | null> {
-    if (!isSupabaseConfigured) return null;
-
-    try {
-      const { data, error } = await supabase
-        .from('products')
-        .select('*, categories(*), collections(*), product_media(*)')
-        .eq('slug', slug)
-        .eq('status', 'published')
-        .maybeSingle();
-
-      if (error || !data) return null;
-
-      return {
-        id: data.id,
-        slug: data.slug,
-        sku: data.sku,
-        name: data.name,
-        categoryId: data.category_id || '',
-        categoryName: data.categories?.name || 'Unassigned',
-        collectionId: data.collection_id || undefined,
-        collectionName: data.collections?.name || undefined,
-        regularPrice: data.regular_price ? Number(data.regular_price) : null,
-        salePrice: data.sale_price ? Number(data.sale_price) : null,
-        currency: data.currency || 'USD',
-        showPricePublicly: data.show_price_publicly ?? true,
-        isEnquiryOnly: data.is_enquiry_only ?? false,
-        shortDescription: data.short_description,
-        fullDescription: data.full_description,
-        materials: data.materials,
-        careInstructions: data.care_instructions || undefined,
-        dimensions: data.dimensions || undefined,
-        finishes: [],
-        primaryImageUrl: data.primary_image_url || null,
-        galleryImages: data.product_media?.filter((m: { type: string }) => m.type === 'image').map((m: { public_url: string }) => m.public_url) || [],
-        galleryMedia: data.product_media?.filter((m: { type: string }) => m.type === 'image').map((m: { public_url: string; storage_path?: string; metadata?: any }) => ({ url: m.public_url, storagePath: m.storage_path, metadata: m.metadata })) || [],
-        videoUrl: data.product_media?.find((m: { type: string }) => m.type === 'video')?.public_url || null,
-        videoPosterUrl: (data.product_media?.find((m: { type: string }) => m.type === 'video')?.metadata as any)?.posterUrl || data.product_media?.find((m: { type: string }) => m.type === 'video')?.thumbnail_url || null,
-        videoMedia: data.product_media?.find((m: { type: string }) => m.type === 'video') ? {
-          url: data.product_media.find((m: { type: string }) => m.type === 'video').public_url,
-          storagePath: data.product_media.find((m: { type: string }) => m.type === 'video').storage_path,
-          posterUrl: (data.product_media.find((m: { type: string }) => m.type === 'video').metadata as any)?.posterUrl || data.product_media.find((m: { type: string }) => m.type === 'video').thumbnail_url || undefined,
-          metadata: data.product_media.find((m: { type: string }) => m.type === 'video').metadata
-        } : null,
-        preferredViewer: (data.preferred_viewer === 'video' || data.product_media?.some((m: { type: string; metadata?: any }) => m.type === 'video' && m.metadata?.is_preferred_viewer)) ? 'video' : (data.preferred_viewer === 'glb_3d' ? 'glb_3d' : 'gallery'),
-        glbConfig: data.product_media?.find((m: { type: string }) => m.type === 'glb_model') ? {
-          modelUrl: data.product_media.find((m: { type: string }) => m.type === 'glb_model').public_url,
-          autoRotate: true
-        } : undefined,
-        glbMedia: data.product_media?.find((m: { type: string }) => m.type === 'glb_model') ? {
-          url: data.product_media.find((m: { type: string }) => m.type === 'glb_model').public_url,
-          storagePath: data.product_media.find((m: { type: string }) => m.type === 'glb_model').storage_path,
-          metadata: data.product_media.find((m: { type: string }) => m.type === 'glb_model').metadata
-        } : null,
-        tags: data.tags || [],
-        isFeatured: data.is_featured ?? false,
-        sortOrder: data.sort_order ?? 0,
-        seoTitle: data.seo_title || undefined,
-        seoDescription: data.seo_description || undefined,
-        status: data.status,
-        createdAt: data.created_at,
-        updatedAt: data.updated_at
-      };
-    } catch (err) {
-      console.error('Error fetching product by slug:', err);
-      return null;
-    }
+    return INAUGURAL_CATALOGUE_BY_SLUG[slug] || INAUGURAL_CATALOGUE.find((p) => p.slug === slug) || null;
   },
 
   /**
    * Fetch active categories
    */
   async getCategories(): Promise<ProductCategory[]> {
-    if (!isSupabaseConfigured) return [];
-
-    try {
-      const { data, error } = await supabase
-        .from('categories')
-        .select('*')
-        .order('sort_order', { ascending: true });
-
-      if (error || !data) return [];
-
-      return data.map((c) => ({
-        id: c.id,
-        slug: c.slug,
-        name: c.name,
-        description: c.description || undefined,
-        sortOrder: c.sort_order,
-        productCount: 0
-      }));
-    } catch {
-      return [];
-    }
+    return STATIC_CATEGORIES;
   },
 
   /**
    * Fetch featured products for homepage
    */
   async getFeaturedProducts(): Promise<Product[]> {
-    const products = await this.getPublishedProducts();
-    return products.filter((p) => p.isFeatured);
+    return INAUGURAL_CATALOGUE.filter((p) => p.isFeatured);
   },
 
   /**

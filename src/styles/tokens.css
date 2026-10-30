@@ -1,41 +1,42 @@
 /**
- * VILLEXA LUXURY DESIGN TOKENS
- * Refined architectural neutral palette with brushed brass accents
- * Smoked & Frosted Glassmorphism Design System
+ * BILEKSA LUXURY ARCHITECTURAL DESIGN SYSTEM
+ * Warm Ivory, Pure White, Sandstone, Brushed Champagne Gold & Architectural Charcoal
+ * Inspired by Aman Luxury Hospitality, Apple Editorial Storytelling & Bespoke Architectural Monographs
  */
 
 :root {
-  /* Color Palette - Neutrals & Atelier Stones */
-  --color-bg-primary: #12100e;
-  --color-bg-secondary: #1a1614;
-  --color-bg-tertiary: #24201c;
-  --color-bg-surface: rgba(28, 24, 21, 0.75);
-  --color-bg-surface-elevated: rgba(36, 31, 27, 0.88);
+  /* Color Palette - Warm Ivory, Pure White & Sandstone */
+  --color-bg-primary: #FAF8F5;            /* Core warm ivory background */
+  --color-bg-secondary: #F3EFEA;          /* Soft sandstone/linen tone */
+  --color-bg-tertiary: #EAE4DA;           /* Warm limestone accent */
+  --color-bg-white: #FFFFFF;              /* Pure white gallery plate */
+  --color-bg-surface: rgba(255, 255, 255, 0.90);
+  --color-bg-surface-elevated: #FFFFFF;
   
-  /* Text & Inks (High-Contrast for Dark Cinematic Architecture) */
-  --color-text-primary: #ffffff;
-  --color-text-secondary: rgba(255, 255, 255, 0.82);
-  --color-text-muted: rgba(255, 255, 255, 0.55);
-  --color-text-inverse: #141210;
+  /* Text & Inks (High-Contrast Architectural Charcoal) */
+  --color-text-primary: #1A1816;          /* Deep architectural charcoal headline ink */
+  --color-text-secondary: #3D3934;        /* Editorial body copy ink */
+  --color-text-muted: #6E6860;            /* Restrained metadata & overline ink */
+  --color-text-inverse: #FAF8F5;          /* Contrast ink for dark triggers */
 
   /* Architectural Accents */
-  --color-accent-gold: #c5a059;
-  --color-accent-gold-hover: #d4af73;
-  --color-accent-gold-light: #e6c88b;
-  --color-accent-gold-soft: rgba(197, 160, 89, 0.16);
-  --color-accent-bronze: #3b3228;
+  --color-accent-gold: #B89552;           /* Brushed champagne gold */
+  --color-accent-gold-hover: #9E7D3B;     /* Deep burnished gold */
+  --color-accent-gold-light: #DFCFA8;     /* Delicate gold wash */
+  --color-accent-gold-soft: rgba(184, 149, 82, 0.12);
+  --color-accent-bronze: #4A3E30;
   
   /* Borders & Dividers */
-  --color-border-subtle: rgba(255, 255, 255, 0.12);
-  --color-border-medium: rgba(255, 255, 255, 0.22);
-  --color-border-dark: rgba(255, 255, 255, 0.08);
+  --color-border-subtle: #EAE5DC;         /* Ultra-fine warm divider */
+  --color-border-medium: #DCD5C9;         /* Defined sandstone border */
+  --color-border-dark: #B8AFA0;           /* Emphasized structural line */
 
-  /* Dark Theme Surfaces (for Hero / Footers / Modals) */
-  --color-dark-bg: #12100e;
-  --color-dark-surface: #1a1714;
-  --color-dark-border: rgba(255, 255, 255, 0.12);
-  --color-dark-text-primary: #ffffff;
-  --color-dark-text-secondary: rgba(255, 255, 255, 0.78);
+  /* Dark Theme Surfaces (for Hero Film / Controlled Anchors) */
+  --color-dark-bg: #141210;
+  --color-dark-surface: #1E1B18;
+  --color-dark-border: rgba(255, 255, 255, 0.15);
+  --color-dark-text-primary: #FFFFFF;
+  --color-dark-text-secondary: rgba(255, 255, 255, 0.82);
 
   /* Typography */
   --font-serif: 'Cormorant Garamond', Georgia, serif;
@@ -56,21 +57,21 @@
   --space-24: 6rem;     /* 96px */
   --space-32: 8rem;     /* 128px */
 
-  /* Radii matching reference image */
+  /* Radii matching architectural proportions */
   --radius-none: 0px;
   --radius-xs: 4px;
   --radius-sm: 8px;
   --radius-md: 14px;
-  --radius-lg: 18px;
-  --radius-xl: 24px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
   --radius-pill: 9999px;
   --radius-full: 9999px;
 
-  /* Shadows */
-  --shadow-subtle: 0 4px 20px rgba(0, 0, 0, 0.35);
-  --shadow-card: 0 16px 36px -8px rgba(0, 0, 0, 0.55);
-  --shadow-elevated: 0 24px 48px -12px rgba(0, 0, 0, 0.7);
-  --shadow-glow: 0 0 28px rgba(197, 160, 89, 0.28);
+  /* Architectural Shadows (Soft, warm ambient depth, never heavy black shadows) */
+  --shadow-subtle: 0 4px 20px rgba(26, 24, 22, 0.04);
+  --shadow-card: 0 16px 36px -8px rgba(26, 24, 22, 0.08);
+  --shadow-elevated: 0 24px 52px -12px rgba(26, 24, 22, 0.12);
+  --shadow-glow: 0 0 28px rgba(184, 149, 82, 0.20);
 
   /* Transitions */
   --transition-fast: 150ms cubic-bezier(0.16, 1, 0.3, 1);
@@ -81,20 +82,20 @@
   --container-max: 1400px;
   --container-narrow: 960px;
 
-  /* Glassmorphism Luxury Showroom Tokens */
-  --glass-bg-primary: rgba(22, 19, 16, 0.65);
-  --glass-bg-surface: rgba(26, 22, 19, 0.68);
-  --glass-bg-surface-elevated: rgba(34, 29, 25, 0.82);
-  --glass-bg-subtle: rgba(255, 255, 255, 0.06);
-  --glass-bg-dark: rgba(18, 15, 13, 0.78);
-  --glass-bg-dark-elevated: rgba(24, 20, 17, 0.90);
-  --glass-bg-pill: rgba(255, 255, 255, 0.08);
-  --glass-bg-pill-hover: rgba(255, 255, 255, 0.14);
+  /* Frosted Ivory & Warm Glassmorphism Tokens */
+  --glass-bg-primary: rgba(250, 248, 245, 0.88);
+  --glass-bg-surface: rgba(255, 255, 255, 0.92);
+  --glass-bg-surface-elevated: #FFFFFF;
+  --glass-bg-subtle: rgba(255, 255, 255, 0.65);
+  --glass-bg-dark: rgba(20, 18, 16, 0.85);
+  --glass-bg-dark-elevated: rgba(26, 23, 20, 0.94);
+  --glass-bg-pill: rgba(26, 24, 22, 0.05);
+  --glass-bg-pill-hover: rgba(26, 24, 22, 0.09);
 
-  --glass-border-subtle: rgba(255, 255, 255, 0.14);
-  --glass-border-medium: rgba(255, 255, 255, 0.24);
-  --glass-border-dark: rgba(255, 255, 255, 0.08);
-  --glass-border-gold: rgba(197, 160, 89, 0.38);
+  --glass-border-subtle: rgba(234, 229, 220, 0.95);
+  --glass-border-medium: rgba(220, 213, 201, 0.95);
+  --glass-border-dark: rgba(26, 24, 22, 0.12);
+  --glass-border-gold: rgba(184, 149, 82, 0.35);
 
   --glass-blur-xs: 6px;
   --glass-blur-sm: 12px;
@@ -102,12 +103,12 @@
   --glass-blur-lg: 28px;
   --glass-blur-xl: 40px;
 
-  --glass-shadow-sm: 0 8px 24px -4px rgba(0, 0, 0, 0.45);
-  --glass-shadow-md: 0 16px 36px -8px rgba(0, 0, 0, 0.60);
-  --glass-shadow-lg: 0 28px 56px -12px rgba(0, 0, 0, 0.75);
+  --glass-shadow-sm: 0 4px 16px -2px rgba(26, 24, 22, 0.05);
+  --glass-shadow-md: 0 12px 32px -6px rgba(26, 24, 22, 0.08);
+  --glass-shadow-lg: 0 24px 48px -10px rgba(26, 24, 22, 0.12);
 
-  --glass-inner-highlight: inset 0 1px 1px 0 rgba(255, 255, 255, 0.30), inset 0 0 24px 0 rgba(255, 255, 255, 0.02);
-  --glass-gold-glow: inset 0 1px 1px 0 rgba(230, 200, 139, 0.45), 0 0 24px rgba(197, 160, 89, 0.20);
+  --glass-inner-highlight: inset 0 1px 1px 0 rgba(255, 255, 255, 0.9), inset 0 0 20px 0 rgba(255, 255, 255, 0.4);
+  --glass-gold-glow: 0 0 24px rgba(184, 149, 82, 0.15);
 }
 
 @media (prefers-reduced-motion: reduce) {

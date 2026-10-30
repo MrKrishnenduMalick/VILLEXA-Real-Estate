@@ -1,6 +1,5 @@
-import React, { useEffect, Suspense, lazy } from 'react';
+import React, { useEffect } from 'react';
 import { Route, Switch, useLocation } from 'wouter';
-import { AuthProvider } from './context/AuthContext';
 import { ClientConfigProvider } from './context/ClientConfigContext';
 import { Header } from './components/layout/Header';
 import { Footer } from './components/layout/Footer';
@@ -15,29 +14,8 @@ import { EmptyState } from './components/common/EmptyState';
 import { CinematicHeroProvider } from './context/CinematicHeroContext';
 import { CinematicShowroomBackground } from './components/layout/CinematicShowroomBackground';
 
-// Lazy-loaded Admin Control Center (isolated from public visitor bundle)
-const AdminLayout = lazy(() => import('./pages/admin/AdminLayout').then(m => ({ default: m.AdminLayout })));
-const AdminOverview = lazy(() => import('./pages/admin/AdminOverview').then(m => ({ default: m.AdminOverview })));
-const AdminProductList = lazy(() => import('./pages/admin/AdminProductList').then(m => ({ default: m.AdminProductList })));
-const AdminProductEditor = lazy(() => import('./pages/admin/AdminProductEditor').then(m => ({ default: m.AdminProductEditor })));
-const AdminCategories = lazy(() => import('./pages/admin/AdminCategories').then(m => ({ default: m.AdminCategories })));
-const AdminCollections = lazy(() => import('./pages/admin/AdminCollections').then(m => ({ default: m.AdminCollections })));
-const AdminShowroomMedia = lazy(() => import('./pages/admin/AdminShowroomMedia').then(m => ({ default: m.AdminShowroomMedia })));
-const AdminHeroFrames = lazy(() => import('./pages/admin/AdminHeroFrames').then(m => ({ default: m.AdminHeroFrames })));
-const AdminSiteSettings = lazy(() => import('./pages/admin/AdminSiteSettings').then(m => ({ default: m.AdminSiteSettings })));
-const AdminStorageAudit = lazy(() => import('./pages/admin/AdminStorageAudit').then(m => ({ default: m.AdminStorageAudit })));
-const AdminEnquiries = lazy(() => import('./pages/admin/AdminEnquiries').then(m => ({ default: m.AdminEnquiries })));
-const AdminLogin = lazy(() => import('./pages/admin/AdminLogin').then(m => ({ default: m.AdminLogin })));
-
-const AdminLoadingFallback: React.FC = () => (
-  <div style={{ minHeight: '80vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-    <span className="kicker" style={{ letterSpacing: '0.2em' }}>AUTHENTICATING ATELIER CONSOLE...</span>
-  </div>
-);
-
 export const App: React.FC = () => {
   const [location] = useLocation();
-  const isAdminRoute = location.startsWith('/admin');
 
   // Scroll to top automatically when route changes
   useEffect(() => {
@@ -46,8 +24,6 @@ export const App: React.FC = () => {
 
   // Scroll-responsive glass reveals for public floating panels (handles async page loads)
   useEffect(() => {
-    if (isAdminRoute) return;
-
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (prefersReducedMotion) {
       document.querySelectorAll('.scroll-reveal').forEach((el) => el.classList.add('is-revealed'));
@@ -85,104 +61,59 @@ export const App: React.FC = () => {
       observer.disconnect();
       mutationObserver.disconnect();
     };
-  }, [location, isAdminRoute]);
+  }, [location]);
 
   return (
     <ClientConfigProvider>
-      <AuthProvider>
-        <CinematicHeroProvider>
-          {!isAdminRoute && <Header />}
-          {!isAdminRoute && <CinematicShowroomBackground />}
-          <main className={!isAdminRoute ? 'showroom-public-main' : ''}>
-            <Suspense fallback={<AdminLoadingFallback />}>
-              <Switch>
-                {/* Public Website Routes */}
-                <Route path="/" component={HomePage} />
-                <Route path="/catalogue" component={CataloguePage} />
-                <Route path="/product/:slug" component={ProductDetailPage} />
-                <Route path="/collections" component={CollectionsPage} />
-                <Route path="/craftsmanship" component={CraftsmanshipPage} />
-                <Route path="/inspiration" component={InspirationPage} />
-                <Route path="/contact" component={ContactPage} />
+      <CinematicHeroProvider>
+        <Header />
+        <CinematicShowroomBackground />
+        <main className="showroom-public-main">
+          <Switch>
+            {/* Public Real Estate Routes */}
+            <Route path="/" component={HomePage} />
+            
+            {/* Residences / Portfolio (Dual routes for seamless transition) */}
+            <Route path="/residences" component={CataloguePage} />
+            <Route path="/catalogue" component={CataloguePage} />
+            
+            {/* Individual Property Detail */}
+            <Route path="/residence/:slug" component={ProductDetailPage} />
+            <Route path="/residences/:slug" component={ProductDetailPage} />
+            <Route path="/product/:slug" component={ProductDetailPage} />
+            
+            {/* Curated Portfolios */}
+            <Route path="/collections" component={CollectionsPage} />
+            
+            {/* Architectural Vision (Dual routes) */}
+            <Route path="/vision" component={CraftsmanshipPage} />
+            <Route path="/craftsmanship" component={CraftsmanshipPage} />
+            
+            {/* Lifestyle & Living (Dual routes) */}
+            <Route path="/lifestyle" component={InspirationPage} />
+            <Route path="/inspiration" component={InspirationPage} />
+            
+            {/* Contact & Private Enquiries */}
+            <Route path="/contact" component={ContactPage} />
 
-                {/* Admin Routes */}
-                <Route path="/admin/login" component={AdminLogin} />
-                <Route path="/admin">
-                  <AdminLayout>
-                    <AdminOverview />
-                  </AdminLayout>
-                </Route>
-                <Route path="/admin/products">
-                  <AdminLayout>
-                    <AdminProductList />
-                  </AdminLayout>
-                </Route>
-                <Route path="/admin/products/new">
-                  <AdminLayout>
-                    <AdminProductEditor />
-                  </AdminLayout>
-                </Route>
-                <Route path="/admin/products/:id">
-                  <AdminLayout>
-                    <AdminProductEditor />
-                  </AdminLayout>
-                </Route>
-                <Route path="/admin/categories">
-                  <AdminLayout>
-                    <AdminCategories />
-                  </AdminLayout>
-                </Route>
-                <Route path="/admin/collections">
-                  <AdminLayout>
-                    <AdminCollections />
-                  </AdminLayout>
-                </Route>
-                <Route path="/admin/media">
-                  <AdminLayout>
-                    <AdminShowroomMedia />
-                  </AdminLayout>
-                </Route>
-                <Route path="/admin/hero-frames">
-                  <AdminLayout>
-                    <AdminHeroFrames />
-                  </AdminLayout>
-                </Route>
-                <Route path="/admin/settings">
-                  <AdminLayout>
-                    <AdminSiteSettings />
-                  </AdminLayout>
-                </Route>
-                <Route path="/admin/storage-audit">
-                  <AdminLayout>
-                    <AdminStorageAudit />
-                  </AdminLayout>
-                </Route>
-                <Route path="/admin/enquiries">
-                  <AdminLayout>
-                    <AdminEnquiries />
-                  </AdminLayout>
-                </Route>
-
-                {/* 404 Fallback Route */}
-                <Route>
-                  <div style={{ padding: 'var(--space-24) 0' }}>
-                    <div className="container">
-                      <EmptyState
-                        type="generic"
-                        title="Page Outside Atelier Registry"
-                        description="The architectural page or reference you requested does not exist."
-                        actionLabel="Return to Showroom Overview"
-                        actionHref="/"
-                      />
-                    </div>
-                  </div>
-                </Route>
-              </Switch>
-            </Suspense>
-          </main>
-      {!isAdminRoute && <Footer />}
-        </CinematicHeroProvider>
-      </AuthProvider>
+            {/* 404 Fallback Route */}
+            <Route>
+              <div style={{ padding: 'var(--space-24) 0' }}>
+                <div className="container">
+                  <EmptyState
+                    type="generic"
+                    title="Page Outside Residence Registry"
+                    description="The architectural page or reference you requested does not exist."
+                    actionLabel="Return to Overview"
+                    actionHref="/"
+                  />
+                </div>
+              </div>
+            </Route>
+          </Switch>
+        </main>
+        <Footer />
+      </CinematicHeroProvider>
     </ClientConfigProvider>
   );
 };

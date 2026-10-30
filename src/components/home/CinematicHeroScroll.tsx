@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { Link } from 'wouter';
-import { ArrowRight, Play } from 'lucide-react';
+import { ArrowRight, Compass } from 'lucide-react';
 import { useCinematicHero } from '../../context/CinematicHeroContext';
 
 export const CinematicHeroScroll: React.FC = () => {
@@ -105,31 +105,10 @@ export const CinematicHeroScroll: React.FC = () => {
         >
           <div
             style={{
-              maxWidth: '760px',
+              maxWidth: '820px',
               position: 'relative'
             }}
           >
-            {/* Vertical Step Counter (01, 02, 03, 04) on left */}
-            <div
-              style={{
-                position: 'absolute',
-                left: '-48px',
-                top: '12px',
-                display: 'none',
-                flexDirection: 'column',
-                gap: '14px',
-                fontSize: '0.72rem',
-                letterSpacing: '0.1em',
-                fontFamily: 'var(--font-sans)'
-              }}
-              className="step-indicator"
-            >
-              <span style={{ color: 'var(--color-accent-gold)', fontWeight: 600 }}>01</span>
-              <span style={{ color: 'rgba(255, 255, 255, 0.35)' }}>02</span>
-              <span style={{ color: 'rgba(255, 255, 255, 0.35)' }}>03</span>
-              <span style={{ color: 'rgba(255, 255, 255, 0.35)' }}>04</span>
-            </div>
-
             {/* Architectural Kicker */}
             <div
               style={{
@@ -137,15 +116,15 @@ export const CinematicHeroScroll: React.FC = () => {
                 alignItems: 'center',
                 gap: '10px',
                 marginBottom: 'var(--space-4)',
-                color: 'var(--color-accent-gold)',
-                fontSize: '0.75rem',
-                letterSpacing: '0.28em',
+                color: '#DFCFA8',
+                fontSize: '0.78rem',
+                letterSpacing: '0.3em',
                 textTransform: 'uppercase',
-                fontWeight: 500,
-                textShadow: '0 2px 10px rgba(0, 0, 0, 0.8)'
+                fontWeight: 600,
+                textShadow: '0 2px 10px rgba(0, 0, 0, 0.45)'
               }}
             >
-              <span>{heroConfig.kicker || 'TIMELESS SPACES'}</span>
+              <span>{heroConfig.kicker || 'BILEKSA PRIVATE RESIDENCES • PORTFOLIO 2026'}</span>
             </div>
 
             {/* Display Title */}
@@ -153,29 +132,30 @@ export const CinematicHeroScroll: React.FC = () => {
               className="display-title"
               style={{
                 marginBottom: 'var(--space-5)',
-                color: '#ffffff',
-                textShadow: '0 4px 30px rgba(0, 0, 0, 0.9), 0 1px 4px rgba(0, 0, 0, 0.9)',
+                color: '#FFFFFF',
+                textShadow: '0 4px 24px rgba(0, 0, 0, 0.55)',
                 fontWeight: 300,
-                lineHeight: 1.08,
-                letterSpacing: '-0.015em',
-                fontSize: 'clamp(2.8rem, 5.5vw, 4.6rem)'
+                lineHeight: 1.05,
+                letterSpacing: '-0.02em',
+                fontSize: 'clamp(3.2rem, 6.5vw, 5.4rem)'
               }}
             >
-              Where Design<br />Meets Living
+              Where Architecture<br />Becomes Sanctuary
             </h1>
 
             {/* Subtitle */}
             <p
               style={{
-                fontSize: 'clamp(1rem, 1.6vw, 1.25rem)',
+                fontSize: 'clamp(1.05rem, 1.8vw, 1.35rem)',
                 lineHeight: 1.7,
-                color: 'rgba(255, 255, 255, 0.9)',
+                color: 'rgba(255, 255, 255, 0.95)',
                 marginBottom: 'var(--space-8)',
-                maxWidth: '620px',
-                textShadow: '0 2px 16px rgba(0, 0, 0, 0.9)'
+                maxWidth: '660px',
+                textShadow: '0 2px 12px rgba(0, 0, 0, 0.55)',
+                fontWeight: 300
               }}
             >
-              Handcrafted furniture for modern living spaces, inspired by nature, crafted for generations.
+              Exceptional private estates and architectural penthouses conceived across clifftop coastlines and alpine ridges.
             </p>
 
             {/* CTA Buttons */}
@@ -188,38 +168,47 @@ export const CinematicHeroScroll: React.FC = () => {
               }}
             >
               <Link
-                href="/catalogue"
+                href="/residences"
                 className="btn btn-gold"
                 style={{
-                  padding: '0.9rem 2.4rem',
-                  fontSize: '0.82rem',
-                  letterSpacing: '0.14em'
+                  padding: '1rem 2.6rem',
+                  fontSize: '0.84rem',
+                  letterSpacing: '0.16em',
+                  fontWeight: 500
                 }}
               >
-                <span>Explore Catalogue</span>
-                <ArrowRight size={14} />
+                <span>Explore The Residences</span>
+                <ArrowRight size={15} />
               </Link>
 
               <Link
-                href="/craftsmanship"
-                className="btn btn-frosted"
+                href="/vision"
                 style={{
-                  padding: '0.9rem 2rem',
-                  fontSize: '0.82rem',
-                  letterSpacing: '0.14em',
                   display: 'inline-flex',
                   alignItems: 'center',
-                  gap: '8px'
+                  gap: '8px',
+                  padding: '1rem 2.2rem',
+                  fontSize: '0.84rem',
+                  letterSpacing: '0.16em',
+                  textTransform: 'uppercase',
+                  borderRadius: '9999px',
+                  background: 'rgba(255, 255, 255, 0.18)',
+                  backdropFilter: 'blur(16px)',
+                  WebkitBackdropFilter: 'blur(16px)',
+                  border: '1px solid rgba(255, 255, 255, 0.45)',
+                  color: '#FFFFFF',
+                  fontWeight: 400,
+                  transition: 'all 0.2s ease'
                 }}
               >
-                <span>Our Craftsmanship</span>
-                <Play size={12} fill="#ffffff" stroke="none" />
+                <span>Architectural Vision</span>
+                <Compass size={15} />
               </Link>
             </div>
           </div>
         </div>
 
-        {/* Bottom Pill Scroll Cue "(8) SCROLL TO EXPLORE" */}
+        {/* Bottom Editorial Scroll Cue */}
         <div
           ref={scrollCueRef}
           style={{
@@ -230,13 +219,13 @@ export const CinematicHeroScroll: React.FC = () => {
             display: 'flex',
             alignItems: 'center',
             gap: '12px',
-            padding: '8px 20px',
-            backgroundColor: 'rgba(20, 17, 14, 0.65)',
+            padding: '8px 22px',
+            backgroundColor: 'rgba(250, 248, 245, 0.92)',
             backdropFilter: 'blur(16px)',
             WebkitBackdropFilter: 'blur(16px)',
-            border: '1px solid rgba(255, 255, 255, 0.14)',
+            border: '1px solid #EAE5DC',
             borderRadius: '9999px',
-            boxShadow: '0 8px 24px rgba(0, 0, 0, 0.45)',
+            boxShadow: '0 8px 24px rgba(26, 24, 22, 0.12)',
             opacity: 1,
             willChange: 'opacity',
             pointerEvents: 'none',
@@ -245,42 +234,26 @@ export const CinematicHeroScroll: React.FC = () => {
         >
           <div
             style={{
-              width: '18px',
-              height: '18px',
+              width: '8px',
+              height: '8px',
               borderRadius: '50%',
-              border: '1px solid var(--color-accent-gold)',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              color: 'var(--color-accent-gold)',
-              fontSize: '0.62rem',
-              fontWeight: 600
+              backgroundColor: 'var(--color-accent-gold)',
+              boxShadow: '0 0 10px var(--color-accent-gold)'
             }}
-          >
-            8
-          </div>
+          />
           <span
             style={{
-              fontSize: '0.68rem',
-              letterSpacing: '0.26em',
+              fontSize: '0.72rem',
+              letterSpacing: '0.22em',
               textTransform: 'uppercase',
-              color: 'var(--color-accent-gold)',
-              fontWeight: 500,
-              textShadow: '0 2px 10px rgba(0,0,0,0.8)'
+              color: 'var(--color-text-primary)',
+              fontWeight: 500
             }}
           >
             Scroll to Explore
           </span>
         </div>
       </div>
-
-      <style>{`
-        @media (min-width: 992px) {
-          .step-indicator {
-            display: flex !important;
-          }
-        }
-      `}</style>
     </div>
   );
 };

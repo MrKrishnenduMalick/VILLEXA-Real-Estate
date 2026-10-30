@@ -56,6 +56,8 @@ export interface ClientFeaturesConfig {
   enableCollections: boolean;
   enableInspirationRooms: boolean;
   enableCraftsmanshipStory: boolean;
+  enableFloorPlans: boolean;
+  enableBrochureDownload: boolean;
 }
 
 export interface ClientSeoConfig {
@@ -75,39 +77,39 @@ export interface ClientConfig {
 }
 
 /**
- * DEFAULT BASELINE CONFIGURATION (Villexa Master Preset)
+ * DEFAULT BASELINE CONFIGURATION (BILEKSA Master Preset)
  */
 export const defaultClientConfig: ClientConfig = {
   brand: {
-    brandName: 'VILLEXA',
-    tagline: 'Haute Ébénisterie & Architecture',
-    badge: 'HAUTE ATELIER ÉBÉNISTERIE',
-    description: 'Bespoke architectural furniture, monolithic proportions, and hand-finished timber joinery. Conceived in Milan, crafted for global architectural residences.',
-    logoText: 'VILLEXA',
-    logoSubtext: 'Haute Ébénisterie',
+    brandName: 'BILEKSA',
+    tagline: 'Private Residences & Architectural Living',
+    badge: 'BILEKSA PRIVATE RESIDENCES',
+    description: 'Bespoke architectural residences, monolithic proportions, and private luxury living spaces conceived for discerning owners.',
+    logoText: 'BILEKSA',
+    logoSubtext: 'PRIVATE RESIDENCES',
     logoImageUrl: null,
     faviconUrl: null
   },
   contact: {
-    contactEmail: 'concierge@villexa.com',
-    contactPhone: '+1 (800) 482-1980',
-    whatsappNumber: '18004821980',
-    whatsappDefaultMessage: 'Hello, I would like to inquire regarding a bespoke showroom piece.',
-    showroomAddress: 'Via della Spiga 28, 20121 Milano, Italy',
-    visitingHours: 'Monday – Saturday: 10:00 to 19:00 (By Appointment Only)',
-    flagshipLocationName: 'Milano Flagship Showroom'
+    contactEmail: 'concierge@bileksa.com',
+    contactPhone: '+91 (800) 482-1980',
+    whatsappNumber: '918004821980',
+    whatsappDefaultMessage: 'Hello, I would like to inquire regarding private residential acquisitions at BILEKSA.',
+    showroomAddress: 'Pavilion of Architecture, Private Estates Gallery',
+    visitingHours: 'Monday – Saturday: 10:00 to 19:00 (By Private Appointment Only)',
+    flagshipLocationName: 'BILEKSA Private Estates Gallery'
   },
   social: {
-    instagramUrl: 'https://instagram.com/villexaofficial',
-    pinterestUrl: 'https://pinterest.com/villexaofficial',
-    linkedinUrl: null,
+    instagramUrl: 'https://instagram.com/bileksaofficial',
+    pinterestUrl: 'https://pinterest.com/bileksaofficial',
+    linkedinUrl: 'https://linkedin.com/company/bileksa',
     twitterUrl: null
   },
   theme: {
     accentColor: '#c5a059',
     accentHoverColor: '#b38f48',
-    bgPrimary: '#f8f6f1',
-    bgDark: '#141413',
+    bgPrimary: '#12100e',
+    bgDark: '#12100e',
     fontSerif: '"Cormorant Garamond", Georgia, serif',
     fontSans: '"Outfit", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif'
   },
@@ -119,13 +121,15 @@ export const defaultClientConfig: ClientConfig = {
     enablePriceDisplay: true,
     enableCollections: true,
     enableInspirationRooms: true,
-    enableCraftsmanshipStory: true
+    enableCraftsmanshipStory: true,
+    enableFloorPlans: true,
+    enableBrochureDownload: true
   },
   seo: {
-    defaultTitle: 'VILLEXA — Haute Ébénisterie & Architecture | Modern Showroom',
-    defaultDescription: 'Villexa curates timeless interior masterworks. Sculptural silhouettes, organic materials, and deliberate proportions crafted for refined living spaces.',
-    keywords: ['luxury furniture', 'bespoke joinery', 'architectural furniture', 'monolithic design', 'atelier', 'milan craftsmanship'],
-    siteUrl: 'https://villexa.com'
+    defaultTitle: 'BILEKSA — Private Residences & Architectural Living | Luxury Estates',
+    defaultDescription: 'BILEKSA curates timeless architectural residences and private luxury estates. Monolithic silhouettes, noble materials, and deliberate proportions.',
+    keywords: ['luxury real estate', 'private residences', 'architectural villas', 'luxury penthouses', 'bileksa', 'bespoke architecture'],
+    siteUrl: 'https://bileksa.com'
   }
 };
 
@@ -178,7 +182,9 @@ export function getClientConfig(): ClientConfig {
       enablePriceDisplay: env.VITE_FEATURE_PRICE_DISPLAY !== undefined ? env.VITE_FEATURE_PRICE_DISPLAY === 'true' : defaultClientConfig.features.enablePriceDisplay,
       enableCollections: env.VITE_FEATURE_COLLECTIONS !== undefined ? env.VITE_FEATURE_COLLECTIONS === 'true' : defaultClientConfig.features.enableCollections,
       enableInspirationRooms: env.VITE_FEATURE_INSPIRATION !== undefined ? env.VITE_FEATURE_INSPIRATION === 'true' : defaultClientConfig.features.enableInspirationRooms,
-      enableCraftsmanshipStory: env.VITE_FEATURE_CRAFTSMANSHIP !== undefined ? env.VITE_FEATURE_CRAFTSMANSHIP === 'true' : defaultClientConfig.features.enableCraftsmanshipStory
+      enableCraftsmanshipStory: env.VITE_FEATURE_CRAFTSMANSHIP !== undefined ? env.VITE_FEATURE_CRAFTSMANSHIP === 'true' : defaultClientConfig.features.enableCraftsmanshipStory,
+      enableFloorPlans: env.VITE_FEATURE_FLOOR_PLANS !== undefined ? env.VITE_FEATURE_FLOOR_PLANS === 'true' : defaultClientConfig.features.enableFloorPlans,
+      enableBrochureDownload: env.VITE_FEATURE_BROCHURE_DOWNLOAD !== undefined ? env.VITE_FEATURE_BROCHURE_DOWNLOAD === 'true' : defaultClientConfig.features.enableBrochureDownload
     },
     seo: {
       defaultTitle: env.VITE_CLIENT_SEO_TITLE || defaultClientConfig.seo.defaultTitle,

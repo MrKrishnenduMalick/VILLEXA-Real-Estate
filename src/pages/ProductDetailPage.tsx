@@ -2,43 +2,78 @@ import React, { useEffect, useState, useRef } from 'react';
 import { useRoute, Link } from 'wouter';
 import { ArrowLeft, Box, Image as ImageIcon, ShieldCheck, Truck, Sparkles, Film, AlertCircle } from 'lucide-react';
 import { productService } from '../services/productService';
+import { propertyService } from '../services/propertyService';
 import { Product } from '../types/product';
+import { Property } from '../types/property';
 import { EmptyState } from '../components/common/EmptyState';
 import { ThreeViewerEngine } from '../services/viewer/threeViewerEngine';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import { useClientConfig } from '../context/ClientConfigContext';
 import { INAUGURAL_CATALOGUE_BY_SLUG } from '../config/inauguralCatalogue';
 
+// Luxury Real Estate Property Components
+import { PropertyHero } from '../components/property/PropertyHero';
+import { PropertySpecs } from '../components/property/PropertySpecs';
+import { PropertyNarrative } from '../components/property/PropertyNarrative';
+import { PropertyGallery } from '../components/property/PropertyGallery';
+import { PropertyVideoTour } from '../components/property/PropertyVideoTour';
+import { PropertyFloorPlans } from '../components/property/PropertyFloorPlans';
+import { PropertyAmenities } from '../components/property/PropertyAmenities';
+import { PropertyLocation } from '../components/property/PropertyLocation';
+import { PropertyEnquirySection } from '../components/property/PropertyEnquirySection';
+import { PropertyAdjacentNav } from '../components/property/PropertyAdjacentNav';
+
 export const ProductDetailPage: React.FC = () => {
   const clientConfig = useClientConfig();
-  const [, params] = useRoute('/product/:slug');
-  const slug = params?.slug || '';
+  const [, residenceParams] = useRoute('/residence/:slug');
+  const [, residencesParams] = useRoute('/residences/:slug');
+  const [, productParams] = useRoute('/product/:slug');
+  const slug = residenceParams?.slug || residencesParams?.slug || productParams?.slug || '';
+
+  const [property, setProperty] = useState<Property | null>(null);
+  const [adjacentProps, setAdjacentProps] = useState<{ prev: Property | null; next: Property | null }>({ prev: null, next: null });
+  const [relatedProps, setRelatedProps] = useState<Property[]>([]);
   const [product, setProduct] = useState<Product | null>(null);
   const [isLoading, setIsLoading] = useState(true);
 
-  // Active viewer mode: 'gallery' | 'glb_3d' | 'video'
+  // Active viewer mode for legacy products: 'gallery' | 'glb_3d' | 'video'
   const [activeViewer, setActiveViewer] = useState<'gallery' | 'glb_3d' | 'video'>('gallery');
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const [quantity, setQuantity] = useState(1);
   const [isFavorited, setIsFavorited] = useState(false);
 
-  // Video playback state & error handling
+  // Video playback state & error handling for legacy products
   const [videoError, setVideoError] = useState(false);
   const [isVideoLoading, setIsVideoLoading] = useState(true);
 
-  // 3D Canvas & error handling
+  // 3D Canvas & error handling for legacy products
   const [glbError, setGlbError] = useState<string | null>(null);
   const [isGlbLoading, setIsGlbLoading] = useState(false);
   const canvasContainerRef = useRef<HTMLDivElement | null>(null);
   const viewerEngineRef = useRef<ThreeViewerEngine | null>(null);
 
   useEffect(() => {
-    async function loadProduct() {
+    async function loadData() {
       if (!slug) {
         setIsLoading(false);
         return;
       }
       try {
+        // 1. Check real estate property registry first
+        const foundProperty = await propertyService.getPropertyBySlug(slug);
+        if (foundProperty) {
+          setProperty(foundProperty);
+          const [adjacent, related] = await Promise.all([
+            propertyService.getAdjacentProperties(slug),
+            propertyService.getRelatedProperties(slug, 3)
+          ]);
+          setAdjacentProps(adjacent);
+          setRelatedProps(related);
+          setIsLoading(false);
+          return;
+        }
+
+        // 2. Fall back to furniture product registry
         let found = await productService.getProductBySlug(slug);
         if (!found && INAUGURAL_CATALOGUE_BY_SLUG[slug]) {
           found = INAUGURAL_CATALOGUE_BY_SLUG[slug];
@@ -53,7 +88,7 @@ export const ProductDetailPage: React.FC = () => {
         setIsLoading(false);
       }
     }
-    loadProduct();
+    loadData();
   }, [slug]);
 
   // Clean up 3D viewer when switching away
@@ -107,34 +142,92 @@ export const ProductDetailPage: React.FC = () => {
     );
   }
 
-  // Graceful empty state when product is not yet in database
+  // BESPOKE LUXURY REAL ESTATE PROPERTY EXPERIENCE (Phase 5 Master Architectural Monograph)
+  if (property) {
+    return (
+      <div className="w-full bg-[#12100E] min-h-screen text-[#12100E]">
+        {/* 1. Full-Width Architectural Hero Introduction */}
+        <PropertyHero property={property} />
+
+        {/* 2. Spatial Metrics & Material Palette */}
+        <PropertySpecs property={property} />
+
+        {/* 3. Architectural Monograph & Storytelling */}
+        <PropertyNarrative property={property} />
+
+        {/* 4. Curated Image Gallery with Fullscreen Lightbox */}
+        <PropertyGallery
+          propertyName={property.name}
+          coverImage={property.coverImage}
+          gallery={property.gallery}
+        />
+
+        {/* 5. Cinematic Video Walkthrough & Aerial Perspectives */}
+        <PropertyVideoTour
+          propertyName={property.name}
+          videos={property.videos}
+          defaultPoster={property.coverImage}
+        />
+
+        {/* 6. Floor Plans & Architectural Schematics */}
+        <PropertyFloorPlans
+          propertyName={property.name}
+          floorPlans={property.floorPlans}
+        />
+
+        {/* 7. Curated Amenities & Lifestyle Privileges */}
+        <PropertyAmenities amenities={property.amenities} />
+
+        {/* 8. Geographic Provenance & Verified Benchmarks */}
+        <PropertyLocation
+          propertyName={property.name}
+          location={property.location}
+          address={property.address}
+          highlights={property.locationHighlights}
+        />
+
+        {/* 9. Confidential Client Advisory & Private Viewing Reservation */}
+        <PropertyEnquirySection property={property} />
+
+        {/* 10. Navigation Between Commissions & Related Portfolio */}
+        <PropertyAdjacentNav
+          currentProperty={property}
+          prevProperty={adjacentProps.prev}
+          nextProperty={adjacentProps.next}
+          relatedProperties={relatedProps}
+        />
+      </div>
+    );
+  }
+
+  // Graceful empty state when residence/product is not found in registry
   if (!product) {
     return (
-      <div style={{ padding: 'var(--space-20) 0' }}>
-        <div className="container-narrow">
+      <div style={{ padding: 'var(--space-20) 0' }} className="bg-[#FBFBF9] min-h-[70vh] flex items-center">
+        <div className="container-narrow w-full">
           <Link
-            href="/catalogue"
+            href="/residences"
             style={{
               display: 'inline-flex',
               alignItems: 'center',
               gap: 'var(--space-2)',
               fontSize: '0.8rem',
-              letterSpacing: '0.1em',
+              letterSpacing: '0.12em',
               textTransform: 'uppercase',
-              color: 'var(--color-text-secondary)',
+              color: '#8C827A',
               marginBottom: 'var(--space-8)'
             }}
           >
             <ArrowLeft size={14} />
-            <span>Back to Catalogue</span>
+            <span>Return to Residences Portfolio</span>
           </Link>
 
           <EmptyState
             type="generic"
-            title="Piece Not Yet Published"
-            description={`The product with reference "${slug}" is not currently published in the ${clientConfig.brand.brandName} catalogue. Once created and published in the Admin Dashboard, its specifications, photography, and 3D viewers will appear here.`}
-            actionLabel="Return to Master Catalogue"
-            actionHref="/catalogue"
+            title="Residence Outside Active Registry"
+            description={`The residence reference "${slug}" is not currently published in the ${clientConfig.brand.brandName} portfolio. It may be under confidential acquisition, private client reserve, or archived.`}
+            actionLabel="Return to Master Portfolio"
+            actionHref="/residences"
           />
         </div>
       </div>

@@ -1,231 +1,174 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Link } from 'wouter';
-import { ArrowRight } from 'lucide-react';
-import { SectionHeader } from '../components/common/SectionHeader';
-import { collectionService } from '../services/collectionService';
-import { Collection } from '../types/collection';
+import { ArrowRight, Compass, Sparkles, Building, Waves, Mountain, Shield } from 'lucide-react';
 
-interface InauguralSuite {
+interface ResidenceCollection {
   id: string;
   name: string;
+  categoryFilter: string;
   headline: string;
-  piecesCount: number;
+  residenceCount: number;
   description: string;
   imageUrl: string;
-  categoryFilter?: string;
+  location: string;
+  icon: React.ComponentType<{ size: number; className?: string }>;
 }
 
-const INAUGURAL_SUITES: InauguralSuite[] = [
+const RESIDENCE_COLLECTIONS: ResidenceCollection[] = [
   {
-    id: 'living-room',
-    name: 'Living Room',
-    headline: 'SALONE PRINCIPALE',
-    piecesCount: 12,
-    description: 'Sculptural seating, monolithic travertine tables, and ambient architectural consoles.',
-    imageUrl: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=900&q=80',
-    categoryFilter: 'Living Room'
+    id: 'coastal-estates',
+    name: 'Coastal & Clifftop Estates',
+    categoryFilter: 'waterfront',
+    headline: 'OCEANFRONT MONOGRAPHS',
+    residenceCount: 2,
+    description: 'Dramatic cantilevered limestone pavilions, infinity reflecting pools, and private tidal access directly onto secluded shorelines.',
+    imageUrl: 'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=1000&q=85',
+    location: 'Goa & Western Coastline',
+    icon: Waves
   },
   {
-    id: 'dining',
-    name: 'Dining',
-    headline: 'SALA DA PRANZO',
-    piecesCount: 8,
-    description: 'Honed Calacatta marble tables, ergonomic leather chairs, and architectural sideboards.',
-    imageUrl: 'https://images.unsplash.com/photo-1617806118233-18e1de247200?auto=format&fit=crop&w=900&q=80',
-    categoryFilter: 'Dining'
+    id: 'sky-penthouses',
+    name: 'Metropolitan Sky Penthouses',
+    categoryFilter: 'penthouse',
+    headline: 'ELEVATED SKY HORIZONS',
+    residenceCount: 1,
+    description: 'Triplex penthouses commanding 360-degree metropolitan skylines, private glass elevators, and double-height entertaining salons.',
+    imageUrl: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1000&q=85',
+    location: 'South Mumbai & Prime Metros',
+    icon: Building
   },
   {
-    id: 'bedroom',
-    name: 'Bedroom',
-    headline: 'SUITE NOTTE',
-    piecesCount: 10,
-    description: 'Floating Italian upholstered beds, bouclé benches, and minimalist bedside monoliths.',
-    imageUrl: 'https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&fit=crop&w=900&q=80',
-    categoryFilter: 'Bedroom'
+    id: 'alpine-manors',
+    name: 'Highland Sanctuaries & Manors',
+    categoryFilter: 'villa',
+    headline: 'ALPINE RETREATS',
+    residenceCount: 1,
+    description: 'Carved cedar and local stone country estates enveloped by permanent pine buffers, private orchards, and panoramic mountain ridges.',
+    imageUrl: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1000&q=85',
+    location: 'Himalayan Foothills & Kasauli',
+    icon: Mountain
   },
   {
-    id: 'outdoor',
-    name: 'Outdoor',
-    headline: 'TERRAZZA & GIARDINO',
-    piecesCount: 6,
-    description: 'Weather-defying teakwood loungers, stone plinths, and bespoke outdoor lounge compositions.',
-    imageUrl: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=900&q=80',
-    categoryFilter: 'Outdoor'
+    id: 'master-enclaves',
+    name: 'Botanical Master Enclaves',
+    categoryFilter: 'residential_development',
+    headline: 'COMMISSIONED ENCLAVES',
+    residenceCount: 1,
+    description: 'Ultra-low-density residential communities integrating mature olive groves, private security perimeters, and bespoke clubhouse pavilions.',
+    imageUrl: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1000&q=85',
+    location: 'Alibaug & Suburban Sanctuaries',
+    icon: Shield
   },
   {
-    id: 'lighting',
-    name: 'Architectural Lighting',
-    headline: 'LUCE ARCHITETTONICA',
-    piecesCount: 7,
-    description: 'Brushed brass floor monoliths, alabaster wall sconces, and hand-blown Murano pendants.',
-    imageUrl: 'https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=900&q=80',
-    categoryFilter: 'Lighting'
-  },
-  {
-    id: 'decor',
-    name: 'Atelier Objects',
-    headline: 'OGGETTI D\'ARTE',
-    piecesCount: 9,
-    description: 'Hand-carved marble vessels, smoked bronze mirrors, and tactile sculptural accessories.',
-    imageUrl: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=900&q=80',
-    categoryFilter: 'Decor'
+    id: 'private-residences',
+    name: 'Luxury City Residences',
+    categoryFilter: 'apartment',
+    headline: 'FULL-FLOOR SANCTUARIES',
+    residenceCount: 1,
+    description: 'Single-residence-per-floor architectural apartments featuring frameless panoramic glazing, private staff quarters, and acoustic serenity.',
+    imageUrl: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1000&q=85',
+    location: 'Central Capital Districts',
+    icon: Compass
   }
 ];
 
 export const CollectionsPage: React.FC = () => {
-  const [collections, setCollections] = useState<Collection[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    async function loadCollections() {
-      try {
-        const loaded = await collectionService.getPublishedCollections();
-        setCollections(loaded);
-      } finally {
-        setIsLoading(false);
-      }
-    }
-    loadCollections();
-  }, []);
-
   return (
-    <div style={{ paddingTop: 'var(--space-8)', paddingBottom: 'var(--space-24)' }}>
-      <div className="container">
-        {/* Header matching Reference Image */}
-        <div style={{ marginBottom: 'var(--space-12)' }}>
-          <SectionHeader
-            kicker="OUR COLLECTIONS"
-            title="Spaces with a Soul"
-            subtitle="Curated suites for every architectural space in your home, hand-sculpted in Brianza."
-          />
+    <div className="w-full bg-[#12100E] text-white py-16 sm:py-24">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8">
+        {/* Header */}
+        <div className="max-w-3xl mb-16 space-y-4">
+          <span className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-[11px] uppercase tracking-[0.25em] bg-white/10 text-[#C5A059] border border-white/15 backdrop-blur-md">
+            <Sparkles size={12} />
+            <span>CURATED ARCHITECTURAL PORTFOLIOS</span>
+          </span>
+          <h1 className="font-serif text-4xl sm:text-6xl font-light text-white leading-tight">
+            Curated Residence Collections
+          </h1>
+          <p className="text-base sm:text-lg text-white/75 font-light leading-relaxed">
+            Explore our curated residential portfolios organized by geography, architectural typology, and lifestyle orientation.
+          </p>
         </div>
 
-        {isLoading ? (
-          <div style={{ textAlign: 'center', padding: 'var(--space-16) 0' }}>
-            <span className="kicker">LOADING ATELIER SUITES...</span>
-          </div>
-        ) : (
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-            gap: 'var(--space-6)'
-          }}>
-            {/* Show DB collections if any exist */}
-            {collections.map((col) => (
+        {/* Collections Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {RESIDENCE_COLLECTIONS.map((col, idx) => {
+            const Icon = col.icon;
+            return (
               <div
                 key={col.id}
-                className="luxury-glass-card"
-                style={{
-                  padding: 'var(--space-4)',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  overflow: 'hidden'
-                }}
+                className={`group rounded-3xl overflow-hidden bg-[#181614] border border-white/15 shadow-xl hover:shadow-2xl transition-all duration-500 flex flex-col justify-between ${
+                  idx === 0 ? 'md:col-span-2 aspect-[16/10]' : 'aspect-[4/5]'
+                }`}
               >
-                <div style={{ height: '240px', borderRadius: '14px', overflow: 'hidden', position: 'relative' }}>
-                  {col.coverImageUrl ? (
-                    <img
-                      src={col.coverImageUrl}
-                      alt={col.name}
-                      style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-                    />
-                  ) : (
-                    <div style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'rgba(20, 17, 14, 0.8)' }}>
-                      <span className="kicker" style={{ color: 'var(--color-accent-gold)' }}>Atelier Suite</span>
-                    </div>
-                  )}
-                  <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(16, 13, 11, 0.75) 0%, transparent 60%)' }} />
-                </div>
-                <div style={{ padding: 'var(--space-4) var(--space-2) var(--space-2)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                  <div>
-                    <span className="kicker" style={{ fontSize: '0.7rem', color: 'var(--color-accent-gold)' }}>{col.headline || 'SUITE'}</span>
-                    <h3 style={{ fontSize: '1.25rem', fontFamily: 'var(--font-serif)', color: '#ffffff', margin: '2px 0 0' }}>{col.name}</h3>
-                  </div>
-                  <Link
-                    href={`/catalogue?category=${encodeURIComponent(col.name)}`}
-                    className="glass-pill"
-                    style={{
-                      width: '38px',
-                      height: '38px',
-                      borderRadius: '50%',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      padding: 0,
-                      color: '#ffffff',
-                      textDecoration: 'none'
-                    }}
-                  >
-                    <ArrowRight size={15} />
-                  </Link>
-                </div>
-              </div>
-            ))}
-
-            {/* Inaugural Suites (Matching Reference Image) */}
-            {INAUGURAL_SUITES.map((suite) => (
-              <div
-                key={suite.id}
-                className="luxury-glass-card"
-                style={{
-                  padding: 'var(--space-4)',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  overflow: 'hidden'
-                }}
-              >
-                <div style={{ height: '260px', borderRadius: '14px', overflow: 'hidden', position: 'relative' }}>
+                <div className="relative flex-1 overflow-hidden">
                   <img
-                    src={suite.imageUrl}
-                    alt={suite.name}
-                    style={{
-                      width: '100%',
-                      height: '100%',
-                      objectFit: 'cover',
-                      transition: 'transform 0.5s ease'
-                    }}
+                    src={col.imageUrl}
+                    alt={col.name}
+                    className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105 opacity-75 group-hover:opacity-85"
                   />
-                  <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(16, 13, 11, 0.70) 0%, transparent 50%)' }} />
-                </div>
-                <div style={{ padding: 'var(--space-4) var(--space-2) var(--space-2)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                  <div>
-                    <h3 style={{
-                      fontSize: '1.25rem',
-                      fontFamily: 'var(--font-serif)',
-                      color: '#ffffff',
-                      textTransform: 'uppercase',
-                      letterSpacing: '0.04em',
-                      margin: 0
-                    }}>
-                      {suite.name}
-                    </h3>
-                    <span style={{ fontSize: '0.8rem', color: 'rgba(255, 255, 255, 0.65)' }}>
-                      {suite.piecesCount} Pieces
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#12100E] via-[#12100E]/40 to-transparent pointer-events-none" />
+
+                  <div className="absolute top-6 left-6 flex items-center gap-2">
+                    <span className="px-3.5 py-1 rounded-full text-[10px] uppercase tracking-[0.2em] bg-black/60 text-[#C5A059] border border-[#C5A059]/40 backdrop-blur-md">
+                      {col.headline}
                     </span>
                   </div>
-                  <Link
-                    href={`/catalogue?category=${encodeURIComponent(suite.categoryFilter || suite.name)}`}
-                    className="glass-pill"
-                    style={{
-                      width: '38px',
-                      height: '38px',
-                      borderRadius: '50%',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      padding: 0,
-                      color: '#ffffff',
-                      textDecoration: 'none',
-                      transition: 'all 0.2s ease'
-                    }}
-                  >
-                    <ArrowRight size={15} />
-                  </Link>
+
+                  <div className="absolute bottom-6 left-6 right-6">
+                    <div className="flex items-center gap-2 text-xs uppercase tracking-wider text-[#C5A059] mb-1">
+                      <Icon size={14} />
+                      <span>{col.location}</span>
+                      <span className="text-white/40">·</span>
+                      <span className="text-white/70">{col.residenceCount} {col.residenceCount === 1 ? 'Residence' : 'Residences'}</span>
+                    </div>
+
+                    <h3 className="font-serif text-2xl sm:text-3xl text-white font-light group-hover:text-[#EFECE6] transition-colors mb-2">
+                      {col.name}
+                    </h3>
+
+                    <p className="text-xs sm:text-sm text-white/75 font-light leading-relaxed line-clamp-2 max-w-lg mb-4">
+                      {col.description}
+                    </p>
+
+                    <Link
+                      href={`/residences?type=${col.categoryFilter}`}
+                      className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.16em] text-[#C5A059] group-hover:text-white font-medium transition-colors"
+                    >
+                      <span>Explore Collection</span>
+                      <ArrowRight size={13} className="transform group-hover:translate-x-1 transition-transform" />
+                    </Link>
+                  </div>
                 </div>
               </div>
-            ))}
+            );
+          })}
+        </div>
+
+        {/* Footer CTA */}
+        <div className="mt-20 p-8 sm:p-12 rounded-3xl bg-white/[0.03] border border-white/10 text-center space-y-6">
+          <h2 className="font-serif text-2xl sm:text-4xl font-light text-white">
+            Seeking a Specific Architectural Geography?
+          </h2>
+          <p className="text-sm sm:text-base text-white/70 max-w-xl mx-auto font-light">
+            Our Private Office coordinates off-market residential acquisitions and land commissions across premier sanctuaries.
+          </p>
+          <div className="pt-2 flex flex-wrap items-center justify-center gap-4">
+            <Link
+              href="/residences"
+              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-[#C5A059] hover:bg-[#b08d47] text-white text-xs uppercase tracking-[0.16em] font-medium transition-colors"
+            >
+              <span>View Master Portfolio</span>
+              <ArrowRight size={14} />
+            </Link>
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-white/10 hover:bg-white/20 text-white text-xs uppercase tracking-[0.16em] transition-colors border border-white/15"
+            >
+              <span>Contact Advisory Desk</span>
+            </Link>
           </div>
-        )}
+        </div>
       </div>
     </div>
   );

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'wouter';
-import { Menu, Search, User } from 'lucide-react';
+import { Menu, Search, PhoneCall } from 'lucide-react';
 import { MobileNavDrawer } from './MobileNavDrawer';
 import { useClientConfig } from '../../context/ClientConfigContext';
 
@@ -20,10 +20,10 @@ export const Header: React.FC = () => {
 
   const navLinks = [
     { href: '/', label: 'Home', show: true },
-    { href: '/catalogue', label: 'Catalogue', show: true },
+    { href: '/residences', label: 'Residences', show: true },
     { href: '/collections', label: 'Collections', show: config.features.enableCollections },
-    { href: '/craftsmanship', label: 'Craftsmanship', show: config.features.enableCraftsmanshipStory },
-    { href: '/inspiration', label: 'Inspiration', show: config.features.enableInspirationRooms },
+    { href: '/vision', label: 'Architectural Vision', show: config.features.enableCraftsmanshipStory },
+    { href: '/lifestyle', label: 'Lifestyle', show: config.features.enableInspirationRooms },
     { href: '/contact', label: 'Contact', show: true }
   ].filter((l) => l.show);
 
@@ -36,14 +36,16 @@ export const Header: React.FC = () => {
           zIndex: 50,
           width: '100%',
           backgroundColor: isScrolled
-            ? 'rgba(16, 13, 11, 0.82)'
-            : 'rgba(20, 17, 14, 0.65)',
-          backdropFilter: 'blur(24px) saturate(140%)',
-          WebkitBackdropFilter: 'blur(24px) saturate(140%)',
-          borderBottom: '1px solid rgba(255, 255, 255, 0.12)',
+            ? 'rgba(255, 255, 255, 0.94)'
+            : 'rgba(250, 248, 245, 0.88)',
+          backdropFilter: 'blur(20px) saturate(140%)',
+          WebkitBackdropFilter: 'blur(20px) saturate(140%)',
+          borderBottom: isScrolled
+            ? '1px solid #EAE5DC'
+            : '1px solid rgba(234, 229, 220, 0.8)',
           boxShadow: isScrolled
-            ? '0 12px 36px 0 rgba(0, 0, 0, 0.60), inset 0 1px 1px rgba(255, 255, 255, 0.15)'
-            : '0 4px 20px 0 rgba(0, 0, 0, 0.35)',
+            ? '0 6px 24px 0 rgba(26, 24, 22, 0.05)'
+            : 'none',
           transition: 'all var(--transition-normal)'
         }}
       >
@@ -53,10 +55,10 @@ export const Header: React.FC = () => {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'space-between',
-            height: '76px'
+            height: '80px'
           }}
         >
-          {/* Brand Logo Matching Reference */}
+          {/* Brand Logo: Typographic Wordmark driven by clientConfig */}
           <Link
             href="/"
             style={{
@@ -68,27 +70,26 @@ export const Header: React.FC = () => {
             <span
               style={{
                 fontFamily: 'var(--font-serif)',
-                fontSize: '1.75rem',
-                letterSpacing: '0.14em',
+                fontSize: '1.85rem',
+                letterSpacing: '0.12em',
                 fontWeight: 400,
-                color: '#ffffff',
-                lineHeight: 1,
-                textShadow: '0 2px 10px rgba(0,0,0,0.5)'
+                color: 'var(--color-text-primary)',
+                lineHeight: 1
               }}
             >
-              VILLEXA
+              {config.brand.logoText}
             </span>
             <span
               style={{
-                fontSize: '0.58rem',
-                letterSpacing: '0.28em',
+                fontSize: '0.62rem',
+                letterSpacing: '0.26em',
                 textTransform: 'uppercase',
                 color: 'var(--color-accent-gold)',
-                fontWeight: 500,
+                fontWeight: 600,
                 marginTop: '4px'
               }}
             >
-              EDIZIONI ARCHITETTONICHE
+              {config.brand.logoSubtext}
             </span>
           </Link>
 
@@ -108,20 +109,20 @@ export const Header: React.FC = () => {
                   key={link.href}
                   href={link.href}
                   style={{
-                    fontSize: '0.78rem',
-                    letterSpacing: '0.16em',
+                    fontSize: '0.82rem',
+                    letterSpacing: '0.14em',
                     textTransform: 'uppercase',
-                    color: isActive ? '#ffffff' : 'rgba(255, 255, 255, 0.72)',
+                    color: isActive ? 'var(--color-text-primary)' : 'var(--color-text-secondary)',
                     fontWeight: isActive ? 500 : 400,
                     position: 'relative',
                     padding: 'var(--space-2) 0',
                     transition: 'color 0.2s ease'
                   }}
                   onMouseEnter={(e) => {
-                    if (!isActive) e.currentTarget.style.color = '#ffffff';
+                    if (!isActive) e.currentTarget.style.color = 'var(--color-accent-gold)';
                   }}
                   onMouseLeave={(e) => {
-                    if (!isActive) e.currentTarget.style.color = 'rgba(255, 255, 255, 0.72)';
+                    if (!isActive) e.currentTarget.style.color = 'var(--color-text-secondary)';
                   }}
                 >
                   {link.label}
@@ -134,7 +135,7 @@ export const Header: React.FC = () => {
                         width: '100%',
                         height: '2px',
                         backgroundColor: 'var(--color-accent-gold)',
-                        boxShadow: '0 0 8px rgba(197, 160, 89, 0.6)'
+                        borderRadius: '2px'
                       }}
                     />
                   )}
@@ -143,63 +144,71 @@ export const Header: React.FC = () => {
             })}
           </nav>
 
-          {/* Right Action Icons Matching Reference Image */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-3)' }}>
+          {/* Right Action Section */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-4)' }}>
             {/* Search Icon */}
             <Link
-              href="/catalogue"
-              aria-label="Search Catalogue"
+              href="/residences"
+              aria-label="Explore Residences"
+              title="Explore Residences"
               style={{
-                width: '38px',
-                height: '38px',
+                width: '40px',
+                height: '40px',
                 borderRadius: '50%',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                color: 'rgba(255, 255, 255, 0.85)',
-                background: 'rgba(255, 255, 255, 0.05)',
-                border: '1px solid rgba(255, 255, 255, 0.12)',
+                color: 'var(--color-text-primary)',
+                background: 'rgba(26, 24, 22, 0.04)',
+                border: '1px solid var(--color-border-subtle)',
                 transition: 'all 0.2s ease'
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.color = 'var(--color-accent-gold)';
                 e.currentTarget.style.borderColor = 'var(--color-accent-gold)';
+                e.currentTarget.style.background = '#FFFFFF';
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.color = 'rgba(255, 255, 255, 0.85)';
-                e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.12)';
+                e.currentTarget.style.color = 'var(--color-text-primary)';
+                e.currentTarget.style.borderColor = 'var(--color-border-subtle)';
+                e.currentTarget.style.background = 'rgba(26, 24, 22, 0.04)';
               }}
             >
               <Search size={16} />
             </Link>
 
-            {/* Admin / Profile Icon */}
+            {/* Desktop Private Viewing CTA */}
             <Link
-              href="/admin"
-              aria-label="Admin Portal"
-              title="Admin Portal"
+              href="/contact"
+              className="desktop-cta"
               style={{
-                width: '38px',
-                height: '38px',
-                borderRadius: '50%',
-                display: 'flex',
+                display: 'none',
                 alignItems: 'center',
-                justifyContent: 'center',
-                color: 'rgba(255, 255, 255, 0.85)',
-                background: 'rgba(255, 255, 255, 0.05)',
-                border: '1px solid rgba(255, 255, 255, 0.12)',
+                gap: '8px',
+                padding: '0.65rem 1.4rem',
+                fontSize: '0.74rem',
+                letterSpacing: '0.14em',
+                textTransform: 'uppercase',
+                borderRadius: '9999px',
+                background: '#1A1816',
+                color: '#FAF8F5',
+                border: '1px solid #1A1816',
+                fontWeight: 500,
                 transition: 'all 0.2s ease'
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.color = 'var(--color-accent-gold)';
+                e.currentTarget.style.background = 'var(--color-accent-gold)';
                 e.currentTarget.style.borderColor = 'var(--color-accent-gold)';
+                e.currentTarget.style.color = '#FFFFFF';
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.color = 'rgba(255, 255, 255, 0.85)';
-                e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.12)';
+                e.currentTarget.style.background = '#1A1816';
+                e.currentTarget.style.borderColor = '#1A1816';
+                e.currentTarget.style.color = '#FAF8F5';
               }}
             >
-              <User size={16} />
+              <PhoneCall size={13} />
+              <span>Private Viewing</span>
             </Link>
 
             {/* Mobile Menu Trigger */}
@@ -207,16 +216,17 @@ export const Header: React.FC = () => {
               onClick={() => setIsMobileNavOpen(true)}
               aria-label="Open Navigation Menu"
               style={{
-                width: '38px',
-                height: '38px',
+                width: '40px',
+                height: '40px',
                 borderRadius: '50%',
                 display: 'inline-flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                background: 'rgba(255, 255, 255, 0.05)',
-                border: '1px solid rgba(255, 255, 255, 0.12)',
+                background: 'rgba(26, 24, 22, 0.04)',
+                border: '1px solid var(--color-border-subtle)',
                 cursor: 'pointer',
-                color: '#ffffff'
+                color: 'var(--color-text-primary)',
+                transition: 'all 0.2s ease'
               }}
             >
               <Menu size={18} />
@@ -228,6 +238,9 @@ export const Header: React.FC = () => {
           @media (min-width: 992px) {
             .desktop-nav {
               display: flex !important;
+            }
+            .desktop-cta {
+              display: inline-flex !important;
             }
           }
         `}</style>

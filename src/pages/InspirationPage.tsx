@@ -1,271 +1,157 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Link } from 'wouter';
-import { ArrowRight } from 'lucide-react';
-import { SectionHeader } from '../components/common/SectionHeader';
-import { collectionService } from '../services/collectionService';
-import { RoomInspiration } from '../types/collection';
+import { ArrowRight, Sparkles, Heart, Waves, Sun, Flame, Trees } from 'lucide-react';
+import { useClientConfig } from '../context/ClientConfigContext';
 
-interface Vignette {
+interface LifestyleVignette {
   id: string;
+  category: string;
   title: string;
-  room: string;
-  imageUrl: string;
+  tagline: string;
   description: string;
+  imageUrl: string;
+  icon: React.ComponentType<{ size: number; className?: string }>;
 }
 
-const INAUGURAL_VIGNETTES: Vignette[] = [
+const LIFESTYLE_VIGNETTES: LifestyleVignette[] = [
   {
-    id: 'v1',
-    title: 'The Solarium Salon',
-    room: 'Penthouse Salon',
-    imageUrl: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1000&q=80',
-    description: 'Natural southern illumination caressing organic bouclé curved lounge seating and honed roman travertine.'
+    id: 'ls-01',
+    category: 'WELLNESS & SANCTUARY',
+    title: 'Private Thermal Spas & Reflection Pools',
+    tagline: 'Hydraulic Calming & Hydrotherapy',
+    description: 'Heated negative-edge infinity pools, cedar dry saunas, and subterranean marble steam chambers engineered for deep restorative tranquility.',
+    imageUrl: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1000&q=85',
+    icon: Waves
   },
   {
-    id: 'v2',
-    title: 'Atelier Botanical Study',
-    room: 'Private Library',
-    imageUrl: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1000&q=80',
-    description: 'Deep French walnut shelving paired with a single sculptural ficus and brushed brass ambient glow.'
+    id: 'ls-02',
+    category: 'INTERIOR PROPORTIONS',
+    title: 'Double-Height Grand Living Salons',
+    tagline: 'Acoustic Calm & Spatial Volumes',
+    description: 'Seven-metre soaring volume ceilings, bookmatched travertine hearths, and frameless motorized glass facades that dissolve into open terraces.',
+    imageUrl: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1000&q=85',
+    icon: Sun
   },
   {
-    id: 'v3',
-    title: 'Minimalist Dining Haven',
-    room: 'Formal Dining',
-    imageUrl: 'https://images.unsplash.com/photo-1617806118233-18e1de247200?auto=format&fit=crop&w=1000&q=80',
-    description: 'Monolithic Calacatta Viola table anchored beneath hand-blown smoked Murano glass pendants.'
+    id: 'ls-03',
+    category: 'CULINARY ARTISTRY',
+    title: 'Chef Show Kitchens & Back Annexes',
+    tagline: 'Material Precision for Entertaining',
+    description: 'Custom fluted dark oak cabinetry, honed Calacatta marble monolithic islands, integrated Gaggenau appliances, and discreet preparation galleys.',
+    imageUrl: 'https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=1000&q=85',
+    icon: Flame
   },
   {
-    id: 'v4',
-    title: 'Terrace at Twilight',
-    room: 'Outdoor Loggia',
-    imageUrl: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1000&q=80',
-    description: 'Low-slung teakwood daybeds framing panoramic metropolitan skyline vistas.'
+    id: 'ls-04',
+    category: 'AL FRESCO ENTERTAINING',
+    title: 'Cantilevered Sunset Dining Loggias',
+    tagline: 'Horizon Gazing & Outdoor Hearths',
+    description: 'Deep bioclimatic pergolas with motorized louvres, built-in masonry fireplaces, and dining loggias positioned for unobstructed 270-degree sunset ocean views.',
+    imageUrl: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1000&q=85',
+    icon: Sparkles
+  },
+  {
+    id: 'ls-05',
+    category: 'LANDSCAPE CHOREOGRAPHY',
+    title: 'Inner Courtyards & Olive Groves',
+    tagline: 'Biophilic Grounding & Quiet Atriums',
+    description: 'Landscaped central courtyards framed by centuries-old olive trees, reflecting shallow water basins, and fragrant jasmine colonnades providing passive cooling.',
+    imageUrl: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1000&q=85',
+    icon: Trees
+  },
+  {
+    id: 'ls-06',
+    category: 'PRIVATE CELLARS',
+    title: 'Subterranean Wine & Spirits Vaults',
+    tagline: 'Temperature-Controlled Curation',
+    description: 'Architectural tasting cellars holding upwards of 1,200 bottles with precision humidity control, dark fluted bronze racks, and intimate tasting lounges.',
+    imageUrl: 'https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=1000&q=85',
+    icon: Heart
   }
 ];
 
-const DEFAULT_VIGNETTE_FALLBACK = 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1000&q=80';
-
 export const InspirationPage: React.FC = () => {
-  const [inspirations, setInspirations] = useState<RoomInspiration[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    async function loadInspirations() {
-      try {
-        const loaded = await collectionService.getRoomInspirations();
-        setInspirations(loaded);
-      } finally {
-        setIsLoading(false);
-      }
-    }
-    loadInspirations();
-  }, []);
-
-  if (isLoading) {
-    return (
-      <div style={{ padding: 'var(--space-24) 0', textAlign: 'center' }}>
-        <span className="kicker">PREPARING SPATIAL ARCHIVE...</span>
-      </div>
-    );
-  }
-
-  // Combine DB inspirations with inaugural reference vignettes
-  const allVignettes: Vignette[] = [
-    ...inspirations
-      .filter((i) => Boolean(i.imageUrl))
-      .map((i) => ({
-        id: i.id,
-        title: i.title,
-        room: i.roomType.toUpperCase(),
-        imageUrl: i.imageUrl as string,
-        description: i.description
-      })),
-    ...INAUGURAL_VIGNETTES
-  ];
+  const config = useClientConfig();
 
   return (
-    <div style={{ paddingTop: 'var(--space-8)', paddingBottom: 'var(--space-24)' }}>
-      <div className="container">
-        
-        {/* Main Reference Banner (matching bottom-middle quadrant of reference) */}
-        <div
-          className="luxury-glass-card"
-          style={{
-            borderRadius: '24px',
-            padding: 'var(--space-12) var(--space-10)',
-            marginBottom: 'var(--space-16)',
-            position: 'relative',
-            overflow: 'hidden',
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))',
-            gap: 'var(--space-10)',
-            alignItems: 'center'
-          }}
-        >
-          {/* Left Column: Editorial Headline & Copy */}
-          <div>
-            <span className="kicker" style={{ color: 'var(--color-accent-gold)', marginBottom: 'var(--space-3)', display: 'block' }}>
-              INSPIRATION
-            </span>
-            <h1 style={{
-              fontFamily: 'var(--font-serif)',
-              fontSize: 'clamp(2.4rem, 4vw, 3.5rem)',
-              fontWeight: 400,
-              color: '#ffffff',
-              lineHeight: 1.15,
-              marginBottom: 'var(--space-5)'
-            }}>
-              Ideas for a<br />Beautiful Tomorrow
-            </h1>
-            <p style={{
-              fontSize: '1.05rem',
-              lineHeight: 1.65,
-              color: 'rgba(255, 255, 255, 0.85)',
-              marginBottom: 'var(--space-8)',
-              maxWidth: '460px'
-            }}>
-              Explore spaces, materials and stories that inspire thoughtful, timeless living. Each spatial composition is conceived by our Milanese architectural studio.
-            </p>
-            <Link
-              href="/catalogue"
-              className="glass-pill"
-              style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: 'var(--space-2)',
-                padding: '10px 24px',
-                fontSize: '0.8rem',
-                letterSpacing: '0.08em',
-                textTransform: 'uppercase',
-                color: '#ffffff',
-                textDecoration: 'none'
-              }}
-            >
-              <span>Discover Inspiration</span>
-              <ArrowRight size={14} color="var(--color-accent-gold)" />
-            </Link>
-          </div>
-
-          {/* Right Column: Overlapping Vignette Cards (matching reference) */}
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'var(--space-4)', position: 'relative' }}>
-            <div
-              style={{
-                height: '280px',
-                borderRadius: '16px',
-                overflow: 'hidden',
-                position: 'relative',
-                boxShadow: '0 15px 35px rgba(0,0,0,0.5)',
-                border: '1px solid rgba(255, 255, 255, 0.16)'
-              }}
-            >
-              <img
-                src={INAUGURAL_VIGNETTES[0].imageUrl}
-                alt={INAUGURAL_VIGNETTES[0].title}
-                style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-              />
-              <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(16, 13, 11, 0.85) 0%, transparent 60%)' }} />
-              <div style={{ position: 'absolute', bottom: '12px', left: '12px', right: '12px' }}>
-                <span className="kicker" style={{ fontSize: '0.65rem', color: 'var(--color-accent-gold)' }}>VIGNETTE 01</span>
-                <div style={{ color: '#ffffff', fontSize: '0.9rem', fontFamily: 'var(--font-serif)' }}>{INAUGURAL_VIGNETTES[0].title}</div>
-              </div>
-            </div>
-
-            <div
-              style={{
-                height: '280px',
-                borderRadius: '16px',
-                overflow: 'hidden',
-                position: 'relative',
-                boxShadow: '0 15px 35px rgba(0,0,0,0.5)',
-                border: '1px solid rgba(255, 255, 255, 0.16)',
-                marginTop: 'var(--space-6)'
-              }}
-            >
-              <img
-                src={INAUGURAL_VIGNETTES[1].imageUrl}
-                alt={INAUGURAL_VIGNETTES[1].title}
-                style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-              />
-              <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(16, 13, 11, 0.85) 0%, transparent 60%)' }} />
-              <div style={{ position: 'absolute', bottom: '12px', left: '12px', right: '12px' }}>
-                <span className="kicker" style={{ fontSize: '0.65rem', color: 'var(--color-accent-gold)' }}>VIGNETTE 02</span>
-                <div style={{ color: '#ffffff', fontSize: '0.9rem', fontFamily: 'var(--font-serif)' }}>{INAUGURAL_VIGNETTES[1].title}</div>
-              </div>
-            </div>
-          </div>
+    <div className="w-full bg-[#12100E] text-white py-16 sm:py-24">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8">
+        {/* Header */}
+        <div className="max-w-3xl mb-16 space-y-4">
+          <span className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-[11px] uppercase tracking-[0.25em] bg-white/10 text-[#C5A059] border border-white/15 backdrop-blur-md">
+            <Sparkles size={12} />
+            <span>THE RESIDENTIAL EXPERIENCE</span>
+          </span>
+          <h1 className="font-serif text-4xl sm:text-6xl font-light text-white leading-tight">
+            Curated Living &amp; Spatial Atmosphere
+          </h1>
+          <p className="text-base sm:text-lg text-white/75 font-light leading-relaxed">
+            True luxury is the cadence of daily life. Explore the deliberate architectural moments and private resort amenities that define the BILEKSA residential standard.
+          </p>
         </div>
 
-        {/* Gallery Grid of Vignettes */}
-        <div style={{ marginBottom: 'var(--space-12)' }}>
-          <SectionHeader
-            kicker="SPATIAL COMPOSITIONS"
-            title="Curated Architectural Studies"
-            subtitle="Explore how light, volume, and material texture coalesce within private residences."
-          />
-
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: 'var(--space-8)' }}>
-            {allVignettes.map((vig) => (
+        {/* 6-Card Lifestyle Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {LIFESTYLE_VIGNETTES.map((vignette) => {
+            const Icon = vignette.icon;
+            return (
               <div
-                key={vig.id}
-                className="luxury-glass-card"
-                style={{
-                  padding: 'var(--space-4)',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  overflow: 'hidden'
-                }}
+                key={vignette.id}
+                className="group rounded-3xl overflow-hidden bg-[#181614] border border-white/10 shadow-xl hover:shadow-2xl transition-all duration-500 flex flex-col justify-between"
               >
-                <div style={{ height: '240px', borderRadius: '14px', overflow: 'hidden', position: 'relative', backgroundColor: 'rgba(28, 24, 20, 0.6)' }}>
+                <div className="relative aspect-[16/11] overflow-hidden bg-[#201D1A]">
                   <img
-                    src={vig.imageUrl}
-                    alt={vig.title}
-                    loading="lazy"
-                    decoding="async"
-                    onError={(e) => {
-                      const target = e.currentTarget;
-                      if (target.src !== DEFAULT_VIGNETTE_FALLBACK) {
-                        target.src = DEFAULT_VIGNETTE_FALLBACK;
-                      } else {
-                        target.style.opacity = '0';
-                      }
-                    }}
-                    style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+                    src={vignette.imageUrl}
+                    alt={vignette.title}
+                    className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105 opacity-80 group-hover:opacity-90"
                   />
-                  <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(16, 13, 11, 0.70) 0%, transparent 50%)' }} />
-                  <div style={{ position: 'absolute', top: '12px', left: '12px' }}>
-                    <span className="badge badge-gold" style={{ fontSize: '0.7rem' }}>{vig.room}</span>
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#181614] via-transparent to-transparent pointer-events-none" />
+
+                  <div className="absolute top-4 left-4 w-9 h-9 rounded-full bg-black/60 backdrop-blur-md text-[#C5A059] flex items-center justify-center">
+                    <Icon size={16} />
                   </div>
                 </div>
-                <div style={{ padding: 'var(--space-4) var(--space-2) var(--space-2)' }}>
-                  <h3 style={{ fontSize: '1.25rem', fontFamily: 'var(--font-serif)', color: '#ffffff', margin: '0 0 var(--space-2)' }}>
-                    {vig.title}
+
+                <div className="p-7 space-y-3">
+                  <span className="text-[10px] uppercase tracking-[0.2em] text-[#C5A059] font-medium block">
+                    {vignette.category}
+                  </span>
+                  <h3 className="font-serif text-2xl font-light text-white group-hover:text-[#EFECE6] transition-colors">
+                    {vignette.title}
                   </h3>
-                  <p style={{ fontSize: '0.88rem', color: 'rgba(255, 255, 255, 0.75)', lineHeight: 1.5, margin: '0 0 var(--space-4)' }}>
-                    {vig.description}
+                  <p className="text-xs sm:text-sm text-white/70 font-light leading-relaxed">
+                    {vignette.description}
                   </p>
-                  <Link
-                    href="/catalogue"
-                    className="glass-pill"
-                    style={{
-                      display: 'inline-flex',
-                      alignItems: 'center',
-                      gap: '6px',
-                      fontSize: '0.75rem',
-                      color: '#ffffff',
-                      textDecoration: 'none',
-                      padding: '6px 14px'
-                    }}
-                  >
-                    <span>View Suite In Catalogue</span>
-                    <ArrowRight size={12} color="var(--color-accent-gold)" />
-                  </Link>
                 </div>
               </div>
-            ))}
-          </div>
+            );
+          })}
         </div>
 
+        {/* Bottom Navigation CTA */}
+        <div className="mt-20 p-8 sm:p-12 rounded-3xl bg-white/[0.03] border border-white/10 text-center space-y-6">
+          <h2 className="font-serif text-2xl sm:text-4xl font-light text-white">
+            Experience These Spaces in Person
+          </h2>
+          <p className="text-sm sm:text-base text-white/70 max-w-xl mx-auto font-light">
+            Private on-site viewings of our six published commissions can be arranged with the {config.brand.brandName} Client Advisory desk.
+          </p>
+          <div className="pt-2 flex flex-wrap items-center justify-center gap-4">
+            <Link
+              href="/residences"
+              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-[#C5A059] hover:bg-[#b08d47] text-white text-xs uppercase tracking-[0.16em] font-medium transition-colors"
+            >
+              <span>Explore The Residences</span>
+              <ArrowRight size={14} />
+            </Link>
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-white/10 hover:bg-white/20 text-white text-xs uppercase tracking-[0.16em] transition-colors border border-white/15"
+            >
+              <span>Schedule Private Viewing</span>
+            </Link>
+          </div>
+        </div>
       </div>
     </div>
   );

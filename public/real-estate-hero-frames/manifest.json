@@ -1,0 +1,1454 @@
+{
+  "version": "2.0.0",
+  "title": "BILEKSA Private Residences — Luxury Villa Walkthrough",
+  "frameCount": 240,
+  "width": 1280,
+  "height": 720,
+  "format": "image/webp",
+  "totalSizeBytes": 11145560,
+  "firstFrame": "/real-estate-hero-frames/frame-00001.webp",
+  "finalFrame": "/real-estate-hero-frames/frame-00240.webp",
+  "framePattern": "/real-estate-hero-frames/frame-{index}.webp",
+  "frames": [
+    {
+      "index": 1,
+      "fileName": "frame-00001.webp",
+      "path": "/real-estate-hero-frames/frame-00001.webp",
+      "size": 70378
+    },
+    {
+      "index": 2,
+      "fileName": "frame-00002.webp",
+      "path": "/real-estate-hero-frames/frame-00002.webp",
+      "size": 66486
+    },
+    {
+      "index": 3,
+      "fileName": "frame-00003.webp",
+      "path": "/real-estate-hero-frames/frame-00003.webp",
+      "size": 68442
+    },
+    {
+      "index": 4,
+      "fileName": "frame-00004.webp",
+      "path": "/real-estate-hero-frames/frame-00004.webp",
+      "size": 65702
+    },
+    {
+      "index": 5,
+      "fileName": "frame-00005.webp",
+      "path": "/real-estate-hero-frames/frame-00005.webp",
+      "size": 67912
+    },
+    {
+      "index": 6,
+      "fileName": "frame-00006.webp",
+      "path": "/real-estate-hero-frames/frame-00006.webp",
+      "size": 65766
+    },
+    {
+      "index": 7,
+      "fileName": "frame-00007.webp",
+      "path": "/real-estate-hero-frames/frame-00007.webp",
+      "size": 66092
+    },
+    {
+      "index": 8,
+      "fileName": "frame-00008.webp",
+      "path": "/real-estate-hero-frames/frame-00008.webp",
+      "size": 64142
+    },
+    {
+      "index": 9,
+      "fileName": "frame-00009.webp",
+      "path": "/real-estate-hero-frames/frame-00009.webp",
+      "size": 65826
+    },
+    {
+      "index": 10,
+      "fileName": "frame-00010.webp",
+      "path": "/real-estate-hero-frames/frame-00010.webp",
+      "size": 62656
+    },
+    {
+      "index": 11,
+      "fileName": "frame-00011.webp",
+      "path": "/real-estate-hero-frames/frame-00011.webp",
+      "size": 63640
+    },
+    {
+      "index": 12,
+      "fileName": "frame-00012.webp",
+      "path": "/real-estate-hero-frames/frame-00012.webp",
+      "size": 62430
+    },
+    {
+      "index": 13,
+      "fileName": "frame-00013.webp",
+      "path": "/real-estate-hero-frames/frame-00013.webp",
+      "size": 64530
+    },
+    {
+      "index": 14,
+      "fileName": "frame-00014.webp",
+      "path": "/real-estate-hero-frames/frame-00014.webp",
+      "size": 60602
+    },
+    {
+      "index": 15,
+      "fileName": "frame-00015.webp",
+      "path": "/real-estate-hero-frames/frame-00015.webp",
+      "size": 61268
+    },
+    {
+      "index": 16,
+      "fileName": "frame-00016.webp",
+      "path": "/real-estate-hero-frames/frame-00016.webp",
+      "size": 60048
+    },
+    {
+      "index": 17,
+      "fileName": "frame-00017.webp",
+      "path": "/real-estate-hero-frames/frame-00017.webp",
+      "size": 61944
+    },
+    {
+      "index": 18,
+      "fileName": "frame-00018.webp",
+      "path": "/real-estate-hero-frames/frame-00018.webp",
+      "size": 58628
+    },
+    {
+      "index": 19,
+      "fileName": "frame-00019.webp",
+      "path": "/real-estate-hero-frames/frame-00019.webp",
+      "size": 58994
+    },
+    {
+      "index": 20,
+      "fileName": "frame-00020.webp",
+      "path": "/real-estate-hero-frames/frame-00020.webp",
+      "size": 58886
+    },
+    {
+      "index": 21,
+      "fileName": "frame-00021.webp",
+      "path": "/real-estate-hero-frames/frame-00021.webp",
+      "size": 61266
+    },
+    {
+      "index": 22,
+      "fileName": "frame-00022.webp",
+      "path": "/real-estate-hero-frames/frame-00022.webp",
+      "size": 58526
+    },
+    {
+      "index": 23,
+      "fileName": "frame-00023.webp",
+      "path": "/real-estate-hero-frames/frame-00023.webp",
+      "size": 59408
+    },
+    {
+      "index": 24,
+      "fileName": "frame-00024.webp",
+      "path": "/real-estate-hero-frames/frame-00024.webp",
+      "size": 57992
+    },
+    {
+      "index": 25,
+      "fileName": "frame-00025.webp",
+      "path": "/real-estate-hero-frames/frame-00025.webp",
+      "size": 59984
+    },
+    {
+      "index": 26,
+      "fileName": "frame-00026.webp",
+      "path": "/real-estate-hero-frames/frame-00026.webp",
+      "size": 57544
+    },
+    {
+      "index": 27,
+      "fileName": "frame-00027.webp",
+      "path": "/real-estate-hero-frames/frame-00027.webp",
+      "size": 57086
+    },
+    {
+      "index": 28,
+      "fileName": "frame-00028.webp",
+      "path": "/real-estate-hero-frames/frame-00028.webp",
+      "size": 57042
+    },
+    {
+      "index": 29,
+      "fileName": "frame-00029.webp",
+      "path": "/real-estate-hero-frames/frame-00029.webp",
+      "size": 58202
+    },
+    {
+      "index": 30,
+      "fileName": "frame-00030.webp",
+      "path": "/real-estate-hero-frames/frame-00030.webp",
+      "size": 55782
+    },
+    {
+      "index": 31,
+      "fileName": "frame-00031.webp",
+      "path": "/real-estate-hero-frames/frame-00031.webp",
+      "size": 57482
+    },
+    {
+      "index": 32,
+      "fileName": "frame-00032.webp",
+      "path": "/real-estate-hero-frames/frame-00032.webp",
+      "size": 56768
+    },
+    {
+      "index": 33,
+      "fileName": "frame-00033.webp",
+      "path": "/real-estate-hero-frames/frame-00033.webp",
+      "size": 57238
+    },
+    {
+      "index": 34,
+      "fileName": "frame-00034.webp",
+      "path": "/real-estate-hero-frames/frame-00034.webp",
+      "size": 54698
+    },
+    {
+      "index": 35,
+      "fileName": "frame-00035.webp",
+      "path": "/real-estate-hero-frames/frame-00035.webp",
+      "size": 55562
+    },
+    {
+      "index": 36,
+      "fileName": "frame-00036.webp",
+      "path": "/real-estate-hero-frames/frame-00036.webp",
+      "size": 54550
+    },
+    {
+      "index": 37,
+      "fileName": "frame-00037.webp",
+      "path": "/real-estate-hero-frames/frame-00037.webp",
+      "size": 56278
+    },
+    {
+      "index": 38,
+      "fileName": "frame-00038.webp",
+      "path": "/real-estate-hero-frames/frame-00038.webp",
+      "size": 53066
+    },
+    {
+      "index": 39,
+      "fileName": "frame-00039.webp",
+      "path": "/real-estate-hero-frames/frame-00039.webp",
+      "size": 53942
+    },
+    {
+      "index": 40,
+      "fileName": "frame-00040.webp",
+      "path": "/real-estate-hero-frames/frame-00040.webp",
+      "size": 52888
+    },
+    {
+      "index": 41,
+      "fileName": "frame-00041.webp",
+      "path": "/real-estate-hero-frames/frame-00041.webp",
+      "size": 55268
+    },
+    {
+      "index": 42,
+      "fileName": "frame-00042.webp",
+      "path": "/real-estate-hero-frames/frame-00042.webp",
+      "size": 53120
+    },
+    {
+      "index": 43,
+      "fileName": "frame-00043.webp",
+      "path": "/real-estate-hero-frames/frame-00043.webp",
+      "size": 53982
+    },
+    {
+      "index": 44,
+      "fileName": "frame-00044.webp",
+      "path": "/real-estate-hero-frames/frame-00044.webp",
+      "size": 52964
+    },
+    {
+      "index": 45,
+      "fileName": "frame-00045.webp",
+      "path": "/real-estate-hero-frames/frame-00045.webp",
+      "size": 53120
+    },
+    {
+      "index": 46,
+      "fileName": "frame-00046.webp",
+      "path": "/real-estate-hero-frames/frame-00046.webp",
+      "size": 51662
+    },
+    {
+      "index": 47,
+      "fileName": "frame-00047.webp",
+      "path": "/real-estate-hero-frames/frame-00047.webp",
+      "size": 51594
+    },
+    {
+      "index": 48,
+      "fileName": "frame-00048.webp",
+      "path": "/real-estate-hero-frames/frame-00048.webp",
+      "size": 51910
+    },
+    {
+      "index": 49,
+      "fileName": "frame-00049.webp",
+      "path": "/real-estate-hero-frames/frame-00049.webp",
+      "size": 53562
+    },
+    {
+      "index": 50,
+      "fileName": "frame-00050.webp",
+      "path": "/real-estate-hero-frames/frame-00050.webp",
+      "size": 52190
+    },
+    {
+      "index": 51,
+      "fileName": "frame-00051.webp",
+      "path": "/real-estate-hero-frames/frame-00051.webp",
+      "size": 52196
+    },
+    {
+      "index": 52,
+      "fileName": "frame-00052.webp",
+      "path": "/real-estate-hero-frames/frame-00052.webp",
+      "size": 51256
+    },
+    {
+      "index": 53,
+      "fileName": "frame-00053.webp",
+      "path": "/real-estate-hero-frames/frame-00053.webp",
+      "size": 53638
+    },
+    {
+      "index": 54,
+      "fileName": "frame-00054.webp",
+      "path": "/real-estate-hero-frames/frame-00054.webp",
+      "size": 51512
+    },
+    {
+      "index": 55,
+      "fileName": "frame-00055.webp",
+      "path": "/real-estate-hero-frames/frame-00055.webp",
+      "size": 52508
+    },
+    {
+      "index": 56,
+      "fileName": "frame-00056.webp",
+      "path": "/real-estate-hero-frames/frame-00056.webp",
+      "size": 51322
+    },
+    {
+      "index": 57,
+      "fileName": "frame-00057.webp",
+      "path": "/real-estate-hero-frames/frame-00057.webp",
+      "size": 52816
+    },
+    {
+      "index": 58,
+      "fileName": "frame-00058.webp",
+      "path": "/real-estate-hero-frames/frame-00058.webp",
+      "size": 51014
+    },
+    {
+      "index": 59,
+      "fileName": "frame-00059.webp",
+      "path": "/real-estate-hero-frames/frame-00059.webp",
+      "size": 51546
+    },
+    {
+      "index": 60,
+      "fileName": "frame-00060.webp",
+      "path": "/real-estate-hero-frames/frame-00060.webp",
+      "size": 50810
+    },
+    {
+      "index": 61,
+      "fileName": "frame-00061.webp",
+      "path": "/real-estate-hero-frames/frame-00061.webp",
+      "size": 51672
+    },
+    {
+      "index": 62,
+      "fileName": "frame-00062.webp",
+      "path": "/real-estate-hero-frames/frame-00062.webp",
+      "size": 49658
+    },
+    {
+      "index": 63,
+      "fileName": "frame-00063.webp",
+      "path": "/real-estate-hero-frames/frame-00063.webp",
+      "size": 49478
+    },
+    {
+      "index": 64,
+      "fileName": "frame-00064.webp",
+      "path": "/real-estate-hero-frames/frame-00064.webp",
+      "size": 47300
+    },
+    {
+      "index": 65,
+      "fileName": "frame-00065.webp",
+      "path": "/real-estate-hero-frames/frame-00065.webp",
+      "size": 49308
+    },
+    {
+      "index": 66,
+      "fileName": "frame-00066.webp",
+      "path": "/real-estate-hero-frames/frame-00066.webp",
+      "size": 47140
+    },
+    {
+      "index": 67,
+      "fileName": "frame-00067.webp",
+      "path": "/real-estate-hero-frames/frame-00067.webp",
+      "size": 48930
+    },
+    {
+      "index": 68,
+      "fileName": "frame-00068.webp",
+      "path": "/real-estate-hero-frames/frame-00068.webp",
+      "size": 47230
+    },
+    {
+      "index": 69,
+      "fileName": "frame-00069.webp",
+      "path": "/real-estate-hero-frames/frame-00069.webp",
+      "size": 48012
+    },
+    {
+      "index": 70,
+      "fileName": "frame-00070.webp",
+      "path": "/real-estate-hero-frames/frame-00070.webp",
+      "size": 45640
+    },
+    {
+      "index": 71,
+      "fileName": "frame-00071.webp",
+      "path": "/real-estate-hero-frames/frame-00071.webp",
+      "size": 47700
+    },
+    {
+      "index": 72,
+      "fileName": "frame-00072.webp",
+      "path": "/real-estate-hero-frames/frame-00072.webp",
+      "size": 44668
+    },
+    {
+      "index": 73,
+      "fileName": "frame-00073.webp",
+      "path": "/real-estate-hero-frames/frame-00073.webp",
+      "size": 45342
+    },
+    {
+      "index": 74,
+      "fileName": "frame-00074.webp",
+      "path": "/real-estate-hero-frames/frame-00074.webp",
+      "size": 44740
+    },
+    {
+      "index": 75,
+      "fileName": "frame-00075.webp",
+      "path": "/real-estate-hero-frames/frame-00075.webp",
+      "size": 46192
+    },
+    {
+      "index": 76,
+      "fileName": "frame-00076.webp",
+      "path": "/real-estate-hero-frames/frame-00076.webp",
+      "size": 44460
+    },
+    {
+      "index": 77,
+      "fileName": "frame-00077.webp",
+      "path": "/real-estate-hero-frames/frame-00077.webp",
+      "size": 45468
+    },
+    {
+      "index": 78,
+      "fileName": "frame-00078.webp",
+      "path": "/real-estate-hero-frames/frame-00078.webp",
+      "size": 44688
+    },
+    {
+      "index": 79,
+      "fileName": "frame-00079.webp",
+      "path": "/real-estate-hero-frames/frame-00079.webp",
+      "size": 44316
+    },
+    {
+      "index": 80,
+      "fileName": "frame-00080.webp",
+      "path": "/real-estate-hero-frames/frame-00080.webp",
+      "size": 44616
+    },
+    {
+      "index": 81,
+      "fileName": "frame-00081.webp",
+      "path": "/real-estate-hero-frames/frame-00081.webp",
+      "size": 43430
+    },
+    {
+      "index": 82,
+      "fileName": "frame-00082.webp",
+      "path": "/real-estate-hero-frames/frame-00082.webp",
+      "size": 43104
+    },
+    {
+      "index": 83,
+      "fileName": "frame-00083.webp",
+      "path": "/real-estate-hero-frames/frame-00083.webp",
+      "size": 44070
+    },
+    {
+      "index": 84,
+      "fileName": "frame-00084.webp",
+      "path": "/real-estate-hero-frames/frame-00084.webp",
+      "size": 42492
+    },
+    {
+      "index": 85,
+      "fileName": "frame-00085.webp",
+      "path": "/real-estate-hero-frames/frame-00085.webp",
+      "size": 41648
+    },
+    {
+      "index": 86,
+      "fileName": "frame-00086.webp",
+      "path": "/real-estate-hero-frames/frame-00086.webp",
+      "size": 40176
+    },
+    {
+      "index": 87,
+      "fileName": "frame-00087.webp",
+      "path": "/real-estate-hero-frames/frame-00087.webp",
+      "size": 40962
+    },
+    {
+      "index": 88,
+      "fileName": "frame-00088.webp",
+      "path": "/real-estate-hero-frames/frame-00088.webp",
+      "size": 41878
+    },
+    {
+      "index": 89,
+      "fileName": "frame-00089.webp",
+      "path": "/real-estate-hero-frames/frame-00089.webp",
+      "size": 41100
+    },
+    {
+      "index": 90,
+      "fileName": "frame-00090.webp",
+      "path": "/real-estate-hero-frames/frame-00090.webp",
+      "size": 40566
+    },
+    {
+      "index": 91,
+      "fileName": "frame-00091.webp",
+      "path": "/real-estate-hero-frames/frame-00091.webp",
+      "size": 40426
+    },
+    {
+      "index": 92,
+      "fileName": "frame-00092.webp",
+      "path": "/real-estate-hero-frames/frame-00092.webp",
+      "size": 41058
+    },
+    {
+      "index": 93,
+      "fileName": "frame-00093.webp",
+      "path": "/real-estate-hero-frames/frame-00093.webp",
+      "size": 39960
+    },
+    {
+      "index": 94,
+      "fileName": "frame-00094.webp",
+      "path": "/real-estate-hero-frames/frame-00094.webp",
+      "size": 40130
+    },
+    {
+      "index": 95,
+      "fileName": "frame-00095.webp",
+      "path": "/real-estate-hero-frames/frame-00095.webp",
+      "size": 40180
+    },
+    {
+      "index": 96,
+      "fileName": "frame-00096.webp",
+      "path": "/real-estate-hero-frames/frame-00096.webp",
+      "size": 38754
+    },
+    {
+      "index": 97,
+      "fileName": "frame-00097.webp",
+      "path": "/real-estate-hero-frames/frame-00097.webp",
+      "size": 38646
+    },
+    {
+      "index": 98,
+      "fileName": "frame-00098.webp",
+      "path": "/real-estate-hero-frames/frame-00098.webp",
+      "size": 39004
+    },
+    {
+      "index": 99,
+      "fileName": "frame-00099.webp",
+      "path": "/real-estate-hero-frames/frame-00099.webp",
+      "size": 37920
+    },
+    {
+      "index": 100,
+      "fileName": "frame-00100.webp",
+      "path": "/real-estate-hero-frames/frame-00100.webp",
+      "size": 38542
+    },
+    {
+      "index": 101,
+      "fileName": "frame-00101.webp",
+      "path": "/real-estate-hero-frames/frame-00101.webp",
+      "size": 38378
+    },
+    {
+      "index": 102,
+      "fileName": "frame-00102.webp",
+      "path": "/real-estate-hero-frames/frame-00102.webp",
+      "size": 37990
+    },
+    {
+      "index": 103,
+      "fileName": "frame-00103.webp",
+      "path": "/real-estate-hero-frames/frame-00103.webp",
+      "size": 37042
+    },
+    {
+      "index": 104,
+      "fileName": "frame-00104.webp",
+      "path": "/real-estate-hero-frames/frame-00104.webp",
+      "size": 36688
+    },
+    {
+      "index": 105,
+      "fileName": "frame-00105.webp",
+      "path": "/real-estate-hero-frames/frame-00105.webp",
+      "size": 36462
+    },
+    {
+      "index": 106,
+      "fileName": "frame-00106.webp",
+      "path": "/real-estate-hero-frames/frame-00106.webp",
+      "size": 37410
+    },
+    {
+      "index": 107,
+      "fileName": "frame-00107.webp",
+      "path": "/real-estate-hero-frames/frame-00107.webp",
+      "size": 36330
+    },
+    {
+      "index": 108,
+      "fileName": "frame-00108.webp",
+      "path": "/real-estate-hero-frames/frame-00108.webp",
+      "size": 35398
+    },
+    {
+      "index": 109,
+      "fileName": "frame-00109.webp",
+      "path": "/real-estate-hero-frames/frame-00109.webp",
+      "size": 36310
+    },
+    {
+      "index": 110,
+      "fileName": "frame-00110.webp",
+      "path": "/real-estate-hero-frames/frame-00110.webp",
+      "size": 34840
+    },
+    {
+      "index": 111,
+      "fileName": "frame-00111.webp",
+      "path": "/real-estate-hero-frames/frame-00111.webp",
+      "size": 35222
+    },
+    {
+      "index": 112,
+      "fileName": "frame-00112.webp",
+      "path": "/real-estate-hero-frames/frame-00112.webp",
+      "size": 34760
+    },
+    {
+      "index": 113,
+      "fileName": "frame-00113.webp",
+      "path": "/real-estate-hero-frames/frame-00113.webp",
+      "size": 35206
+    },
+    {
+      "index": 114,
+      "fileName": "frame-00114.webp",
+      "path": "/real-estate-hero-frames/frame-00114.webp",
+      "size": 35666
+    },
+    {
+      "index": 115,
+      "fileName": "frame-00115.webp",
+      "path": "/real-estate-hero-frames/frame-00115.webp",
+      "size": 35504
+    },
+    {
+      "index": 116,
+      "fileName": "frame-00116.webp",
+      "path": "/real-estate-hero-frames/frame-00116.webp",
+      "size": 36560
+    },
+    {
+      "index": 117,
+      "fileName": "frame-00117.webp",
+      "path": "/real-estate-hero-frames/frame-00117.webp",
+      "size": 37224
+    },
+    {
+      "index": 118,
+      "fileName": "frame-00118.webp",
+      "path": "/real-estate-hero-frames/frame-00118.webp",
+      "size": 36208
+    },
+    {
+      "index": 119,
+      "fileName": "frame-00119.webp",
+      "path": "/real-estate-hero-frames/frame-00119.webp",
+      "size": 37852
+    },
+    {
+      "index": 120,
+      "fileName": "frame-00120.webp",
+      "path": "/real-estate-hero-frames/frame-00120.webp",
+      "size": 37038
+    },
+    {
+      "index": 121,
+      "fileName": "frame-00121.webp",
+      "path": "/real-estate-hero-frames/frame-00121.webp",
+      "size": 37634
+    },
+    {
+      "index": 122,
+      "fileName": "frame-00122.webp",
+      "path": "/real-estate-hero-frames/frame-00122.webp",
+      "size": 38508
+    },
+    {
+      "index": 123,
+      "fileName": "frame-00123.webp",
+      "path": "/real-estate-hero-frames/frame-00123.webp",
+      "size": 38660
+    },
+    {
+      "index": 124,
+      "fileName": "frame-00124.webp",
+      "path": "/real-estate-hero-frames/frame-00124.webp",
+      "size": 39458
+    },
+    {
+      "index": 125,
+      "fileName": "frame-00125.webp",
+      "path": "/real-estate-hero-frames/frame-00125.webp",
+      "size": 41076
+    },
+    {
+      "index": 126,
+      "fileName": "frame-00126.webp",
+      "path": "/real-estate-hero-frames/frame-00126.webp",
+      "size": 42244
+    },
+    {
+      "index": 127,
+      "fileName": "frame-00127.webp",
+      "path": "/real-estate-hero-frames/frame-00127.webp",
+      "size": 43542
+    },
+    {
+      "index": 128,
+      "fileName": "frame-00128.webp",
+      "path": "/real-estate-hero-frames/frame-00128.webp",
+      "size": 43724
+    },
+    {
+      "index": 129,
+      "fileName": "frame-00129.webp",
+      "path": "/real-estate-hero-frames/frame-00129.webp",
+      "size": 45536
+    },
+    {
+      "index": 130,
+      "fileName": "frame-00130.webp",
+      "path": "/real-estate-hero-frames/frame-00130.webp",
+      "size": 44256
+    },
+    {
+      "index": 131,
+      "fileName": "frame-00131.webp",
+      "path": "/real-estate-hero-frames/frame-00131.webp",
+      "size": 44886
+    },
+    {
+      "index": 132,
+      "fileName": "frame-00132.webp",
+      "path": "/real-estate-hero-frames/frame-00132.webp",
+      "size": 44934
+    },
+    {
+      "index": 133,
+      "fileName": "frame-00133.webp",
+      "path": "/real-estate-hero-frames/frame-00133.webp",
+      "size": 46076
+    },
+    {
+      "index": 134,
+      "fileName": "frame-00134.webp",
+      "path": "/real-estate-hero-frames/frame-00134.webp",
+      "size": 44428
+    },
+    {
+      "index": 135,
+      "fileName": "frame-00135.webp",
+      "path": "/real-estate-hero-frames/frame-00135.webp",
+      "size": 45102
+    },
+    {
+      "index": 136,
+      "fileName": "frame-00136.webp",
+      "path": "/real-estate-hero-frames/frame-00136.webp",
+      "size": 44614
+    },
+    {
+      "index": 137,
+      "fileName": "frame-00137.webp",
+      "path": "/real-estate-hero-frames/frame-00137.webp",
+      "size": 45702
+    },
+    {
+      "index": 138,
+      "fileName": "frame-00138.webp",
+      "path": "/real-estate-hero-frames/frame-00138.webp",
+      "size": 44504
+    },
+    {
+      "index": 139,
+      "fileName": "frame-00139.webp",
+      "path": "/real-estate-hero-frames/frame-00139.webp",
+      "size": 44512
+    },
+    {
+      "index": 140,
+      "fileName": "frame-00140.webp",
+      "path": "/real-estate-hero-frames/frame-00140.webp",
+      "size": 44416
+    },
+    {
+      "index": 141,
+      "fileName": "frame-00141.webp",
+      "path": "/real-estate-hero-frames/frame-00141.webp",
+      "size": 44964
+    },
+    {
+      "index": 142,
+      "fileName": "frame-00142.webp",
+      "path": "/real-estate-hero-frames/frame-00142.webp",
+      "size": 44148
+    },
+    {
+      "index": 143,
+      "fileName": "frame-00143.webp",
+      "path": "/real-estate-hero-frames/frame-00143.webp",
+      "size": 44002
+    },
+    {
+      "index": 144,
+      "fileName": "frame-00144.webp",
+      "path": "/real-estate-hero-frames/frame-00144.webp",
+      "size": 43518
+    },
+    {
+      "index": 145,
+      "fileName": "frame-00145.webp",
+      "path": "/real-estate-hero-frames/frame-00145.webp",
+      "size": 44564
+    },
+    {
+      "index": 146,
+      "fileName": "frame-00146.webp",
+      "path": "/real-estate-hero-frames/frame-00146.webp",
+      "size": 43994
+    },
+    {
+      "index": 147,
+      "fileName": "frame-00147.webp",
+      "path": "/real-estate-hero-frames/frame-00147.webp",
+      "size": 43846
+    },
+    {
+      "index": 148,
+      "fileName": "frame-00148.webp",
+      "path": "/real-estate-hero-frames/frame-00148.webp",
+      "size": 43348
+    },
+    {
+      "index": 149,
+      "fileName": "frame-00149.webp",
+      "path": "/real-estate-hero-frames/frame-00149.webp",
+      "size": 44104
+    },
+    {
+      "index": 150,
+      "fileName": "frame-00150.webp",
+      "path": "/real-estate-hero-frames/frame-00150.webp",
+      "size": 42686
+    },
+    {
+      "index": 151,
+      "fileName": "frame-00151.webp",
+      "path": "/real-estate-hero-frames/frame-00151.webp",
+      "size": 42796
+    },
+    {
+      "index": 152,
+      "fileName": "frame-00152.webp",
+      "path": "/real-estate-hero-frames/frame-00152.webp",
+      "size": 42254
+    },
+    {
+      "index": 153,
+      "fileName": "frame-00153.webp",
+      "path": "/real-estate-hero-frames/frame-00153.webp",
+      "size": 42588
+    },
+    {
+      "index": 154,
+      "fileName": "frame-00154.webp",
+      "path": "/real-estate-hero-frames/frame-00154.webp",
+      "size": 41168
+    },
+    {
+      "index": 155,
+      "fileName": "frame-00155.webp",
+      "path": "/real-estate-hero-frames/frame-00155.webp",
+      "size": 41218
+    },
+    {
+      "index": 156,
+      "fileName": "frame-00156.webp",
+      "path": "/real-estate-hero-frames/frame-00156.webp",
+      "size": 40412
+    },
+    {
+      "index": 157,
+      "fileName": "frame-00157.webp",
+      "path": "/real-estate-hero-frames/frame-00157.webp",
+      "size": 41296
+    },
+    {
+      "index": 158,
+      "fileName": "frame-00158.webp",
+      "path": "/real-estate-hero-frames/frame-00158.webp",
+      "size": 40444
+    },
+    {
+      "index": 159,
+      "fileName": "frame-00159.webp",
+      "path": "/real-estate-hero-frames/frame-00159.webp",
+      "size": 40452
+    },
+    {
+      "index": 160,
+      "fileName": "frame-00160.webp",
+      "path": "/real-estate-hero-frames/frame-00160.webp",
+      "size": 40088
+    },
+    {
+      "index": 161,
+      "fileName": "frame-00161.webp",
+      "path": "/real-estate-hero-frames/frame-00161.webp",
+      "size": 39902
+    },
+    {
+      "index": 162,
+      "fileName": "frame-00162.webp",
+      "path": "/real-estate-hero-frames/frame-00162.webp",
+      "size": 39540
+    },
+    {
+      "index": 163,
+      "fileName": "frame-00163.webp",
+      "path": "/real-estate-hero-frames/frame-00163.webp",
+      "size": 39766
+    },
+    {
+      "index": 164,
+      "fileName": "frame-00164.webp",
+      "path": "/real-estate-hero-frames/frame-00164.webp",
+      "size": 38676
+    },
+    {
+      "index": 165,
+      "fileName": "frame-00165.webp",
+      "path": "/real-estate-hero-frames/frame-00165.webp",
+      "size": 39406
+    },
+    {
+      "index": 166,
+      "fileName": "frame-00166.webp",
+      "path": "/real-estate-hero-frames/frame-00166.webp",
+      "size": 38754
+    },
+    {
+      "index": 167,
+      "fileName": "frame-00167.webp",
+      "path": "/real-estate-hero-frames/frame-00167.webp",
+      "size": 39530
+    },
+    {
+      "index": 168,
+      "fileName": "frame-00168.webp",
+      "path": "/real-estate-hero-frames/frame-00168.webp",
+      "size": 38318
+    },
+    {
+      "index": 169,
+      "fileName": "frame-00169.webp",
+      "path": "/real-estate-hero-frames/frame-00169.webp",
+      "size": 40052
+    },
+    {
+      "index": 170,
+      "fileName": "frame-00170.webp",
+      "path": "/real-estate-hero-frames/frame-00170.webp",
+      "size": 39240
+    },
+    {
+      "index": 171,
+      "fileName": "frame-00171.webp",
+      "path": "/real-estate-hero-frames/frame-00171.webp",
+      "size": 39956
+    },
+    {
+      "index": 172,
+      "fileName": "frame-00172.webp",
+      "path": "/real-estate-hero-frames/frame-00172.webp",
+      "size": 38736
+    },
+    {
+      "index": 173,
+      "fileName": "frame-00173.webp",
+      "path": "/real-estate-hero-frames/frame-00173.webp",
+      "size": 38464
+    },
+    {
+      "index": 174,
+      "fileName": "frame-00174.webp",
+      "path": "/real-estate-hero-frames/frame-00174.webp",
+      "size": 37164
+    },
+    {
+      "index": 175,
+      "fileName": "frame-00175.webp",
+      "path": "/real-estate-hero-frames/frame-00175.webp",
+      "size": 38580
+    },
+    {
+      "index": 176,
+      "fileName": "frame-00176.webp",
+      "path": "/real-estate-hero-frames/frame-00176.webp",
+      "size": 38774
+    },
+    {
+      "index": 177,
+      "fileName": "frame-00177.webp",
+      "path": "/real-estate-hero-frames/frame-00177.webp",
+      "size": 37864
+    },
+    {
+      "index": 178,
+      "fileName": "frame-00178.webp",
+      "path": "/real-estate-hero-frames/frame-00178.webp",
+      "size": 37850
+    },
+    {
+      "index": 179,
+      "fileName": "frame-00179.webp",
+      "path": "/real-estate-hero-frames/frame-00179.webp",
+      "size": 37662
+    },
+    {
+      "index": 180,
+      "fileName": "frame-00180.webp",
+      "path": "/real-estate-hero-frames/frame-00180.webp",
+      "size": 37110
+    },
+    {
+      "index": 181,
+      "fileName": "frame-00181.webp",
+      "path": "/real-estate-hero-frames/frame-00181.webp",
+      "size": 37712
+    },
+    {
+      "index": 182,
+      "fileName": "frame-00182.webp",
+      "path": "/real-estate-hero-frames/frame-00182.webp",
+      "size": 37382
+    },
+    {
+      "index": 183,
+      "fileName": "frame-00183.webp",
+      "path": "/real-estate-hero-frames/frame-00183.webp",
+      "size": 38712
+    },
+    {
+      "index": 184,
+      "fileName": "frame-00184.webp",
+      "path": "/real-estate-hero-frames/frame-00184.webp",
+      "size": 38072
+    },
+    {
+      "index": 185,
+      "fileName": "frame-00185.webp",
+      "path": "/real-estate-hero-frames/frame-00185.webp",
+      "size": 38130
+    },
+    {
+      "index": 186,
+      "fileName": "frame-00186.webp",
+      "path": "/real-estate-hero-frames/frame-00186.webp",
+      "size": 37002
+    },
+    {
+      "index": 187,
+      "fileName": "frame-00187.webp",
+      "path": "/real-estate-hero-frames/frame-00187.webp",
+      "size": 38092
+    },
+    {
+      "index": 188,
+      "fileName": "frame-00188.webp",
+      "path": "/real-estate-hero-frames/frame-00188.webp",
+      "size": 37554
+    },
+    {
+      "index": 189,
+      "fileName": "frame-00189.webp",
+      "path": "/real-estate-hero-frames/frame-00189.webp",
+      "size": 37564
+    },
+    {
+      "index": 190,
+      "fileName": "frame-00190.webp",
+      "path": "/real-estate-hero-frames/frame-00190.webp",
+      "size": 37534
+    },
+    {
+      "index": 191,
+      "fileName": "frame-00191.webp",
+      "path": "/real-estate-hero-frames/frame-00191.webp",
+      "size": 38658
+    },
+    {
+      "index": 192,
+      "fileName": "frame-00192.webp",
+      "path": "/real-estate-hero-frames/frame-00192.webp",
+      "size": 38446
+    },
+    {
+      "index": 193,
+      "fileName": "frame-00193.webp",
+      "path": "/real-estate-hero-frames/frame-00193.webp",
+      "size": 38382
+    },
+    {
+      "index": 194,
+      "fileName": "frame-00194.webp",
+      "path": "/real-estate-hero-frames/frame-00194.webp",
+      "size": 38730
+    },
+    {
+      "index": 195,
+      "fileName": "frame-00195.webp",
+      "path": "/real-estate-hero-frames/frame-00195.webp",
+      "size": 39122
+    },
+    {
+      "index": 196,
+      "fileName": "frame-00196.webp",
+      "path": "/real-estate-hero-frames/frame-00196.webp",
+      "size": 38294
+    },
+    {
+      "index": 197,
+      "fileName": "frame-00197.webp",
+      "path": "/real-estate-hero-frames/frame-00197.webp",
+      "size": 39036
+    },
+    {
+      "index": 198,
+      "fileName": "frame-00198.webp",
+      "path": "/real-estate-hero-frames/frame-00198.webp",
+      "size": 40700
+    },
+    {
+      "index": 199,
+      "fileName": "frame-00199.webp",
+      "path": "/real-estate-hero-frames/frame-00199.webp",
+      "size": 42138
+    },
+    {
+      "index": 200,
+      "fileName": "frame-00200.webp",
+      "path": "/real-estate-hero-frames/frame-00200.webp",
+      "size": 41844
+    },
+    {
+      "index": 201,
+      "fileName": "frame-00201.webp",
+      "path": "/real-estate-hero-frames/frame-00201.webp",
+      "size": 41752
+    },
+    {
+      "index": 202,
+      "fileName": "frame-00202.webp",
+      "path": "/real-estate-hero-frames/frame-00202.webp",
+      "size": 42756
+    },
+    {
+      "index": 203,
+      "fileName": "frame-00203.webp",
+      "path": "/real-estate-hero-frames/frame-00203.webp",
+      "size": 42926
+    },
+    {
+      "index": 204,
+      "fileName": "frame-00204.webp",
+      "path": "/real-estate-hero-frames/frame-00204.webp",
+      "size": 45250
+    },
+    {
+      "index": 205,
+      "fileName": "frame-00205.webp",
+      "path": "/real-estate-hero-frames/frame-00205.webp",
+      "size": 46044
+    },
+    {
+      "index": 206,
+      "fileName": "frame-00206.webp",
+      "path": "/real-estate-hero-frames/frame-00206.webp",
+      "size": 45816
+    },
+    {
+      "index": 207,
+      "fileName": "frame-00207.webp",
+      "path": "/real-estate-hero-frames/frame-00207.webp",
+      "size": 48158
+    },
+    {
+      "index": 208,
+      "fileName": "frame-00208.webp",
+      "path": "/real-estate-hero-frames/frame-00208.webp",
+      "size": 47806
+    },
+    {
+      "index": 209,
+      "fileName": "frame-00209.webp",
+      "path": "/real-estate-hero-frames/frame-00209.webp",
+      "size": 48484
+    },
+    {
+      "index": 210,
+      "fileName": "frame-00210.webp",
+      "path": "/real-estate-hero-frames/frame-00210.webp",
+      "size": 48064
+    },
+    {
+      "index": 211,
+      "fileName": "frame-00211.webp",
+      "path": "/real-estate-hero-frames/frame-00211.webp",
+      "size": 49270
+    },
+    {
+      "index": 212,
+      "fileName": "frame-00212.webp",
+      "path": "/real-estate-hero-frames/frame-00212.webp",
+      "size": 47938
+    },
+    {
+      "index": 213,
+      "fileName": "frame-00213.webp",
+      "path": "/real-estate-hero-frames/frame-00213.webp",
+      "size": 48518
+    },
+    {
+      "index": 214,
+      "fileName": "frame-00214.webp",
+      "path": "/real-estate-hero-frames/frame-00214.webp",
+      "size": 48388
+    },
+    {
+      "index": 215,
+      "fileName": "frame-00215.webp",
+      "path": "/real-estate-hero-frames/frame-00215.webp",
+      "size": 49224
+    },
+    {
+      "index": 216,
+      "fileName": "frame-00216.webp",
+      "path": "/real-estate-hero-frames/frame-00216.webp",
+      "size": 47458
+    },
+    {
+      "index": 217,
+      "fileName": "frame-00217.webp",
+      "path": "/real-estate-hero-frames/frame-00217.webp",
+      "size": 47744
+    },
+    {
+      "index": 218,
+      "fileName": "frame-00218.webp",
+      "path": "/real-estate-hero-frames/frame-00218.webp",
+      "size": 47358
+    },
+    {
+      "index": 219,
+      "fileName": "frame-00219.webp",
+      "path": "/real-estate-hero-frames/frame-00219.webp",
+      "size": 49898
+    },
+    {
+      "index": 220,
+      "fileName": "frame-00220.webp",
+      "path": "/real-estate-hero-frames/frame-00220.webp",
+      "size": 48804
+    },
+    {
+      "index": 221,
+      "fileName": "frame-00221.webp",
+      "path": "/real-estate-hero-frames/frame-00221.webp",
+      "size": 48590
+    },
+    {
+      "index": 222,
+      "fileName": "frame-00222.webp",
+      "path": "/real-estate-hero-frames/frame-00222.webp",
+      "size": 48380
+    },
+    {
+      "index": 223,
+      "fileName": "frame-00223.webp",
+      "path": "/real-estate-hero-frames/frame-00223.webp",
+      "size": 50660
+    },
+    {
+      "index": 224,
+      "fileName": "frame-00224.webp",
+      "path": "/real-estate-hero-frames/frame-00224.webp",
+      "size": 48812
+    },
+    {
+      "index": 225,
+      "fileName": "frame-00225.webp",
+      "path": "/real-estate-hero-frames/frame-00225.webp",
+      "size": 49290
+    },
+    {
+      "index": 226,
+      "fileName": "frame-00226.webp",
+      "path": "/real-estate-hero-frames/frame-00226.webp",
+      "size": 50318
+    },
+    {
+      "index": 227,
+      "fileName": "frame-00227.webp",
+      "path": "/real-estate-hero-frames/frame-00227.webp",
+      "size": 50514
+    },
+    {
+      "index": 228,
+      "fileName": "frame-00228.webp",
+      "path": "/real-estate-hero-frames/frame-00228.webp",
+      "size": 50120
+    },
+    {
+      "index": 229,
+      "fileName": "frame-00229.webp",
+      "path": "/real-estate-hero-frames/frame-00229.webp",
+      "size": 51660
+    },
+    {
+      "index": 230,
+      "fileName": "frame-00230.webp",
+      "path": "/real-estate-hero-frames/frame-00230.webp",
+      "size": 49938
+    },
+    {
+      "index": 231,
+      "fileName": "frame-00231.webp",
+      "path": "/real-estate-hero-frames/frame-00231.webp",
+      "size": 50206
+    },
+    {
+      "index": 232,
+      "fileName": "frame-00232.webp",
+      "path": "/real-estate-hero-frames/frame-00232.webp",
+      "size": 51448
+    },
+    {
+      "index": 233,
+      "fileName": "frame-00233.webp",
+      "path": "/real-estate-hero-frames/frame-00233.webp",
+      "size": 49912
+    },
+    {
+      "index": 234,
+      "fileName": "frame-00234.webp",
+      "path": "/real-estate-hero-frames/frame-00234.webp",
+      "size": 51624
+    },
+    {
+      "index": 235,
+      "fileName": "frame-00235.webp",
+      "path": "/real-estate-hero-frames/frame-00235.webp",
+      "size": 50358
+    },
+    {
+      "index": 236,
+      "fileName": "frame-00236.webp",
+      "path": "/real-estate-hero-frames/frame-00236.webp",
+      "size": 50966
+    },
+    {
+      "index": 237,
+      "fileName": "frame-00237.webp",
+      "path": "/real-estate-hero-frames/frame-00237.webp",
+      "size": 50034
+    },
+    {
+      "index": 238,
+      "fileName": "frame-00238.webp",
+      "path": "/real-estate-hero-frames/frame-00238.webp",
+      "size": 51084
+    },
+    {
+      "index": 239,
+      "fileName": "frame-00239.webp",
+      "path": "/real-estate-hero-frames/frame-00239.webp",
+      "size": 49630
+    },
+    {
+      "index": 240,
+      "fileName": "frame-00240.webp",
+      "path": "/real-estate-hero-frames/frame-00240.webp",
+      "size": 49852
+    }
+  ]
+}

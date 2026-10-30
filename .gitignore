@@ -29,6 +29,8 @@ Thumbs.db
 
 # Heavy media, video dumps, and scratch experiments
 _backup_baseline/
+_backup_furniture_frames/
+_archive_backend/
 *.mp4
 *.mov
 *.avi

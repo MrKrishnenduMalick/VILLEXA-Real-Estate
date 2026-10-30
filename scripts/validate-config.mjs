@@ -53,7 +53,7 @@ const warnings = [];
 const notes = [];
 
 // 1. BRAND IDENTITY CHECKS
-const brandName = activeEnv.VITE_CLIENT_BRAND_NAME || 'VILLEXA';
+const brandName = activeEnv.VITE_CLIENT_BRAND_NAME || 'BILEKSA';
 if (!brandName || brandName.trim().length < 2) {
   errors.push('VITE_CLIENT_BRAND_NAME must be at least 2 characters.');
 } else {
@@ -61,7 +61,7 @@ if (!brandName || brandName.trim().length < 2) {
 }
 
 // 2. CONTACT DETAILS CHECKS
-const contactEmail = activeEnv.VITE_CLIENT_CONTACT_EMAIL || 'concierge@villexa.com';
+const contactEmail = activeEnv.VITE_CLIENT_CONTACT_EMAIL || 'concierge@bileksa.com';
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 if (!emailRegex.test(contactEmail)) {
   errors.push(`VITE_CLIENT_CONTACT_EMAIL "${contactEmail}" is not a valid email address.`);
@@ -69,7 +69,7 @@ if (!emailRegex.test(contactEmail)) {
   notes.push(`Contact Email: "${contactEmail}"`);
 }
 
-const whatsappNumber = activeEnv.VITE_CLIENT_WHATSAPP_NUMBER || '18004821980';
+const whatsappNumber = activeEnv.VITE_CLIENT_WHATSAPP_NUMBER || '918004821980';
 const digitsOnly = whatsappNumber.replace(/\D/g, '');
 if (digitsOnly.length < 7) {
   errors.push(`VITE_CLIENT_WHATSAPP_NUMBER "${whatsappNumber}" must contain at least 7 digits.`);
@@ -79,46 +79,13 @@ if (digitsOnly.length < 7) {
 
 // 3. THEME ACCENT TOKENS
 const hexColorRegex = /^#([0-9a-fA-F]{3}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$/;
-const accentColor = activeEnv.VITE_CLIENT_THEME_ACCENT || '#d4af37';
+const accentColor = activeEnv.VITE_CLIENT_THEME_ACCENT || '#c5a059';
 if (!hexColorRegex.test(accentColor)) {
   errors.push(`VITE_CLIENT_THEME_ACCENT "${accentColor}" is not a valid hex color code.`);
 }
 
-// 4. SUPABASE CREDENTIALS & ISOLATION PREFLIGHT
-const supabaseUrl = activeEnv.VITE_SUPABASE_URL || '';
-const supabaseAnonKey = activeEnv.VITE_SUPABASE_ANON_KEY || '';
-
-// Security: Check for accidental leak of service-role key
-for (const [key, val] of Object.entries(activeEnv)) {
-  if (key.includes('SERVICE_ROLE') && key.startsWith('VITE_')) {
-    errors.push(`CRITICAL SECURITY VIOLATION: Never prefix service-role key with VITE_ (${key}). It would be bundled into client JavaScript!`);
-  }
-}
-
-if (!supabaseUrl && !supabaseAnonKey) {
-  if (isProduction) {
-    warnings.push('Production build initiated without VITE_SUPABASE_URL and VITE_SUPABASE_ANON_KEY. The showroom will operate in offline/catalog-fallback mode.');
-  } else {
-    notes.push('Backend: Disconnected Local Sandbox Mode (No Supabase URL provided)');
-  }
-} else if ((supabaseUrl && !supabaseAnonKey) || (!supabaseUrl && supabaseAnonKey)) {
-  errors.push('Partial Supabase configuration: Both VITE_SUPABASE_URL and VITE_SUPABASE_ANON_KEY must be provided together.');
-} else {
-  // Both provided
-  if (supabaseUrl.includes('YOUR-PROJECT') || supabaseUrl.includes('placeholder')) {
-    errors.push('VITE_SUPABASE_URL contains placeholder text instead of real project domain.');
-  } else if (!supabaseUrl.startsWith('https://')) {
-    errors.push('VITE_SUPABASE_URL must begin with https://');
-  }
-
-  if (supabaseAnonKey.includes('YOUR-ANON-KEY') || supabaseAnonKey.includes('placeholder')) {
-    errors.push('VITE_SUPABASE_ANON_KEY contains placeholder text instead of real anonymous key.');
-  } else if (supabaseAnonKey.split('.').length !== 3) {
-    warnings.push('VITE_SUPABASE_ANON_KEY does not follow standard JWT structure (3 dot-separated segments). Verify key in Supabase Dashboard.');
-  }
-
-  notes.push(`Supabase Project URL: "${supabaseUrl}"`);
-}
+// 4. FRONTEND-ONLY ARCHITECTURE (No Supabase required for static demo)
+notes.push('Architecture: Static Luxury Real Estate Demonstration Mode (Frontend-only, no backend required)');
 
 // 5. FEATURE FLAGS INTEGRITY
 const featureKeys = [

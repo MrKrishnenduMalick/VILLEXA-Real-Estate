@@ -26,14 +26,14 @@ describe('Client Configuration System (Phase A Reusability)', () => {
     Object.assign(import.meta.env, originalEnv);
   });
 
-  describe('Default Preset Baseline (Villexa Master)', () => {
-    it('provides Villexa as the default master preset without configuration overrides', () => {
+  describe('Default Preset Baseline (BILEKSA Master)', () => {
+    it('provides BILEKSA as the default master preset without configuration overrides', () => {
       const config = getClientConfig();
-      expect(config.brand.brandName).toBe('VILLEXA');
-      expect(config.brand.tagline).toBe('Haute Ébénisterie & Architecture');
-      expect(config.brand.logoText).toBe('VILLEXA');
-      expect(config.contact.contactEmail).toBe('concierge@villexa.com');
-      expect(config.contact.whatsappNumber).toBe('18004821980');
+      expect(config.brand.brandName).toBe('BILEKSA');
+      expect(config.brand.tagline).toBe('Private Residences & Architectural Living');
+      expect(config.brand.logoText).toBe('BILEKSA');
+      expect(config.contact.contactEmail).toBe('concierge@bileksa.com');
+      expect(config.contact.whatsappNumber).toBe('918004821980');
     });
 
     it('has all core feature flags explicitly defined as booleans', () => {
@@ -59,7 +59,7 @@ describe('Client Configuration System (Phase A Reusability)', () => {
 
     it('includes default SEO metadata and keywords for discovery', () => {
       const { seo } = defaultClientConfig;
-      expect(seo.defaultTitle).toContain('VILLEXA');
+      expect(seo.defaultTitle).toContain('BILEKSA');
       expect(seo.defaultDescription.length).toBeGreaterThan(20);
       expect(Array.isArray(seo.keywords)).toBe(true);
       expect(seo.keywords.length).toBeGreaterThan(3);

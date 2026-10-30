@@ -1,3 +1,4 @@
+/// <reference types="vitest" />
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
@@ -6,6 +7,14 @@ export default defineConfig({
   server: {
     host: true,
     port: 5173
+  },
+  test: {
+    exclude: [
+      '**/node_modules/**',
+      '**/dist/**',
+      '**/_backup_baseline/**',
+      '**/_archive_backend/**'
+    ]
   },
   build: {
     rollupOptions: {

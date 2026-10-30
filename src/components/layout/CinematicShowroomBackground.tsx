@@ -20,7 +20,7 @@ export const CinematicShowroomBackground: React.FC = () => {
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
 
   const frameSeq = heroConfig?.frameSequence;
-  const frameCount = frameSeq?.frameCount || 384;
+  const frameCount = frameSeq?.frameCount || 240;
 
   // Compute frame URL for a given 1-based frame index
   const getFrameUrl = useCallback((index: number): string => {
@@ -30,7 +30,7 @@ export const CinematicShowroomBackground: React.FC = () => {
       return frameSeq.framePattern.replace('{index}', padded);
     }
     const padded = String(clampedIndex).padStart(5, '0');
-    return `/hero-frames/frame-${padded}.webp`;
+    return `/real-estate-hero-frames/frame-${padded}.webp`;
   }, [frameCount, frameSeq]);
 
   // 1. Accessibility: prefers-reduced-motion
@@ -53,8 +53,8 @@ export const CinematicShowroomBackground: React.FC = () => {
 
     const cw = canvas.width;
     const ch = canvas.height;
-    const iw = img.naturalWidth || 1600;
-    const ih = img.naturalHeight || 900;
+    const iw = img.naturalWidth || 1280;
+    const ih = img.naturalHeight || 720;
 
     const canvasRatio = cw / ch;
     const imageRatio = iw / ih;
@@ -209,8 +209,12 @@ export const CinematicShowroomBackground: React.FC = () => {
     // Determine active target frame index
     let targetIndex: number;
 
-    if (!isHomePage || (isHeroCompleted && scrollProgress >= 0.99)) {
-      targetIndex = frameCount; // Hold final frame behind all public pages and completed post-hero sections
+    if (!isHomePage) {
+      return;
+    }
+
+    if (isHeroCompleted && scrollProgress >= 0.99) {
+      targetIndex = frameCount;
     } else {
       // Linear mapping of scroll progress (0.0 -> 1.0) to frame (1 -> frameCount)
       const clampedProgress = Math.min(Math.max(scrollProgress, 0), 1);
@@ -267,9 +271,11 @@ export const CinematicShowroomBackground: React.FC = () => {
     };
   }, [scrollProgress, isHomePage, isHeroCompleted, frameCount, isReady, prefersReducedMotion, drawImageToCanvas, loadFrame]);
 
-  const fallbackPoster = (!isHomePage || (isHeroCompleted && scrollProgress >= 0.99))
-    ? (frameSeq?.finalFrame || `/hero-frames/frame-${String(frameCount).padStart(5, '0')}.webp`)
-    : (frameSeq?.firstFrame || '/hero-frames/frame-00001.webp');
+  if (!isHomePage) return null;
+
+  const fallbackPoster = frameSeq?.firstFrame || '/real-estate-hero-frames/frame-00001.webp';
+  // Fade out canvas gently as scroll reaches end of hero section
+  const heroVisibility = scrollProgress < 0.85 ? 1 : Math.max(1 - (scrollProgress - 0.85) / 0.15, 0);
 
   return (
     <div
@@ -280,7 +286,9 @@ export const CinematicShowroomBackground: React.FC = () => {
         zIndex: 0,
         pointerEvents: 'none',
         overflow: 'hidden',
-        backgroundColor: '#141210' // Warm architectural stone fallback (never stark empty black)
+        backgroundColor: '#FAF8F5',
+        opacity: heroVisibility,
+        transition: 'opacity 0.3s ease-out'
       }}
     >
       {/* 1. First Frame Instant Poster (Protects against flash before first render) */}
@@ -294,7 +302,7 @@ export const CinematicShowroomBackground: React.FC = () => {
             width: '100vw',
             height: '100vh',
             objectFit: 'cover',
-            opacity: 0.95
+            opacity: 1
           }}
         />
       )}
@@ -312,24 +320,13 @@ export const CinematicShowroomBackground: React.FC = () => {
         }}
       />
 
-      {/* 3. Luxury Architectural Scrim Overlay (Delicate lighting, warm stone balance) */}
+      {/* 3. Luminous Architectural Scrim — Restrained top/bottom film gradients for headline legibility */}
       <div
         style={{
           position: 'absolute',
           inset: 0,
-          background: isHomePage && scrollProgress < 0.2
-            ? 'radial-gradient(circle at 50% 35%, rgba(20, 18, 16, 0.28) 0%, rgba(20, 18, 16, 0.70) 100%)'
-            : 'radial-gradient(circle at 50% 30%, rgba(20, 18, 16, 0.38) 0%, rgba(20, 18, 16, 0.82) 100%)',
-          transition: 'background 0.4s ease'
-        }}
-      />
-
-      {/* 4. Subtle Vignette Depth */}
-      <div
-        style={{
-          position: 'absolute',
-          inset: 0,
-          boxShadow: 'inset 0 0 140px rgba(0, 0, 0, 0.65)'
+          background: 'linear-gradient(180deg, rgba(20, 18, 16, 0.40) 0%, rgba(20, 18, 16, 0.08) 25%, rgba(20, 18, 16, 0.08) 70%, rgba(20, 18, 16, 0.55) 100%)',
+          pointerEvents: 'none'
         }}
       />
     </div>

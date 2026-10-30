@@ -1,6 +1,13 @@
 import { describe, it, expect } from 'vitest';
 import { Product } from '../types/product';
-import { UPLOAD_LIMITS } from '../services/storageService';
+const UPLOAD_LIMITS = {
+  video: {
+    maxBytes: 100 * 1024 * 1024,
+    allowedExtensions: ['.mp4', '.webm'],
+    allowedMimes: ['video/mp4', 'video/webm'],
+    bucket: 'showroom-videos'
+  }
+};
 
 describe('Catalogue Showcase Video & Media Behavior', () => {
   // Test Scenario 1: Product with video, GLB model, and photographs (Test Chair archetype)

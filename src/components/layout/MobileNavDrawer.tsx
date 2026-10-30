@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Link, useLocation } from 'wouter';
-import { X, ArrowRight, Shield } from 'lucide-react';
+import { X, ArrowRight } from 'lucide-react';
 import { useClientConfig } from '../../context/ClientConfigContext';
 
 interface MobileNavDrawerProps {
@@ -169,31 +169,6 @@ export const MobileNavDrawer: React.FC<MobileNavDrawerProps> = ({
             );
           })}
         </nav>
-
-        {/* Admin Gateway Footer Link */}
-        <div style={{
-          paddingTop: 'var(--space-6)',
-          borderTop: '1px solid var(--color-border-subtle)',
-          marginTop: 'var(--space-6)'
-        }}>
-          <Link
-            href="/admin"
-            onClick={onClose}
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: 'var(--space-3)',
-              fontSize: '0.8rem',
-              letterSpacing: '0.08em',
-              textTransform: 'uppercase',
-              color: 'var(--color-text-muted)',
-              padding: 'var(--space-3) var(--space-2)'
-            }}
-          >
-            <Shield size={14} strokeWidth={1.5} />
-            <span>Admin Gateway</span>
-          </Link>
-        </div>
       </div>
     </div>
   );
