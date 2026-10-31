@@ -7,6 +7,7 @@
  */
 
 import { Property } from '../types/property';
+import { getAssetSlotUrl } from './assetSlots';
 
 export const SAMPLE_PROPERTIES: Property[] = [
   {
@@ -47,51 +48,93 @@ export const SAMPLE_PROPERTIES: Property[] = [
     featured: true,
     signatureEstate: true,
     sortOrder: 1,
-    coverImage: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1800&q=85',
+    coverImage: getAssetSlotUrl('PROPERTY_EXTERIOR_PRIMARY'),
     gallery: [
       {
         id: 'aur-01',
-        url: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=85',
+        url: getAssetSlotUrl('PROPERTY_EXTERIOR_PRIMARY'),
         category: 'exterior',
-        caption: 'Cantilevered limestone facade and infinity reflection pavilion at dusk.',
+        caption: 'Monolithic limestone Mediterranean facade and reflecting pool at golden hour.',
         altText: 'The Aurelia Estate exterior at dusk',
         isFeatured: true
       },
       {
         id: 'aur-02',
-        url: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1600&q=85',
+        url: getAssetSlotUrl('PROPERTY_ARCHITECTURAL_ENTRANCE'),
+        category: 'exterior',
+        caption: 'Monumental private entrance facade with weathered cedar and champagne bronze pivot door.',
+        altText: 'Architectural entrance with Roman travertine columns'
+      },
+      {
+        id: 'aur-03',
+        url: getAssetSlotUrl('PROPERTY_INTERIOR_SALON'),
         category: 'interior',
         caption: 'Double-height grand salon featuring bookmatched travertine fireplace.',
         altText: 'Grand salon interior with travertine accents'
       },
       {
-        id: 'aur-03',
-        url: 'https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=1600&q=85',
+        id: 'aur-04',
+        url: getAssetSlotUrl('PROPERTY_INTERIOR_KITCHEN'),
         category: 'interior',
-        caption: 'Minimalist chef kitchen with fluted dark oak cabinetry and marble island.',
+        caption: 'Minimalist chef kitchen with monolithic Calacatta marble island.',
         altText: 'Chef kitchen with marble island'
       },
       {
-        id: 'aur-04',
-        url: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1600&q=85',
+        id: 'aur-05',
+        url: getAssetSlotUrl('PROPERTY_INTERIOR_MASTER_BEDROOM'),
+        category: 'interior',
+        caption: 'Master sanctuary bedroom suite with fluted oak slats and coastal sea views.',
+        altText: 'Master bedroom suite'
+      },
+      {
+        id: 'aur-06',
+        url: getAssetSlotUrl('PROPERTY_EXTERIOR_POOL'),
+        category: 'terrace',
+        caption: '25-metre infinity edge reflection swimming pool and sunken fire-pit lounge at twilight.',
+        altText: 'Infinity pool and sun terrace'
+      },
+      {
+        id: 'aur-07',
+        url: getAssetSlotUrl('PROPERTY_INTERIOR_BATHROOM'),
+        category: 'interior',
+        caption: 'Limestone spa master bathroom overlooking private bamboo zen atrium.',
+        altText: 'Spa master bathroom'
+      },
+      {
+        id: 'aur-08',
+        url: getAssetSlotUrl('PROPERTY_DINING_TERRACE'),
         category: 'terrace',
         caption: 'Open-air dining loggia framing horizon sunset ocean views.',
         altText: 'Outdoor terrace and dining loggia'
       },
       {
-        id: 'aur-05',
-        url: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1600&q=85',
+        id: 'aur-09',
+        url: getAssetSlotUrl('PROPERTY_GALLERY_ATRIUM'),
         category: 'exterior',
-        caption: 'Landscaped private courtyard with mature olive groves and reflecting water basin.',
+        caption: 'Internal courtyard atrium with sculptural olive tree and bronze glass corridors.',
         altText: 'Inner courtyard garden'
+      },
+      {
+        id: 'aur-10',
+        url: getAssetSlotUrl('PROPERTY_GALLERY_WINE_VAULT'),
+        category: 'interior',
+        caption: 'Climate-controlled glass wine vault and private tasting gallery.',
+        altText: 'Private wine vault'
+      },
+      {
+        id: 'aur-11',
+        url: getAssetSlotUrl('PROPERTY_GALLERY_MATERIALITY'),
+        category: 'interior',
+        caption: 'Architectural materiality detail: fluted oak, travertine, and champagne bronze.',
+        altText: 'Architectural materiality detail'
       }
     ],
     videos: [
       {
         id: 'vid-aur-01',
         title: 'The Aurelia Estate — Architectural Walkthrough',
-        videoUrl: '/hero.mp4',
-        posterUrl: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1800&q=85',
+        videoUrl: getAssetSlotUrl('HERO_CINEMATIC'),
+        posterUrl: getAssetSlotUrl('PROPERTY_EXTERIOR_PRIMARY'),
         durationSeconds: 10,
         videoType: 'walkthrough'
       }

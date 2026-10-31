@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'wouter';
 import { ArrowRight, Compass } from 'lucide-react';
+import { getAssetSlotUrl } from '../../config/assetSlots';
 
 interface CuratedResidence {
   editorialName: string;
@@ -26,7 +27,7 @@ export const CuratedCollectionSection: React.FC = () => {
       originalName: 'The Ocean Crest',
       slug: 'the-ocean-crest',
       location: 'Palm Beach, Florida',
-      imageUrl: 'https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=1200&q=85',
+      imageUrl: getAssetSlotUrl('PROPERTY_EXTERIOR_PRIMARY'),
       imageAlt: 'The Ocean Villa Curved Waterfront Architecture',
       excerpt: 'Curved frameless glass curtain walls and private oceanfront pool loggias engineered to dissolve into tidal rhythms.',
       footprint: '1,280 m² (13,780 sq.ft)',
@@ -40,7 +41,7 @@ export const CuratedCollectionSection: React.FC = () => {
       originalName: 'The Elysian Gardens',
       slug: 'the-elysian-gardens',
       location: 'Lake Como, Italy',
-      imageUrl: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=85',
+      imageUrl: getAssetSlotUrl('PROPERTY_GALLERY_ATRIUM'),
       imageAlt: 'The Garden Villa Lake Como Estate',
       excerpt: 'Monumental local granite estate surrounded by tiered botanical terraces, centuries-old cypress, and private lakeside jetty.',
       footprint: '1,150 m² (12,380 sq.ft)',
@@ -54,7 +55,7 @@ export const CuratedCollectionSection: React.FC = () => {
       originalName: 'The Celestia Penthouse',
       slug: 'the-celestia-penthouse',
       location: 'Monaco Harbor',
-      imageUrl: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1200&q=85',
+      imageUrl: getAssetSlotUrl('PROPERTY_INTERIOR_MASTER_BEDROOM'),
       imageAlt: 'The Skyline Residence Penthouse Architecture',
       excerpt: 'Triplex sky terrace cantilevered over the Mediterranean port with private glass swimming pool and direct helipad access.',
       footprint: '980 m² (10,550 sq.ft)',
@@ -68,7 +69,7 @@ export const CuratedCollectionSection: React.FC = () => {
       originalName: 'The Solstice Residences',
       slug: 'the-solstice-residences',
       location: 'St. Barthélemy',
-      imageUrl: 'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=1200&q=85',
+      imageUrl: getAssetSlotUrl('PROPERTY_EXTERIOR_POOL'),
       imageAlt: 'The Beachfront Compound Coastal Architecture',
       excerpt: 'Secluded multi-pavilion enclave constructed of bleached teak and volcanic basalt directly upon white coral sands.',
       footprint: '1,560 m² (16,800 sq.ft)',
@@ -82,7 +83,7 @@ export const CuratedCollectionSection: React.FC = () => {
       originalName: 'The Highland Manor',
       slug: 'the-highland-manor',
       location: 'St. Moritz, Switzerland',
-      imageUrl: 'https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1800&q=85',
+      imageUrl: getAssetSlotUrl('PROPERTY_ARCHITECTURAL_ENTRANCE'),
       imageAlt: 'The Hillside Retreat Monumental Alpine Architecture',
       excerpt: 'Embedded into a dramatic alpine incline, this architectural masterpiece features multi-tiered cantilevers of blackened timber, local granite, and triple-insulated floor-to-ceiling panoramic glass facing the Engadin valley.',
       footprint: '1,380 m² (14,850 sq.ft)',

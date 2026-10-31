@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'wouter';
 import { ArrowRight, Sparkles } from 'lucide-react';
 import { useClientConfig } from '../../context/ClientConfigContext';
+import { getAssetSlotUrl } from '../../config/assetSlots';
 
 export const BrandIntroduction: React.FC = () => {
   const config = useClientConfig();
@@ -60,7 +61,7 @@ export const BrandIntroduction: React.FC = () => {
               <div className="plaque-image-card">
                 <div className="plaque-image-frame bg-[#EAE5DC]">
                   <img
-                    src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=85"
+                    src={getAssetSlotUrl('PROPERTY_ARCHITECTURAL_ENTRANCE')}
                     alt="The Aurelia Cantilever Architectural Study"
                     className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
                     loading="eager"

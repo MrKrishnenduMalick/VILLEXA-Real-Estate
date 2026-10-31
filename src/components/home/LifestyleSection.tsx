@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'wouter';
 import { ArrowRight, Sparkles } from 'lucide-react';
+import { getAssetSlotUrl } from '../../config/assetSlots';
 
 export const LifestyleSection: React.FC = () => {
   return (
@@ -36,7 +37,7 @@ export const LifestyleSection: React.FC = () => {
             <div>
               <div className="w-full aspect-[16/10] rounded-[3px] overflow-hidden border border-[#EAE5DC] bg-[#EAE5DC] shadow-sm">
                 <img
-                  src="https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=1200&q=85"
+                  src={getAssetSlotUrl('PROPERTY_INTERIOR_BATHROOM')}
                   alt="Private Thermal Spas & Hydrotherapy"
                   className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
                   loading="eager"
@@ -87,7 +88,7 @@ export const LifestyleSection: React.FC = () => {
             <div>
               <div className="w-full aspect-[16/10] overflow-hidden bg-[#EAE5DC]">
                 <img
-                  src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1400&q=85"
+                  src={getAssetSlotUrl('PROPERTY_EXTERIOR_POOL')}
                   alt="Open-Air Horizon Entertaining"
                   className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
                   loading="eager"
@@ -116,7 +117,7 @@ export const LifestyleSection: React.FC = () => {
             <div>
               <div className="w-full aspect-[16/10] overflow-hidden bg-[#EAE5DC]">
                 <img
-                  src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1200&q=85"
+                  src={getAssetSlotUrl('PROPERTY_INTERIOR_SALON')}
                   alt="Grand Living & Double-Height Salons"
                   className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
                   loading="eager"
@@ -156,7 +157,7 @@ export const LifestyleSection: React.FC = () => {
               <div>
                 <div className="aspect-[16/10] overflow-hidden mb-4 border border-[var(--glass-border)] rounded-[3px] bg-[#EAE5DC]">
                   <img
-                    src="https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=800&q=85"
+                    src={getAssetSlotUrl('PROPERTY_GALLERY_MATERIALITY')}
                     alt="Dolby Private Screening Room"
                     className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
                     loading="eager"
@@ -180,7 +181,7 @@ export const LifestyleSection: React.FC = () => {
               <div>
                 <div className="aspect-[16/10] overflow-hidden mb-4 border border-[var(--glass-border)] rounded-[3px] bg-[#EAE5DC]">
                   <img
-                    src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=800&q=85"
+                    src={getAssetSlotUrl('PROPERTY_GALLERY_WINE_VAULT')}
                     alt="Subterranean Wine Vault"
                     className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
                     loading="eager"
@@ -204,7 +205,7 @@ export const LifestyleSection: React.FC = () => {
               <div>
                 <div className="aspect-[16/10] overflow-hidden mb-4 border border-[var(--glass-border)] rounded-[3px] bg-[#EAE5DC]">
                   <img
-                    src="https://images.unsplash.com/photo-160058515526-990dced4db0d?auto=format&fit=crop&w=800&q=85"
+                    src={getAssetSlotUrl('PROPERTY_GALLERY_ATRIUM')}
                     alt="Manicured Botanical Grounds"
                     className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
                     loading="eager"

@@ -52,7 +52,7 @@ export const PropertyEnquirySection: React.FC<PropertyEnquirySectionProps> = ({ 
   );
 
   return (
-    <section id="private-enquiry" className="py-20 sm:py-28 bg-[#12100E] text-white border-t border-white/10">
+    <section id="private-enquiry" className="py-20 sm:py-28 bg-[#12100E]/70 backdrop-blur-2xl text-white border-t border-white/10">
       <div className="max-w-7xl mx-auto px-6 sm:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           {/* Left Column: Advisory Protocol & WhatsApp Concierge (5 cols) */}

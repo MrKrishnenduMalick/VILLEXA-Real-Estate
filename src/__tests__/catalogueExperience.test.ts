@@ -120,7 +120,7 @@ describe('BILEKSA Premium Property Catalogue & Cards Experience', () => {
 
     it('provides valid image URLs for all property cards', () => {
       SAMPLE_PROPERTIES.forEach((p) => {
-        expect(p.coverImage).toMatch(/^https?:\/\//);
+        expect(p.coverImage).toMatch(/^(https?:\/\/|\/)/);
         expect(p.gallery.length).toBeGreaterThanOrEqual(3);
       });
     });

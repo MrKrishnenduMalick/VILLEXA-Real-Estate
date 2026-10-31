@@ -67,7 +67,7 @@ export const ProductDetailPage: React.FC = () => {
   // Bespoke Luxury Real Estate Property Experience
   if (property) {
     return (
-      <div className="w-full bg-[#FAF8F5] min-h-screen text-[#1A1816]">
+      <div className="w-full bg-[#FAF8F5]/85 backdrop-blur-xl min-h-screen text-[#1A1816] relative z-10">
         {/* 1. Full-Width Architectural Hero Introduction */}
         <PropertyHero property={property} />
 

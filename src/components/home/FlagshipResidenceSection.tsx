@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'wouter';
 import { ArrowRight, Compass } from 'lucide-react';
 import { Property } from '../../types/property';
+import { getAssetSlotUrl } from '../../config/assetSlots';
 
 interface FlagshipResidenceSectionProps {
   leadProperty?: Property | null;
@@ -13,7 +14,7 @@ export const FlagshipResidenceSection: React.FC<FlagshipResidenceSectionProps> =
     originalName: leadProperty?.name || 'The Aurelia Estate',
     slug: leadProperty?.slug || 'the-aurelia-estate',
     location: "Cap d'Antibes, France",
-    imageUrl: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1600&q=85',
+    imageUrl: leadProperty?.coverImage || getAssetSlotUrl('PROPERTY_EXTERIOR_PRIMARY'),
     imageAlt: "The Cliff Villa Clifftop Architecture overlooking the Mediterranean",
     description: "Perched dramatically upon a limestone sea cliff, this monumental estate integrates cantilevered travertine terraces and a 25-meter infinity pool that dissolves directly into the Mediterranean horizon. Conceived as a series of cascading pavilions, the residence utilizes thermal limestone envelopes, frameless floor-to-ceiling glass, and internal courtyards to orchestrate natural light and ocean cross-ventilation throughout all seasons.",
     footprint: '1,420 m² (15,280 sq.ft)',

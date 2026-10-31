@@ -20,20 +20,20 @@ export const PropertyLocation: React.FC<PropertyLocationProps> = ({
   );
 
   return (
-    <section id="location" className="py-20 sm:py-28 bg-[#FBFBF9] border-t border-[#EFECE6] text-[#12100E]">
+    <section id="location" className="py-20 sm:py-28 bg-[#12100E]/70 backdrop-blur-2xl border-t border-white/10 text-white">
       <div className="max-w-7xl mx-auto px-6 sm:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           {/* Left Column: Geographical Information & Narrative (7 cols) */}
           <div className="lg:col-span-7 space-y-8">
             <div>
-              <span className="inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.25em] text-[#C5A059] mb-3">
-                <MapPin size={13} />
+              <span className="inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.25em] text-[#DFCFA8] mb-3 font-medium">
+                <MapPin size={13} className="text-[#C5A059]" />
                 <span>GEOGRAPHIC SANCTUARY · {propertyName}</span>
               </span>
-              <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-light text-[#12100E] leading-tight">
+              <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-light text-white leading-tight">
                 Prime Clifftop & Urban Sanctuaries
               </h2>
-              <p className="mt-4 text-base sm:text-lg text-[#6B655F] font-light leading-relaxed">
+              <p className="mt-4 text-base sm:text-lg text-white/80 font-light leading-relaxed">
                 Selected for unparalleled privacy, uninterrupted horizons, and protected green or coastal reserve boundaries.
               </p>
             </div>

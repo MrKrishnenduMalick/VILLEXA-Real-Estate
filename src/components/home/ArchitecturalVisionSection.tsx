@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'wouter';
 import { ArrowRight, Compass } from 'lucide-react';
+import { getAssetSlotUrl } from '../../config/assetSlots';
 
 export const ArchitecturalVisionSection: React.FC = () => {
   const pillars = [
@@ -65,7 +66,7 @@ export const ArchitecturalVisionSection: React.FC = () => {
           <div className="space-y-4">
             <div className="border border-[var(--glass-border)] bg-[#EAE5DC] shadow-md overflow-hidden aspect-[4/3] rounded-[4px] backdrop-blur-[16px]">
               <img
-                src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=85"
+                src={getAssetSlotUrl('SECTION_PHILOSOPHY_BG')}
                 alt="Travertine Architectural Living Volume"
                 className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
                 loading="eager"

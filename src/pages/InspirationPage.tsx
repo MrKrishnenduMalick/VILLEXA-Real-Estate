@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'wouter';
 import { ArrowRight, Sparkles, Heart, Waves, Sun, Flame, Trees } from 'lucide-react';
 import { useClientConfig } from '../context/ClientConfigContext';
+import { getAssetSlotUrl } from '../config/assetSlots';
 
 interface LifestyleVignette {
   id: string;
@@ -20,7 +21,7 @@ const LIFESTYLE_VIGNETTES: LifestyleVignette[] = [
     title: 'Private Thermal Spas & Reflection Pools',
     tagline: 'Hydraulic Calming & Hydrotherapy',
     description: 'Heated negative-edge infinity pools, cedar dry saunas, and subterranean marble steam chambers engineered for deep restorative tranquility.',
-    imageUrl: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1000&q=85',
+    imageUrl: getAssetSlotUrl('PROPERTY_INTERIOR_BATHROOM'),
     icon: Waves
   },
   {
@@ -29,7 +30,7 @@ const LIFESTYLE_VIGNETTES: LifestyleVignette[] = [
     title: 'Double-Height Grand Living Salons',
     tagline: 'Acoustic Calm & Spatial Volumes',
     description: 'Seven-metre soaring volume ceilings, bookmatched travertine hearths, and frameless motorized glass facades that dissolve into open terraces.',
-    imageUrl: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1000&q=85',
+    imageUrl: getAssetSlotUrl('PROPERTY_INTERIOR_SALON'),
     icon: Sun
   },
   {
@@ -38,7 +39,7 @@ const LIFESTYLE_VIGNETTES: LifestyleVignette[] = [
     title: 'Chef Show Kitchens & Back Annexes',
     tagline: 'Material Precision for Entertaining',
     description: 'Custom fluted dark oak cabinetry, honed Calacatta marble monolithic islands, integrated Gaggenau appliances, and discreet preparation galleys.',
-    imageUrl: 'https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=1000&q=85',
+    imageUrl: getAssetSlotUrl('PROPERTY_INTERIOR_KITCHEN'),
     icon: Flame
   },
   {
@@ -47,7 +48,7 @@ const LIFESTYLE_VIGNETTES: LifestyleVignette[] = [
     title: 'Cantilevered Sunset Dining Loggias',
     tagline: 'Horizon Gazing & Outdoor Hearths',
     description: 'Deep bioclimatic pergolas with motorized louvres, built-in masonry fireplaces, and dining loggias positioned for unobstructed 270-degree sunset ocean views.',
-    imageUrl: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1000&q=85',
+    imageUrl: getAssetSlotUrl('PROPERTY_DINING_TERRACE'),
     icon: Sparkles
   },
   {
@@ -56,7 +57,7 @@ const LIFESTYLE_VIGNETTES: LifestyleVignette[] = [
     title: 'Inner Courtyards & Olive Groves',
     tagline: 'Biophilic Grounding & Quiet Atriums',
     description: 'Landscaped central courtyards framed by centuries-old olive trees, reflecting shallow water basins, and fragrant jasmine colonnades providing passive cooling.',
-    imageUrl: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1000&q=85',
+    imageUrl: getAssetSlotUrl('PROPERTY_GALLERY_ATRIUM'),
     icon: Trees
   },
   {
@@ -65,7 +66,7 @@ const LIFESTYLE_VIGNETTES: LifestyleVignette[] = [
     title: 'Subterranean Wine & Spirits Vaults',
     tagline: 'Temperature-Controlled Curation',
     description: 'Architectural tasting cellars holding upwards of 1,200 bottles with precision humidity control, dark fluted bronze racks, and intimate tasting lounges.',
-    imageUrl: 'https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=1000&q=85',
+    imageUrl: getAssetSlotUrl('PROPERTY_GALLERY_WINE_VAULT'),
     icon: Heart
   }
 ];
@@ -74,7 +75,7 @@ export const InspirationPage: React.FC = () => {
   const config = useClientConfig();
 
   return (
-    <div className="w-full bg-[#12100E] text-white py-16 sm:py-24">
+    <div className="w-full bg-[#12100E]/75 backdrop-blur-xl text-white py-16 sm:py-24 relative z-10">
       <div className="max-w-7xl mx-auto px-6 sm:px-8">
         {/* Header */}
         <div className="max-w-3xl mb-16 space-y-4">

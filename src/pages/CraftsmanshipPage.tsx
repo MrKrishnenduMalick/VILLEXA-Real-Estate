@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'wouter';
 import { ArrowRight, Compass, Sun, Layers, Shield, Sparkles } from 'lucide-react';
 import { useClientConfig } from '../context/ClientConfigContext';
+import { getAssetSlotUrl } from '../config/assetSlots';
 
 export const CraftsmanshipPage: React.FC = () => {
   const config = useClientConfig();
@@ -12,28 +13,28 @@ export const CraftsmanshipPage: React.FC = () => {
       tagline: 'Solar Orientation & Volumetric Illumination',
       description: 'Calculated building orientation, frameless triple-track glass, and deep structural cantilevers choreograph dynamic natural illumination across daylight cycles while mitigating solar thermal gain.',
       icon: Sun,
-      image: 'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=900&q=85'
+      image: getAssetSlotUrl('PROPERTY_INTERIOR_SALON')
     },
     {
       title: 'Noble Materiality',
       tagline: 'Authentic Geological & Timber Provenance',
       description: 'Vein-cut Roman travertine, honed Jura limestone, patinated raw bronze, and sustainable old-growth European oak. Materials chosen for tactile warmth and the capacity to age with graceful dignity over generations.',
       icon: Layers,
-      image: 'https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=900&q=85'
+      image: getAssetSlotUrl('PROPERTY_GALLERY_MATERIALITY')
     },
     {
       title: 'Dissolving Boundaries',
       tagline: 'Seamless Indoor-Outdoor Topography',
       description: 'Disappearing pocket glazed walls, continuous flush stone flooring, and reflecting water basins dissolve the threshold between internal sanctuaries and coastal or botanical horizons.',
       icon: Compass,
-      image: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=900&q=85'
+      image: getAssetSlotUrl('PROPERTY_EXTERIOR_POOL')
     },
     {
       title: 'Enduring Legacy Equity',
       tagline: 'Multigenerational Structural Permanence',
       description: 'Monolithic reinforced foundations, subterranean vaulting, independent solar micro-grids, and bioclimatic thermal envelopes built to withstand marine environments and preserve long-term family equity.',
       icon: Shield,
-      image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=85'
+      image: getAssetSlotUrl('PROPERTY_ARCHITECTURAL_ENTRANCE')
     }
   ];
 
@@ -61,12 +62,12 @@ export const CraftsmanshipPage: React.FC = () => {
   ];
 
   return (
-    <div className="w-full bg-[#12100E] text-white">
+    <div className="w-full bg-[#12100E]/75 backdrop-blur-xl text-white relative z-10">
       {/* 1. Distinctive Editorial Hero */}
       <section className="relative min-h-[75vh] flex items-center justify-center overflow-hidden border-b border-white/10 px-6 sm:px-8 py-24 sm:py-32">
         <div className="absolute inset-0 z-0">
           <img
-            src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=2000&q=85"
+            src={getAssetSlotUrl('SECTION_PHILOSOPHY_BG')}
             alt="Architectural Vision Monograph"
             className="w-full h-full object-cover scale-[1.02]"
           />

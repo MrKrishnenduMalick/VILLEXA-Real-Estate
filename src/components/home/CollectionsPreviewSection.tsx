@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { Link } from 'wouter';
 import { ArrowRight, Film, Play, Pause, Volume2, VolumeX, Maximize, Layers, Compass } from 'lucide-react';
+import { getAssetSlotUrl } from '../../config/assetSlots';
 
 export const CollectionsPreviewSection: React.FC = () => {
   const videoRef = useRef<HTMLVideoElement | null>(null);
@@ -15,7 +16,7 @@ export const CollectionsPreviewSection: React.FC = () => {
       tagline: 'Suspended over azure Mediterranean & Atlantic ocean horizons.',
       count: '02 Commissions',
       type: 'waterfront',
-      imageUrl: 'https://images.unsplash.com/photo-1512915922686-57c11dde9b6b?auto=format&fit=crop&w=800&q=85'
+      imageUrl: getAssetSlotUrl('PROPERTY_EXTERIOR_PRIMARY')
     },
     {
       id: 'col-alpine',
@@ -23,7 +24,7 @@ export const CollectionsPreviewSection: React.FC = () => {
       tagline: 'Monumental local granite and timber embedded into Swiss mountain slopes.',
       count: '01 Commission',
       type: 'villa',
-      imageUrl: 'https://images.unsplash.com/photo-1518780664697-55e3ad937233?auto=format&fit=crop&w=800&q=85'
+      imageUrl: getAssetSlotUrl('PROPERTY_ARCHITECTURAL_ENTRANCE')
     },
     {
       id: 'col-sky',
@@ -31,7 +32,7 @@ export const CollectionsPreviewSection: React.FC = () => {
       tagline: 'Triplex sky terraces commanding uninterrupted deep-water harbour panoramas.',
       count: '01 Commission',
       type: 'penthouse',
-      imageUrl: 'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=800&q=85'
+      imageUrl: getAssetSlotUrl('PROPERTY_INTERIOR_SALON')
     },
     {
       id: 'col-estate',
@@ -39,7 +40,7 @@ export const CollectionsPreviewSection: React.FC = () => {
       tagline: 'Low-density acreage with centuries-old cypress and private reflecting basins.',
       count: '02 Commissions',
       type: 'residential_development',
-      imageUrl: 'https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?auto=format&fit=crop&w=800&q=85'
+      imageUrl: getAssetSlotUrl('PROPERTY_EXTERIOR_POOL')
     }
   ];
 

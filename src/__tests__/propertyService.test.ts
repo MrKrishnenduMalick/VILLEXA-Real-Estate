@@ -26,12 +26,13 @@ describe('BILEKSA Property Data Architecture & Service', () => {
     });
 
     it('ensures all cover images and gallery images have valid URL format', () => {
+      const isValidUrl = (url: string) => url.startsWith('http://') || url.startsWith('https://') || url.startsWith('/');
       SAMPLE_PROPERTIES.forEach((prop) => {
-        expect(prop.coverImage.startsWith('http://') || prop.coverImage.startsWith('https://')).toBe(true);
+        expect(isValidUrl(prop.coverImage)).toBe(true);
         expect(prop.gallery.length).toBeGreaterThanOrEqual(3);
         prop.gallery.forEach((media) => {
           expect(media.id).toBeTruthy();
-          expect(media.url.startsWith('http://') || media.url.startsWith('https://')).toBe(true);
+          expect(isValidUrl(media.url)).toBe(true);
           expect(media.altText).toBeTruthy();
         });
       });

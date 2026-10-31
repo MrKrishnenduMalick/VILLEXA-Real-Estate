@@ -143,7 +143,7 @@ export const CataloguePage: React.FC = () => {
   };
 
   return (
-    <div style={{ paddingTop: 'var(--space-10)', paddingBottom: 'var(--space-24)', position: 'relative', zIndex: 10 }}>
+    <div className="w-full bg-[#12100E]/75 backdrop-blur-xl text-white" style={{ paddingTop: 'var(--space-10)', paddingBottom: 'var(--space-24)', position: 'relative', zIndex: 10 }}>
       <div className="container">
         {/* 1. EDITORIAL HEADER */}
         <div style={{ marginBottom: 'var(--space-10)', textAlign: 'left' }}>

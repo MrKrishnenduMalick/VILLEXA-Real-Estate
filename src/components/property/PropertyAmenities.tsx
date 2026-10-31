@@ -24,7 +24,7 @@ export const PropertyAmenities: React.FC<PropertyAmenitiesProps> = ({ amenities 
   };
 
   return (
-    <section id="amenities" className="py-20 sm:py-28 bg-[#181614] text-white border-t border-white/10">
+    <section id="amenities" className="py-20 sm:py-28 bg-[#12100E]/70 backdrop-blur-2xl text-white border-t border-white/10">
       <div className="max-w-7xl mx-auto px-6 sm:px-8">
         <div className="max-w-3xl mb-14">
           <span className="inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.25em] text-[#C5A059] mb-3">

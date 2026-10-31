@@ -17,7 +17,7 @@ export const PropertyAdjacentNav: React.FC<PropertyAdjacentNavProps> = ({
   relatedProperties
 }) => {
   return (
-    <section className="py-20 sm:py-28 bg-[#F5F3EF] border-t border-[#EFECE6] text-[#12100E]">
+    <section className="py-20 sm:py-28 bg-[#12100E]/70 backdrop-blur-2xl border-t border-white/10 text-white">
       <div className="max-w-7xl mx-auto px-6 sm:px-8">
         {/* 1. Next & Previous Residence Navigation Bar */}
         {(prevProperty || nextProperty) && (
@@ -26,7 +26,7 @@ export const PropertyAdjacentNav: React.FC<PropertyAdjacentNavProps> = ({
             {prevProperty ? (
               <Link
                 href={`/residence/${prevProperty.slug}`}
-                className="group p-6 sm:p-8 rounded-3xl bg-white border border-[#E8E4DC] hover:border-[#C5A059] shadow-sm hover:shadow-md transition-all duration-300 flex items-center gap-5"
+                className="group p-6 sm:p-8 rounded-3xl bg-white/[0.08] border border-white/20 hover:border-[#C5A059] backdrop-blur-xl shadow-xl transition-all duration-300 flex items-center gap-5"
               >
                 <div className="w-12 h-12 rounded-full bg-[#FAF9F6] border border-[#E8E4DC] flex items-center justify-center shrink-0 group-hover:bg-[#C5A059] group-hover:text-white transition-colors duration-300">
                   <ArrowLeft size={18} className="text-[#8C827A] group-hover:text-white" />
@@ -49,21 +49,21 @@ export const PropertyAdjacentNav: React.FC<PropertyAdjacentNavProps> = ({
             {nextProperty ? (
               <Link
                 href={`/residence/${nextProperty.slug}`}
-                className="group p-6 sm:p-8 rounded-3xl bg-white border border-[#E8E4DC] hover:border-[#C5A059] shadow-sm hover:shadow-md transition-all duration-300 flex items-center justify-between gap-5 text-right"
+                className="group p-6 sm:p-8 rounded-3xl bg-white/[0.08] border border-white/20 hover:border-[#C5A059] backdrop-blur-xl shadow-xl transition-all duration-300 flex items-center justify-between gap-5 text-right"
               >
                 <div className="overflow-hidden flex-1">
-                  <span className="text-[10px] uppercase tracking-[0.2em] text-[#C5A059] block mb-1">
+                  <span className="text-[10px] uppercase tracking-[0.2em] text-[#DFCFA8] block mb-1 font-medium">
                     Next Residence
                   </span>
-                  <h4 className="font-serif text-xl sm:text-2xl text-[#12100E] font-normal truncate group-hover:text-[#9A7B39] transition-colors">
+                  <h4 className="font-serif text-xl sm:text-2xl text-white font-normal truncate group-hover:text-[#DFCFA8] transition-colors">
                     {nextProperty.name}
                   </h4>
-                  <span className="text-xs text-[#8C827A] truncate block mt-0.5">
+                  <span className="text-xs text-white/60 font-light truncate block mt-0.5">
                     {nextProperty.location.city}, {nextProperty.location.country}
                   </span>
                 </div>
-                <div className="w-12 h-12 rounded-full bg-[#FAF9F6] border border-[#E8E4DC] flex items-center justify-center shrink-0 group-hover:bg-[#C5A059] group-hover:text-white transition-colors duration-300">
-                  <ArrowRight size={18} className="text-[#8C827A] group-hover:text-white" />
+                <div className="w-12 h-12 rounded-full bg-white/10 border border-white/20 flex items-center justify-center shrink-0 group-hover:bg-[#C5A059] group-hover:text-white transition-colors duration-300">
+                  <ArrowRight size={18} className="text-[#DFCFA8] group-hover:text-white" />
                 </div>
               </Link>
             ) : <div />}
@@ -79,7 +79,7 @@ export const PropertyAdjacentNav: React.FC<PropertyAdjacentNavProps> = ({
                   <Compass size={13} />
                   <span>COMPLEMENTARY COMMISSIONS</span>
                 </span>
-                <h3 className="font-serif text-3xl sm:text-4xl font-light text-[#12100E]">
+                <h3 className="font-serif text-3xl sm:text-4xl font-light text-white">
                   Related Architectural Residences
                 </h3>
               </div>

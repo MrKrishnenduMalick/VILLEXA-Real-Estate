@@ -98,22 +98,22 @@ export const PropertyGallery: React.FC<PropertyGalleryProps> = ({
   const isCurrentFailed = failedImages[currentImage.url];
 
   return (
-    <section id="gallery" className="py-20 sm:py-28 bg-[#FBFBF9] border-t border-[#EFECE6]">
+    <section id="gallery" className="py-20 sm:py-28 bg-[#12100E]/70 backdrop-blur-2xl border-t border-white/10 text-white">
       <div className="max-w-7xl mx-auto px-6 sm:px-8">
         {/* Section Header */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-12 gap-4">
           <div>
-            <span className="block text-[11px] uppercase tracking-[0.25em] text-[#C5A059] mb-3">
+            <span className="block text-[11px] uppercase tracking-[0.25em] text-[#DFCFA8] mb-3 font-medium">
               CURATED RESIDENCE VISUAL ARCHIVE
             </span>
-            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-light text-[#12100E]">
+            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-light text-white">
               Architectural Gallery
             </h2>
           </div>
           <button
             type="button"
             onClick={() => setIsLightboxOpen(true)}
-            className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.16em] text-[#C5A059] hover:text-[#9A7B39] font-medium transition-colors"
+            className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.16em] text-[#DFCFA8] hover:text-[#C5A059] font-medium transition-colors"
           >
             <Maximize2 size={14} />
             <span>Enter Fullscreen Gallery ({activeIndex + 1}/{allImages.length})</span>

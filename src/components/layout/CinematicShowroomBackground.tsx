@@ -271,11 +271,15 @@ export const CinematicShowroomBackground: React.FC = () => {
     };
   }, [scrollProgress, isHomePage, isHeroCompleted, frameCount, isReady, prefersReducedMotion, drawImageToCanvas, loadFrame]);
 
-  if (!isHomePage) return null;
+  // Persistent Poster: Frame 240 on subpages, Frame 1 on Homepage
+  const fallbackPoster = !isHomePage
+    ? (frameSeq?.finalFrame || '/real-estate-hero-frames/frame-00240.webp')
+    : (frameSeq?.firstFrame || '/real-estate-hero-frames/frame-00001.webp');
 
-  const fallbackPoster = frameSeq?.firstFrame || '/real-estate-hero-frames/frame-00001.webp';
-  // Fade out canvas gently as scroll reaches end of hero section
-  const heroVisibility = scrollProgress < 0.85 ? 1 : Math.max(1 - (scrollProgress - 0.85) / 0.15, 0);
+  // Signature Feature: Final frame persists as permanent website background across all pages
+  // Canvas maintains 100% full opacity throughout the entire site
+  const editorialOverlayOpacity = !isHomePage ? 1 : Math.min(Math.max((scrollProgress - 0.80) / 0.15, 0), 1);
+  const heroVignetteOpacity = isHomePage ? Math.max(1 - (scrollProgress - 0.75) / 0.15, 0) : 0;
 
   return (
     <div
@@ -286,12 +290,10 @@ export const CinematicShowroomBackground: React.FC = () => {
         zIndex: 0,
         pointerEvents: 'none',
         overflow: 'hidden',
-        backgroundColor: '#141210',
-        opacity: heroVisibility,
-        transition: 'opacity 0.3s ease-out'
+        backgroundColor: '#141210'
       }}
     >
-      {/* 1. First Frame Instant Poster (Protects against flash before first render) */}
+      {/* 1. Instant Poster (Protects against flash before first render) */}
       {!isReady && (
         <img
           src={fallbackPoster}
@@ -310,6 +312,7 @@ export const CinematicShowroomBackground: React.FC = () => {
 
       {/* 2. Hardware-Accelerated Cinematic Frame Canvas */}
       <canvas
+        id="cinematic-showroom-canvas"
         ref={canvasRef}
         style={{
           width: '100vw',
@@ -321,13 +324,28 @@ export const CinematicShowroomBackground: React.FC = () => {
         }}
       />
 
-      {/* 3. Luminous Architectural Scrim — Localized lower-left vignette guaranteeing text contrast while leaving 85% of villa facade sunlit and clear */}
+      {/* 3. Luminous Architectural Hero Vignette — Lower-left contrast during hero scroll */}
       <div
         style={{
           position: 'absolute',
           inset: 0,
           background:
             'radial-gradient(ellipse at 18% 85%, rgba(14, 12, 10, 0.78) 0%, rgba(14, 12, 10, 0.44) 48%, rgba(14, 12, 10, 0.0) 76%), linear-gradient(180deg, rgba(14, 12, 10, 0.45) 0%, rgba(14, 12, 10, 0.15) 75px, rgba(14, 12, 10, 0.0) 150px)',
+          opacity: heroVignetteOpacity,
+          transition: 'opacity 0.4s ease',
+          pointerEvents: 'none'
+        }}
+      />
+
+      {/* 4. Balanced Atmospheric Scrim — Keeps Frame 240 architectural imagery recognizable and clear */}
+      <div
+        style={{
+          position: 'absolute',
+          inset: 0,
+          background:
+            'radial-gradient(circle at 50% 40%, rgba(18, 16, 14, 0.15) 0%, rgba(18, 16, 14, 0.35) 70%, rgba(18, 16, 14, 0.55) 100%), linear-gradient(180deg, rgba(18, 16, 14, 0.10) 0%, rgba(18, 16, 14, 0.30) 100%)',
+          opacity: editorialOverlayOpacity,
+          transition: 'opacity 0.5s ease',
           pointerEvents: 'none'
         }}
       />

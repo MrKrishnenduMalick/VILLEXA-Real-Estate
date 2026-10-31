@@ -37,18 +37,18 @@ export const PropertyFloorPlans: React.FC<PropertyFloorPlansProps> = ({
   };
 
   return (
-    <section id="floor-plans" className="py-20 sm:py-28 bg-[#F5F3EF] border-t border-[#EFECE6] text-[#12100E]">
+    <section id="floor-plans" className="py-20 sm:py-28 bg-[#12100E]/70 backdrop-blur-2xl border-t border-white/10 text-white">
       <div className="max-w-7xl mx-auto px-6 sm:px-8">
         {/* Section Header */}
         <div className="max-w-3xl mb-12">
-          <span className="inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.25em] text-[#C5A059] mb-3">
-            <Layers size={13} />
+          <span className="inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.25em] text-[#DFCFA8] mb-3 font-medium">
+            <Layers size={13} className="text-[#C5A059]" />
             <span>ARCHITECTURAL BLUEPRINTS & VOLUMES</span>
           </span>
-          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-light text-[#12100E] leading-tight">
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-light text-white leading-tight">
             Floor Plans & Schematics
           </h2>
-          <p className="mt-4 text-base text-[#6B655F] leading-relaxed">
+          <p className="mt-4 text-base text-white/80 font-light leading-relaxed">
             Examine the spatial choreography, dual-aspect sightlines, and circulation corridors across each architectural level.
           </p>
         </div>

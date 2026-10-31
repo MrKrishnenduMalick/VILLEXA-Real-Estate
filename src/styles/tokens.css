@@ -82,47 +82,45 @@
   --container-max: 1400px;
   --container-narrow: 960px;
 
-  /* Frosted Ivory & Warm Glassmorphism Tokens — Phase 9D.2 Refined Glass System */
-  --glass-primary: rgba(250, 248, 245, 0.72);
-  --glass-strong: rgba(250, 248, 245, 0.82);
-  --glass-subtle: rgba(250, 248, 245, 0.60);
-  --glass-card: rgba(250, 248, 245, 0.64);
-  --glass-card-strong: rgba(250, 248, 245, 0.84);
-  --glass-surface-small: rgba(250, 248, 245, 0.84);
-  --glass-border: rgba(255, 255, 255, 0.60);
-  --glass-border-subtle: rgba(234, 229, 220, 0.70);
-  --glass-border-champagne: rgba(184, 149, 82, 0.32);
-  --glass-blur: 20px;
+  /* Frosted Ivory & Warm 3D Glassmorphism Tokens — Architectural Luxury Glass */
+  --glass-primary: rgba(250, 248, 245, 0.58);
+  --glass-strong: rgba(250, 248, 245, 0.68);
+  --glass-subtle: rgba(250, 248, 245, 0.45);
+  --glass-card: rgba(255, 255, 255, 0.54);
+  --glass-card-strong: rgba(255, 255, 255, 0.70);
+  --glass-surface-small: rgba(255, 255, 255, 0.72);
+  --glass-border: rgba(255, 255, 255, 0.45);
+  --glass-border-subtle: rgba(234, 229, 220, 0.50);
+  --glass-border-champagne: rgba(197, 160, 89, 0.32);
+  --glass-blur: 24px;
   --glass-blur-lg: 32px;
-  --glass-shadow: 0 16px 44px rgba(26, 24, 22, 0.05), 0 1px 3px rgba(26, 24, 22, 0.03);
-  --glass-shadow-lg: 0 24px 64px rgba(26, 24, 22, 0.08), 0 2px 6px rgba(26, 24, 22, 0.04);
+  --glass-shadow: 0 16px 44px -8px rgba(18, 16, 14, 0.08), inset 0 1px 1px 0 rgba(255, 255, 255, 0.75);
+  --glass-shadow-lg: 0 24px 64px -12px rgba(18, 16, 14, 0.12), inset 0 1px 1px 0 rgba(255, 255, 255, 0.85), inset 0 0 0 1px rgba(197, 160, 89, 0.18);
 
-  --glass-bg-primary: rgba(250, 248, 245, 0.88);
-  --glass-bg-surface: rgba(255, 255, 255, 0.92);
-  --glass-bg-surface-elevated: #FFFFFF;
-  --glass-bg-subtle: rgba(255, 255, 255, 0.65);
-  --glass-bg-dark: rgba(20, 18, 16, 0.85);
-  --glass-bg-dark-elevated: rgba(26, 23, 20, 0.94);
-  --glass-bg-pill: rgba(26, 24, 22, 0.05);
-  --glass-bg-pill-hover: rgba(26, 24, 22, 0.09);
+  --glass-bg-primary: rgba(250, 248, 245, 0.58);
+  --glass-bg-surface: rgba(255, 255, 255, 0.62);
+  --glass-bg-surface-elevated: rgba(255, 255, 255, 0.75);
+  --glass-bg-subtle: rgba(255, 255, 255, 0.45);
+  --glass-bg-dark: rgba(18, 16, 14, 0.70);
+  --glass-bg-dark-elevated: rgba(24, 21, 18, 0.82);
+  --glass-bg-pill: rgba(255, 255, 255, 0.15);
+  --glass-bg-pill-hover: rgba(255, 255, 255, 0.25);
 
-  --glass-border-subtle: rgba(234, 229, 220, 0.95);
-  --glass-border-medium: rgba(220, 213, 201, 0.95);
-  --glass-border-dark: rgba(26, 24, 22, 0.12);
-  --glass-border-gold: rgba(184, 149, 82, 0.35);
+  --glass-border-medium: rgba(220, 213, 201, 0.65);
+  --glass-border-dark: rgba(255, 255, 255, 0.15);
+  --glass-border-gold: rgba(197, 160, 89, 0.35);
 
-  --glass-blur-xs: 6px;
-  --glass-blur-sm: 12px;
-  --glass-blur-md: 20px;
-  --glass-blur-lg: 28px;
-  --glass-blur-xl: 40px;
+  --glass-blur-xs: 8px;
+  --glass-blur-sm: 16px;
+  --glass-blur-md: 24px;
+  --glass-blur-lg: 32px;
+  --glass-blur-xl: 44px;
 
-  --glass-shadow-sm: 0 4px 16px -2px rgba(26, 24, 22, 0.05);
-  --glass-shadow-md: 0 12px 32px -6px rgba(26, 24, 22, 0.08);
-  --glass-shadow-lg: 0 24px 48px -10px rgba(26, 24, 22, 0.12);
+  --glass-shadow-sm: 0 4px 16px -2px rgba(18, 16, 14, 0.05), inset 0 1px 0 0 rgba(255, 255, 255, 0.6);
+  --glass-shadow-md: 0 12px 32px -6px rgba(18, 16, 14, 0.09), inset 0 1px 1px 0 rgba(255, 255, 255, 0.75);
 
-  --glass-inner-highlight: inset 0 1px 1px 0 rgba(255, 255, 255, 0.9), inset 0 0 20px 0 rgba(255, 255, 255, 0.4);
-  --glass-gold-glow: 0 0 24px rgba(184, 149, 82, 0.15);
+  --glass-inner-highlight: inset 0 1px 1px 0 rgba(255, 255, 255, 0.9), inset 0 0 20px 0 rgba(255, 255, 255, 0.15);
+  --glass-gold-glow: 0 0 28px rgba(197, 160, 89, 0.22);
 }
 
 @media (prefers-reduced-motion: reduce) {

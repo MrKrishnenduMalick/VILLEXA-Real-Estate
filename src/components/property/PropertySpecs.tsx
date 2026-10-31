@@ -57,17 +57,17 @@ export const PropertySpecs: React.FC<PropertySpecsProps> = ({ property }) => {
   ];
 
   return (
-    <section id="specifications" className="py-20 sm:py-28 bg-[#FBFBF9] border-t border-[#EFECE6] text-[#12100E]">
+    <section id="specifications" className="py-20 sm:py-28 bg-[#12100E]/70 backdrop-blur-2xl border-t border-white/10 text-white">
       <div className="max-w-7xl mx-auto px-6 sm:px-8">
         {/* Section Header */}
         <div className="max-w-3xl mb-16">
-          <span className="block text-[11px] uppercase tracking-[0.25em] text-[#C5A059] mb-3">
+          <span className="block text-[11px] uppercase tracking-[0.25em] text-[#DFCFA8] mb-3 font-medium">
             ARCHITECTURAL DIMENSIONS & ATTRIBUTES
           </span>
-          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-light text-[#12100E] leading-tight">
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-light text-white leading-tight">
             Spatial Dimensions & Specifications
           </h2>
-          <p className="mt-4 text-base text-[#6B655F] leading-relaxed">
+          <p className="mt-4 text-base text-white/80 leading-relaxed font-light">
             Every square foot is engineered with exacting spatial proportions, utilizing premium materials sourced across historical European quarries and master fabrication workshops.
           </p>
         </div>
@@ -79,20 +79,20 @@ export const PropertySpecs: React.FC<PropertySpecsProps> = ({ property }) => {
             return (
               <div
                 key={idx}
-                className="bg-white p-5 sm:p-6 rounded-2xl border border-[#EFECE6] shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col justify-between"
+                className="bg-white/[0.08] p-5 sm:p-6 rounded-2xl border border-white/20 backdrop-blur-xl shadow-xl hover:border-[#C5A059]/50 transition-all duration-300 flex flex-col justify-between"
               >
                 <div>
-                  <div className="w-9 h-9 rounded-full bg-[#C5A059]/10 text-[#C5A059] flex items-center justify-center mb-4">
+                  <div className="w-9 h-9 rounded-full bg-[#C5A059]/20 text-[#DFCFA8] border border-[#C5A059]/30 flex items-center justify-center mb-4">
                     <Icon size={18} />
                   </div>
-                  <span className="block text-[11px] uppercase tracking-[0.16em] text-[#8C827A] mb-1">
+                  <span className="block text-[11px] uppercase tracking-[0.16em] text-[#DFCFA8] mb-1 font-medium">
                     {metric.label}
                   </span>
-                  <span className="font-serif text-xl sm:text-2xl font-normal text-[#12100E] block leading-snug">
+                  <span className="font-serif text-xl sm:text-2xl font-normal text-white block leading-snug">
                     {metric.value}
                   </span>
                 </div>
-                <span className="block text-[11px] text-[#A39990] mt-3 pt-3 border-t border-[#F2EFE9]">
+                <span className="block text-[11px] text-white/60 mt-3 pt-3 border-t border-white/10 font-light">
                   {metric.detail}
                 </span>
               </div>
@@ -102,8 +102,8 @@ export const PropertySpecs: React.FC<PropertySpecsProps> = ({ property }) => {
 
         {/* Categorized Specifications Accordion / Grid */}
         {property.specifications && property.specifications.length > 0 && (
-          <div className="mt-12 pt-12 border-t border-[#EFECE6]">
-            <h3 className="font-serif text-2xl font-light text-[#12100E] mb-8">
+          <div className="mt-12 pt-12 border-t border-white/15">
+            <h3 className="font-serif text-2xl font-light text-white mb-8">
               Technical & Material Palette
             </h3>
 
@@ -111,20 +111,20 @@ export const PropertySpecs: React.FC<PropertySpecsProps> = ({ property }) => {
               {property.specifications.map((specCat, catIdx) => (
                 <div
                   key={catIdx}
-                  className="bg-white/80 p-6 sm:p-7 rounded-2xl border border-[#EFECE6]"
+                  className="bg-white/[0.06] p-6 sm:p-7 rounded-2xl border border-white/15 backdrop-blur-xl shadow-lg"
                 >
-                  <div className="flex items-center justify-between pb-3 mb-4 border-b border-[#F2EFE9]">
-                    <span className="text-xs uppercase tracking-[0.18em] font-medium text-[#C5A059]">
+                  <div className="flex items-center justify-between pb-3 mb-4 border-b border-white/10">
+                    <span className="text-xs uppercase tracking-[0.18em] font-medium text-[#DFCFA8]">
                       {specCat.category}
                     </span>
-                    <ArrowUpRight size={14} className="text-[#C5A059]/50" />
+                    <ArrowUpRight size={14} className="text-[#C5A059]" />
                   </div>
 
                   <ul className="space-y-3.5">
                     {specCat.items.map((item, itemIdx) => (
                       <li key={itemIdx} className="flex flex-col sm:flex-row sm:justify-between sm:items-baseline gap-1 text-xs">
-                        <span className="text-[#8C827A]">{item.label}</span>
-                        <span className="font-medium text-[#12100E] text-right">{item.value}</span>
+                        <span className="text-white/70 font-light">{item.label}</span>
+                        <span className="font-medium text-white text-right">{item.value}</span>
                       </li>
                     ))}
                   </ul>

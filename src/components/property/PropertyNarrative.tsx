@@ -11,7 +11,7 @@ export const PropertyNarrative: React.FC<PropertyNarrativeProps> = ({ property }
   const narrativeImage = property.gallery.find((g) => g.category === 'interior' || g.category === 'exterior') || property.gallery[0];
 
   return (
-    <section id="architectural-narrative" className="py-20 sm:py-28 bg-[#181614] text-white overflow-hidden">
+    <section id="architectural-narrative" className="py-20 sm:py-28 bg-[#12100E]/70 backdrop-blur-2xl text-white overflow-hidden border-t border-white/10">
       <div className="max-w-7xl mx-auto px-6 sm:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           {/* Left Column: Editorial Architectural Essay (7 cols) */}

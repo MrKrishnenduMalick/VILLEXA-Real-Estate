@@ -54,7 +54,7 @@ export const PropertyVideoTour: React.FC<PropertyVideoTourProps> = ({
   };
 
   return (
-    <section id="video-tour" className="py-20 sm:py-28 bg-[#12100E] text-white overflow-hidden border-t border-white/10">
+    <section id="video-tour" className="py-20 sm:py-28 bg-[#12100E]/70 backdrop-blur-2xl text-white overflow-hidden border-t border-white/10">
       <div className="max-w-7xl mx-auto px-6 sm:px-8">
         {/* Section Header */}
         <div className="max-w-3xl mb-12">
