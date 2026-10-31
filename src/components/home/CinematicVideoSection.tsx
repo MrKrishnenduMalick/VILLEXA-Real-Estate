@@ -51,14 +51,14 @@ export const CinematicVideoSection: React.FC = () => {
           <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-light text-[#1A1816] leading-tight">
             An Architectural Film in Motion
           </h2>
-          <p className="mt-4 text-base text-[#6E6860] font-light leading-relaxed">
+          <p className="mt-4 text-base text-[#2B2724] font-light leading-relaxed">
             Experience the interplay of morning coastal fog, shifting cantilever shadows, and spatial acoustics in our 4K cinematic walkthrough.
           </p>
         </div>
 
         {/* 16:9 Screen Container */}
         {!hasError ? (
-          <div className="relative rounded-3xl overflow-hidden aspect-video bg-[#FAF8F5] shadow-2xl border border-[#EAE5DC] group">
+          <div className="relative rounded-[2px] overflow-hidden aspect-video bg-[#FAF8F5] shadow-2xl border border-[#EAE5DC] group">
             <video
               ref={videoRef}
               src={videoSrc}

@@ -1,0 +1,41 @@
+{
+  "auditResults": {
+    "desktop-1440x900": {
+      "innerW": 1440,
+      "scrollW": 1425,
+      "hasOverflow": false,
+      "overflowingElementsCount": 0,
+      "overflowSample": []
+    },
+    "laptop-1366x768": {
+      "innerW": 1366,
+      "scrollW": 1351,
+      "hasOverflow": false,
+      "overflowingElementsCount": 0,
+      "overflowSample": []
+    },
+    "tablet-768x1024": {
+      "innerW": 768,
+      "scrollW": 753,
+      "hasOverflow": false,
+      "overflowingElementsCount": 0,
+      "overflowSample": []
+    },
+    "mobile-390x844": {
+      "innerW": 390,
+      "scrollW": 390,
+      "hasOverflow": false,
+      "overflowingElementsCount": 0,
+      "overflowSample": []
+    },
+    "small-mobile-360x800": {
+      "innerW": 360,
+      "scrollW": 360,
+      "hasOverflow": false,
+      "overflowingElementsCount": 0,
+      "overflowSample": []
+    }
+  },
+  "totalConsoleErrors": 0,
+  "timestamp": "2026-10-31T09:35:43.062Z"
+}

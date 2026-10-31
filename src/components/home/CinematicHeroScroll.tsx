@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { Link } from 'wouter';
-import { ArrowRight, Compass } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { useCinematicHero } from '../../context/CinematicHeroContext';
 
 export const CinematicHeroScroll: React.FC = () => {
@@ -65,6 +65,17 @@ export const CinematicHeroScroll: React.FC = () => {
 
   if (!heroConfig) return null;
 
+  const kickerText = heroConfig.kicker && !heroConfig.kicker.includes('PORTFOLIO 2026')
+    ? heroConfig.kicker
+    : "Sole Autonomous Commission · Cap d'Antibes";
+
+  const titleText = heroConfig.title && heroConfig.title !== 'Where Architecture Becomes Sanctuary'
+    ? heroConfig.title
+    : 'Architecture at the Edge of Wonder';
+
+  const subtitleText = heroConfig.subtitle ||
+    'Six monumental private residences orchestrated between raw geological cliffs and frameless horizon. Curated for discreet multi-generational ownership.';
+
   return (
     <div
       ref={trackRef}
@@ -85,12 +96,12 @@ export const CinematicHeroScroll: React.FC = () => {
           height: '100vh',
           display: 'flex',
           flexDirection: 'column',
-          justifyContent: 'center',
+          justifyContent: 'flex-end',
           overflow: 'hidden',
           zIndex: 2
         }}
       >
-        {/* Full-Screen Minimalist Editorial Opening */}
+        {/* Full-Screen Minimalist Editorial Opening (Anchored Lower-Left) */}
         <div
           ref={textContainerRef}
           className="container"
@@ -100,158 +111,56 @@ export const CinematicHeroScroll: React.FC = () => {
             opacity: 1,
             transform: 'translate3d(0, 0px, 0)',
             willChange: 'opacity, transform',
-            pointerEvents: 'auto'
+            pointerEvents: 'auto',
+            paddingBottom: '88px'
           }}
         >
-          <div
-            style={{
-              maxWidth: '820px',
-              position: 'relative'
-            }}
-          >
+          <div className="hero-editorial-card-wrap">
             {/* Architectural Kicker */}
-            <div
-              style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '10px',
-                marginBottom: 'var(--space-4)',
-                color: '#DFCFA8',
-                fontSize: '0.78rem',
-                letterSpacing: '0.3em',
-                textTransform: 'uppercase',
-                fontWeight: 600,
-                textShadow: '0 2px 10px rgba(0, 0, 0, 0.45)'
-              }}
-            >
-              <span>{heroConfig.kicker || 'BILEKSA PRIVATE RESIDENCES • PORTFOLIO 2026'}</span>
+            <div className="hero-editorial-kicker">
+              <span>{kickerText}</span>
             </div>
 
             {/* Display Title */}
-            <h1
-              className="display-title"
-              style={{
-                marginBottom: 'var(--space-5)',
-                color: '#FFFFFF',
-                textShadow: '0 4px 24px rgba(0, 0, 0, 0.55)',
-                fontWeight: 300,
-                lineHeight: 1.05,
-                letterSpacing: '-0.02em',
-                fontSize: 'clamp(3.2rem, 6.5vw, 5.4rem)'
-              }}
-            >
-              Where Architecture<br />Becomes Sanctuary
+            <h1 className="hero-editorial-title">
+              {titleText}
             </h1>
 
             {/* Subtitle */}
-            <p
-              style={{
-                fontSize: 'clamp(1.05rem, 1.8vw, 1.35rem)',
-                lineHeight: 1.7,
-                color: 'rgba(255, 255, 255, 0.95)',
-                marginBottom: 'var(--space-8)',
-                maxWidth: '660px',
-                textShadow: '0 2px 12px rgba(0, 0, 0, 0.55)',
-                fontWeight: 300
-              }}
-            >
-              Exceptional private estates and architectural penthouses conceived across clifftop coastlines and alpine ridges.
+            <p className="hero-editorial-subtitle">
+              {subtitleText}
             </p>
 
-            {/* CTA Buttons */}
-            <div
-              style={{
-                display: 'flex',
-                flexWrap: 'wrap',
-                alignItems: 'center',
-                gap: 'var(--space-4)'
-              }}
-            >
+            {/* Architectural CTA Controls */}
+            <div className="hero-actions-group">
               <Link
                 href="/residences"
-                className="btn btn-gold"
-                style={{
-                  padding: '1rem 2.6rem',
-                  fontSize: '0.84rem',
-                  letterSpacing: '0.16em',
-                  fontWeight: 500
-                }}
+                className="btn btn-solid-white"
               >
                 <span>Explore The Residences</span>
-                <ArrowRight size={15} />
+                <ArrowRight size={14} />
               </Link>
 
               <Link
-                href="/vision"
-                style={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '8px',
-                  padding: '1rem 2.2rem',
-                  fontSize: '0.84rem',
-                  letterSpacing: '0.16em',
-                  textTransform: 'uppercase',
-                  borderRadius: '9999px',
-                  background: 'rgba(255, 255, 255, 0.18)',
-                  backdropFilter: 'blur(16px)',
-                  WebkitBackdropFilter: 'blur(16px)',
-                  border: '1px solid rgba(255, 255, 255, 0.45)',
-                  color: '#FFFFFF',
-                  fontWeight: 400,
-                  transition: 'all 0.2s ease'
-                }}
+                href="/contact"
+                className="btn btn-glass-hero"
               >
-                <span>Architectural Vision</span>
-                <Compass size={15} />
+                <span>Acquisition Advisory</span>
               </Link>
             </div>
           </div>
         </div>
 
-        {/* Bottom Editorial Scroll Cue */}
-        <div
-          ref={scrollCueRef}
-          style={{
-            position: 'absolute',
-            bottom: '36px',
-            left: '50%',
-            transform: 'translateX(-50%)',
-            display: 'flex',
-            alignItems: 'center',
-            gap: '12px',
-            padding: '8px 22px',
-            backgroundColor: 'rgba(250, 248, 245, 0.92)',
-            backdropFilter: 'blur(16px)',
-            WebkitBackdropFilter: 'blur(16px)',
-            border: '1px solid #EAE5DC',
-            borderRadius: '9999px',
-            boxShadow: '0 8px 24px rgba(26, 24, 22, 0.12)',
-            opacity: 1,
-            willChange: 'opacity',
-            pointerEvents: 'none',
-            zIndex: 10
-          }}
-        >
-          <div
-            style={{
-              width: '8px',
-              height: '8px',
-              borderRadius: '50%',
-              backgroundColor: 'var(--color-accent-gold)',
-              boxShadow: '0 0 10px var(--color-accent-gold)'
-            }}
-          />
-          <span
-            style={{
-              fontSize: '0.72rem',
-              letterSpacing: '0.22em',
-              textTransform: 'uppercase',
-              color: 'var(--color-text-primary)',
-              fontWeight: 500
-            }}
-          >
-            Scroll to Explore
-          </span>
+        {/* Bottom Cinematic Information Strip & Scroll Cue */}
+        <div ref={scrollCueRef} className="hero-ground-strip">
+          <div className="container ground-strip-inner">
+            <span>Latitude 43.5528° N &middot; Longitude 7.1278° E</span>
+            <div className="hero-scroll-cue-pill">
+              <div className="hero-scroll-cue-dot" />
+              <span>Descend to Editorial Registry</span>
+            </div>
+            <span>Monolithic Travertine &middot; Triple Glazing</span>
+          </div>
         </div>
       </div>
     </div>

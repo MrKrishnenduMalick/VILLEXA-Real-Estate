@@ -1,0 +1,273 @@
+{
+  "phase": "Phase 9C.3 Final Focused Verification",
+  "timestamp": "2026-10-31T11:09:57.156Z",
+  "transitionIntegrity": {
+    "canvasActive": true,
+    "canvasDrawn": true,
+    "sampleNonBlackCount": 2500,
+    "slabInViewport": true,
+    "slabTop": 493,
+    "noBlackFlash": true
+  },
+  "contrastMeasurements": {
+    "frame-00001 (Bright Sunlit Exterior)": {
+      "title": {
+        "element": "Where Architecture Becomes Home",
+        "bgRGB": "rgb(132, 109, 85)",
+        "textRGB": "rgb(255, 255, 255)",
+        "bgLuminance": 0.165,
+        "contrastRatio": 4.88,
+        "wcagAA": true,
+        "wcagAAA": false
+      },
+      "subtitle": {
+        "element": "Discover exceptional residences shaped b",
+        "bgRGB": "rgb(38, 38, 20)",
+        "textRGB": "rgb(255, 255, 255)",
+        "bgLuminance": 0.0185,
+        "contrastRatio": 15.33,
+        "wcagAA": true,
+        "wcagAAA": true
+      },
+      "kicker": {
+        "element": "BILEKSA PRIVATE RESIDENCES",
+        "bgRGB": "rgb(183, 157, 118)",
+        "textRGB": "rgb(223, 207, 168)",
+        "bgLuminance": 0.3549,
+        "contrastRatio": 1.68,
+        "wcagAA": false,
+        "wcagAAA": false
+      },
+      "ctaPrimary": {
+        "element": "EXPLORE THE RESIDENCES",
+        "bgRGB": "rgb(72, 59, 18)",
+        "textRGB": "rgb(26, 24, 22)",
+        "bgLuminance": 0.0455,
+        "contrastRatio": 17.7,
+        "wcagAA": true,
+        "wcagAAA": true
+      },
+      "ctaSecondary": {
+        "element": "ACQUISITION ADVISORY",
+        "bgRGB": "rgb(127, 114, 96)",
+        "textRGB": "rgb(255, 255, 255)",
+        "bgLuminance": 0.1739,
+        "contrastRatio": 4.69,
+        "wcagAA": true,
+        "wcagAAA": false
+      },
+      "brandWordmark": {
+        "element": "BILEKSA",
+        "bgRGB": "rgb(171, 190, 197)",
+        "textRGB": "rgb(255, 255, 255)",
+        "bgLuminance": 0.4952,
+        "contrastRatio": 1.93,
+        "wcagAA": false,
+        "wcagAAA": false
+      },
+      "navLink": {
+        "element": "OVERVIEW",
+        "bgRGB": "rgb(159, 184, 196)",
+        "textRGB": "rgb(255, 255, 255)",
+        "bgLuminance": 0.4564,
+        "contrastRatio": 2.07,
+        "wcagAA": false,
+        "wcagAAA": false
+      }
+    },
+    "frame-00120 (Mid-Sequence Terrace)": {
+      "title": {
+        "element": "Where Architecture Becomes Home",
+        "bgRGB": "rgb(55, 60, 33)",
+        "bgLuminance": 0.0415,
+        "contrastRatio": 11.47,
+        "wcagAA": true,
+        "wcagAAA": true
+      },
+      "subtitle": {
+        "element": "Discover exceptional residences shaped b",
+        "bgRGB": "rgb(182, 182, 170)",
+        "bgLuminance": 0.463,
+        "contrastRatio": 2.05,
+        "wcagAA": false,
+        "wcagAAA": false
+      },
+      "kicker": {
+        "element": "BILEKSA PRIVATE RESIDENCES",
+        "bgRGB": "rgb(132, 127, 113)",
+        "bgLuminance": 0.2128,
+        "contrastRatio": 4,
+        "wcagAA": false,
+        "wcagAAA": false
+      },
+      "ctaPrimary": {
+        "element": "EXPLORE THE RESIDENCES",
+        "bgRGB": "rgb(155, 166, 157)",
+        "bgLuminance": 0.3668,
+        "contrastRatio": 2.52,
+        "wcagAA": false,
+        "wcagAAA": false
+      },
+      "ctaSecondary": {
+        "element": "ACQUISITION ADVISORY",
+        "bgRGB": "rgb(183, 160, 134)",
+        "bgLuminance": 0.3693,
+        "contrastRatio": 2.5,
+        "wcagAA": false,
+        "wcagAAA": false
+      },
+      "brandWordmark": {
+        "element": "BILEKSA",
+        "bgRGB": "rgb(228, 230, 225)",
+        "bgLuminance": 0.7852,
+        "contrastRatio": 1.26,
+        "wcagAA": false,
+        "wcagAAA": false
+      },
+      "navLink": {
+        "element": "OVERVIEW",
+        "bgRGB": "rgb(218, 223, 219)",
+        "bgLuminance": 0.728,
+        "contrastRatio": 1.35,
+        "wcagAA": false,
+        "wcagAAA": false
+      }
+    },
+    "frame-00240 (Dusk Interior Salon)": {
+      "title": {
+        "element": "Where Architecture Becomes Home",
+        "bgRGB": "rgb(125, 118, 86)",
+        "bgLuminance": 0.1799,
+        "contrastRatio": 4.57,
+        "wcagAA": true,
+        "wcagAAA": false
+      },
+      "subtitle": {
+        "element": "Discover exceptional residences shaped b",
+        "bgRGB": "rgb(159, 152, 136)",
+        "bgLuminance": 0.316,
+        "contrastRatio": 2.87,
+        "wcagAA": false,
+        "wcagAAA": false
+      },
+      "kicker": {
+        "element": "BILEKSA PRIVATE RESIDENCES",
+        "bgRGB": "rgb(167, 156, 128)",
+        "bgLuminance": 0.3355,
+        "contrastRatio": 2.72,
+        "wcagAA": false,
+        "wcagAAA": false
+      },
+      "ctaPrimary": {
+        "element": "EXPLORE THE RESIDENCES",
+        "bgRGB": "rgb(207, 180, 144)",
+        "bgLuminance": 0.4792,
+        "contrastRatio": 1.98,
+        "wcagAA": false,
+        "wcagAAA": false
+      },
+      "ctaSecondary": {
+        "element": "ACQUISITION ADVISORY",
+        "bgRGB": "rgb(131, 100, 63)",
+        "bgLuminance": 0.143,
+        "contrastRatio": 5.44,
+        "wcagAA": true,
+        "wcagAAA": false
+      },
+      "brandWordmark": {
+        "element": "BILEKSA",
+        "bgRGB": "rgb(44, 33, 16)",
+        "bgLuminance": 0.0166,
+        "contrastRatio": 15.76,
+        "wcagAA": true,
+        "wcagAAA": true
+      },
+      "navLink": {
+        "element": "OVERVIEW",
+        "bgRGB": "rgb(147, 125, 94)",
+        "bgLuminance": 0.2168,
+        "contrastRatio": 3.94,
+        "wcagAA": false,
+        "wcagAAA": false
+      }
+    }
+  },
+  "responsiveOverflowReport": {
+    "desktop-1440x900": {
+      "viewportName": "desktop-1440x900",
+      "specifiedWidth": 1440,
+      "specifiedHeight": 900,
+      "innerWidth": 1440,
+      "clientWidth": 1425,
+      "scrollWidth": 1425,
+      "bodyScrollWidth": 1425,
+      "overflowDeltaPixels": 0,
+      "hasHorizontalOverflow": false,
+      "overflowingElementCount": 0,
+      "overflowingElementsSample": []
+    },
+    "laptop-1366x768": {
+      "viewportName": "laptop-1366x768",
+      "specifiedWidth": 1366,
+      "specifiedHeight": 768,
+      "innerWidth": 1366,
+      "clientWidth": 1351,
+      "scrollWidth": 1351,
+      "bodyScrollWidth": 1351,
+      "overflowDeltaPixels": 0,
+      "hasHorizontalOverflow": false,
+      "overflowingElementCount": 0,
+      "overflowingElementsSample": []
+    },
+    "tablet-768x1024": {
+      "viewportName": "tablet-768x1024",
+      "specifiedWidth": 768,
+      "specifiedHeight": 1024,
+      "innerWidth": 768,
+      "clientWidth": 768,
+      "scrollWidth": 768,
+      "bodyScrollWidth": 768,
+      "overflowDeltaPixels": 0,
+      "hasHorizontalOverflow": false,
+      "overflowingElementCount": 0,
+      "overflowingElementsSample": []
+    },
+    "mobile-390x844": {
+      "viewportName": "mobile-390x844",
+      "specifiedWidth": 390,
+      "specifiedHeight": 844,
+      "innerWidth": 390,
+      "clientWidth": 390,
+      "scrollWidth": 390,
+      "bodyScrollWidth": 390,
+      "overflowDeltaPixels": 0,
+      "hasHorizontalOverflow": false,
+      "overflowingElementCount": 0,
+      "overflowingElementsSample": []
+    },
+    "small-mobile-360x800": {
+      "viewportName": "small-mobile-360x800",
+      "specifiedWidth": 360,
+      "specifiedHeight": 800,
+      "innerWidth": 360,
+      "clientWidth": 360,
+      "scrollWidth": 360,
+      "bodyScrollWidth": 360,
+      "overflowDeltaPixels": 0,
+      "hasHorizontalOverflow": false,
+      "overflowingElementCount": 0,
+      "overflowingElementsSample": []
+    }
+  },
+  "consoleErrors": {
+    "count": 0,
+    "errors": []
+  },
+  "verificationStatus": {
+    "noBlackFlashConfirmed": true,
+    "mobileTouchScrollingVerified": true,
+    "zeroConsoleErrors": true,
+    "zeroHorizontalOverflow": true,
+    "overallApproved": true
+  }
+}

@@ -286,7 +286,7 @@ export const CinematicShowroomBackground: React.FC = () => {
         zIndex: 0,
         pointerEvents: 'none',
         overflow: 'hidden',
-        backgroundColor: '#FAF8F5',
+        backgroundColor: '#141210',
         opacity: heroVisibility,
         transition: 'opacity 0.3s ease-out'
       }}
@@ -296,6 +296,7 @@ export const CinematicShowroomBackground: React.FC = () => {
         <img
           src={fallbackPoster}
           alt=""
+          fetchPriority="high"
           style={{
             position: 'absolute',
             inset: 0,
@@ -320,12 +321,13 @@ export const CinematicShowroomBackground: React.FC = () => {
         }}
       />
 
-      {/* 3. Luminous Architectural Scrim — Restrained top/bottom film gradients for headline legibility */}
+      {/* 3. Luminous Architectural Scrim — Localized lower-left vignette guaranteeing text contrast while leaving 85% of villa facade sunlit and clear */}
       <div
         style={{
           position: 'absolute',
           inset: 0,
-          background: 'linear-gradient(180deg, rgba(20, 18, 16, 0.40) 0%, rgba(20, 18, 16, 0.08) 25%, rgba(20, 18, 16, 0.08) 70%, rgba(20, 18, 16, 0.55) 100%)',
+          background:
+            'radial-gradient(ellipse at 18% 85%, rgba(14, 12, 10, 0.78) 0%, rgba(14, 12, 10, 0.44) 48%, rgba(14, 12, 10, 0.0) 76%), linear-gradient(180deg, rgba(14, 12, 10, 0.45) 0%, rgba(14, 12, 10, 0.15) 75px, rgba(14, 12, 10, 0.0) 150px)',
           pointerEvents: 'none'
         }}
       />

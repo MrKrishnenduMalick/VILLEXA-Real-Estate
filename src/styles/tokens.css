@@ -82,7 +82,21 @@
   --container-max: 1400px;
   --container-narrow: 960px;
 
-  /* Frosted Ivory & Warm Glassmorphism Tokens */
+  /* Frosted Ivory & Warm Glassmorphism Tokens — Phase 9D.2 Refined Glass System */
+  --glass-primary: rgba(250, 248, 245, 0.72);
+  --glass-strong: rgba(250, 248, 245, 0.82);
+  --glass-subtle: rgba(250, 248, 245, 0.60);
+  --glass-card: rgba(250, 248, 245, 0.64);
+  --glass-card-strong: rgba(250, 248, 245, 0.84);
+  --glass-surface-small: rgba(250, 248, 245, 0.84);
+  --glass-border: rgba(255, 255, 255, 0.60);
+  --glass-border-subtle: rgba(234, 229, 220, 0.70);
+  --glass-border-champagne: rgba(184, 149, 82, 0.32);
+  --glass-blur: 20px;
+  --glass-blur-lg: 32px;
+  --glass-shadow: 0 16px 44px rgba(26, 24, 22, 0.05), 0 1px 3px rgba(26, 24, 22, 0.03);
+  --glass-shadow-lg: 0 24px 64px rgba(26, 24, 22, 0.08), 0 2px 6px rgba(26, 24, 22, 0.04);
+
   --glass-bg-primary: rgba(250, 248, 245, 0.88);
   --glass-bg-surface: rgba(255, 255, 255, 0.92);
   --glass-bg-surface-elevated: #FFFFFF;

@@ -1,0 +1,1744 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>BILEKSA Private Residences — Hybrid Concept A + B (Revision 3: Final Architectural Corrections)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    /* =============================================================
+       BILEKSA REVISION 3: MASTER ARCHITECTURAL DESIGN SYSTEM
+       Hybrid Concept A + B with Selective Architectural Transparency
+       ============================================================= */
+    :root {
+      /* Palette */
+      --color-ivory: #FAF8F5;
+      --color-ivory-translucent: rgba(250, 248, 245, 0.84);
+      --color-ivory-glass-nav: rgba(250, 248, 245, 0.88);
+      --color-ivory-glass-surface: rgba(250, 248, 245, 0.82);
+      --color-white: #FFFFFF;
+      --color-white-glass: rgba(255, 255, 255, 0.68);
+      --color-sand: #F3EFEA;
+      --color-sand-translucent: rgba(243, 239, 234, 0.88);
+      --color-sand-dark: #EAE5DC;
+      --color-charcoal: #1A1816;
+      --color-charcoal-muted: #524C44;
+      --color-charcoal-light: #7E776E;
+      --color-gold: #B89552;
+      --color-gold-hover: #9E7D3B;
+      --color-gold-light: #DFCFA8;
+      --color-border-light: rgba(234, 229, 220, 0.75);
+      --color-border-solid: #EAE5DC;
+      --color-border-glass: rgba(255, 255, 255, 0.40);
+      --color-border-champagne: rgba(184, 149, 82, 0.35);
+      --color-border-dark: #2B2724;
+
+      /* Typography */
+      --font-serif: 'Cormorant Garamond', Georgia, serif;
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+
+      /* Radii */
+      --radius-sm: 2px;
+      --radius-md: 4px;
+
+      /* Layout */
+      --container-max: 1320px;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      width: 100%;
+      max-width: 100%;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      width: 100%;
+      max-width: 100%;
+      overflow-x: hidden;
+      background-color: var(--color-ivory);
+      color: var(--color-charcoal);
+      font-family: var(--font-sans);
+      font-size: 15px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+    }
+
+    /* TYPOGRAPHY */
+    h1, h2, h3, h4, h5 {
+      font-family: var(--font-serif);
+      font-weight: 300;
+      color: var(--color-charcoal);
+      letter-spacing: -0.015em;
+      line-height: 1.15;
+      word-break: break-word;
+    }
+
+    .eyebrow {
+      font-family: var(--font-sans);
+      font-size: 10.5px;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--color-gold);
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      line-height: 1.4;
+      flex-wrap: wrap;
+    }
+
+    .eyebrow::before {
+      content: "";
+      display: inline-block;
+      width: 16px;
+      height: 1px;
+      background-color: var(--color-gold);
+      flex-shrink: 0;
+    }
+
+    .container {
+      width: 100%;
+      max-width: var(--container-max);
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+
+    /* ARCHITECTURAL CONTROLS (Zero pill shapes) */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.20em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 16px 32px;
+      border-radius: var(--radius-sm);
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      cursor: pointer;
+      text-align: center;
+    }
+
+    .btn-solid-dark {
+      background-color: var(--color-charcoal);
+      color: var(--color-ivory);
+      border: 1px solid var(--color-charcoal);
+    }
+    .btn-solid-dark:hover {
+      background-color: var(--color-gold);
+      border-color: var(--color-gold);
+      color: #fff;
+    }
+
+    .btn-outline-dark {
+      background-color: transparent;
+      color: var(--color-charcoal);
+      border: 1px solid var(--color-charcoal);
+    }
+    .btn-outline-dark:hover {
+      background-color: var(--color-charcoal);
+      color: var(--color-ivory);
+    }
+
+    .btn-glass-hero {
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      color: #FFFFFF;
+      border: 1px solid rgba(255, 255, 255, 0.40);
+    }
+    .btn-glass-hero:hover {
+      background: rgba(255, 255, 255, 0.25);
+      border-color: #FFFFFF;
+      color: #FFFFFF;
+    }
+
+    .btn-solid-white {
+      background-color: var(--color-white);
+      color: var(--color-charcoal);
+      border: 1px solid var(--color-white);
+    }
+    .btn-solid-white:hover {
+      background-color: var(--color-gold);
+      border-color: var(--color-gold);
+      color: #fff;
+    }
+
+    /* -------------------------------------------------------------
+       1. NAVIGATION: DUAL STATE (TRANSPARENT VS FROSTED IVORY GLASS)
+       ------------------------------------------------------------- */
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 76px;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      transition: background-color 0.35s ease, height 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+      /* Top of page: 100% Fully Transparent */
+      background: transparent;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+      box-shadow: none;
+    }
+
+    /* Scrolled state: Refined frosted warm ivory glass */
+    .site-header.is-scrolled {
+      height: 68px;
+      background: var(--color-ivory-glass-nav);
+      backdrop-filter: blur(20px) saturate(140%);
+      -webkit-backdrop-filter: blur(20px) saturate(140%);
+      border-bottom: 1px solid var(--color-border-champagne);
+      box-shadow: 0 4px 24px rgba(26, 24, 22, 0.05);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+    }
+
+    .brand-group {
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-wordmark {
+      font-family: var(--font-serif);
+      font-size: 26px;
+      font-weight: 400;
+      letter-spacing: 0.26em;
+      line-height: 1;
+      color: #FFFFFF; /* Pure white on transparent hero */
+      transition: color 0.3s ease;
+    }
+    .site-header.is-scrolled .brand-wordmark {
+      color: var(--color-charcoal);
+    }
+
+    .brand-subtext {
+      font-family: var(--font-sans);
+      font-size: 8.5px;
+      letter-spacing: 0.36em;
+      text-transform: uppercase;
+      color: var(--color-gold-light);
+      font-weight: 500;
+      margin-top: 4px;
+      transition: color 0.3s ease;
+    }
+    .site-header.is-scrolled .brand-subtext {
+      color: var(--color-gold);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 36px;
+      list-style: none;
+    }
+
+    .nav-link {
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.20em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.90);
+      text-decoration: none;
+      position: relative;
+      padding: 6px 0;
+      transition: color 0.2s ease;
+    }
+    .site-header.is-scrolled .nav-link {
+      color: var(--color-charcoal);
+    }
+
+    .nav-link:hover, .nav-link.active {
+      color: var(--color-gold-light);
+    }
+    .site-header.is-scrolled .nav-link:hover,
+    .site-header.is-scrolled .nav-link.active {
+      color: var(--color-gold);
+    }
+
+    .nav-link.active::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background-color: var(--color-gold-light);
+    }
+    .site-header.is-scrolled .nav-link.active::after {
+      background-color: var(--color-gold);
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .btn-header-advisory {
+      padding: 10px 22px;
+      font-size: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.40);
+      background: rgba(255, 255, 255, 0.10);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      color: #FFFFFF;
+      border-radius: var(--radius-sm);
+      text-decoration: none;
+      letter-spacing: 0.20em;
+      text-transform: uppercase;
+      font-weight: 500;
+      transition: all 0.25s ease;
+    }
+    .btn-header-advisory:hover {
+      background-color: #FFFFFF;
+      color: var(--color-charcoal);
+      border-color: #FFFFFF;
+    }
+    .site-header.is-scrolled .btn-header-advisory {
+      border-color: var(--color-charcoal);
+      background: transparent;
+      color: var(--color-charcoal);
+    }
+    .site-header.is-scrolled .btn-header-advisory:hover {
+      background-color: var(--color-charcoal);
+      color: var(--color-ivory);
+    }
+
+    .mobile-menu-trigger {
+      display: none;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+      color: #FFFFFF;
+      align-items: center;
+      justify-content: center;
+    }
+    .site-header.is-scrolled .mobile-menu-trigger {
+      color: var(--color-charcoal);
+    }
+
+    /* -------------------------------------------------------------
+       2. REPOSITIONED HERO: UNOBSTRUCTED ARCHITECTURE
+       ------------------------------------------------------------- */
+    .hero-container {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      min-height: 720px;
+      max-height: 1040px;
+      overflow: hidden;
+      display: flex;
+      align-items: flex-end;
+      background-color: #1A1816;
+    }
+
+    .hero-fixed-background {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 25%;
+      z-index: 1;
+    }
+
+    /* Natural localized vignette: confined strictly to bottom-left 
+       leaving 85% of villa facade and dusk sky completely sunlit */
+    .hero-vignette {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 16% 88%, rgba(14, 12, 10, 0.70) 0%, rgba(14, 12, 10, 0.32) 44%, rgba(14, 12, 10, 0.0) 72%);
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 10;
+      width: 100%;
+      padding-bottom: 90px;
+    }
+
+    .hero-editorial-card {
+      max-width: 720px;
+    }
+
+    .hero-kicker {
+      font-family: var(--font-sans);
+      font-size: 10.5px;
+      font-weight: 600;
+      letter-spacing: 0.30em;
+      text-transform: uppercase;
+      color: var(--color-gold-light);
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .hero-title {
+      font-family: var(--font-serif);
+      font-size: clamp(3.0rem, 5.0vw, 4.6rem);
+      line-height: 1.05;
+      font-weight: 300;
+      color: #FFFFFF;
+      margin-bottom: 20px;
+      letter-spacing: -0.02em;
+    }
+
+    .hero-subtitle {
+      font-size: 15.5px;
+      font-weight: 300;
+      color: rgba(255, 255, 255, 0.92);
+      line-height: 1.70;
+      max-width: 580px;
+      margin-bottom: 34px;
+    }
+
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .hero-ground-bar {
+      position: absolute;
+      bottom: 24px;
+      left: 0;
+      width: 100%;
+      z-index: 10;
+    }
+
+    .ground-bar-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 10.5px;
+      letter-spacing: 0.20em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.65);
+      border-top: 1px solid rgba(255, 255, 255, 0.16);
+      padding-top: 14px;
+    }
+
+    .scroll-indicator {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--color-gold-light);
+    }
+    .scroll-indicator-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background-color: var(--color-gold);
+    }
+
+    /* -------------------------------------------------------------
+       3. ARCHITECTURAL EDITORIAL GLASS TRANSITION (REVISED & SOPHISTICATED)
+       ------------------------------------------------------------- */
+    .transition-wrapper {
+      position: relative;
+      z-index: 20;
+      /* Subtle backdrop continuation so cinematic hero frame shows through */
+      background: linear-gradient(180deg, #1A1816 0%, #26221E 120px, var(--color-ivory) 460px, var(--color-ivory) 100%);
+      padding-bottom: 120px;
+    }
+
+    /* The Large Floating Translucent Editorial Surface */
+    .editorial-glass-slab {
+      margin-top: -140px;
+      background: var(--color-ivory-glass-surface);
+      backdrop-filter: blur(32px) saturate(140%);
+      -webkit-backdrop-filter: blur(32px) saturate(140%);
+      border: 1px solid rgba(255, 255, 255, 0.85);
+      box-shadow: 0 24px 64px rgba(26, 24, 22, 0.08), 0 1px 2px rgba(26, 24, 22, 0.04);
+      border-radius: var(--radius-md);
+      padding: 72px 64px;
+      position: relative;
+    }
+
+    .curatorial-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 48px;
+      align-items: center;
+    }
+
+    .curatorial-text {
+      grid-column: span 7;
+      padding-right: 24px;
+    }
+
+    .curatorial-heading {
+      font-size: clamp(2.3rem, 3.6vw, 3.2rem);
+      line-height: 1.12;
+      color: var(--color-charcoal);
+      margin: 18px 0 26px;
+    }
+
+    .curatorial-body {
+      font-size: 15.5px;
+      font-weight: 300;
+      color: var(--color-charcoal-muted);
+      line-height: 1.75;
+      margin-bottom: 24px;
+    }
+
+    .curatorial-metrics {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      padding: 28px 0;
+      border-top: 1px solid var(--color-border-light);
+      border-bottom: 1px solid var(--color-border-light);
+      margin: 36px 0;
+    }
+
+    .metric-value {
+      font-family: var(--font-serif);
+      font-size: 32px;
+      font-weight: 400;
+      color: var(--color-charcoal);
+      line-height: 1;
+    }
+
+    .metric-label {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.20em;
+      text-transform: uppercase;
+      color: var(--color-gold);
+      margin-top: 6px;
+      display: block;
+    }
+
+    .curatorial-media {
+      grid-column: span 5;
+    }
+
+    .plaque-image-card {
+      position: relative;
+      background-color: var(--color-sand);
+      border: 1px solid var(--color-border-solid);
+      box-shadow: 0 16px 40px rgba(26, 24, 22, 0.06);
+    }
+
+    .plaque-image-frame {
+      width: 100%;
+      aspect-ratio: 3/4;
+      overflow: hidden;
+      display: block;
+    }
+
+    .plaque-image-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .plaque-caption {
+      padding: 16px 20px;
+      background: var(--color-white);
+      border-top: 1px solid var(--color-border-solid);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .plaque-title {
+      font-family: var(--font-serif);
+      font-size: 15px;
+      color: var(--color-charcoal);
+    }
+
+    .plaque-meta {
+      font-size: 9.5px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--color-gold);
+      font-weight: 500;
+    }
+
+    /* -------------------------------------------------------------
+       4. INAUGURAL REGISTRY: WITH TRANSLUCENT SPECS FLOATING PANELS
+       ------------------------------------------------------------- */
+    .section-registry {
+      position: relative;
+      z-index: 20;
+      padding: 120px 0;
+      background-color: var(--color-ivory);
+    }
+
+    .section-header-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 56px;
+      border-bottom: 1px solid var(--color-border-solid);
+      padding-bottom: 24px;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .section-title {
+      font-size: clamp(2.2rem, 3.8vw, 3.2rem);
+      margin-top: 10px;
+    }
+
+    /* Demonstration Data Notice Banner */
+    .demo-notice-bar {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 18px;
+      background: rgba(184, 149, 82, 0.08);
+      border-left: 2px solid var(--color-gold);
+      margin-bottom: 48px;
+      font-size: 12px;
+      color: var(--color-charcoal-muted);
+      line-height: 1.5;
+    }
+    .demo-notice-bar strong {
+      color: var(--color-charcoal);
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      font-size: 10px;
+    }
+
+    /* Flagship Spread (Residence 1) */
+    .flagship-spread {
+      display: grid;
+      grid-template-columns: 7fr 5fr;
+      border: 1px solid var(--color-border-solid);
+      background-color: var(--color-white);
+      margin-bottom: 48px;
+      box-shadow: 0 16px 40px rgba(26, 24, 22, 0.04);
+      position: relative;
+    }
+
+    .flagship-media {
+      position: relative;
+      min-height: 480px;
+      overflow: hidden;
+    }
+
+    .flagship-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Floating Translucent Information Badge over Flagship Media */
+    .floating-specs-badge {
+      position: absolute;
+      bottom: 24px;
+      left: 24px;
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.80);
+      padding: 14px 20px;
+      border-radius: var(--radius-sm);
+      box-shadow: 0 8px 24px rgba(26, 24, 22, 0.08);
+    }
+    .floating-specs-badge span {
+      display: block;
+      font-size: 10px;
+      letter-spacing: 0.20em;
+      text-transform: uppercase;
+      color: var(--color-gold);
+      font-weight: 600;
+    }
+    .floating-specs-badge strong {
+      font-family: var(--font-serif);
+      font-size: 18px;
+      color: var(--color-charcoal);
+      font-weight: 400;
+    }
+
+    .flagship-details {
+      padding: 48px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border-left: 1px solid var(--color-border-solid);
+    }
+
+    .residence-location {
+      font-size: 10.5px;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--color-gold);
+    }
+
+    .residence-name {
+      font-size: 28px;
+      margin: 8px 0 16px;
+    }
+
+    .residence-excerpt {
+      font-size: 14.5px;
+      color: var(--color-charcoal-muted);
+      line-height: 1.7;
+      margin-bottom: 28px;
+    }
+
+    .specs-table {
+      border-top: 1px solid var(--color-border-light);
+      border-bottom: 1px solid var(--color-border-light);
+      padding: 20px 0;
+      margin-bottom: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .specs-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      font-size: 13px;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .specs-label {
+      color: var(--color-charcoal-light);
+      flex-shrink: 0;
+    }
+
+    .specs-val {
+      font-weight: 500;
+      color: var(--color-charcoal);
+      text-align: right;
+      word-break: break-word;
+    }
+
+    .price-tag {
+      font-family: var(--font-serif);
+      font-size: 26px;
+      color: var(--color-charcoal);
+      margin-bottom: 24px;
+    }
+    .price-disclaimer {
+      font-size: 9.5px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--color-charcoal-light);
+      margin-top: 2px;
+      display: block;
+    }
+
+    /* 2-Column Matrix for Remaining Curated Residences */
+    .registry-matrix-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 36px;
+    }
+
+    .residence-card {
+      border: 1px solid var(--color-border-solid);
+      background-color: var(--color-white);
+      box-shadow: 0 12px 32px rgba(26, 24, 22, 0.03);
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      max-width: 100%;
+      min-width: 0;
+    }
+
+    .residence-card-featured {
+      grid-column: span 2;
+    }
+
+    @media (max-width: 1024px) {
+      .residence-card-featured {
+        grid-column: span 1 !important;
+      }
+    }
+
+    .card-media-wrap {
+      width: 100%;
+      aspect-ratio: 16/10;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .card-media-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .card-body {
+      padding: 32px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    /* -------------------------------------------------------------
+       5. ARCHITECTURAL MATERIALITY & NOBLE PROVENANCE
+       ------------------------------------------------------------- */
+    .section-materiality {
+      position: relative;
+      z-index: 20;
+      padding: 120px 0;
+      background-color: var(--color-sand);
+      border-top: 1px solid var(--color-border-solid);
+      border-bottom: 1px solid var(--color-border-solid);
+    }
+
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 36px;
+      margin-top: 56px;
+    }
+
+    .pillar-card {
+      padding: 36px;
+      background-color: var(--color-white);
+      border: 1px solid var(--color-border-solid);
+      box-shadow: 0 8px 24px rgba(26, 24, 22, 0.02);
+    }
+
+    .pillar-num {
+      font-family: var(--font-serif);
+      font-size: 26px;
+      color: var(--color-gold);
+      display: block;
+      margin-bottom: 16px;
+    }
+
+    .pillar-title {
+      font-size: 21px;
+      margin-bottom: 12px;
+    }
+
+    .pillar-desc {
+      font-size: 14px;
+      color: var(--color-charcoal-muted);
+      line-height: 1.7;
+    }
+
+    /* -------------------------------------------------------------
+       6. BESPOKE AMENITIES & LIFESTYLE TRIPTYCH
+       ------------------------------------------------------------- */
+    .section-amenities {
+      position: relative;
+      z-index: 20;
+      padding: 120px 0;
+      background-color: var(--color-ivory);
+    }
+
+    .amenities-triptych {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      margin-top: 56px;
+    }
+
+    .amenity-card {
+      border: 1px solid var(--color-border-solid);
+      background-color: var(--color-white);
+    }
+
+    .amenity-img-wrap {
+      width: 100%;
+      aspect-ratio: 4/3;
+      overflow: hidden;
+    }
+
+    .amenity-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .amenity-info {
+      padding: 24px;
+      border-top: 1px solid var(--color-border-solid);
+    }
+
+    .amenity-name {
+      font-size: 19px;
+      margin-bottom: 6px;
+    }
+
+    .amenity-sub {
+      font-size: 10px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--color-gold);
+    }
+
+    /* -------------------------------------------------------------
+       7. PRIVATE CONCIERGE & ADVISORY DESK
+       ------------------------------------------------------------- */
+    .section-concierge {
+      position: relative;
+      z-index: 20;
+      padding: 130px 0;
+      background-color: var(--color-charcoal);
+      color: var(--color-ivory);
+      text-align: center;
+    }
+
+    .concierge-box {
+      max-width: 780px;
+      margin: 0 auto;
+    }
+
+    .concierge-title {
+      font-size: clamp(2.6rem, 4.2vw, 3.8rem);
+      color: #FFFFFF;
+      margin: 16px 0 24px;
+    }
+
+    .concierge-body {
+      font-size: 15.5px;
+      font-weight: 300;
+      color: rgba(255, 255, 255, 0.80);
+      line-height: 1.75;
+      margin-bottom: 40px;
+    }
+
+    .concierge-actions {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    /* -------------------------------------------------------------
+       8. MASTER ARCHITECTURAL FOOTER
+       ------------------------------------------------------------- */
+    .site-footer {
+      position: relative;
+      z-index: 20;
+      background-color: #141210;
+      border-top: 1px solid var(--color-border-dark);
+      padding: 80px 0 40px;
+      color: var(--color-ivory);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1.5fr;
+      gap: 48px;
+      margin-bottom: 64px;
+    }
+
+    .footer-col-title {
+      font-family: var(--font-sans);
+      font-size: 10px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--color-gold);
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .footer-link {
+      color: rgba(255, 255, 255, 0.70);
+      text-decoration: none;
+      font-size: 13.5px;
+      transition: color 0.2s ease;
+    }
+    .footer-link:hover {
+      color: var(--color-gold);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid var(--color-border-dark);
+      padding-top: 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.45);
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    /* -------------------------------------------------------------
+       RESPONSIVE ARCHITECTURAL SYSTEM (1024px, 768px, 390px, 360px)
+       Strict Overflow Prevention: document.scrollWidth === innerWidth
+       ------------------------------------------------------------- */
+    @media (max-width: 1024px) {
+      .curatorial-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      .curatorial-text {
+        grid-column: span 1;
+        padding-right: 0;
+      }
+      .curatorial-media {
+        grid-column: span 1;
+      }
+      .flagship-spread {
+        grid-template-columns: 1fr;
+      }
+      .flagship-media {
+        min-height: 380px;
+      }
+      .flagship-details {
+        border-left: none;
+        border-top: 1px solid var(--color-border-solid);
+        padding: 36px;
+      }
+      .registry-matrix-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+      .residence-card {
+        grid-column: 1 / -1 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+      }
+      .pillars-grid {
+        grid-template-columns: 1fr;
+      }
+      .amenities-triptych {
+        grid-template-columns: 1fr;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 0 20px;
+      }
+      .site-header {
+        height: 64px;
+      }
+      .brand-wordmark {
+        font-size: 21px;
+      }
+      .brand-subtext {
+        font-size: 7.5px;
+      }
+      .nav-links {
+        display: none;
+      }
+      .btn-header-advisory {
+        display: none;
+      }
+      .mobile-menu-trigger {
+        display: flex;
+      }
+      .hero-container {
+        height: 100vh;
+        min-height: 580px;
+      }
+      .hero-content {
+        padding-bottom: 40px;
+      }
+      .hero-title {
+        font-size: 2.5rem;
+        line-height: 1.08;
+      }
+      .hero-subtitle {
+        font-size: 13.5px;
+        margin-bottom: 24px;
+        line-height: 1.6;
+      }
+      .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+      }
+      .hero-actions .btn {
+        width: 100%;
+        padding: 15px 20px;
+        font-size: 10.5px;
+      }
+      .hero-ground-bar {
+        display: none; /* Hide bottom coordinate strip on mobile */
+      }
+      .editorial-glass-slab {
+        margin-top: -60px;
+        padding: 40px 24px;
+      }
+      .section-registry,
+      .section-materiality,
+      .section-amenities,
+      .section-concierge {
+        padding: 72px 0;
+      }
+      .curatorial-heading {
+        font-size: 2.2rem;
+      }
+      .card-body {
+        padding: 24px;
+      }
+      .residence-name {
+        font-size: 23px;
+      }
+      .concierge-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .concierge-actions .btn {
+        width: 100%;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+    }
+
+    /* Exact Mobile Target: 390px (iPhone 12/13/14) */
+    @media (max-width: 414px) {
+      .container {
+        padding: 0 16px;
+      }
+      .editorial-glass-slab {
+        padding: 32px 18px;
+        margin-top: -40px;
+      }
+      .hero-title {
+        font-size: 2.25rem;
+      }
+      .eyebrow {
+        font-size: 9.5px;
+        letter-spacing: 0.16em;
+      }
+      .curatorial-metrics {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      .floating-specs-badge {
+        bottom: 16px;
+        left: 16px;
+        padding: 10px 14px;
+      }
+      .floating-specs-badge strong {
+        font-size: 16px;
+      }
+      .flagship-details {
+        padding: 24px 18px;
+      }
+      .btn {
+        padding: 14px 18px;
+        font-size: 10px;
+        letter-spacing: 0.16em;
+      }
+      .pillar-card {
+        padding: 24px 18px;
+      }
+      .amenity-info {
+        padding: 18px;
+      }
+    }
+
+    /* Small Mobile Target: 360px (Samsung Galaxy S & Compact Android) */
+    @media (max-width: 360px) {
+      .container {
+        padding: 0 14px;
+      }
+      .brand-wordmark {
+        font-size: 18.5px;
+        letter-spacing: 0.20em;
+      }
+      .brand-subtext {
+        font-size: 6.5px;
+        letter-spacing: 0.28em;
+      }
+      .hero-title {
+        font-size: 2.0rem;
+      }
+      .hero-subtitle {
+        font-size: 13px;
+      }
+      .curatorial-heading {
+        font-size: 1.95rem;
+      }
+      .editorial-glass-slab {
+        padding: 28px 14px;
+        margin-top: -30px;
+      }
+      .btn {
+        padding: 13px 14px;
+        font-size: 9.5px;
+        letter-spacing: 0.14em;
+      }
+      .price-tag {
+        font-size: 22px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============================================================
+       1. DUAL-STATE ARCHITECTURAL MASTHEAD
+       ============================================================ -->
+  <header id="site-header" class="site-header">
+    <div class="container header-inner">
+      <a href="#" class="brand-group">
+        <span class="brand-wordmark">BILEKSA</span>
+        <span class="brand-subtext">Private Residences</span>
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#hero" class="nav-link active">Overview</a></li>
+          <li><a href="#registry" class="nav-link">The Registry</a></li>
+          <li><a href="#materiality" class="nav-link">Architectural Vision</a></li>
+          <li><a href="#amenities" class="nav-link">Sanctuary & Living</a></li>
+          <li><a href="#concierge" class="nav-link">Private Desk</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <a href="#concierge" class="btn-header-advisory">Private Viewing</a>
+        <button class="mobile-menu-trigger" aria-label="Open Mobile Navigation">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============================================================
+       2. REPOSITIONED HERO: UNOBSTRUCTED VILLA FACADE
+       ============================================================ -->
+  <section id="hero" class="hero-container">
+    <img src="../../../public/real-estate-hero-frames/frame-00001.webp" alt="The Aurelia Estate Monumental Hero Frame" class="hero-fixed-background">
+    <div class="hero-vignette"></div>
+
+    <div class="container hero-content">
+      <div class="hero-editorial-card">
+        <div class="hero-kicker">
+          <span>Sole Autonomous Commission</span>
+          <span>&middot;</span>
+          <span>Cap d'Antibes</span>
+        </div>
+        <h1 class="hero-title">Architecture at the Edge of Wonder</h1>
+        <p class="hero-subtitle">
+          Six monumental private residences orchestrated between raw geological cliffs and frameless horizon. Curated for discreet multi-generational ownership.
+        </p>
+        <div class="hero-actions">
+          <a href="#registry" class="btn btn-solid-white">Explore The Registry &rarr;</a>
+          <a href="#concierge" class="btn btn-glass-hero">Acquisition Advisory</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-ground-bar">
+      <div class="container ground-bar-inner">
+        <span>Latitude 43.5528° N &middot; Longitude 7.1278° E</span>
+        <div class="scroll-indicator">
+          <div class="scroll-indicator-dot"></div>
+          <span>Descend to Editorial Registry</span>
+        </div>
+        <span>Monolithic Travertine &middot; Triple Glazing</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       3. ARCHITECTURAL EDITORIAL GLASS TRANSITION
+       ============================================================ -->
+  <div id="transition-curatorial" class="transition-wrapper">
+    <div class="container">
+      <div class="editorial-glass-slab">
+        <div class="curatorial-grid">
+          <div class="curatorial-text">
+            <span class="eyebrow">Curatorial Statement</span>
+            <h2 class="curatorial-heading">Where Sanctuary Transcends Structure</h2>
+            <p class="curatorial-body">
+              BILEKSA does not construct houses; we orchestrate permanent architectural sanctuaries. Each residence is an autonomous masterwork, sculpted to dialogue with light, wind, and geological strata.
+            </p>
+            <p class="curatorial-body">
+              Engineered with monolithic Roman travertine, patinated bronze, and triple-laminated frameless glazing, these estates offer supreme acoustic quiet and generational permanence.
+            </p>
+
+            <div class="curatorial-metrics">
+              <div>
+                <div class="metric-value">6</div>
+                <span class="metric-label">Private Estates Worldwide</span>
+              </div>
+              <div>
+                <div class="metric-value">1,150 m²</div>
+                <span class="metric-label">Average Interior Footprint</span>
+              </div>
+            </div>
+
+            <a href="#materiality" class="btn btn-outline-dark">Examine Provenance &rarr;</a>
+          </div>
+
+          <div class="curatorial-media">
+            <div class="plaque-image-card">
+              <div class="plaque-image-frame">
+                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1000&q=85" alt="Architectural Travertine Cantilever">
+              </div>
+              <div class="plaque-caption">
+                <span class="plaque-title">The Aurelia Cantilever</span>
+                <span class="plaque-meta">Plate 01 &middot; Structural Study</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       4. INAUGURAL REGISTRY: CURATED ARCHITECTURAL PORTFOLIO
+       ============================================================ -->
+  <section id="registry" class="section-registry">
+    <div class="container">
+      <div class="section-header-row">
+        <div>
+          <span class="eyebrow">The Inaugural Registry</span>
+          <h2 class="section-title">Six Distinct Architectural Manifestos</h2>
+        </div>
+        <span class="eyebrow">Private Portfolio</span>
+      </div>
+
+      <div class="demo-notice-bar">
+        <span>*</span>
+        <div>
+          <strong>Demonstration Portfolio Notice</strong> &mdash; Architectural specifications and guide valuations reflect conceptual master commissions. Formal private dossiers and verified ownership records are issued under confidential non-disclosure protocol via our Advisory Desk.
+        </div>
+      </div>
+
+      <!-- Flagship Spread: Residence 1 - The Cliff Villa -->
+      <div id="flagship-residence" class="flagship-spread">
+        <div class="flagship-media">
+          <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1400&q=85" alt="The Cliff Villa Clifftop Architecture">
+          <div class="floating-specs-badge">
+            <span>Flagship Commission</span>
+            <strong>The Cliff Villa &middot; Cap d'Antibes</strong>
+          </div>
+        </div>
+        <div class="flagship-details">
+          <div>
+            <span class="residence-location">Cap d'Antibes, France</span>
+            <h3 class="residence-name">The Cliff Villa</h3>
+            <p class="residence-excerpt">
+              Perched dramatically upon a limestone sea cliff, this monumental estate integrates cantilevered travertine terraces and a 25-meter infinity pool that dissolves directly into the Mediterranean horizon.
+            </p>
+            <div class="specs-table">
+              <div class="specs-row">
+                <span class="specs-label">Interior Footprint</span>
+                <span class="specs-val">1,420 m² (15,280 sq.ft)</span>
+              </div>
+              <div class="specs-row">
+                <span class="specs-label">Private Grounds</span>
+                <span class="specs-val">4,800 m² Clifftop Plot</span>
+              </div>
+              <div class="specs-row">
+                <span class="specs-label">Suites & Amenities</span>
+                <span class="specs-val">6 Master Suites &middot; 8 Baths</span>
+              </div>
+            </div>
+            <div class="price-tag">
+              &euro;48,000,000
+              <span class="price-disclaimer">* Demonstrative Guide Valuation</span>
+            </div>
+          </div>
+          <a href="#concierge" class="btn btn-solid-dark">Acquisition Dossier &rarr;</a>
+        </div>
+      </div>
+
+      <!-- 2-Column Matrix for Remaining Properties -->
+      <div class="registry-matrix-grid">
+        <!-- Residence 2: The Ocean Villa -->
+        <div class="residence-card">
+          <div class="card-media-wrap">
+            <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=1200&q=85" alt="The Ocean Villa Curved Waterfront Architecture">
+          </div>
+          <div class="card-body">
+            <div>
+              <span class="residence-location">Palm Beach, Florida</span>
+              <h3 class="residence-name">The Ocean Villa</h3>
+              <div class="specs-table">
+                <div class="specs-row">
+                  <span class="specs-label">Interior Footprint</span>
+                  <span class="specs-val">1,280 m²</span>
+                </div>
+                <div class="specs-row">
+                  <span class="specs-label">Suites</span>
+                  <span class="specs-val">5 Beds &middot; 7 Baths</span>
+                </div>
+              </div>
+              <div class="price-tag">
+                $34,000,000
+                <span class="price-disclaimer">* Demonstrative Guide Valuation</span>
+              </div>
+            </div>
+            <a href="#concierge" class="btn btn-outline-dark">Inspect Residence &rarr;</a>
+          </div>
+        </div>
+
+        <!-- Residence 3: The Garden Villa -->
+        <div class="residence-card">
+          <div class="card-media-wrap">
+            <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=85" alt="The Garden Villa Lake Como Estate">
+          </div>
+          <div class="card-body">
+            <div>
+              <span class="residence-location">Lake Como, Italy</span>
+              <h3 class="residence-name">The Garden Villa</h3>
+              <div class="specs-table">
+                <div class="specs-row">
+                  <span class="specs-label">Interior Footprint</span>
+                  <span class="specs-val">1,150 m²</span>
+                </div>
+                <div class="specs-row">
+                  <span class="specs-label">Suites</span>
+                  <span class="specs-val">6 Beds &middot; 7 Baths</span>
+                </div>
+              </div>
+              <div class="price-tag">
+                &euro;22,000,000
+                <span class="price-disclaimer">* Demonstrative Guide Valuation</span>
+              </div>
+            </div>
+            <a href="#concierge" class="btn btn-outline-dark">Inspect Residence &rarr;</a>
+          </div>
+        </div>
+
+        <!-- Residence 4: The Skyline Residence -->
+        <div class="residence-card">
+          <div class="card-media-wrap">
+            <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1200&q=85" alt="The Skyline Residence Penthouse Architecture">
+          </div>
+          <div class="card-body">
+            <div>
+              <span class="residence-location">Monaco Harbor</span>
+              <h3 class="residence-name">The Skyline Residence</h3>
+              <div class="specs-table">
+                <div class="specs-row">
+                  <span class="specs-label">Interior Footprint</span>
+                  <span class="specs-val">980 m²</span>
+                </div>
+                <div class="specs-row">
+                  <span class="specs-label">Suites</span>
+                  <span class="specs-val">4 Beds &middot; 5 Baths</span>
+                </div>
+              </div>
+              <div class="price-tag">
+                &euro;42,000,000
+                <span class="price-disclaimer">* Demonstrative Guide Valuation</span>
+              </div>
+            </div>
+            <a href="#concierge" class="btn btn-outline-dark">Inspect Residence &rarr;</a>
+          </div>
+        </div>
+
+        <!-- Residence 5: The Beachfront Compound -->
+        <div class="residence-card">
+          <div class="card-media-wrap">
+            <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=1200&q=85" alt="The Beachfront Compound Coastal Architecture">
+          </div>
+          <div class="card-body">
+            <div>
+              <span class="residence-location">St. Barthélemy</span>
+              <h3 class="residence-name">The Beachfront Compound</h3>
+              <div class="specs-table">
+                <div class="specs-row">
+                  <span class="specs-label">Interior Footprint</span>
+                  <span class="specs-val">1,560 m²</span>
+                </div>
+                <div class="specs-row">
+                  <span class="specs-label">Suites</span>
+                  <span class="specs-val">7 Beds &middot; 9 Baths</span>
+                </div>
+              </div>
+              <div class="price-tag">
+                $52,000,000
+                <span class="price-disclaimer">* Demonstrative Guide Valuation</span>
+              </div>
+            </div>
+            <a href="#concierge" class="btn btn-outline-dark">Inspect Residence &rarr;</a>
+          </div>
+        </div>
+
+        <!-- Residence 6: The Hillside Retreat (Corrected: Monumental Modern Alpine Hillside Chalet Exterior) -->
+        <div class="residence-card residence-card-featured">
+          <div class="card-media-wrap" style="aspect-ratio: 21/9;">
+            <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1600&q=85" alt="The Hillside Retreat Monumental Alpine Hillside Architecture">
+          </div>
+          <div class="card-body">
+            <div>
+              <span class="residence-location">St. Moritz, Switzerland</span>
+              <h3 class="residence-name">The Hillside Retreat</h3>
+              <p class="residence-excerpt" style="margin-bottom: 20px;">
+                Embedded into a dramatic alpine incline, this architectural masterpiece features multi-tiered cantilevers of blackened timber, local granite, and triple-insulated floor-to-ceiling panoramic glass facing the Engadin valley.
+              </p>
+              <div class="specs-table">
+                <div class="specs-row">
+                  <span class="specs-label">Interior Footprint</span>
+                  <span class="specs-val">1,380 m² (14,850 sq.ft)</span>
+                </div>
+                <div class="specs-row">
+                  <span class="specs-label">Alpine Grounds & Private Helipad</span>
+                  <span class="specs-val">8,200 m² Mountain Plot</span>
+                </div>
+                <div class="specs-row">
+                  <span class="specs-label">Suites & Wellness</span>
+                  <span class="specs-val">5 Master Suites &middot; Thermal Spa &middot; 6 Baths</span>
+                </div>
+              </div>
+              <div class="price-tag">
+                CHF 38,000,000
+                <span class="price-disclaimer">* Demonstrative Guide Valuation</span>
+              </div>
+            </div>
+            <a href="#concierge" class="btn btn-outline-dark">Inspect Residence &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       5. ARCHITECTURAL MATERIALITY & PHILOSOPHY
+       ============================================================ -->
+  <section id="materiality" class="section-materiality">
+    <div class="container">
+      <span class="eyebrow">Noble Provenance</span>
+      <h2 class="section-title">The Dialogue of Stone, Light, and Landscape</h2>
+
+      <div class="pillars-grid">
+        <div class="pillar-card">
+          <span class="pillar-num">01</span>
+          <h3 class="pillar-title">Solar Choreography</h3>
+          <p class="pillar-desc">
+            Calculated solar orientation, deep structural cantilevers, and triple-track frameless glass orchestrate natural diurnal illumination while eliminating thermal gain.
+          </p>
+        </div>
+
+        <div class="pillar-card">
+          <span class="pillar-num">02</span>
+          <h3 class="pillar-title">Geological Permanence</h3>
+          <p class="pillar-desc">
+            Vein-cut Roman travertine, honed Jura limestone, patinated raw bronze, and European oak. Noble organic materials selected to mature with quiet dignity across generations.
+          </p>
+        </div>
+
+        <div class="pillar-card">
+          <span class="pillar-num">03</span>
+          <h3 class="pillar-title">Acoustic Sanctuary</h3>
+          <p class="pillar-desc">
+            Monolithic acoustic ceilings, subterranean master isolation, and flush pocket doors dissolve the boundary between internal peace and open horizon.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       6. BESPOKE AMENITIES & LIFESTYLE TRIPTYCH
+       ============================================================ -->
+  <section id="amenities" class="section-amenities">
+    <div class="container">
+      <div class="section-header-row">
+        <div>
+          <span class="eyebrow">Curated Living</span>
+          <h2 class="section-title">Sanctuary & Bespoke Amenities</h2>
+        </div>
+        <span class="eyebrow">Integrated Commissions</span>
+      </div>
+
+      <div class="amenities-triptych">
+        <div class="amenity-card">
+          <div class="amenity-img-wrap">
+            <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=85" alt="Thermal Infinity Waters">
+          </div>
+          <div class="amenity-info">
+            <h4 class="amenity-name">Thermal Infinity Waters</h4>
+            <span class="amenity-sub">Geothermal Clifftop Pools</span>
+          </div>
+        </div>
+
+        <div class="amenity-card">
+          <div class="amenity-img-wrap">
+            <img src="https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=800&q=85" alt="Dolby Private Screening Room">
+          </div>
+          <div class="amenity-info">
+            <h4 class="amenity-name">Dolby Private Screening</h4>
+            <span class="amenity-sub">Acoustically Tuned Cinema</span>
+          </div>
+        </div>
+
+        <div class="amenity-card">
+          <div class="amenity-img-wrap">
+            <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=800&q=85" alt="Subterranean Wine Vault">
+          </div>
+          <div class="amenity-info">
+            <h4 class="amenity-name">Subterranean Wine Vault</h4>
+            <span class="amenity-sub">Climate-Controlled Provenance</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       7. PRIVATE CONCIERGE & ADVISORY DESK
+       ============================================================ -->
+  <section id="concierge" class="section-concierge">
+    <div class="container concierge-box">
+      <span class="eyebrow" style="color: var(--color-gold-light);">Confidential Acquisition</span>
+      <h2 class="concierge-title">Arrange a Private Viewing</h2>
+      <p class="concierge-body">
+        Private commissions and acquisitions are handled strictly under discreet non-disclosure protocols. Connect directly with our Mayfair or Côte d'Azur advisory desk.
+      </p>
+      <div class="concierge-actions">
+        <a href="https://wa.me/918004821980" target="_blank" rel="noopener noreferrer" class="btn btn-solid-white">Direct WhatsApp Concierge &nearr;</a>
+        <a href="mailto:concierge@bileksa.com" class="btn btn-glass-hero">Request Formal Advisory Dossier</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       8. MASTER ARCHITECTURAL FOOTER
+       ============================================================ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <span class="brand-wordmark" style="color: #fff; font-size: 22px;">BILEKSA</span>
+          <p style="font-size: 13px; color: rgba(255, 255, 255, 0.55); margin-top: 12px; line-height: 1.6; max-width: 280px;">
+            Atelier for exceptional residential commissions and private acquisitions across Europe, North America, and the Middle East.
+          </p>
+        </div>
+
+        <div>
+          <h5 class="footer-col-title">The Registry</h5>
+          <ul class="footer-links">
+            <li><a href="#registry" class="footer-link">The Cliff Villa</a></li>
+            <li><a href="#registry" class="footer-link">The Ocean Villa</a></li>
+            <li><a href="#registry" class="footer-link">The Garden Villa</a></li>
+            <li><a href="#registry" class="footer-link">The Skyline Residence</a></li>
+            <li><a href="#registry" class="footer-link">The Beachfront Compound</a></li>
+            <li><a href="#registry" class="footer-link">The Hillside Retreat</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h5 class="footer-col-title">Advisory</h5>
+          <ul class="footer-links">
+            <li><a href="#materiality" class="footer-link">Architectural Vision</a></li>
+            <li><a href="#amenities" class="footer-link">Curated Sanctuary</a></li>
+            <li><a href="#concierge" class="footer-link">Private Viewing</a></li>
+            <li><a href="#concierge" class="footer-link">Confidential Protocol</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h5 class="footer-col-title">Jurisdictions</h5>
+          <p style="font-size: 12.5px; color: rgba(255, 255, 255, 0.65); line-height: 1.8;">
+            Mayfair, London<br>
+            Cap d'Antibes, France<br>
+            Monaco &middot; Dubai &middot; St. Moritz
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; 2026 BILEKSA Private Residences Ltd. All rights reserved.</span>
+        <span>Architectural Master Template v2.0 &middot; Revision 3</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script for Dynamic Navigation Transition and URL State Control -->
+  <script>
+    (function() {
+      const header = document.getElementById('site-header');
+      function onScroll() {
+        if (window.scrollY > 30) {
+          header.classList.add('is-scrolled');
+        } else {
+          header.classList.remove('is-scrolled');
+        }
+      }
+      window.addEventListener('scroll', onScroll, { passive: true });
+      
+      const params = new URLSearchParams(window.location.search);
+      const targetParam = params.get('target');
+      const scrollYParam = params.get('scrollY');
+
+      function applyScroll() {
+        if (targetParam) {
+          const el = document.getElementById(targetParam);
+          if (el) {
+            el.scrollIntoView({ behavior: 'instant', block: 'start' });
+            header.classList.add('is-scrolled');
+          }
+        } else if (scrollYParam) {
+          const y = parseInt(scrollYParam, 10);
+          window.scrollTo(0, y);
+          if (y > 30) header.classList.add('is-scrolled');
+        } else if (params.get('scrolled') === 'true') {
+          window.scrollTo(0, 500);
+          header.classList.add('is-scrolled');
+        }
+      }
+
+      if (document.readyState === 'loading') {
+        window.addEventListener('DOMContentLoaded', applyScroll);
+      } else {
+        applyScroll();
+      }
+      window.addEventListener('load', applyScroll);
+    })();
+  </script>
+</body>
+</html>

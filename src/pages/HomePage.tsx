@@ -3,25 +3,22 @@ import { propertyService } from '../services/propertyService';
 import { Property } from '../types/property';
 import { CinematicHeroScroll } from '../components/home/CinematicHeroScroll';
 import { BrandIntroduction } from '../components/home/BrandIntroduction';
-import { TypologyShowcase } from '../components/home/TypologyShowcase';
-import { SignatureResidencesSection } from '../components/home/SignatureResidencesSection';
-import { CinematicVideoSection } from '../components/home/CinematicVideoSection';
+import { FlagshipResidenceSection } from '../components/home/FlagshipResidenceSection';
+import { CuratedCollectionSection } from '../components/home/CuratedCollectionSection';
 import { ArchitecturalVisionSection } from '../components/home/ArchitecturalVisionSection';
 import { LifestyleSection } from '../components/home/LifestyleSection';
+import { CollectionsPreviewSection } from '../components/home/CollectionsPreviewSection';
 import { PrivateViewingCTA } from '../components/home/PrivateViewingCTA';
 
 export const HomePage: React.FC = () => {
   const [leadProperty, setLeadProperty] = useState<Property | null>(null);
-  const [secondaryProperties, setSecondaryProperties] = useState<Property[]>([]);
 
   useEffect(() => {
     async function loadData() {
       try {
         const all = await propertyService.getAllProperties();
         const aurelia = all.find((p) => p.slug === 'the-aurelia-estate') || all[0] || null;
-        const secondaries = all.filter((p) => p.slug !== aurelia?.slug).slice(0, 3);
         setLeadProperty(aurelia);
-        setSecondaryProperties(secondaries);
       } catch (err) {
         console.error('Failed to load homepage residences:', err);
       }
@@ -30,33 +27,39 @@ export const HomePage: React.FC = () => {
   }, []);
 
   return (
-    <div className="w-full bg-[#FAF8F5] text-[#1A1816]">
-      {/* 1. PRESERVED 240-FRAME SCROLL-CONTROLLED CINEMATIC HERO SEQUENCE */}
+    <div className="homepage-root">
+      {/* LOCKED APPROVED 240-FRAME SCROLL-CONTROLLED CINEMATIC HERO SEQUENCE */}
       <CinematicHeroScroll />
 
-      {/* 2. BRAND INTRODUCTION — SPACES BEYOND THE ORDINARY */}
-      <BrandIntroduction />
+      {/* CONTINUOUS AMBIENT ARCHITECTURAL ENVIRONMENT FOR EDITORIAL GLASS SECTIONS */}
+      <div className="homepage-ambient-backdrop" aria-hidden="true">
+        <div className="ambient-architectural-media" />
+        <div className="ambient-warm-scrim" />
+      </div>
 
-      {/* 3. ARCHITECTURAL TYPOLOGIES SHOWCASE */}
-      <TypologyShowcase />
+      {/* EDITORIAL GLASS CONTAINER FLOATING ABOVE ARCHITECTURAL ENVIRONMENT */}
+      <div className="homepage-editorial-flow">
+        {/* SECTION 1 — ARCHITECTURAL INTRODUCTION & EDITORIAL FLOATING SLAB */}
+        <BrandIntroduction />
 
-      {/* 4. SIGNATURE RESIDENCES (THE AURELIA ESTATE & FEATURED COMMISSIONS) */}
-      <SignatureResidencesSection
-        leadProperty={leadProperty}
-        secondaryProperties={secondaryProperties}
-      />
+        {/* SECTION 2 — FLAGSHIP RESIDENCE: THE CLIFF VILLA */}
+        <FlagshipResidenceSection leadProperty={leadProperty} />
 
-      {/* 5. CINEMATIC PROPERTY SHOWCASE — 16:9 ARCHITECTURAL FILM SCREENING */}
-      <CinematicVideoSection />
+        {/* SECTION 3 — CURATED RESIDENCE COLLECTION (FIVE MASTERWORKS) */}
+        <CuratedCollectionSection />
 
-      {/* 6. ARCHITECTURAL VISION & MATERIAL CRAFT */}
-      <ArchitecturalVisionSection />
+        {/* SECTION 4 — ARCHITECTURAL PHILOSOPHY: STONE, LIGHT & LANDSCAPE */}
+        <ArchitecturalVisionSection />
 
-      {/* 7. CURATED LIFESTYLE & LIVING EXPERIENCE */}
-      <LifestyleSection />
+        {/* SECTION 5 — SANCTUARY & LIVING PREVIEW (WELLNESS, POOLS, SALONS) */}
+        <LifestyleSection />
 
-      {/* 8. PRIVATE CLIENT VIEWING & CONCIERGE CTA */}
-      <PrivateViewingCTA />
+        {/* SECTION 6 — CURATED LIFESTYLE & COLLECTIONS PREVIEW + 4K SCREENING */}
+        <CollectionsPreviewSection />
+
+        {/* SECTION 7 — PRIVATE VIEWING INVITATION & ADVISORY CONCIERGE */}
+        <PrivateViewingCTA />
+      </div>
     </div>
   );
 };

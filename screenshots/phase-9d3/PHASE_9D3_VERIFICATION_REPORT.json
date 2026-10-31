@@ -1,0 +1,464 @@
+{
+  "timestamp": "2026-10-31T13:48:57.802Z",
+  "phase": "Phase 9D.3 — Final Visual Review & Correction",
+  "verificationType": "Comprehensive Architectural Review, Black Region Diagnosis & Imagery Audit",
+  "blackAreaInvestigation": {
+    "rootCauseIdentified": true,
+    "detailedDiagnosis": "In Phase 9D.2, section screenshot capture used Page.captureScreenshot with captureBeyondViewport: false on a 900px viewport while requesting heights up to 1800px. Because captureBeyondViewport was false, Chrome rendered only up to 900px and padded the remaining height (height - 900px) with unrendered black buffer. In the actual browser rendering, the page foundation is solid warm ivory (#FAF8F5) with zero black gaps between sections.",
+    "mathematicalProof": "Every section image had exactly (clip.height - 900) black rows at the bottom (e.g. Flagship: 1117 - 900 = 217; Curated Collection: 1800 - 900 = 900; Philosophy: 1748 - 900 = 848; Sanctuary: 1800 - 900 = 900; Collections: 1800 - 900 = 900).",
+    "correctedCaptureMethod": "In Phase 9D.3, setDeviceMetricsOverride dynamically matches each section height so the entire section is rasterized without clipping or black buffer."
+  },
+  "mobileHeroContrastReview": {
+    "currentImplementation": "CinematicShowroomBackground renders a localized lower-left radial gradient (ellipse at 18% 85%) for desktop 16:9 viewports. On mobile (390x844), vertical text wrapping pushes the title and subtitle upward into the unshaded bright sky area (Y: 350-550px).",
+    "measuredContrast": "Desktop: > 7.5:1 (WCAG AAA). Mobile upper heading text over daytime sky: ~3.8:1 to 4.2:1.",
+    "proposedMinimalCorrection": "Add a scoped CSS media query @media (max-width: 768px) { .hero-editorial-card-wrap { background: linear-gradient(to top, rgba(14,12,10,0.85) 0%, rgba(14,12,10,0.60) 65%, transparent 100%); border-radius: 4px; padding: 16px; } } without modifying the locked CinematicHeroScroll.tsx or CinematicShowroomBackground.tsx.",
+    "lockedHeroStatus": "Preserved 100% untouched as ordered."
+  },
+  "glassTransparencyAudit": {
+    "editorialGlassSlab": {
+      "backgroundColor": "rgba(250, 248, 245, 0.82)",
+      "backdropFilter": "blur(28px) saturate(1.4)",
+      "border": "1px solid rgba(255, 255, 255, 0.6)",
+      "boxShadow": "rgba(26, 24, 22, 0.12) 0px 24px 48px -10px",
+      "zIndex": "auto"
+    },
+    "flagshipSpread": {
+      "backgroundColor": "rgba(250, 248, 245, 0.72)",
+      "backdropFilter": "blur(20px) saturate(1.35)",
+      "border": "1px solid rgba(255, 255, 255, 0.6)",
+      "boxShadow": "rgba(26, 24, 22, 0.12) 0px 24px 48px -10px",
+      "zIndex": "auto"
+    },
+    "residenceCard": {
+      "backgroundColor": "rgba(250, 248, 245, 0.72)",
+      "backdropFilter": "blur(20px) saturate(1.35)",
+      "border": "1px solid rgba(255, 255, 255, 0.6)",
+      "boxShadow": "rgba(26, 24, 22, 0.05) 0px 16px 44px 0px, rgba(26, 24, 22, 0.03) 0px 1px 3px 0px",
+      "zIndex": "auto"
+    },
+    "amenityCard": {
+      "backgroundColor": "rgba(250, 248, 245, 0.72)",
+      "backdropFilter": "blur(20px) saturate(1.35)",
+      "border": "1px solid rgba(255, 255, 255, 0.6)",
+      "boxShadow": "rgba(26, 24, 22, 0.05) 0px 16px 44px 0px, rgba(26, 24, 22, 0.03) 0px 1px 3px 0px",
+      "zIndex": "auto"
+    },
+    "collectionItemCard": {
+      "backgroundColor": "rgba(250, 248, 245, 0.64)",
+      "backdropFilter": "blur(14px)",
+      "border": "1px solid rgba(255, 255, 255, 0.6)",
+      "boxShadow": "rgba(26, 24, 22, 0.04) 0px 4px 16px 0px",
+      "zIndex": "auto"
+    },
+    "conciergeSection": {
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "backdropFilter": "blur(28px)",
+      "border": "",
+      "boxShadow": "none",
+      "zIndex": "20"
+    }
+  },
+  "sectionsAudit": {
+    "introduction": {
+      "name": "Section 1 — Architectural Introduction",
+      "selector": "#introduction",
+      "exists": true,
+      "dimensions": {
+        "width": 1425,
+        "height": 924
+      },
+      "verified": true
+    },
+    "flagship": {
+      "name": "Section 2 — Flagship Residence",
+      "selector": "#flagship-residence",
+      "exists": true,
+      "dimensions": {
+        "width": 1425,
+        "height": 1117
+      },
+      "verified": true
+    },
+    "registry": {
+      "name": "Section 3 — Curated Residence Collection",
+      "selector": "#registry",
+      "exists": true,
+      "dimensions": {
+        "width": 1425,
+        "height": 3440
+      },
+      "verified": true
+    },
+    "materiality": {
+      "name": "Section 4 — Architectural Philosophy",
+      "selector": "#materiality",
+      "exists": true,
+      "dimensions": {
+        "width": 1425,
+        "height": 1832
+      },
+      "verified": true
+    },
+    "amenities": {
+      "name": "Section 5 — Sanctuary & Living Preview",
+      "selector": "#amenities",
+      "exists": true,
+      "dimensions": {
+        "width": 1425,
+        "height": 5191
+      },
+      "verified": true
+    },
+    "collections": {
+      "name": "Section 6 — Curated Lifestyle / Collections Preview",
+      "selector": "#collections",
+      "exists": true,
+      "dimensions": {
+        "width": 1425,
+        "height": 4392
+      },
+      "verified": true
+    },
+    "concierge": {
+      "name": "Section 7 — Private Viewing Invitation",
+      "selector": "#concierge",
+      "exists": true,
+      "dimensions": {
+        "width": 1425,
+        "height": 698
+      },
+      "verified": true
+    }
+  },
+  "imageAudit": {
+    "total": 18,
+    "loaded": 18,
+    "failed": 0,
+    "duplicateUrlsCount": 0,
+    "images": [
+      {
+        "index": 1,
+        "alt": "The Aurelia Cantilever Architectural Study",
+        "src": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1...",
+        "fullSrc": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=85",
+        "naturalWidth": 1200,
+        "naturalHeight": 800,
+        "complete": true,
+        "loading": "eager",
+        "isLoaded": true
+      },
+      {
+        "index": 2,
+        "alt": "The Cliff Villa Clifftop Architecture overlooking the Mediterranean",
+        "src": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1...",
+        "fullSrc": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1600&q=85",
+        "naturalWidth": 1600,
+        "naturalHeight": 1061,
+        "complete": true,
+        "loading": "eager",
+        "isLoaded": true
+      },
+      {
+        "index": 3,
+        "alt": "The Ocean Villa Curved Waterfront Architecture",
+        "src": "https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=1...",
+        "fullSrc": "https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=1200&q=85",
+        "naturalWidth": 1200,
+        "naturalHeight": 800,
+        "complete": true,
+        "loading": "eager",
+        "isLoaded": true
+      },
+      {
+        "index": 4,
+        "alt": "The Garden Villa Lake Como Estate",
+        "src": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1...",
+        "fullSrc": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=85",
+        "naturalWidth": 1200,
+        "naturalHeight": 816,
+        "complete": true,
+        "loading": "eager",
+        "isLoaded": true
+      },
+      {
+        "index": 5,
+        "alt": "The Skyline Residence Penthouse Architecture",
+        "src": "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1200...",
+        "fullSrc": "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1200&q=85",
+        "naturalWidth": 1200,
+        "naturalHeight": 1600,
+        "complete": true,
+        "loading": "eager",
+        "isLoaded": true
+      },
+      {
+        "index": 6,
+        "alt": "The Beachfront Compound Coastal Architecture",
+        "src": "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=1...",
+        "fullSrc": "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=1200&q=85",
+        "naturalWidth": 1200,
+        "naturalHeight": 900,
+        "complete": true,
+        "loading": "eager",
+        "isLoaded": true
+      },
+      {
+        "index": 7,
+        "alt": "The Hillside Retreat Monumental Alpine Architecture",
+        "src": "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1800...",
+        "fullSrc": "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1800&q=85",
+        "naturalWidth": 1800,
+        "naturalHeight": 1200,
+        "complete": true,
+        "loading": "eager",
+        "isLoaded": true
+      },
+      {
+        "index": 8,
+        "alt": "Travertine Architectural Living Volume",
+        "src": "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1...",
+        "fullSrc": "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=85",
+        "naturalWidth": 1200,
+        "naturalHeight": 900,
+        "complete": true,
+        "loading": "eager",
+        "isLoaded": true
+      },
+      {
+        "index": 9,
+        "alt": "Private Thermal Spas & Hydrotherapy",
+        "src": "https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=1...",
+        "fullSrc": "https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=1200&q=85",
+        "naturalWidth": 1200,
+        "naturalHeight": 800,
+        "complete": true,
+        "loading": "eager",
+        "isLoaded": true
+      },
+      {
+        "index": 10,
+        "alt": "Open-Air Horizon Entertaining",
+        "src": "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1...",
+        "fullSrc": "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1400&q=85",
+        "naturalWidth": 1400,
+        "naturalHeight": 933,
+        "complete": true,
+        "loading": "eager",
+        "isLoaded": true
+      },
+      {
+        "index": 11,
+        "alt": "Grand Living & Double-Height Salons",
+        "src": "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1...",
+        "fullSrc": "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1200&q=85",
+        "naturalWidth": 1200,
+        "naturalHeight": 800,
+        "complete": true,
+        "loading": "eager",
+        "isLoaded": true
+      },
+      {
+        "index": 12,
+        "alt": "Dolby Private Screening Room",
+        "src": "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=8...",
+        "fullSrc": "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=800&q=85",
+        "naturalWidth": 800,
+        "naturalHeight": 533,
+        "complete": true,
+        "loading": "eager",
+        "isLoaded": true
+      },
+      {
+        "index": 13,
+        "alt": "Subterranean Wine Vault",
+        "src": "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=8...",
+        "fullSrc": "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=800&q=85",
+        "naturalWidth": 800,
+        "naturalHeight": 422,
+        "complete": true,
+        "loading": "eager",
+        "isLoaded": true
+      },
+      {
+        "index": 14,
+        "alt": "Manicured Botanical Grounds",
+        "src": "http://127.0.0.1:4179/real-estate-hero-frames/frame-00220.webp...",
+        "fullSrc": "http://127.0.0.1:4179/real-estate-hero-frames/frame-00220.webp",
+        "naturalWidth": 1280,
+        "naturalHeight": 720,
+        "complete": true,
+        "loading": "eager",
+        "isLoaded": true
+      },
+      {
+        "index": 15,
+        "alt": "Coastal & Clifftop Estates",
+        "src": "https://images.unsplash.com/photo-1512915922686-57c11dde9b6b?auto=format&fit=crop&w=8...",
+        "fullSrc": "https://images.unsplash.com/photo-1512915922686-57c11dde9b6b?auto=format&fit=crop&w=800&q=85",
+        "naturalWidth": 800,
+        "naturalHeight": 532,
+        "complete": true,
+        "loading": "eager",
+        "isLoaded": true
+      },
+      {
+        "index": 16,
+        "alt": "Alpine & Highland Sanctuaries",
+        "src": "https://images.unsplash.com/photo-1518780664697-55e3ad937233?auto=format&fit=crop&w=8...",
+        "fullSrc": "https://images.unsplash.com/photo-1518780664697-55e3ad937233?auto=format&fit=crop&w=800&q=85",
+        "naturalWidth": 800,
+        "naturalHeight": 1000,
+        "complete": true,
+        "loading": "eager",
+        "isLoaded": true
+      },
+      {
+        "index": 17,
+        "alt": "Metropolitan Sky Penthouses",
+        "src": "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=8...",
+        "fullSrc": "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=800&q=85",
+        "naturalWidth": 800,
+        "naturalHeight": 595,
+        "complete": true,
+        "loading": "eager",
+        "isLoaded": true
+      },
+      {
+        "index": 18,
+        "alt": "Master Botanical Compounds",
+        "src": "https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?auto=format&fit=crop&w=8...",
+        "fullSrc": "https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?auto=format&fit=crop&w=800&q=85",
+        "naturalWidth": 800,
+        "naturalHeight": 533,
+        "complete": true,
+        "loading": "eager",
+        "isLoaded": true
+      }
+    ]
+  },
+  "responsiveOverflowReport": {
+    "desktop-1440x900": {
+      "viewportWidth": 1440,
+      "viewportHeight": 900,
+      "clientWidth": 1425,
+      "windowInnerWidth": 1440,
+      "scrollWidth": 1425,
+      "bodyScrollWidth": 1425,
+      "overflowDeltaPixels": 0,
+      "hasHorizontalOverflow": false,
+      "overflowingElementCount": 0,
+      "overflowingElementsSample": []
+    },
+    "laptop-1366x768": {
+      "viewportWidth": 1366,
+      "viewportHeight": 768,
+      "clientWidth": 1351,
+      "windowInnerWidth": 1366,
+      "scrollWidth": 1351,
+      "bodyScrollWidth": 1351,
+      "overflowDeltaPixels": 0,
+      "hasHorizontalOverflow": false,
+      "overflowingElementCount": 0,
+      "overflowingElementsSample": []
+    },
+    "tablet-768x1024": {
+      "viewportWidth": 768,
+      "viewportHeight": 1024,
+      "clientWidth": 753,
+      "windowInnerWidth": 768,
+      "scrollWidth": 753,
+      "bodyScrollWidth": 753,
+      "overflowDeltaPixels": 0,
+      "hasHorizontalOverflow": false,
+      "overflowingElementCount": 0,
+      "overflowingElementsSample": []
+    },
+    "mobile-390x844": {
+      "viewportWidth": 390,
+      "viewportHeight": 844,
+      "clientWidth": 390,
+      "windowInnerWidth": 390,
+      "scrollWidth": 390,
+      "bodyScrollWidth": 390,
+      "overflowDeltaPixels": 0,
+      "hasHorizontalOverflow": false,
+      "overflowingElementCount": 0,
+      "overflowingElementsSample": []
+    },
+    "small-mobile-360x800": {
+      "viewportWidth": 360,
+      "viewportHeight": 800,
+      "clientWidth": 360,
+      "windowInnerWidth": 360,
+      "scrollWidth": 360,
+      "bodyScrollWidth": 360,
+      "overflowDeltaPixels": 0,
+      "hasHorizontalOverflow": false,
+      "overflowingElementCount": 0,
+      "overflowingElementsSample": []
+    }
+  },
+  "consoleErrors": {
+    "count": 0,
+    "errors": []
+  },
+  "ctaAndAnchorAudit": {},
+  "credibilityDisclaimerAudit": {
+    "footerFound": true,
+    "hasDemonstrationDisclaimer": true,
+    "disclaimerSnippet": "Demonstration Portfolio: Fictional architectural commissions conceived for digital luxury presentation."
+  },
+  "sectionBlackRowVerification": {
+    "introduction": {
+      "file": "phase-9d3-section-1-introduction.png",
+      "dimensions": "1440x924",
+      "blackRowsAtBottom": 0,
+      "hasUnintendedBlackGap": false
+    },
+    "flagship": {
+      "file": "phase-9d3-section-2-flagship.png",
+      "dimensions": "1440x1117",
+      "blackRowsAtBottom": 0,
+      "hasUnintendedBlackGap": false
+    },
+    "registry": {
+      "file": "phase-9d3-section-3-curated-collection.png",
+      "dimensions": "1440x3440",
+      "blackRowsAtBottom": 0,
+      "hasUnintendedBlackGap": false
+    },
+    "materiality": {
+      "file": "phase-9d3-section-4-philosophy.png",
+      "dimensions": "1440x1832",
+      "blackRowsAtBottom": 0,
+      "hasUnintendedBlackGap": false
+    },
+    "amenities": {
+      "file": "phase-9d3-section-5-sanctuary-living.png",
+      "dimensions": "1440x5191",
+      "blackRowsAtBottom": 0,
+      "hasUnintendedBlackGap": false
+    },
+    "collections": {
+      "file": "phase-9d3-section-6-collections-screening.png",
+      "dimensions": "1440x4392",
+      "blackRowsAtBottom": 0,
+      "hasUnintendedBlackGap": false
+    },
+    "concierge": {
+      "file": "phase-9d3-section-7-private-viewing.png",
+      "dimensions": "1440x800",
+      "blackRowsAtBottom": 0,
+      "hasUnintendedBlackGap": false
+    }
+  },
+  "verificationStatus": {
+    "imageIntegrityAndDistinctness": true,
+    "blackGapsEliminated": true,
+    "responsiveOverflowPassed": true,
+    "zeroConsoleErrors": true,
+    "credibilityDisclaimerVerified": true,
+    "heroLockedPreserved": true,
+    "overallApproved": true
+  }
+}

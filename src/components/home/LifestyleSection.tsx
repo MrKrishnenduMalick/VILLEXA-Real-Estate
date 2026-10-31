@@ -3,81 +3,226 @@ import { Link } from 'wouter';
 import { ArrowRight, Sparkles } from 'lucide-react';
 
 export const LifestyleSection: React.FC = () => {
-  const vignettes = [
-    {
-      title: 'Private Thermal Spas & Wellness',
-      category: 'SANCTUARY',
-      description: 'Subterranean steam rooms, cedar saunas, and temperature-controlled infinity plunge basins.',
-      imageUrl: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=800&q=85'
-    },
-    {
-      title: 'Open-Air Horizon Entertaining',
-      category: 'LOGGIAS & TERRACES',
-      description: 'Cantilevered dining loggias with integrated outdoor hearths framing uninterrupted ocean sunsets.',
-      imageUrl: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=85'
-    },
-    {
-      title: 'Grand Living & Double-Height Salons',
-      category: 'INTERIOR PROPORTIONS',
-      description: 'Soaring 7-metre volume ceilings engineered for acoustic calm, natural cross-ventilation, and monumental art curation.',
-      imageUrl: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=85'
-    }
-  ];
-
   return (
-    <section id="curated-lifestyle" className="py-28 sm:py-36 bg-[#FFFFFF] text-[#1A1816] overflow-hidden border-t border-[#EAE5DC]">
-      <div className="max-w-7xl mx-auto px-6 sm:px-8">
+    <section id="amenities" className="section-amenities py-12 sm:py-16">
+      <div className="container">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
-          <div className="max-w-2xl">
-            <span className="inline-flex items-center gap-2 text-[12px] uppercase tracking-[0.28em] text-[#B89552] font-semibold mb-3">
-              <Sparkles size={13} />
-              <span>THE LIVING EXPERIENCE</span>
+        <div className="section-header-row mb-10 pb-5 border-b border-[#EAE5DC]">
+          <div>
+            <span className="eyebrow mb-2">
+              <Sparkles size={13} className="text-[#B89552]" />
+              <span>SANCTUARY &amp; LIVING PREVIEW</span>
             </span>
-            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-light text-[#1A1816] leading-tight">
-              An Elevated Daily Rhythm
+            <h2 className="section-title">
+              Living as an Art Form
             </h2>
-            <p className="mt-4 text-base text-[#6E6860] font-light leading-relaxed">
-              Architecture that nurtures tranquility, privacy, and meaningful gatherings with the service standards of a private resort.
+            <p className="mt-3 text-base text-[#2B2724] font-normal leading-relaxed max-w-2xl">
+              From subterranean thermal baths to cantilevered infinity pools, each residence is designed as an acoustic and sensory sanctuary.
             </p>
           </div>
-
           <Link
             href="/lifestyle"
-            className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.18em] text-[#B89552] hover:text-[#9E7D3B] font-semibold transition-colors"
+            className="btn btn-outline-dark"
           >
-            <span>Explore Lifestyle Monographs</span>
+            <span>Explore Sanctuary &amp; Living</span>
             <ArrowRight size={14} />
           </Link>
         </div>
 
-        {/* 3-Column Lifestyle Vignettes */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {vignettes.map((item, idx) => (
-            <div
-              key={idx}
-              className="group relative rounded-3xl overflow-hidden aspect-[4/5] bg-[#FAF8F5] border border-[#EAE5DC] shadow-sm hover:shadow-xl transition-all duration-500 flex flex-col justify-end p-6 sm:p-8"
-            >
-              <img
-                src={item.imageUrl}
-                alt={item.title}
-                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#1A1816]/90 via-[#1A1816]/35 to-transparent pointer-events-none" />
+        {/* 1. Master Sanctuary Spread: Heroic Architectural Feature */}
+        <div className="bg-[var(--glass-primary)] border border-[var(--glass-border)] rounded-[4px] p-6 lg:p-8 backdrop-blur-[20px] shadow-md mb-8">
+          <div className="lifestyle-hero-spread">
+            {/* Commanding Primary Image (7 cols) */}
+            <div>
+              <div className="w-full aspect-[16/10] rounded-[3px] overflow-hidden border border-[#EAE5DC] bg-[#EAE5DC] shadow-sm">
+                <img
+                  src="https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=1200&q=85"
+                  alt="Private Thermal Spas & Hydrotherapy"
+                  className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                  loading="eager"
+                  onError={(e) => {
+                    e.currentTarget.src = '/real-estate-hero-frames/frame-00080.webp';
+                  }}
+                />
+              </div>
+            </div>
 
-              <div className="relative z-10 space-y-2">
-                <span className="text-[11px] uppercase tracking-[0.24em] text-[#DFCFA8] font-semibold block">
-                  {item.category}
+            {/* Editorial Story & Provenance (5 cols) */}
+            <div className="space-y-4">
+              <div className="flex items-center justify-between">
+                <span className="text-[10px] uppercase tracking-[0.22em] text-[#B89552] font-semibold">
+                  WELLNESS &amp; SPA SANCTUARY
                 </span>
-                <h3 className="font-serif text-2xl sm:text-3xl font-light text-white leading-snug">
-                  {item.title}
+                <span className="text-[9.5px] uppercase tracking-widest text-[#8A7E72] font-medium bg-white/60 px-2 py-0.5 rounded border border-[#EAE5DC]">
+                  Plate 03
+                </span>
+              </div>
+
+              <h3 className="font-serif text-2xl sm:text-3xl text-[#1A1816] font-light leading-snug">
+                Private Thermal Spas &amp; Hydrotherapy
+              </h3>
+
+              <p className="text-sm sm:text-base text-[#2B2724] leading-relaxed font-light">
+                Subterranean steam chambers, Finnish cedar saunas, and temperature-controlled hydrotherapy plunge basins carved from monolithic local stone. Engineered as an acoustic and sensory sanctuary away from external disturbance.
+              </p>
+
+              <div className="pt-3 border-t border-[#EAE5DC] grid grid-cols-2 gap-4 text-xs text-[#2B2724]">
+                <div>
+                  <strong className="block text-[#1A1816] text-[10.5px] uppercase tracking-wider mb-0.5">Vals Granite</strong>
+                  <span className="text-[#524C44] text-[11px]">Carved subterranean basin</span>
+                </div>
+                <div>
+                  <strong className="block text-[#1A1816] text-[10.5px] uppercase tracking-wider mb-0.5">Acoustic Quiet</strong>
+                  <span className="text-[#524C44] text-[11px]">-48dB subterranean isolation</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* 2. Balanced Architectural Diptych (Two Wide Curated Volumes) */}
+        <div className="lifestyle-diptych-grid">
+          {/* Diptych 1: Infinity Pools & Entertaining */}
+          <div className="amenity-card flex flex-col justify-between">
+            <div>
+              <div className="w-full aspect-[16/10] overflow-hidden bg-[#EAE5DC]">
+                <img
+                  src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1400&q=85"
+                  alt="Open-Air Horizon Entertaining"
+                  className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                  loading="eager"
+                  onError={(e) => {
+                    e.currentTarget.src = '/real-estate-hero-frames/frame-00140.webp';
+                  }}
+                />
+              </div>
+              <div className="p-6 bg-[var(--glass-strong)] border-t border-[var(--glass-border-subtle)] space-y-2">
+                <div className="flex items-center justify-between">
+                  <span className="amenity-sub">INFINITY POOLS &amp; LOGGIAS</span>
+                  <span className="text-[9.5px] uppercase tracking-widest text-[#B89552] font-semibold">Plate 04</span>
+                </div>
+                <h3 className="font-serif text-xl sm:text-2xl text-[#1A1816] font-light">
+                  Open-Air Horizon Entertaining
                 </h3>
-                <p className="text-xs sm:text-sm text-white/85 font-light leading-relaxed line-clamp-3">
-                  {item.description}
+                <p className="text-xs sm:text-sm text-[#2B2724] leading-relaxed font-light">
+                  Cantilevered dining loggias with integrated hearths and 25-meter infinity reflecting pools framing uninterrupted ocean sunsets.
                 </p>
               </div>
             </div>
-          ))}
+          </div>
+
+          {/* Diptych 2: Grand Living & Double-Height Salons */}
+          <div className="amenity-card flex flex-col justify-between">
+            <div>
+              <div className="w-full aspect-[16/10] overflow-hidden bg-[#EAE5DC]">
+                <img
+                  src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1200&q=85"
+                  alt="Grand Living & Double-Height Salons"
+                  className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                  loading="eager"
+                  onError={(e) => {
+                    e.currentTarget.src = '/real-estate-hero-frames/frame-00200.webp';
+                  }}
+                />
+              </div>
+              <div className="p-6 bg-[var(--glass-strong)] border-t border-[var(--glass-border-subtle)] space-y-2">
+                <div className="flex items-center justify-between">
+                  <span className="amenity-sub">ACOUSTIC &amp; RESIDENTIAL VOLUME</span>
+                  <span className="text-[9.5px] uppercase tracking-widest text-[#B89552] font-semibold">Plate 05</span>
+                </div>
+                <h3 className="font-serif text-xl sm:text-2xl text-[#1A1816] font-light">
+                  Grand Living &amp; Double-Height Salons
+                </h3>
+                <p className="text-xs sm:text-sm text-[#2B2724] leading-relaxed font-light">
+                  Soaring 7-metre volume ceilings engineered for acoustic calm, natural cross-ventilation, and monumental private art curation.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* 3. Secondary Amenity Infrastructure Triad (Refined Horizontal Capsules) */}
+        <div>
+          <div className="mb-6 pb-2 border-b border-[#EAE5DC]/80 flex items-center justify-between">
+            <span className="text-[11px] uppercase tracking-[0.22em] text-[#B89552] font-semibold block">
+              Curated Private Infrastructure
+            </span>
+            <span className="text-xs text-[#8A7E72] font-light">03 Specialized Commissions</span>
+          </div>
+
+          <div className="lifestyle-triad-grid">
+            {/* Screening Room */}
+            <div className="amenity-sub-card flex flex-col justify-between">
+              <div>
+                <div className="aspect-[16/10] overflow-hidden mb-4 border border-[var(--glass-border)] rounded-[3px] bg-[#EAE5DC]">
+                  <img
+                    src="https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=800&q=85"
+                    alt="Dolby Private Screening Room"
+                    className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                    loading="eager"
+                    onError={(e) => {
+                      e.currentTarget.src = '/real-estate-hero-frames/frame-00060.webp';
+                    }}
+                  />
+                </div>
+                <span className="text-[9.5px] uppercase tracking-widest text-[#B89552] font-semibold block mb-1">
+                  ACOUSTICALLY TUNED CINEMA
+                </span>
+                <h4 className="font-serif text-lg text-[#1A1816] mb-2">Dolby Private Screening Room</h4>
+                <p className="text-xs text-[#2B2724] leading-relaxed font-light">
+                  THX-certified 4K laser projection with bespoke fabric acoustics and ergonomic private lounge seating.
+                </p>
+              </div>
+            </div>
+
+            {/* Wine Vault */}
+            <div className="amenity-sub-card flex flex-col justify-between">
+              <div>
+                <div className="aspect-[16/10] overflow-hidden mb-4 border border-[var(--glass-border)] rounded-[3px] bg-[#EAE5DC]">
+                  <img
+                    src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=800&q=85"
+                    alt="Subterranean Wine Vault"
+                    className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                    loading="eager"
+                    onError={(e) => {
+                      e.currentTarget.src = '/real-estate-hero-frames/frame-00180.webp';
+                    }}
+                  />
+                </div>
+                <span className="text-[9.5px] uppercase tracking-widest text-[#B89552] font-semibold block mb-1">
+                  CLIMATE-CONTROLLED CELLAR
+                </span>
+                <h4 className="font-serif text-lg text-[#1A1816] mb-2">Subterranean Wine Vault</h4>
+                <p className="text-xs text-[#2B2724] leading-relaxed font-light">
+                  Vibration-damped sommelier cellars maintaining an exact 13°C and 70% humidity for up to 2,500 grand cru vintages.
+                </p>
+              </div>
+            </div>
+
+            {/* Botanical Grounds */}
+            <div className="amenity-sub-card flex flex-col justify-between">
+              <div>
+                <div className="aspect-[16/10] overflow-hidden mb-4 border border-[var(--glass-border)] rounded-[3px] bg-[#EAE5DC]">
+                  <img
+                    src="https://images.unsplash.com/photo-160058515526-990dced4db0d?auto=format&fit=crop&w=800&q=85"
+                    alt="Manicured Botanical Grounds"
+                    className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                    loading="eager"
+                    onError={(e) => {
+                      e.currentTarget.src = '/real-estate-hero-frames/frame-00220.webp';
+                    }}
+                  />
+                </div>
+                <span className="text-[9.5px] uppercase tracking-widest text-[#B89552] font-semibold block mb-1">
+                  PRIVATE GROUNDS &amp; GARDENS
+                </span>
+                <h4 className="font-serif text-lg text-[#1A1816] mb-2">Manicured Botanical Grounds</h4>
+                <p className="text-xs text-[#2B2724] leading-relaxed font-light">
+                  Secluded meditative olive groves, sculpted water rills, and native botanical flora designed by landscape masters.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
