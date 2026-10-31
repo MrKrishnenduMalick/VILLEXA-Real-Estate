@@ -1,5 +1,37 @@
 import { describe, it, expect } from 'vitest';
-import { Product } from '../types/product';
+
+interface MockMediaItem {
+  id: string;
+  slug: string;
+  sku?: string;
+  name: string;
+  categoryId?: string;
+  categoryName?: string;
+  regularPrice?: number;
+  currency?: string;
+  showPricePublicly?: boolean;
+  isEnquiryOnly?: boolean;
+  shortDescription?: string;
+  fullDescription?: string;
+  materials?: string;
+  finishes?: string[];
+  primaryImageUrl: string | null;
+  galleryImages: string[];
+  videoUrl: string | null;
+  videoPosterUrl: string | null;
+  preferredViewer?: string;
+  glbConfig?: {
+    modelUrl: string;
+    autoRotate: boolean;
+  };
+  tags?: string[];
+  isFeatured?: boolean;
+  sortOrder?: number;
+  status?: string;
+  createdAt?: string;
+  updatedAt?: string;
+}
+
 const UPLOAD_LIMITS = {
   video: {
     maxBytes: 100 * 1024 * 1024,
@@ -12,7 +44,7 @@ const UPLOAD_LIMITS = {
 describe('Catalogue Showcase Video & Media Behavior', () => {
   // Test Scenario 1: Product with video, GLB model, and photographs (Test Chair archetype)
   it('correctly structures products with full multimedia suite (video + GLB + photo)', () => {
-    const fullMediaProduct: Product = {
+    const fullMediaProduct: MockMediaItem = {
       id: 'prod-full-media-1',
       slug: 'test-chair',
       sku: 'TEST-CHAIR-001',
@@ -59,7 +91,7 @@ describe('Catalogue Showcase Video & Media Behavior', () => {
 
   // Test Scenario 2: Product with photographs and GLB, but NO video
   it('correctly handles products with photographs and GLB but no showcase video', () => {
-    const glbOnlyProduct: Product = {
+    const glbOnlyProduct: MockMediaItem = {
       id: 'prod-glb-only-2',
       slug: 'solis-pedestal-table',
       sku: 'VLX-TB-02',
@@ -100,7 +132,7 @@ describe('Catalogue Showcase Video & Media Behavior', () => {
 
   // Test Scenario 3: Product with photographs only
   it('correctly renders photograph-only products with standard gallery view', () => {
-    const photoOnlyProduct: Product = {
+    const photoOnlyProduct: MockMediaItem = {
       id: 'prod-photo-only-3',
       slug: 'aethel-credenza',
       sku: 'VLX-CR-03',
