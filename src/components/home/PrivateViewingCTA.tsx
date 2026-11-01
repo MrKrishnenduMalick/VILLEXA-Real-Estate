@@ -7,7 +7,7 @@ export const PrivateViewingCTA: React.FC = () => {
   const config = useClientConfig();
 
   const whatsappMessage = encodeURIComponent(
-    `Hello ${config.brand.brandName} Concierge,\n\nI would like to arrange a confidential private consultation regarding the BILEKSA Private Residences portfolio.`
+    `Hello ${config.brand.brandName} Concierge,\n\nI would like to arrange a confidential private consultation regarding the ${config.brand.brandName} Private Residences portfolio.`
   );
 
   return (

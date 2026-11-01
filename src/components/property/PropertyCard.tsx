@@ -3,6 +3,7 @@ import { Link } from 'wouter';
 import { ArrowRight, MapPin, Bed, Bath, Maximize2 } from 'lucide-react';
 import { Property } from '../../types/property';
 import { propertyService } from '../../services/propertyService';
+import { useClientConfig } from '../../context/ClientConfigContext';
 
 interface PropertyCardProps {
   property: Property;
@@ -10,6 +11,7 @@ interface PropertyCardProps {
 }
 
 export const PropertyCard: React.FC<PropertyCardProps> = ({ property, priority = false }) => {
+  const config = useClientConfig();
   const containerRef = useRef<HTMLDivElement | null>(null);
   const videoRef = useRef<HTMLVideoElement | null>(null);
 
@@ -159,7 +161,7 @@ export const PropertyCard: React.FC<PropertyCardProps> = ({ property, priority =
             }}
           >
             <span style={{ fontFamily: 'var(--font-serif)', fontSize: '1.4rem', letterSpacing: '0.1em' }}>
-              BILEKSA
+              {config?.brand?.brandName || 'VILLEXA'}
             </span>
             <span style={{ fontSize: '0.72rem', color: '#6E6860', marginTop: '4px' }}>
               Architectural Commission
@@ -245,7 +247,9 @@ export const PropertyCard: React.FC<PropertyCardProps> = ({ property, priority =
           flexGrow: 1,
           justifyContent: 'space-between',
           gap: 'var(--space-4)',
-          backgroundColor: '#FFFFFF'
+          backgroundColor: 'rgba(255, 255, 255, 0.94)',
+          backdropFilter: 'blur(16px)',
+          WebkitBackdropFilter: 'blur(16px)'
         }}
       >
         <div>

@@ -163,7 +163,7 @@ export const PropertyVideoTour: React.FC<PropertyVideoTourProps> = ({
                 Private Architectural Film Upon Request
               </h3>
               <p className="mt-3 text-sm sm:text-base text-white/70 max-w-xl font-light">
-                To maintain client privacy and exclusive residency standards, complete high-resolution walkthrough films for {propertyName} are screened by appointment with the BILEKSA Advisory Board.
+                To maintain client privacy and exclusive residency standards, complete high-resolution walkthrough films for {propertyName} are screened by appointment with the {clientConfig.brand.brandName} Advisory Board.
               </p>
             </div>
 

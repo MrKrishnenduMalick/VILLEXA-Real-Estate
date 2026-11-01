@@ -238,11 +238,11 @@ export const SAMPLE_PROPERTIES: Property[] = [
     featured: true,
     signatureEstate: true,
     sortOrder: 2,
-    coverImage: 'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1800&q=85',
+    coverImage: getAssetSlotUrl('PROPERTY_INTERIOR_SALON'),
     gallery: [
       {
         id: 'cel-01',
-        url: 'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1600&q=85',
+        url: getAssetSlotUrl('PROPERTY_INTERIOR_SALON'),
         category: 'interior',
         caption: 'Double-height cathedral living room with floor-to-ceiling sea face vistas.',
         altText: 'The Celestia Penthouse cathedral salon',
@@ -250,21 +250,21 @@ export const SAMPLE_PROPERTIES: Property[] = [
       },
       {
         id: 'cel-02',
-        url: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1600&q=85',
+        url: getAssetSlotUrl('PROPERTY_ARCHITECTURAL_ENTRANCE'),
         category: 'interior',
         caption: 'Sculptural bronze spiral staircase connecting the triplex levels.',
         altText: 'Sculptural staircase'
       },
       {
         id: 'cel-03',
-        url: 'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=1600&q=85',
+        url: getAssetSlotUrl('PROPERTY_EXTERIOR_POOL'),
         category: 'terrace',
         caption: 'Private rooftop sky deck with heated counter-current lap pool.',
         altText: 'Rooftop sky pool'
       },
       {
         id: 'cel-04',
-        url: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1600&q=85',
+        url: getAssetSlotUrl('PROPERTY_INTERIOR_MASTER_BEDROOM'),
         category: 'interior',
         caption: 'Primary suite overlooking the coastal horizon with private dressing room.',
         altText: 'Primary suite with panoramic views'
@@ -275,7 +275,7 @@ export const SAMPLE_PROPERTIES: Property[] = [
         id: 'fp-cel-01',
         level: 'Lower Level 58',
         title: 'Grand Entertaining Salon',
-        planImageUrl: 'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=800&q=85',
+        planImageUrl: getAssetSlotUrl('PROPERTY_GALLERY_ATRIUM'),
         area: { value: 3800, unit: 'sqft' },
         description: 'Receiving salon, formal 16-seat dining room, show kitchen, and service annex.'
       },
@@ -283,7 +283,7 @@ export const SAMPLE_PROPERTIES: Property[] = [
         id: 'fp-cel-02',
         level: 'Upper Levels 59–60',
         title: 'Private Suites & Sky Deck',
-        planImageUrl: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=800&q=85',
+        planImageUrl: getAssetSlotUrl('PROPERTY_GALLERY_WINE_VAULT'),
         area: { value: 5400, unit: 'sqft' },
         description: '5 master suites, private wellness chamber, and private rooftop swimming terrace.'
       }
@@ -362,11 +362,11 @@ export const SAMPLE_PROPERTIES: Property[] = [
     featured: true,
     signatureEstate: false,
     sortOrder: 3,
-    coverImage: 'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=1800&q=85',
+    coverImage: getAssetSlotUrl('PROPERTY_EXTERIOR_PRIMARY'),
     gallery: [
       {
         id: 'ocn-01',
-        url: 'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=1600&q=85',
+        url: getAssetSlotUrl('PROPERTY_EXTERIOR_PRIMARY'),
         category: 'exterior',
         caption: 'Low-slung pavilion silhouette set amidst lush native coastal palms.',
         altText: 'The Ocean Crest beach pavilion',
@@ -374,14 +374,14 @@ export const SAMPLE_PROPERTIES: Property[] = [
       },
       {
         id: 'ocn-02',
-        url: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=85',
+        url: getAssetSlotUrl('PROPERTY_EXTERIOR_POOL'),
         category: 'terrace',
         caption: 'Sandstone poolside terrace stepping down directly to the beach reserve.',
         altText: 'Beachfront swimming pool'
       },
       {
         id: 'ocn-03',
-        url: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1600&q=85',
+        url: getAssetSlotUrl('PROPERTY_DINING_TERRACE'),
         category: 'interior',
         caption: 'Open living salon opening with 18-metre motorized pocket sliding doors.',
         altText: 'Open plan beachfront living salon'
@@ -392,7 +392,7 @@ export const SAMPLE_PROPERTIES: Property[] = [
         id: 'fp-ocn-01',
         level: 'Single Level Masterplan',
         title: 'Coastal Pavilion Enclave',
-        planImageUrl: 'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=800&q=85',
+        planImageUrl: getAssetSlotUrl('PROPERTY_GALLERY_MATERIALITY'),
         area: { value: 11800, unit: 'sqft' },
         description: 'Integrated single-floor layout connecting 5 detached bedroom pavilions via covered breezeways.'
       }
@@ -466,11 +466,11 @@ export const SAMPLE_PROPERTIES: Property[] = [
     featured: false,
     signatureEstate: false,
     sortOrder: 4,
-    coverImage: 'https://images.unsplash.com/photo-1518780664697-55e3ad937233?auto=format&fit=crop&w=1800&q=85',
+    coverImage: getAssetSlotUrl('PROPERTY_ARCHITECTURAL_ENTRANCE'),
     gallery: [
       {
         id: 'hld-01',
-        url: 'https://images.unsplash.com/photo-1518780664697-55e3ad937233?auto=format&fit=crop&w=1600&q=85',
+        url: getAssetSlotUrl('PROPERTY_ARCHITECTURAL_ENTRANCE'),
         category: 'exterior',
         caption: 'Stepped mountain retreat with dark charred timber and local slate stone.',
         altText: 'The Highland Manor mountain exterior',
@@ -478,14 +478,14 @@ export const SAMPLE_PROPERTIES: Property[] = [
       },
       {
         id: 'hld-02',
-        url: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1600&q=85',
+        url: getAssetSlotUrl('PROPERTY_GALLERY_WINE_VAULT'),
         category: 'interior',
         caption: 'Heated library and fireside lounge with floor-to-ceiling valley panoramas.',
         altText: 'Fireside mountain lounge'
       },
       {
         id: 'hld-03',
-        url: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1600&q=85',
+        url: getAssetSlotUrl('PROPERTY_INTERIOR_KITCHEN'),
         category: 'terrace',
         caption: 'Cantilevered heated viewing deck hovering above alpine pine forests.',
         altText: 'Alpine viewing deck'
@@ -496,7 +496,7 @@ export const SAMPLE_PROPERTIES: Property[] = [
         id: 'fp-hld-01',
         level: 'Terraced Masterplan',
         title: 'Three-Tier Alpine Layout',
-        planImageUrl: 'https://images.unsplash.com/photo-1518780664697-55e3ad937233?auto=format&fit=crop&w=800&q=85',
+        planImageUrl: getAssetSlotUrl('PROPERTY_INTERIOR_SALON'),
         area: { value: 8400, unit: 'sqft' },
         description: 'Upper entry observatory, central social hearth, and lower private bedroom suites.'
       }
@@ -569,11 +569,11 @@ export const SAMPLE_PROPERTIES: Property[] = [
     featured: false,
     signatureEstate: false,
     sortOrder: 5,
-    coverImage: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1800&q=85',
+    coverImage: getAssetSlotUrl('PROPERTY_INTERIOR_MASTER_BEDROOM'),
     gallery: [
       {
         id: 'sol-01',
-        url: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1600&q=85',
+        url: getAssetSlotUrl('PROPERTY_INTERIOR_MASTER_BEDROOM'),
         category: 'exterior',
         caption: 'Architectural fluted concrete facade with stepped terrace gardens.',
         altText: 'The Solstice Residences facade',
@@ -581,14 +581,14 @@ export const SAMPLE_PROPERTIES: Property[] = [
       },
       {
         id: 'sol-02',
-        url: 'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1600&q=85',
+        url: getAssetSlotUrl('PROPERTY_INTERIOR_SALON'),
         category: 'interior',
         caption: 'Expansive formal salon with seamless connection to private sky loggia.',
         altText: 'Contemporary apartment salon'
       },
       {
         id: 'sol-03',
-        url: 'https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=1600&q=85',
+        url: getAssetSlotUrl('PROPERTY_INTERIOR_KITCHEN'),
         category: 'interior',
         caption: 'Minimalist designer kitchen with integrated Gaggenau appliances.',
         altText: 'Modern kitchen interior'
@@ -599,7 +599,7 @@ export const SAMPLE_PROPERTIES: Property[] = [
         id: 'fp-sol-01',
         level: 'Single Floor Residence',
         title: 'Full-Floor Master Layout',
-        planImageUrl: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=800&q=85',
+        planImageUrl: getAssetSlotUrl('PROPERTY_GALLERY_ATRIUM'),
         area: { value: 6100, unit: 'sqft' },
         description: 'Private elevator foyer, 4 bedroom suites, staff chamber, and 120 ft continuous loggia.'
       }
@@ -673,11 +673,11 @@ export const SAMPLE_PROPERTIES: Property[] = [
     featured: true,
     signatureEstate: true,
     sortOrder: 6,
-    coverImage: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1800&q=85',
+    coverImage: getAssetSlotUrl('PROPERTY_GALLERY_ATRIUM'),
     gallery: [
       {
         id: 'ely-01',
-        url: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1600&q=85',
+        url: getAssetSlotUrl('PROPERTY_GALLERY_ATRIUM'),
         category: 'exterior',
         caption: 'Monumental modern villa pavilion surrounded by mature botanical gardens.',
         altText: 'The Elysian Gardens villa exterior',
@@ -685,14 +685,14 @@ export const SAMPLE_PROPERTIES: Property[] = [
       },
       {
         id: 'ely-02',
-        url: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1600&q=85',
+        url: getAssetSlotUrl('PROPERTY_INTERIOR_BATHROOM'),
         category: 'interior',
         caption: 'Grand gallery living hall with glass atrium and internal bamboo garden.',
         altText: 'Gallery living hall'
       },
       {
         id: 'ely-03',
-        url: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1600&q=85',
+        url: getAssetSlotUrl('PROPERTY_EXTERIOR_POOL'),
         category: 'terrace',
         caption: '30-metre lap pool with pavilion poolhouse and landscaped lawn.',
         altText: 'Lap pool and pavilion'
@@ -703,7 +703,7 @@ export const SAMPLE_PROPERTIES: Property[] = [
         id: 'fp-ely-01',
         level: 'Ground Level',
         title: 'Garden Level Pavilions',
-        planImageUrl: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=85',
+        planImageUrl: getAssetSlotUrl('PROPERTY_DINING_TERRACE'),
         area: { value: 9200, unit: 'sqft' },
         description: 'Grand receiving spaces, banquet dining, kitchen pavilion, and 2 guest pavilions.'
       },
@@ -711,7 +711,7 @@ export const SAMPLE_PROPERTIES: Property[] = [
         id: 'fp-ely-02',
         level: 'First Level',
         title: 'Family & Owner Sanctuary',
-        planImageUrl: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=85',
+        planImageUrl: getAssetSlotUrl('PROPERTY_GALLERY_MATERIALITY'),
         area: { value: 7000, unit: 'sqft' },
         description: 'Primary owner compound with dual marble baths, study, and private forest-facing balconies.'
       }

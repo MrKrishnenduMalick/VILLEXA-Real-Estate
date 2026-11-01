@@ -147,7 +147,7 @@ export const PropertyHero: React.FC<PropertyHeroProps> = ({
 
       {/* 4. Bottom Scroll Indicator */}
       <div className="relative z-10 max-w-7xl w-full mx-auto px-6 sm:px-8 pb-8 flex items-center justify-between text-white/50 text-[11px] uppercase tracking-[0.2em]">
-        <span className="hidden sm:inline">BILEKSA Private Office · Ref. {property.id}</span>
+        <span className="hidden sm:inline">{clientConfig.brand.brandName} Private Office · Ref. {property.id}</span>
         <button
           type="button"
           onClick={() => {

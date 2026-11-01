@@ -5,7 +5,7 @@ const activeClient = getClientConfig();
 
 const defaultSiteConfig: SiteConfiguration = {
   hero: {
-    kicker: 'BILEKSA PRIVATE RESIDENCES',
+    kicker: `${activeClient.brand.brandName} PRIVATE RESIDENCES`,
     title: 'Where Architecture Becomes Home',
     subtitle: 'Discover exceptional residences shaped by space, light and timeless design.',
     primaryCtaLabel: 'Explore Residences',

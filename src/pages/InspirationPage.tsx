@@ -87,7 +87,7 @@ export const InspirationPage: React.FC = () => {
             Curated Living &amp; Spatial Atmosphere
           </h1>
           <p className="text-base sm:text-lg text-white/75 font-light leading-relaxed">
-            True luxury is the cadence of daily life. Explore the deliberate architectural moments and private resort amenities that define the BILEKSA residential standard.
+            True luxury is the cadence of daily life. Explore the deliberate architectural moments and private resort amenities that define the {config.brand.brandName} residential standard.
           </p>
         </div>
 

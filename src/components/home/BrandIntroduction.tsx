@@ -25,7 +25,7 @@ export const BrandIntroduction: React.FC = () => {
               </h2>
 
               <p className="curatorial-body">
-                BILEKSA does not construct houses; we orchestrate permanent architectural sanctuaries. Each residence is an autonomous masterwork, sculpted to dialogue with light, wind, and geological strata.
+                {config.brand.brandName} does not construct houses; we orchestrate permanent architectural sanctuaries. Each residence is an autonomous masterwork, sculpted to dialogue with light, wind, and geological strata.
               </p>
 
               <p className="curatorial-body">

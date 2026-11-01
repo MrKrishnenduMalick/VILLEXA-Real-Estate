@@ -76,7 +76,7 @@ export const CollectionsPreviewSection: React.FC = () => {
   };
 
   return (
-    <section id="collections" className="section-collections py-12 sm:py-16 text-[#1A1816]">
+    <section id="collections" className="section-collections py-12 sm:py-16">
       <div className="container">
         {/* Section Header */}
         <div className="section-header-row mb-10 pb-5 border-b border-[#EAE5DC]">
@@ -88,7 +88,7 @@ export const CollectionsPreviewSection: React.FC = () => {
             <h2 className="section-title">
               Typological Collections in Motion
             </h2>
-            <p className="mt-3 text-base text-[#2B2724] font-normal leading-relaxed max-w-2xl">
+            <p className="mt-3 text-base font-normal leading-relaxed max-w-2xl">
               Residences categorized by landscape geography, complemented by an exclusive screening of our architectural motion study.
             </p>
           </div>

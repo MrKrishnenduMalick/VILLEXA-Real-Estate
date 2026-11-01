@@ -17,7 +17,7 @@ export const LifestyleSection: React.FC = () => {
             <h2 className="section-title">
               Living as an Art Form
             </h2>
-            <p className="mt-3 text-base text-[#2B2724] font-normal leading-relaxed max-w-2xl">
+            <p className="mt-3 text-base font-normal leading-relaxed max-w-2xl">
               From subterranean thermal baths to cantilevered infinity pools, each residence is designed as an acoustic and sensory sanctuary.
             </p>
           </div>

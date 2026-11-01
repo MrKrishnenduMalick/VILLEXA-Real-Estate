@@ -40,13 +40,13 @@ export const PropertySpecs: React.FC<PropertySpecsProps> = ({ property }) => {
     },
     ...(formattedPlot
       ? [
-          {
-            label: 'Plot Domain',
-            value: formattedPlot,
-            detail: 'Private Curated Grounds',
-            icon: Sparkles
-          }
-        ]
+        {
+          label: 'Plot Domain',
+          value: formattedPlot,
+          detail: 'Private Curated Grounds',
+          icon: Sparkles
+        }
+      ]
       : []),
     {
       label: 'Private Garage',

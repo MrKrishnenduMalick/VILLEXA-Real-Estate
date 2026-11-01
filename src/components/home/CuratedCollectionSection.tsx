@@ -111,7 +111,7 @@ export const CuratedCollectionSection: React.FC = () => {
             <h2 className="section-title">
               The Masterwork Registry &middot; Six Private Commissions
             </h2>
-            <p className="mt-3 text-base text-[#2B2724] font-normal leading-relaxed max-w-2xl">
+            <p className="mt-3 text-base font-normal leading-relaxed max-w-2xl">
               Comprising our flagship Aurelia commission alongside five autonomous architectural masterworks across Mediterranean cliffs, Alpine crests, and secluded island shores.
             </p>
           </div>

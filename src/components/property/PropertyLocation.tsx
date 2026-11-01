@@ -1,6 +1,7 @@
 import React from 'react';
 import { MapPin, Compass, Navigation, CheckCircle2 } from 'lucide-react';
 import { PropertyLocation as PropertyLocationType } from '../../types/property';
+import { useClientConfig } from '../../context/ClientConfigContext';
 
 interface PropertyLocationProps {
   propertyName: string;
@@ -15,6 +16,7 @@ export const PropertyLocation: React.FC<PropertyLocationProps> = ({
   address,
   highlights
 }) => {
+  const config = useClientConfig();
   const hasCoordinates = Boolean(
     location.coordinates?.latitude && location.coordinates?.longitude
   );
@@ -124,7 +126,7 @@ export const PropertyLocation: React.FC<PropertyLocationProps> = ({
               )}
 
               <p className="text-xs text-white/60 font-light leading-relaxed">
-                Private chauffeurs and helicopter charters can be coordinated through the BILEKSA Concierge desk for prospective owner site inspections.
+                Private chauffeurs and helicopter charters can be coordinated through the {config.brand.brandName} Concierge desk for prospective owner site inspections.
               </p>
             </div>
           </div>

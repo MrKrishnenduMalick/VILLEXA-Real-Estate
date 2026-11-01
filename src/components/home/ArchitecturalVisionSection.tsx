@@ -2,8 +2,10 @@ import React from 'react';
 import { Link } from 'wouter';
 import { ArrowRight, Compass } from 'lucide-react';
 import { getAssetSlotUrl } from '../../config/assetSlots';
+import { useClientConfig } from '../../context/ClientConfigContext';
 
 export const ArchitecturalVisionSection: React.FC = () => {
+  const config = useClientConfig();
   const pillars = [
     {
       number: '01',
@@ -35,17 +37,17 @@ export const ArchitecturalVisionSection: React.FC = () => {
     <section id="materiality" className="section-materiality py-12 sm:py-16">
       <div className="container">
         {/* Section Header with Refined Spacing */}
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-8 sm:mb-10 gap-8 pb-5 border-b border-[#EAE5DC]">
+        <div className="section-header-row flex flex-col lg:flex-row lg:items-end justify-between mb-8 sm:mb-10 gap-8 pb-5 border-b border-[#EAE5DC]">
           <div className="max-w-2xl">
             <span className="eyebrow mb-3">
               <Compass size={13} className="text-[#B89552]" />
               <span>ARCHITECTURAL PHILOSOPHY</span>
             </span>
-            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-light text-[#1A1816] leading-[1.1] tracking-tight mt-2">
+            <h2 className="section-title font-serif text-3xl sm:text-4xl md:text-5xl font-light leading-[1.1] tracking-tight mt-2">
               The Dialogue of Stone, Light, and Landscape
             </h2>
-            <p className="mt-4 text-base text-[#2B2724] font-normal leading-relaxed max-w-xl">
-              We reject the superficial ornamentation of mass luxury. Instead, BILEKSA residences celebrate pure structural form, heroic spatial volumes, and the sensory calm of authentic, unembellished materials.
+            <p className="mt-4 text-base font-normal leading-relaxed max-w-xl">
+              We reject the superficial ornamentation of mass luxury. Instead, {config.brand.brandName} residences celebrate pure structural form, heroic spatial volumes, and the sensory calm of authentic, unembellished materials.
             </p>
           </div>
 
