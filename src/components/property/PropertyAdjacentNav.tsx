@@ -28,17 +28,17 @@ export const PropertyAdjacentNav: React.FC<PropertyAdjacentNavProps> = ({
                 href={`/residence/${prevProperty.slug}`}
                 className="group p-6 sm:p-8 rounded-3xl bg-white/[0.08] border border-white/20 hover:border-[#C5A059] backdrop-blur-xl shadow-xl transition-all duration-300 flex items-center gap-5"
               >
-                <div className="w-12 h-12 rounded-full bg-[#FAF9F6] border border-[#E8E4DC] flex items-center justify-center shrink-0 group-hover:bg-[#C5A059] group-hover:text-white transition-colors duration-300">
-                  <ArrowLeft size={18} className="text-[#8C827A] group-hover:text-white" />
+                <div className="w-12 h-12 rounded-full bg-white/10 border border-white/20 flex items-center justify-center shrink-0 group-hover:bg-[#C5A059] group-hover:text-white transition-colors duration-300">
+                  <ArrowLeft size={18} className="text-[#DFCFA8] group-hover:text-white" />
                 </div>
                 <div className="overflow-hidden">
-                  <span className="text-[10px] uppercase tracking-[0.2em] text-[#C5A059] block mb-1">
+                  <span className="text-[10px] uppercase tracking-[0.2em] text-[#DFCFA8] block mb-1 font-medium">
                     Previous Residence
                   </span>
-                  <h4 className="font-serif text-xl sm:text-2xl text-[#12100E] font-normal truncate group-hover:text-[#9A7B39] transition-colors">
+                  <h4 className="font-serif text-xl sm:text-2xl text-white font-normal truncate group-hover:text-[#DFCFA8] transition-colors">
                     {prevProperty.name}
                   </h4>
-                  <span className="text-xs text-[#8C827A] truncate block mt-0.5">
+                  <span className="text-xs text-white/60 font-light truncate block mt-0.5">
                     {prevProperty.location.city}, {prevProperty.location.country}
                   </span>
                 </div>

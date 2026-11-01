@@ -65,8 +65,8 @@ export const PropertyFloorPlans: React.FC<PropertyFloorPlansProps> = ({
                   onClick={() => setActivePlanIndex(idx)}
                   className={`px-5 py-2.5 rounded-full text-xs uppercase tracking-[0.16em] font-medium transition-all duration-300 whitespace-nowrap ${
                     isActive
-                      ? 'bg-[#12100E] text-white shadow-md'
-                      : 'bg-white text-[#6B655F] hover:bg-[#EFECE6] border border-[#E8E4DC]'
+                      ? 'bg-[#C5A059] text-white shadow-md border border-[#C5A059]'
+                      : 'bg-white/10 text-white/80 hover:bg-white/20 border border-white/20'
                   }`}
                 >
                   {plan.level || `Level 0${idx + 1}`}
@@ -79,8 +79,8 @@ export const PropertyFloorPlans: React.FC<PropertyFloorPlansProps> = ({
         {/* Floor Plan Display Canvas */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           {/* Visual Blueprint (8 cols) */}
-          <div className="lg:col-span-8 bg-white p-6 sm:p-10 rounded-3xl border border-[#E8E4DC] shadow-sm relative group">
-            <div className="relative aspect-[16/10] sm:aspect-[16/9] rounded-2xl overflow-hidden bg-[#FAF9F6] border border-[#F2EFE9] flex items-center justify-center">
+          <div className="lg:col-span-8 glass-midnight-crystal p-6 sm:p-10 rounded-3xl relative group">
+            <div className="relative aspect-[16/10] sm:aspect-[16/9] rounded-2xl overflow-hidden bg-white/95 border border-white/40 flex items-center justify-center">
               {isFailed ? (
                 <div className="text-center p-8 text-[#8C827A]">
                   <ImageIcon size={36} className="mx-auto mb-2 opacity-40 text-[#C5A059]" />
@@ -100,7 +100,7 @@ export const PropertyFloorPlans: React.FC<PropertyFloorPlansProps> = ({
                 <button
                   type="button"
                   onClick={() => setIsZoomModalOpen(true)}
-                  className="absolute bottom-4 right-4 inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-[#12100E]/80 hover:bg-[#12100E] text-white text-xs uppercase tracking-wider backdrop-blur-md transition-colors"
+                  className="absolute bottom-4 right-4 inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-[#070C18]/85 hover:bg-[#070C18] border border-white/20 text-white text-xs uppercase tracking-wider backdrop-blur-md transition-colors"
                 >
                   <Maximize2 size={13} />
                   <span>Enlarge Blueprint</span>
@@ -110,29 +110,29 @@ export const PropertyFloorPlans: React.FC<PropertyFloorPlansProps> = ({
           </div>
 
           {/* Plan Details & Area Spec (4 cols) */}
-          <div className="lg:col-span-4 bg-white p-6 sm:p-8 rounded-3xl border border-[#E8E4DC] shadow-sm space-y-6">
+          <div className="lg:col-span-4 glass-champagne-gold p-6 sm:p-8 rounded-3xl space-y-6">
             <div>
-              <span className="text-[11px] uppercase tracking-[0.2em] text-[#C5A059] block mb-1">
+              <span className="text-[11px] uppercase tracking-[0.2em] text-[#DFCFA8] block mb-1 font-medium">
                 {currentPlan.level}
               </span>
-              <h3 className="font-serif text-2xl font-normal text-[#12100E]">
+              <h3 className="font-serif text-2xl font-normal text-white">
                 {currentPlan.title}
               </h3>
             </div>
 
             {currentPlan.area && (
-              <div className="p-4 rounded-2xl bg-[#FBFBF9] border border-[#EFECE6]">
-                <span className="text-[10px] uppercase tracking-[0.18em] text-[#8C827A] block mb-1">
+              <div className="p-4 rounded-2xl bg-white/10 border border-white/20">
+                <span className="text-[10px] uppercase tracking-[0.18em] text-[#DFCFA8] block mb-1">
                   Enclosed Usable Volume
                 </span>
-                <span className="font-serif text-2xl font-light text-[#12100E] block">
+                <span className="font-serif text-2xl font-light text-white block">
                   {propertyService.formatArea(currentPlan.area)}
                 </span>
               </div>
             )}
 
             {currentPlan.description && (
-              <p className="text-sm text-[#6B655F] leading-relaxed">
+              <p className="text-sm text-white/80 leading-relaxed">
                 {currentPlan.description}
               </p>
             )}
@@ -155,7 +155,7 @@ export const PropertyFloorPlans: React.FC<PropertyFloorPlansProps> = ({
         <div
           role="dialog"
           aria-modal="true"
-          className="fixed inset-0 z-50 bg-[#12100E]/95 backdrop-blur-xl flex flex-col justify-between p-4 sm:p-8 animate-fadeIn"
+          className="fixed inset-0 z-50 bg-[#070C18]/95 backdrop-blur-xl flex flex-col justify-between p-4 sm:p-8 animate-fadeIn"
         >
           <div className="flex items-center justify-between text-white/80 pb-4 border-b border-white/10">
             <div>

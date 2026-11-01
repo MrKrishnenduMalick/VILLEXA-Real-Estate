@@ -62,7 +62,7 @@ export const CraftsmanshipPage: React.FC = () => {
   ];
 
   return (
-    <div className="w-full bg-[#12100E]/75 backdrop-blur-xl text-white relative z-10">
+    <div className="w-full bg-[#070C18]/80 backdrop-blur-xl text-white relative z-10">
       {/* 1. Distinctive Editorial Hero */}
       <section className="relative min-h-[75vh] flex items-center justify-center overflow-hidden border-b border-white/10 px-6 sm:px-8 py-24 sm:py-32">
         <div className="absolute inset-0 z-0">
@@ -71,7 +71,7 @@ export const CraftsmanshipPage: React.FC = () => {
             alt="Architectural Vision Monograph"
             className="w-full h-full object-cover scale-[1.02]"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#12100E] via-[#12100E]/70 to-[#12100E]/40" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#070C18] via-[#070C18]/70 to-[#070C18]/40" />
         </div>
 
         <div className="relative z-10 max-w-4xl mx-auto text-center space-y-6">
@@ -130,14 +130,14 @@ export const CraftsmanshipPage: React.FC = () => {
       </section>
 
       {/* 3. Four Pillars of Architectural Design */}
-      <section className="py-24 sm:py-32 bg-[#FBFBF9] text-[#12100E]">
+      <section className="py-24 sm:py-32 bg-[#FAF8F5] text-[#070C18]">
         <div className="max-w-7xl mx-auto px-6 sm:px-8">
           <div className="max-w-2xl mb-16">
             <span className="inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.25em] text-[#C5A059] mb-3 font-medium">
               <Compass size={13} />
               <span>THE FOUR PILLARS</span>
             </span>
-            <h2 className="font-serif text-3xl sm:text-5xl font-light text-[#12100E] leading-tight">
+            <h2 className="font-serif text-3xl sm:text-5xl font-light text-[#070C18] leading-tight">
               Design Principles &amp; Material Integrity
             </h2>
             <p className="mt-4 text-base text-[#6B655F] leading-relaxed">
@@ -159,7 +159,7 @@ export const CraftsmanshipPage: React.FC = () => {
                       alt={pillar.title}
                       className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
                     />
-                    <div className="absolute top-4 left-4 w-10 h-10 rounded-full bg-[#12100E]/80 backdrop-blur-md text-[#C5A059] flex items-center justify-center">
+                    <div className="absolute top-4 left-4 w-10 h-10 rounded-full bg-[#070C18]/85 backdrop-blur-md text-[#C5A059] flex items-center justify-center">
                       <Icon size={18} />
                     </div>
                   </div>
@@ -168,7 +168,7 @@ export const CraftsmanshipPage: React.FC = () => {
                     <span className="text-[10px] uppercase tracking-[0.2em] text-[#C5A059] font-medium block">
                       {pillar.tagline}
                     </span>
-                    <h3 className="font-serif text-2xl font-light text-[#12100E]">
+                    <h3 className="font-serif text-2xl font-light text-[#070C18]">
                       {pillar.title}
                     </h3>
                     <p className="text-xs sm:text-sm text-[#6B655F] leading-relaxed font-light">
@@ -183,7 +183,7 @@ export const CraftsmanshipPage: React.FC = () => {
       </section>
 
       {/* 4. The Commission & Delivery Process */}
-      <section className="py-24 sm:py-32 bg-[#12100E] text-white border-t border-white/10">
+      <section className="py-24 sm:py-32 bg-[#070C18] text-white border-t border-white/10">
         <div className="max-w-7xl mx-auto px-6 sm:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
             <span className="text-[11px] uppercase tracking-[0.25em] text-[#C5A059]">

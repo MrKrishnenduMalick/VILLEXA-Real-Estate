@@ -85,7 +85,7 @@ export const CollectionsPage: React.FC = () => {
   const tertiaryCols = RESIDENCE_COLLECTIONS.slice(3);
 
   return (
-    <div className="w-full bg-[#12100E]/70 backdrop-blur-2xl text-white pt-32 pb-24 sm:pt-36 sm:pb-32 relative z-10">
+    <div className="w-full bg-[#070C18]/80 backdrop-blur-2xl text-white pt-32 pb-24 sm:pt-36 sm:pb-32 relative z-10">
       <div className="max-w-7xl mx-auto px-6 sm:px-8">
         {/* Editorial Header */}
         <div className="max-w-3xl mb-16 space-y-4">
@@ -109,10 +109,10 @@ export const CollectionsPage: React.FC = () => {
               alt={leadCol.name}
               className="w-full h-full object-cover transition-transform duration-1000 ease-out group-hover:scale-105"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#12100E]/90 via-[#12100E]/40 to-transparent pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#070C18]/90 via-[#070C18]/40 to-transparent pointer-events-none" />
           </div>
 
-          <div className="relative z-10 p-6 sm:p-12 max-w-2xl m-4 sm:m-8 rounded-2xl bg-white/[0.08] backdrop-blur-2xl border border-white/20 shadow-2xl space-y-4">
+          <div className="relative z-10 p-6 sm:p-12 max-w-2xl m-4 sm:m-8 rounded-2xl glass-material-smoked border border-[rgba(197,160,89,0.30)] shadow-2xl space-y-4">
             <div className="flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-[#DFCFA8]">
               <Waves size={15} className="text-[#C5A059]" />
               <span>{leadCol.location}</span>
@@ -160,10 +160,10 @@ export const CollectionsPage: React.FC = () => {
                     alt={col.name}
                     className="w-full h-full object-cover transition-transform duration-1000 ease-out group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#12100E]/90 via-[#12100E]/40 to-transparent pointer-events-none" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#070C18]/90 via-[#070C18]/40 to-transparent pointer-events-none" />
                 </div>
 
-                <div className="relative z-10 p-6 sm:p-8 m-4 rounded-2xl bg-white/[0.08] backdrop-blur-2xl border border-white/20 shadow-2xl space-y-3">
+                <div className="relative z-10 p-6 sm:p-8 m-4 rounded-2xl glass-material-smoked border border-[rgba(197,160,89,0.30)] shadow-2xl space-y-3">
                   <div className="flex items-center gap-2 text-[11px] uppercase tracking-wider text-[#DFCFA8]">
                     <Icon size={14} className="text-[#C5A059]" />
                     <span>{col.location}</span>
@@ -209,10 +209,10 @@ export const CollectionsPage: React.FC = () => {
                     alt={col.name}
                     className="w-full h-full object-cover transition-transform duration-1000 ease-out group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#12100E]/90 via-[#12100E]/40 to-transparent pointer-events-none" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#070C18]/90 via-[#070C18]/40 to-transparent pointer-events-none" />
                 </div>
 
-                <div className="relative z-10 p-6 sm:p-8 m-4 rounded-2xl bg-white/[0.08] backdrop-blur-2xl border border-white/20 shadow-2xl space-y-3">
+                <div className="relative z-10 p-6 sm:p-8 m-4 rounded-2xl glass-material-smoked border border-[rgba(197,160,89,0.30)] shadow-2xl space-y-3">
                   <div className="flex items-center gap-2 text-[11px] uppercase tracking-wider text-[#DFCFA8]">
                     <Icon size={14} className="text-[#C5A059]" />
                     <span>{col.location}</span>

@@ -61,8 +61,9 @@ export const MobileNavDrawer: React.FC<MobileNavDrawerProps> = ({
         style={{
           position: 'absolute',
           inset: 0,
-          background: 'rgba(19, 18, 17, 0.65)',
-          backdropFilter: 'blur(8px)',
+          background: 'rgba(4, 8, 18, 0.75)',
+          backdropFilter: 'blur(10px)',
+          WebkitBackdropFilter: 'blur(10px)',
           transition: 'opacity var(--transition-normal)'
         }}
       />
@@ -74,14 +75,15 @@ export const MobileNavDrawer: React.FC<MobileNavDrawerProps> = ({
           width: '100%',
           maxWidth: '380px',
           height: '100%',
-          background: 'rgba(248, 246, 241, 0.85)',
-          backdropFilter: 'blur(24px)',
-          WebkitBackdropFilter: 'blur(24px)',
-          borderLeft: '1px solid rgba(255, 255, 255, 0.45)',
+          background: 'linear-gradient(180deg, rgba(8, 14, 28, 0.94) 0%, rgba(12, 22, 42, 0.96) 100%)',
+          backdropFilter: 'blur(28px)',
+          WebkitBackdropFilter: 'blur(28px)',
+          borderLeft: '1px solid rgba(197, 160, 89, 0.35)',
           display: 'flex',
           flexDirection: 'column',
           padding: 'var(--space-8)',
-          boxShadow: 'var(--shadow-elevated)',
+          boxShadow: '-12px 0 40px rgba(2, 6, 14, 0.65)',
+          color: '#FAF8F5',
           overflowY: 'auto'
         }}
       >
@@ -91,7 +93,7 @@ export const MobileNavDrawer: React.FC<MobileNavDrawerProps> = ({
           alignItems: 'center',
           justifyContent: 'space-between',
           paddingBottom: 'var(--space-6)',
-          borderBottom: '1px solid var(--color-border-subtle)',
+          borderBottom: '1px solid rgba(197, 160, 89, 0.20)',
           marginBottom: 'var(--space-6)'
         }}>
           <div>
@@ -99,7 +101,8 @@ export const MobileNavDrawer: React.FC<MobileNavDrawerProps> = ({
               fontFamily: 'var(--font-serif)',
               fontSize: '1.4rem',
               letterSpacing: '0.12em',
-              fontWeight: 400
+              fontWeight: 400,
+              color: '#FFFFFF'
             }}>
               {config.brand.logoText}
             </div>
@@ -107,7 +110,7 @@ export const MobileNavDrawer: React.FC<MobileNavDrawerProps> = ({
               fontSize: '0.65rem',
               letterSpacing: '0.2em',
               textTransform: 'uppercase',
-              color: 'var(--color-text-muted)'
+              color: '#DFCFA8'
             }}>
               {config.brand.logoSubtext}
             </div>
@@ -119,7 +122,7 @@ export const MobileNavDrawer: React.FC<MobileNavDrawerProps> = ({
               background: 'transparent',
               border: 'none',
               cursor: 'pointer',
-              color: 'var(--color-text-primary)',
+              color: '#FAF8F5',
               padding: 'var(--space-2)'
             }}
           >
@@ -141,8 +144,8 @@ export const MobileNavDrawer: React.FC<MobileNavDrawerProps> = ({
                   alignItems: 'center',
                   justifyContent: 'space-between',
                   padding: 'var(--space-4) var(--space-2)',
-                  borderBottom: '1px solid var(--color-border-subtle)',
-                  color: isActive ? 'var(--color-accent-gold)' : 'var(--color-text-primary)',
+                  borderBottom: '1px solid rgba(197, 160, 89, 0.15)',
+                  color: isActive ? 'var(--color-accent-gold)' : '#FAF8F5',
                   transition: 'color var(--transition-fast)'
                 }}
               >
@@ -157,14 +160,14 @@ export const MobileNavDrawer: React.FC<MobileNavDrawerProps> = ({
                   {link.desc && (
                     <div style={{
                       fontSize: '0.75rem',
-                      color: 'var(--color-text-muted)',
+                      color: 'rgba(250, 248, 245, 0.65)',
                       marginTop: '2px'
                     }}>
                       {link.desc}
                     </div>
                   )}
                 </div>
-                <ArrowRight size={14} strokeWidth={1.5} color={isActive ? 'var(--color-accent-gold)' : 'var(--color-text-muted)'} />
+                <ArrowRight size={14} strokeWidth={1.5} color={isActive ? 'var(--color-accent-gold)' : 'rgba(250, 248, 245, 0.45)'} />
               </Link>
             );
           })}

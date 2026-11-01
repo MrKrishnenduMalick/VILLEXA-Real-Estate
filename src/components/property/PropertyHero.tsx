@@ -41,7 +41,7 @@ export const PropertyHero: React.FC<PropertyHeroProps> = ({
   };
 
   return (
-    <section className="relative w-full min-h-[92vh] flex flex-col justify-between overflow-hidden bg-[#12100E] text-white">
+    <section className="relative w-full min-h-[92vh] flex flex-col justify-between overflow-hidden bg-[#070C18] text-white">
       {/* 1. Architectural Cover Imagery with Cinematic Gradient */}
       <div className="absolute inset-0 z-0">
         <img
@@ -49,9 +49,9 @@ export const PropertyHero: React.FC<PropertyHeroProps> = ({
           alt={property.name}
           className="w-full h-full object-cover object-center scale-[1.02] transform transition-transform duration-1000 ease-out"
         />
-        {/* Multilayered Warm Atmosphere Gradients */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#12100E] via-[#12100E]/40 to-[#12100E]/30" />
-        <div className="absolute inset-0 bg-radial-gradient from-transparent via-transparent to-[#12100E]/60 pointer-events-none" />
+        {/* Multilayered Royal Atmosphere Gradients */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#070C18] via-[#070C18]/40 to-[#070C18]/30" />
+        <div className="absolute inset-0 bg-radial-gradient from-transparent via-transparent to-[#070C18]/60 pointer-events-none" />
       </div>
 
       {/* 2. Top Navigation Bar (Breadcrumb & Signature Badge) */}

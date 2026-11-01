@@ -108,8 +108,8 @@ export const defaultClientConfig: ClientConfig = {
   theme: {
     accentColor: '#c5a059',
     accentHoverColor: '#b38f48',
-    bgPrimary: '#12100e',
-    bgDark: '#12100e',
+    bgPrimary: '#070c18',
+    bgDark: '#070c18',
     fontSerif: '"Cormorant Garamond", Georgia, serif',
     fontSans: '"Outfit", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif'
   },

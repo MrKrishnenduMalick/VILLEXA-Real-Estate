@@ -1,8 +1,9 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { Link } from 'wouter';
-import { Search, X, ArrowRight, RotateCcw, Building, Sparkles } from 'lucide-react';
+import { Search, X, ArrowRight, RotateCcw, Building, Sparkles, ShieldCheck, Lock, MessageSquare } from 'lucide-react';
 import { PropertyCard } from '../components/property/PropertyCard';
 import { propertyService } from '../services/propertyService';
+import { useClientConfig } from '../context/ClientConfigContext';
 import { Property, PropertyType, PropertySortOption } from '../types/property';
 
 const CATEGORY_TABS: Array<{ id: string; label: string; type?: PropertyType }> = [
@@ -29,6 +30,7 @@ const PRICE_RANGE_OPTIONS = [
 ];
 
 export const CataloguePage: React.FC = () => {
+  const config = useClientConfig();
   const [properties, setProperties] = useState<Property[]>([]);
   const [featuredProperty, setFeaturedProperty] = useState<Property | null>(null);
 
@@ -143,7 +145,7 @@ export const CataloguePage: React.FC = () => {
   };
 
   return (
-    <div className="w-full bg-[#12100E]/75 backdrop-blur-xl text-white" style={{ paddingTop: 'var(--space-10)', paddingBottom: 'var(--space-24)', position: 'relative', zIndex: 10 }}>
+    <div className="w-full bg-[#070C18]/80 backdrop-blur-xl text-white" style={{ paddingTop: 'var(--space-10)', paddingBottom: 'var(--space-24)', position: 'relative', zIndex: 10 }}>
       <div className="container">
         {/* 1. EDITORIAL HEADER */}
         <div style={{ marginBottom: 'var(--space-10)', textAlign: 'left' }}>
@@ -397,9 +399,9 @@ export const CataloguePage: React.FC = () => {
                     cursor: 'pointer',
                     transition: 'all 0.25s ease',
                     backgroundColor: isActive ? 'var(--color-accent-gold)' : 'rgba(255, 255, 255, 0.05)',
-                    color: isActive ? '#12100e' : '#ffffff',
+                    color: isActive ? '#070C18' : '#FAF8F5',
                     fontWeight: isActive ? 600 : 400,
-                    border: isActive ? '1px solid var(--color-accent-gold)' : '1px solid rgba(255, 255, 255, 0.1)'
+                    border: isActive ? '1px solid var(--color-accent-gold)' : '1px solid rgba(197, 160, 89, 0.22)'
                   }}
                 >
                   {tab.label}
@@ -488,9 +490,9 @@ export const CataloguePage: React.FC = () => {
                 style={{
                   padding: '8px 12px',
                   borderRadius: '10px',
-                  backgroundColor: 'rgba(20, 18, 16, 0.75)',
-                  border: '1px solid rgba(255, 255, 255, 0.12)',
-                  color: '#ffffff',
+                  backgroundColor: 'rgba(10, 18, 36, 0.80)',
+                  border: '1px solid rgba(197, 160, 89, 0.30)',
+                  color: '#FAF8F5',
                   fontSize: '0.8rem',
                   cursor: 'pointer',
                   fontFamily: 'var(--font-sans)',
@@ -498,7 +500,7 @@ export const CataloguePage: React.FC = () => {
                 }}
               >
                 {BEDROOM_OPTIONS.map((opt) => (
-                  <option key={opt.value} value={opt.value} style={{ background: '#1c1815' }}>
+                  <option key={opt.value} value={opt.value} style={{ background: '#0A1224' }}>
                     {opt.label}
                   </option>
                 ))}
@@ -511,9 +513,9 @@ export const CataloguePage: React.FC = () => {
                 style={{
                   padding: '8px 12px',
                   borderRadius: '10px',
-                  backgroundColor: 'rgba(20, 18, 16, 0.75)',
-                  border: '1px solid rgba(255, 255, 255, 0.12)',
-                  color: '#ffffff',
+                  backgroundColor: 'rgba(10, 18, 36, 0.80)',
+                  border: '1px solid rgba(197, 160, 89, 0.30)',
+                  color: '#FAF8F5',
                   fontSize: '0.8rem',
                   cursor: 'pointer',
                   fontFamily: 'var(--font-sans)',
@@ -521,7 +523,7 @@ export const CataloguePage: React.FC = () => {
                 }}
               >
                 {PRICE_RANGE_OPTIONS.map((opt) => (
-                  <option key={opt.id} value={opt.id} style={{ background: '#1c1815' }}>
+                  <option key={opt.id} value={opt.id} style={{ background: '#0A1224' }}>
                     {opt.label}
                   </option>
                 ))}
@@ -534,8 +536,8 @@ export const CataloguePage: React.FC = () => {
                 style={{
                   padding: '8px 12px',
                   borderRadius: '10px',
-                  backgroundColor: 'rgba(20, 18, 16, 0.75)',
-                  border: '1px solid rgba(197, 160, 89, 0.35)',
+                  backgroundColor: 'rgba(10, 18, 36, 0.80)',
+                  border: '1px solid rgba(197, 160, 89, 0.38)',
                   color: 'var(--color-accent-gold)',
                   fontSize: '0.8rem',
                   cursor: 'pointer',
@@ -544,11 +546,11 @@ export const CataloguePage: React.FC = () => {
                   outline: 'none'
                 }}
               >
-                <option value="featured" style={{ background: '#1c1815' }}>Sort: Featured Precedence</option>
-                <option value="price_desc" style={{ background: '#1c1815' }}>Sort: Price (High to Low)</option>
-                <option value="price_asc" style={{ background: '#1c1815' }}>Sort: Price (Low to High)</option>
-                <option value="area_desc" style={{ background: '#1c1815' }}>Sort: Built-Up Area</option>
-                <option value="name_asc" style={{ background: '#1c1815' }}>Sort: Residence Name</option>
+                <option value="featured" style={{ background: '#0A1224' }}>Sort: Featured Precedence</option>
+                <option value="price_desc" style={{ background: '#0A1224' }}>Sort: Price (High to Low)</option>
+                <option value="price_asc" style={{ background: '#0A1224' }}>Sort: Price (Low to High)</option>
+                <option value="area_desc" style={{ background: '#0A1224' }}>Sort: Built-Up Area</option>
+                <option value="name_asc" style={{ background: '#0A1224' }}>Sort: Residence Name</option>
               </select>
 
               {/* Clear Filters Button (When active) */}
@@ -658,79 +660,161 @@ export const CataloguePage: React.FC = () => {
           </div>
         )}
 
-        {/* 6. CONCIERGE ADVISORY CALL-TO-ACTION FOOTER */}
+        {/* 6. CONCIERGE ADVISORY CALL-TO-ACTION FOOTER — REDESIGNED ARCHITECTURAL MONOGRAPH */}
         <section
           style={{
             marginTop: 'var(--space-20)',
-            padding: 'clamp(2.5rem, 5vw, 4rem) clamp(1.8rem, 4vw, 3.5rem)',
-            borderRadius: '24px',
-            textAlign: 'center',
+            maxWidth: '1080px',
+            marginLeft: 'auto',
+            marginRight: 'auto',
+            padding: 'clamp(2rem, 4vw, 3.2rem) clamp(1.8rem, 4vw, 3.5rem)',
+            borderRadius: '16px',
             position: 'relative',
-            overflow: 'hidden'
+            overflow: 'hidden',
+            background: 'linear-gradient(145deg, rgba(10, 18, 36, 0.58) 0%, rgba(6, 11, 24, 0.48) 100%)',
+            backdropFilter: 'blur(20px) saturate(140%)',
+            WebkitBackdropFilter: 'blur(20px) saturate(140%)',
+            border: '1px solid rgba(197, 160, 89, 0.35)',
+            boxShadow: 'inset 0 1px 0 0 rgba(255, 255, 255, 0.38), inset 0 0 0 1px rgba(197, 160, 89, 0.14), 0 24px 60px -8px rgba(2, 6, 14, 0.55)'
           }}
-          className="glass-panel-elevated"
         >
-          {/* Subtle Accent Glow */}
+          {/* Architectural Registration Crosshairs in 4 corners */}
+          <div style={{ position: 'absolute', top: '14px', left: '16px', color: 'rgba(197, 160, 89, 0.45)', fontSize: '11px', fontFamily: 'monospace', pointerEvents: 'none' }}>+</div>
+          <div style={{ position: 'absolute', top: '14px', right: '16px', color: 'rgba(197, 160, 89, 0.45)', fontSize: '11px', fontFamily: 'monospace', pointerEvents: 'none' }}>+</div>
+          <div style={{ position: 'absolute', bottom: '14px', left: '16px', color: 'rgba(197, 160, 89, 0.45)', fontSize: '11px', fontFamily: 'monospace', pointerEvents: 'none' }}>+</div>
+          <div style={{ position: 'absolute', bottom: '14px', right: '16px', color: 'rgba(197, 160, 89, 0.45)', fontSize: '11px', fontFamily: 'monospace', pointerEvents: 'none' }}>+</div>
+
+          {/* Balanced Two-Column Composition */}
           <div
             style={{
-              position: 'absolute',
-              top: '-60px',
-              left: '50%',
-              transform: 'translateX(-50%)',
-              width: '320px',
-              height: '180px',
-              borderRadius: '50%',
-              background: 'radial-gradient(ellipse, rgba(197, 160, 89, 0.22) 0%, transparent 70%)',
-              pointerEvents: 'none'
-            }}
-          />
-
-          <span
-            style={{
-              display: 'block',
-              fontSize: '0.72rem',
-              letterSpacing: '0.22em',
-              textTransform: 'uppercase',
-              color: 'var(--color-accent-gold)',
-              fontWeight: 600,
-              marginBottom: 'var(--space-2)'
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+              gap: 'clamp(24px, 4vw, 48px)',
+              alignItems: 'center',
+              position: 'relative',
+              zIndex: 2
             }}
           >
-            CONFIDENTIAL ACQUISITIONS
-          </span>
+            {/* Left Column: Monograph Heading & Statement */}
+            <div style={{ textAlign: 'left' }}>
+              <div
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '8px',
+                  color: 'var(--color-accent-gold)',
+                  fontSize: '0.68rem',
+                  letterSpacing: '0.22em',
+                  textTransform: 'uppercase',
+                  fontWeight: 600,
+                  marginBottom: '10px'
+                }}
+              >
+                <ShieldCheck size={14} className="text-[#C5A059]" />
+                <span>CONFIDENTIAL ACQUISITION PROTOCOL</span>
+              </div>
 
-          <h2
-            style={{
-              fontFamily: 'var(--font-serif)',
-              fontSize: 'clamp(1.9rem, 3.5vw, 2.8rem)',
-              color: '#ffffff',
-              fontWeight: 300,
-              marginBottom: 'var(--space-4)'
-            }}
-          >
-            Private Client Representation &amp; Off-Market Enquiries
-          </h2>
+              <h2
+                style={{
+                  fontFamily: 'var(--font-serif)',
+                  fontSize: 'clamp(1.9rem, 2.8vw, 2.5rem)',
+                  color: '#FAF8F5',
+                  fontWeight: 300,
+                  lineHeight: 1.15,
+                  margin: '0 0 14px 0',
+                  letterSpacing: '-0.01em'
+                }}
+              >
+                Private Client Representation &amp; Off-Market Portfolio
+              </h2>
 
-          <p
-            style={{
-              fontSize: '1rem',
-              color: 'rgba(255, 255, 255, 0.82)',
-              maxWidth: '620px',
-              margin: '0 auto var(--space-8)',
-              lineHeight: 1.7
-            }}
-          >
-            A selective portion of our architectural estate portfolio remains strictly confidential. Our advisory directors are available for discreet acquisition briefings, private aviation coordination, and confidential viewings.
-          </p>
+              <p
+                style={{
+                  fontSize: '0.92rem',
+                  color: 'rgba(250, 248, 245, 0.82)',
+                  lineHeight: 1.65,
+                  margin: 0,
+                  fontWeight: 300
+                }}
+              >
+                A selective portion of our architectural estate portfolio remains strictly confidential. Our advisory directors are available for discreet acquisition briefings, private aviation coordination, and confidential viewings under signed non-disclosure protocols.
+              </p>
+            </div>
 
-          <Link
-            href="/contact"
-            className="btn btn-gold"
-            style={{ padding: '0.9rem 2.4rem', fontSize: '0.82rem', letterSpacing: '0.14em' }}
-          >
-            <span>Consult Private Concierge</span>
-            <ArrowRight size={14} />
-          </Link>
+            {/* Right Column: Reassurance Capsules & Prominent Action */}
+            <div
+              style={{
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '16px',
+                padding: '22px 24px',
+                borderRadius: '12px',
+                background: 'rgba(255, 255, 255, 0.04)',
+                border: '1px solid rgba(197, 160, 89, 0.20)',
+                backdropFilter: 'blur(16px)',
+                textAlign: 'left'
+              }}
+            >
+              {/* Protocol Badges */}
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.78rem', color: '#FAF8F5' }}>
+                  <Lock size={13} color="var(--color-accent-gold)" />
+                  <span>Discreet Non-Disclosure &amp; Identity Privacy</span>
+                </div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.78rem', color: '#FAF8F5' }}>
+                  <Building size={13} color="var(--color-accent-gold)" />
+                  <span>Direct Advisory Desk &amp; Partner Briefing</span>
+                </div>
+              </div>
+
+              {/* Consultation Action */}
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '12px', alignItems: 'center', marginTop: '6px' }}>
+                <Link
+                  href="/contact"
+                  className="btn btn-gold"
+                  style={{
+                    padding: '0.85rem 1.8rem',
+                    fontSize: '0.76rem',
+                    letterSpacing: '0.14em',
+                    textTransform: 'uppercase',
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '8px',
+                    borderRadius: '9999px',
+                    boxShadow: '0 8px 24px rgba(184, 149, 82, 0.35)',
+                    textDecoration: 'none'
+                  }}
+                >
+                  <span>Consult Private Concierge</span>
+                  <ArrowRight size={13} />
+                </Link>
+
+                <a
+                  href={`https://wa.me/${config.contact.whatsappNumber}?text=${encodeURIComponent(`Hello ${config.brand.brandName} Concierge,\n\nI would like to arrange a confidential private consultation regarding off-market acquisitions.`)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '6px',
+                    fontSize: '0.74rem',
+                    letterSpacing: '0.12em',
+                    textTransform: 'uppercase',
+                    color: '#DFCFA8',
+                    textDecoration: 'none',
+                    padding: '8px 14px',
+                    borderRadius: '9999px',
+                    border: '1px solid rgba(197, 160, 89, 0.25)',
+                    background: 'rgba(255, 255, 255, 0.05)',
+                    transition: 'all 0.25s ease'
+                  }}
+                >
+                  <MessageSquare size={13} className="text-[#25D366]" />
+                  <span>Direct Desk</span>
+                </a>
+              </div>
+            </div>
+          </div>
         </section>
       </div>
     </div>

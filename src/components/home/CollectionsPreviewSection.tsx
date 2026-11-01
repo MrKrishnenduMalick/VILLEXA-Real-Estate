@@ -107,38 +107,174 @@ export const CollectionsPreviewSection: React.FC = () => {
             <Link
               key={col.id}
               href={`/residences?type=${col.type}`}
-              className="group collection-item-card"
+              className="group luxury-collection-card"
+              style={{
+                position: 'relative',
+                borderRadius: '16px',
+                overflow: 'hidden',
+                minHeight: '440px',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'space-between',
+                border: '1px solid rgba(197, 160, 89, 0.30)',
+                boxShadow: '0 16px 36px -6px rgba(2, 6, 16, 0.45)',
+                textDecoration: 'none',
+                transition: 'all 0.45s cubic-bezier(0.16, 1, 0.3, 1)',
+                backgroundColor: '#070C18'
+              }}
             >
-              <div>
-                {/* Architectural Typology Image */}
-                <div className="w-full aspect-[16/10] rounded-[3px] overflow-hidden mb-4 border border-[#EAE5DC] bg-[#EAE5DC]">
-                  <img
-                    src={col.imageUrl}
-                    alt={col.name}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                    loading="eager"
-                    onError={(e) => {
-                      e.currentTarget.src = `/real-estate-hero-frames/frame-${String((idx + 2) * 50).padStart(5, '0')}.webp`;
-                    }}
-                  />
-                </div>
-
-                {/* Typology Meta & Title */}
-                <span className="text-[10px] uppercase tracking-[0.20em] text-[#B89552] font-semibold block mb-1">
-                  {col.count}
-                </span>
-                <h3 className="font-serif text-xl text-[#1A1816] font-normal group-hover:text-[#B89552] transition-colors leading-snug mb-2">
-                  {col.name}
-                </h3>
-                <p className="text-xs text-[#2B2724] font-light leading-relaxed mb-4">
-                  {col.tagline}
-                </p>
+              {/* Full Architectural Visual Backdrop — Top 55-60% Clean Photography */}
+              <div
+                style={{
+                  position: 'absolute',
+                  inset: 0,
+                  width: '100%',
+                  height: '100%',
+                  zIndex: 1,
+                  overflow: 'hidden'
+                }}
+              >
+                <img
+                  src={col.imageUrl}
+                  alt={col.name}
+                  className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                  loading="eager"
+                  onError={(e) => {
+                    e.currentTarget.src = `/real-estate-hero-frames/frame-${String((idx + 2) * 50).padStart(5, '0')}.webp`;
+                  }}
+                />
+                {/* Gentle lower vignette only behind glass panel for crisp contrast */}
+                <div
+                  style={{
+                    position: 'absolute',
+                    inset: 0,
+                    background: 'linear-gradient(to top, rgba(6, 11, 24, 0.35) 0%, rgba(6, 11, 24, 0.06) 45%, transparent 100%)',
+                    pointerEvents: 'none'
+                  }}
+                />
               </div>
 
-              {/* Bottom Card Action Affordance */}
-              <div className="pt-3 border-t border-[#EAE5DC]/80 flex items-center justify-between text-xs text-[#1A1816] font-medium group-hover:text-[#B89552] transition-colors">
-                <span className="tracking-wide">Explore Portfolio</span>
-                <ArrowRight size={13} className="transform group-hover:translate-x-1 transition-transform" />
+              {/* Top Metadata Strip Floating over Photography */}
+              <div
+                style={{
+                  position: 'relative',
+                  zIndex: 3,
+                  padding: '16px 18px',
+                  display: 'flex',
+                  justifyContent: 'space-between',
+                  alignItems: 'center',
+                  pointerEvents: 'none'
+                }}
+              >
+                <span
+                  style={{
+                    fontSize: '0.62rem',
+                    letterSpacing: '0.20em',
+                    textTransform: 'uppercase',
+                    color: '#DFCFA8',
+                    fontWeight: 600,
+                    padding: '5px 12px',
+                    borderRadius: '9999px',
+                    background: 'rgba(8, 14, 28, 0.68)',
+                    border: '1px solid rgba(197, 160, 89, 0.32)',
+                    backdropFilter: 'blur(12px)',
+                    WebkitBackdropFilter: 'blur(12px)',
+                    boxShadow: '0 4px 14px rgba(2, 6, 14, 0.35)'
+                  }}
+                >
+                  {col.count}
+                </span>
+                <span
+                  style={{
+                    fontSize: '0.64rem',
+                    letterSpacing: '0.14em',
+                    textTransform: 'uppercase',
+                    color: 'rgba(250, 248, 245, 0.85)',
+                    fontWeight: 500,
+                    padding: '5px 10px',
+                    borderRadius: '9999px',
+                    background: 'rgba(8, 14, 28, 0.52)',
+                    backdropFilter: 'blur(10px)',
+                    WebkitBackdropFilter: 'blur(10px)',
+                    border: '1px solid rgba(255, 255, 255, 0.16)'
+                  }}
+                >
+                  Monograph
+                </span>
+              </div>
+
+              {/* Integrated Translucent Champagne Gold Glass Lower Panel */}
+              <div
+                className="glass-champagne-gold"
+                style={{
+                  position: 'relative',
+                  zIndex: 3,
+                  margin: '12px',
+                  marginTop: 'auto',
+                  padding: '20px 22px',
+                  borderRadius: '12px',
+                  background: 'linear-gradient(145deg, rgba(16, 26, 48, 0.46) 0%, rgba(8, 15, 30, 0.40) 100%)',
+                  backdropFilter: 'blur(14px) saturate(135%)',
+                  WebkitBackdropFilter: 'blur(14px) saturate(135%)',
+                  border: '1px solid rgba(197, 160, 89, 0.32)',
+                  boxShadow: 'inset 0 1px 0 0 rgba(255, 255, 255, 0.42), inset 0 0 0 1px rgba(197, 160, 89, 0.14), 0 16px 36px -4px rgba(2, 6, 16, 0.45)',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: '12px',
+                  transition: 'all 0.35s ease'
+                }}
+              >
+                {/* Typology Title & Tagline */}
+                <div>
+                  <h3
+                    style={{
+                      fontFamily: 'var(--font-serif)',
+                      fontSize: '1.40rem',
+                      color: '#FAF8F5',
+                      fontWeight: 300,
+                      lineHeight: 1.2,
+                      margin: '0 0 6px 0',
+                      letterSpacing: '-0.01em',
+                      transition: 'color 0.25s ease'
+                    }}
+                    className="group-hover:text-[#DFCFA8]"
+                  >
+                    {col.name}
+                  </h3>
+                  <p
+                    style={{
+                      fontSize: '0.80rem',
+                      color: 'rgba(250, 248, 245, 0.82)',
+                      fontWeight: 300,
+                      lineHeight: 1.5,
+                      margin: 0
+                    }}
+                  >
+                    {col.tagline}
+                  </p>
+                </div>
+
+                {/* Bottom Separated CTA Action Row */}
+                <div
+                  style={{
+                    paddingTop: '12px',
+                    borderTop: '1px solid rgba(197, 160, 89, 0.22)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'space-between',
+                    fontSize: '0.72rem',
+                    letterSpacing: '0.14em',
+                    textTransform: 'uppercase',
+                    color: '#FAF8F5',
+                    fontWeight: 500
+                  }}
+                >
+                  <span className="group-hover:text-[#DFCFA8] transition-colors">Explore Portfolio</span>
+                  <ArrowRight
+                    size={13}
+                    className="text-[#C5A059] transform group-hover:translate-x-1.5 transition-transform"
+                  />
+                </div>
               </div>
             </Link>
           ))}

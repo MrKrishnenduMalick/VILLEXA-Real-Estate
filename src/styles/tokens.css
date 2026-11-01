@@ -19,24 +19,31 @@
   --color-text-muted: #6E6860;            /* Restrained metadata & overline ink */
   --color-text-inverse: #FAF8F5;          /* Contrast ink for dark triggers */
 
-  /* Architectural Accents */
-  --color-accent-gold: #B89552;           /* Brushed champagne gold */
-  --color-accent-gold-hover: #9E7D3B;     /* Deep burnished gold */
-  --color-accent-gold-light: #DFCFA8;     /* Delicate gold wash */
-  --color-accent-gold-soft: rgba(184, 149, 82, 0.12);
-  --color-accent-bronze: #4A3E30;
+  /* Architectural Accents — Metallic Royal Gold & Soft Antique Gold */
+  --color-accent-gold: #C5A059;           /* Metallic royal gold */
+  --color-accent-gold-hover: #D4AF37;     /* Luminous imperial gold */
+  --color-accent-gold-light: #DFCFA8;     /* Delicate champagne gold wash */
+  --color-accent-gold-soft: rgba(197, 160, 89, 0.14);
+  --color-accent-sapphire: #1A3264;       /* Royal sapphire accent */
   
   /* Borders & Dividers */
   --color-border-subtle: #EAE5DC;         /* Ultra-fine warm divider */
   --color-border-medium: #DCD5C9;         /* Defined sandstone border */
-  --color-border-dark: #B8AFA0;           /* Emphasized structural line */
+  --color-border-dark: rgba(197, 160, 89, 0.35); /* Royal gold structural line */
 
-  /* Dark Theme Surfaces (for Hero Film / Controlled Anchors) */
-  --color-dark-bg: #141210;
-  --color-dark-surface: #1E1B18;
-  --color-dark-border: rgba(255, 255, 255, 0.15);
-  --color-dark-text-primary: #FFFFFF;
-  --color-dark-text-secondary: rgba(255, 255, 255, 0.82);
+  /* Royal Navy & Midnight Theme Surfaces */
+  --color-dark-bg: #070C18;               /* Deep royal navy */
+  --color-dark-surface: #0B1326;          /* Midnight blue surface */
+  --color-dark-surface-elevated: #0E1A36; /* Rich sapphire elevated card */
+  --color-dark-border: rgba(197, 160, 89, 0.30);
+  --color-dark-text-primary: #FAF8F5;     /* Warm ivory */
+  --color-dark-text-secondary: rgba(250, 248, 245, 0.85);
+
+  /* Royal Edition Core Palette */
+  --color-royal-navy: #070C18;
+  --color-midnight-blue: #0A1224;
+  --color-rich-sapphire: #0E1A38;
+  --color-sapphire-glow: rgba(14, 26, 56, 0.60);
 
   /* Typography */
   --font-serif: 'Cormorant Garamond', Georgia, serif;
@@ -116,11 +123,50 @@
   --glass-blur-lg: 32px;
   --glass-blur-xl: 44px;
 
-  --glass-shadow-sm: 0 4px 16px -2px rgba(18, 16, 14, 0.05), inset 0 1px 0 0 rgba(255, 255, 255, 0.6);
-  --glass-shadow-md: 0 12px 32px -6px rgba(18, 16, 14, 0.09), inset 0 1px 1px 0 rgba(255, 255, 255, 0.75);
+  --glass-shadow-sm: 0 4px 16px -2px rgba(4, 8, 18, 0.12), inset 0 1px 0 0 rgba(255, 255, 255, 0.6);
+  --glass-shadow-md: 0 12px 32px -6px rgba(4, 8, 18, 0.25), inset 0 1px 1px 0 rgba(255, 255, 255, 0.75);
 
   --glass-inner-highlight: inset 0 1px 1px 0 rgba(255, 255, 255, 0.9), inset 0 0 20px 0 rgba(255, 255, 255, 0.15);
-  --glass-gold-glow: 0 0 28px rgba(197, 160, 89, 0.22);
+  --glass-gold-glow: 0 0 28px rgba(197, 160, 89, 0.25);
+
+  /* =============================================================
+     ROYAL LUXURY ARCHITECTURAL GLASS MATERIAL SYSTEM
+     Three controlled variants: Royal Sapphire, Midnight Crystal, Champagne Gold
+     ============================================================= */
+
+  /* Variant 1: Royal Sapphire Glass (for brighter photographic backgrounds) */
+  --glass-royal-sapphire-bg: linear-gradient(145deg, rgba(14, 25, 48, 0.48) 0%, rgba(8, 16, 32, 0.42) 100%);
+  --glass-royal-sapphire-border: rgba(197, 160, 89, 0.35);
+  --glass-royal-sapphire-highlight: inset 0 1px 0 0 rgba(255, 255, 255, 0.45), inset 0 0 0 1px rgba(197, 160, 89, 0.16);
+  --glass-royal-sapphire-shadow: 0 16px 36px -6px rgba(4, 8, 18, 0.45);
+
+  /* Variant 2: Midnight Crystal Glass (for darker cinematic backgrounds & concierge) */
+  --glass-midnight-crystal-bg: linear-gradient(145deg, rgba(10, 18, 36, 0.58) 0%, rgba(6, 11, 24, 0.48) 100%);
+  --glass-midnight-crystal-border: rgba(197, 160, 89, 0.32);
+  --glass-midnight-crystal-highlight: inset 0 1px 0 0 rgba(255, 255, 255, 0.36), inset 0 0 0 1px rgba(197, 160, 89, 0.12);
+  --glass-midnight-crystal-shadow: 0 20px 48px -8px rgba(2, 6, 14, 0.55);
+
+  /* Variant 3: Champagne Gold Glass (for selected premium info panels & badges) */
+  --glass-champagne-gold-bg: linear-gradient(145deg, rgba(20, 30, 52, 0.48) 0%, rgba(10, 16, 32, 0.40) 100%);
+  --glass-champagne-gold-border: rgba(212, 175, 55, 0.36);
+  --glass-champagne-gold-highlight: inset 0 1px 0 0 rgba(255, 255, 255, 0.50), inset 0 0 0 1px rgba(212, 175, 55, 0.18);
+  --glass-champagne-gold-shadow: 0 16px 36px -6px rgba(4, 8, 18, 0.40);
+
+  /* Backward Compatibility Aliases */
+  --glass-light-crystal-bg: var(--glass-royal-sapphire-bg);
+  --glass-light-crystal-border: var(--glass-royal-sapphire-border);
+  --glass-light-crystal-highlight: var(--glass-royal-sapphire-highlight);
+  --glass-light-crystal-shadow: var(--glass-royal-sapphire-shadow);
+
+  --glass-champagne-bg: var(--glass-champagne-gold-bg);
+  --glass-champagne-border: var(--glass-champagne-gold-border);
+  --glass-champagne-highlight: var(--glass-champagne-gold-highlight);
+  --glass-champagne-shadow: var(--glass-champagne-gold-shadow);
+
+  --glass-smoked-crystal-bg: var(--glass-midnight-crystal-bg);
+  --glass-smoked-crystal-border: var(--glass-midnight-crystal-border);
+  --glass-smoked-crystal-highlight: var(--glass-midnight-crystal-highlight);
+  --glass-smoked-crystal-shadow: var(--glass-midnight-crystal-shadow);
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -221,7 +221,7 @@ export const PropertyGallery: React.FC<PropertyGalleryProps> = ({
         <div
           role="dialog"
           aria-modal="true"
-          className="fixed inset-0 z-50 bg-[#12100E]/95 backdrop-blur-xl flex flex-col justify-between p-4 sm:p-8 animate-fadeIn"
+          className="fixed inset-0 z-50 bg-[#070C18]/95 backdrop-blur-xl flex flex-col justify-between p-4 sm:p-8 animate-fadeIn"
           onTouchStart={handleTouchStart}
           onTouchEnd={handleTouchEnd}
         >

@@ -142,8 +142,7 @@ export const CuratedCollectionSection: React.FC = () => {
                 className="residence-card"
               >
                 <div
-                  className="card-media-wrap bg-[#EAE5DC]"
-                  style={{ aspectRatio: prop.aspectRatio || '16/10' }}
+                  className="card-media-wrap bg-[#070C18]"
                 >
                   <img
                     src={prop.imageUrl}

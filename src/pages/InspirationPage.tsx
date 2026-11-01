@@ -75,7 +75,7 @@ export const InspirationPage: React.FC = () => {
   const config = useClientConfig();
 
   return (
-    <div className="w-full bg-[#12100E]/75 backdrop-blur-xl text-white py-16 sm:py-24 relative z-10">
+    <div className="w-full bg-[#070C18]/80 backdrop-blur-xl text-white py-16 sm:py-24 relative z-10">
       <div className="max-w-7xl mx-auto px-6 sm:px-8">
         {/* Header */}
         <div className="max-w-3xl mb-16 space-y-4">

@@ -77,7 +77,7 @@ export const PropertyNarrative: React.FC<PropertyNarrativeProps> = ({ property }
                     alt={narrativeImage.altText || property.name}
                     className="w-full h-full object-cover transform transition-transform duration-700 ease-out group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#12100E]/80 via-transparent to-transparent pointer-events-none" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#070C18]/80 via-transparent to-transparent pointer-events-none" />
 
                   {narrativeImage.caption && (
                     <div className="absolute bottom-5 left-5 right-5">

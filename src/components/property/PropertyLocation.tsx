@@ -41,27 +41,27 @@ export const PropertyLocation: React.FC<PropertyLocationProps> = ({
             </div>
 
             {/* Address Card */}
-            <div className="p-6 sm:p-8 rounded-3xl bg-white border border-[#E8E4DC] shadow-sm space-y-4">
-              <span className="text-[10px] uppercase tracking-[0.2em] text-[#8C827A] block">
+            <div className="p-6 sm:p-8 rounded-3xl glass-champagne-gold space-y-4">
+              <span className="text-[10px] uppercase tracking-[0.2em] text-[#DFCFA8] block font-medium">
                 Official Registered Address
               </span>
-              <p className="font-serif text-xl sm:text-2xl text-[#12100E] font-normal leading-relaxed">
+              <p className="font-serif text-xl sm:text-2xl text-white font-normal leading-relaxed">
                 {address}
               </p>
-              <div className="flex flex-wrap items-center gap-3 pt-2 text-xs text-[#8C827A]">
-                <span className="px-3 py-1 rounded-full bg-[#F5F3EF] border border-[#E8E4DC]">
+              <div className="flex flex-wrap items-center gap-3 pt-2 text-xs text-white/70">
+                <span className="px-3 py-1 rounded-full bg-white/10 border border-white/20">
                   {location.city}
                 </span>
                 {location.state && (
-                  <span className="px-3 py-1 rounded-full bg-[#F5F3EF] border border-[#E8E4DC]">
+                  <span className="px-3 py-1 rounded-full bg-white/10 border border-white/20">
                     {location.state}
                   </span>
                 )}
-                <span className="px-3 py-1 rounded-full bg-[#F5F3EF] border border-[#E8E4DC]">
+                <span className="px-3 py-1 rounded-full bg-white/10 border border-white/20">
                   {location.country}
                 </span>
                 {location.region && (
-                  <span className="px-3 py-1 rounded-full bg-[#C5A059]/10 text-[#C5A059] border border-[#C5A059]/20">
+                  <span className="px-3 py-1 rounded-full bg-[#C5A059]/20 text-[#DFCFA8] border border-[#C5A059]/40">
                     {location.region}
                   </span>
                 )}
