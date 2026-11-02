@@ -585,37 +585,41 @@ a {
   }
 }
 
-/* 4. PROPERTY INFORMATION CARDS (Floating elevated glass plaque transmitting photography) */
+/* 4. PROPERTY INFORMATION CARDS (Floating elevated translucent glass plaque transmitting photography) */
+.property-glass-card,
 .glass-property-card,
 .glass-panel-integrated,
 .floating-glass-panel {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.72) 0%, rgba(255, 252, 244, 0.54) 50%, rgba(255, 248, 236, 0.65) 100%);
-  backdrop-filter: blur(22px) saturate(170%);
-  -webkit-backdrop-filter: blur(22px) saturate(170%);
-  border: 1px solid rgba(255, 255, 255, 0.82);
-  border-radius: 22px;
+  background: rgba(246, 239, 224, 0.38);
+  backdrop-filter: blur(18px) saturate(135%);
+  -webkit-backdrop-filter: blur(18px) saturate(135%);
+
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  border-radius: 26px;
+
   box-shadow:
-    inset 0 1.5px 2px 0 rgba(255, 255, 255, 0.95),
-    inset 0 0 12px 0 rgba(255, 240, 200, 0.25),
-    0 4px 12px -2px rgba(20, 16, 12, 0.14),
-    0 18px 40px -4px rgba(20, 16, 12, 0.20),
-    0 0 24px 0 rgba(212, 163, 59, 0.22);
-  color: #151311;
+    0 22px 55px rgba(48, 34, 19, 0.22),
+    0 6px 18px rgba(48, 34, 19, 0.10),
+    0 0 20px rgba(212, 163, 59, 0.14),
+    inset 0 1px 0 rgba(255, 255, 255, 0.85),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.18);
+  color: #1E1C19;
   transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease, background 0.35s ease;
 }
 
+.property-glass-card:hover,
 .glass-property-card:hover,
 .glass-panel-integrated:hover,
 .floating-glass-panel:hover {
-  transform: translateY(-10px);
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.78) 0%, rgba(255, 252, 244, 0.62) 50%, rgba(255, 248, 236, 0.72) 100%);
-  border-color: rgba(255, 255, 255, 0.95);
+  transform: translateY(-6px);
+  background: rgba(246, 239, 224, 0.44);
+  border-color: rgba(255, 255, 255, 0.90);
   box-shadow:
-    inset 0 2px 3px 0 rgba(255, 255, 255, 1),
-    inset 0 0 16px 0 rgba(255, 240, 200, 0.35),
-    0 8px 18px -2px rgba(20, 16, 12, 0.18),
-    0 28px 56px -6px rgba(20, 16, 12, 0.28),
-    0 0 32px 2px rgba(212, 163, 59, 0.35);
+    0 28px 65px rgba(48, 34, 19, 0.28),
+    0 10px 24px rgba(48, 34, 19, 0.14),
+    0 0 28px rgba(212, 163, 59, 0.22),
+    inset 0 1px 0 rgba(255, 255, 255, 0.95),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.22);
 }
 
 /* 5. COLLECTION CARDS (Photo-backed cards with floating glass plaque) */

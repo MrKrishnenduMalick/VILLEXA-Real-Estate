@@ -123,10 +123,10 @@
   --glass-crystal-blur: 18px;
 
   /* 2. WARM CHAMPAGNE GLASS (Warm champagne tint, transparent surface, refined reflections) */
-  --glass-champagne-bg: rgba(255, 248, 238, 0.25);
-  --glass-champagne-border: rgba(255, 255, 255, 0.78);
-  --glass-champagne-highlight: inset 0 1.5px 2px 0 rgba(255, 255, 255, 0.95);
-  --glass-champagne-shadow: inset 0 1.5px 2px 0 rgba(255, 255, 255, 0.95), inset 0 0 12px 0 rgba(216, 189, 138, 0.15), 0 4px 10px -2px rgba(20, 16, 12, 0.16), 0 18px 40px -4px rgba(20, 16, 12, 0.26), 0 0 24px 0 rgba(201, 154, 50, 0.18);
+  --glass-champagne-bg: rgba(246, 239, 224, 0.38);
+  --glass-champagne-border: rgba(255, 255, 255, 0.72);
+  --glass-champagne-highlight: inset 0 1px 0 rgba(255, 255, 255, 0.85);
+  --glass-champagne-shadow: 0 22px 55px rgba(48, 34, 19, 0.22), 0 6px 18px rgba(48, 34, 19, 0.10), 0 0 20px rgba(212, 163, 59, 0.14), inset 0 1px 0 rgba(255, 255, 255, 0.85), inset 0 -1px 0 rgba(255, 255, 255, 0.18);
   --glass-champagne-blur: 18px;
 
   /* 3. GOLD-EDGE CRYSTAL GLASS (Transparent crystal glass with metallic-gold edge & specular highlights) */

@@ -246,6 +246,13 @@ async function runMasterQA() {
   await delay(2200);
   await captureToFile('14-mobile-homepage.png');
 
+  // 14b. Mobile Featured Property Cards (390x844)
+  await send('Runtime.evaluate', {
+    expression: 'document.getElementById("featured-residences")?.scrollIntoView({ behavior: "instant", block: "start" })'
+  });
+  await delay(1200);
+  await captureToFile('18-mobile-property-cards-390px.png');
+
   // 15. Mobile Catalogue (390x844)
   await send('Page.navigate', { url: `http://127.0.0.1:${PORT}/residences` });
   await delay(2200);
@@ -259,6 +266,16 @@ async function runMasterQA() {
   });
   await delay(800);
   await captureToFile('16-mobile-nav-drawer.png');
+
+  // 17. Tablet (768x1024) - Featured Residences
+  await setViewport(768, 1024, false);
+  await send('Page.navigate', { url: `http://127.0.0.1:${PORT}/` });
+  await delay(1800);
+  await send('Runtime.evaluate', {
+    expression: 'document.getElementById("featured-residences")?.scrollIntoView({ behavior: "instant", block: "start" })'
+  });
+  await delay(1200);
+  await captureToFile('17-tablet-property-cards-768px.png');
 
   console.log('--- All Verification Captures Successfully Completed! ---');
 
