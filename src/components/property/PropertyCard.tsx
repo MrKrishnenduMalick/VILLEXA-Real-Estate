@@ -90,18 +90,18 @@ export const PropertyCard: React.FC<PropertyCardProps> = ({ property, priority =
       onMouseLeave={() => setIsHovered(false)}
       style={{
         position: 'relative',
-        borderRadius: '22px',
+        borderRadius: '28px',
         overflow: 'hidden',
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'space-between',
-        minHeight: '480px',
-        border: '1.5px solid rgba(255, 255, 255, 0.75)',
-        borderColor: isHovered ? 'rgba(201, 154, 50, 0.55)' : 'rgba(216, 189, 138, 0.35)',
+        minHeight: '510px',
+        border: '1.5px solid rgba(255, 255, 255, 0.85)',
+        borderColor: isHovered ? 'rgba(216, 189, 138, 0.65)' : 'rgba(255, 255, 255, 0.85)',
         boxShadow: isHovered
-          ? '0 24px 60px -10px rgba(41, 39, 34, 0.16), 0 0 20px rgba(201, 154, 50, 0.20)'
-          : '0 16px 40px -10px rgba(41, 39, 34, 0.08), inset 0 1px 1px rgba(255, 255, 255, 0.9)',
-        transform: isHovered && !prefersReducedMotion ? 'translateY(-4px)' : 'translateY(0)',
+          ? '0 24px 56px -8px rgba(41, 39, 34, 0.15), 0 0 28px rgba(216, 189, 138, 0.30), inset 0 1px 1.5px rgba(255, 255, 255, 0.95)'
+          : '0 18px 45px -10px rgba(41, 39, 34, 0.12), 0 0 22px rgba(216, 189, 138, 0.20), inset 0 1px 1px rgba(255, 255, 255, 0.9)',
+        transform: isHovered && !prefersReducedMotion ? 'translateY(-2px)' : 'translateY(0)',
         transition: 'transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease, box-shadow 0.4s ease',
         backgroundColor: '#FAF8F5'
       }}
@@ -117,7 +117,7 @@ export const PropertyCard: React.FC<PropertyCardProps> = ({ property, priority =
           zIndex: 1
         }}
       >
-        {/* Video Preview or Cover Image */}
+        {/* Video Preview or Cover Image — Stable on hover */}
         {hasVideo ? (
           <video
             ref={videoRef}
@@ -130,9 +130,7 @@ export const PropertyCard: React.FC<PropertyCardProps> = ({ property, priority =
             style={{
               width: '100%',
               height: '100%',
-              objectFit: 'cover',
-              transform: isHovered && !prefersReducedMotion ? 'scale(1.05)' : 'scale(1)',
-              transition: 'transform 0.8s cubic-bezier(0.16, 1, 0.3, 1)'
+              objectFit: 'cover'
             }}
           />
         ) : !imageError ? (
@@ -144,9 +142,7 @@ export const PropertyCard: React.FC<PropertyCardProps> = ({ property, priority =
             style={{
               width: '100%',
               height: '100%',
-              objectFit: 'cover',
-              transform: isHovered && !prefersReducedMotion ? 'scale(1.05)' : 'scale(1)',
-              transition: 'transform 0.8s cubic-bezier(0.16, 1, 0.3, 1)'
+              objectFit: 'cover'
             }}
           />
         ) : (
@@ -168,12 +164,12 @@ export const PropertyCard: React.FC<PropertyCardProps> = ({ property, priority =
           </div>
         )}
 
-        {/* Subtle Vignette Gradient for Glass Contrast */}
+        {/* Extremely Subtle Vignette Gradient for natural contrast without darkening */}
         <div
           style={{
             position: 'absolute',
             inset: 0,
-            background: 'linear-gradient(to top, rgba(20, 16, 12, 0.20) 0%, transparent 55%)',
+            background: 'linear-gradient(to top, rgba(20, 16, 12, 0.10) 0%, transparent 45%)',
             pointerEvents: 'none'
           }}
         />
@@ -184,7 +180,7 @@ export const PropertyCard: React.FC<PropertyCardProps> = ({ property, priority =
         style={{
           position: 'relative',
           zIndex: 3,
-          padding: '16px 18px',
+          padding: '18px 20px',
           display: 'flex',
           justifyContent: 'space-between',
           alignItems: 'center'
@@ -193,18 +189,18 @@ export const PropertyCard: React.FC<PropertyCardProps> = ({ property, priority =
         {/* Category Badge Pill */}
         <span
           style={{
-            fontSize: '11px',
-            letterSpacing: '0.08em',
+            fontSize: '11.5px',
+            letterSpacing: '0.04em',
             textTransform: 'capitalize',
-            padding: '5px 14px',
+            padding: '6px 18px',
             borderRadius: '9999px',
-            backgroundColor: 'rgba(255, 250, 240, 0.38)',
+            backgroundColor: 'rgba(255, 250, 240, 0.50)',
             backdropFilter: 'blur(14px) saturate(140%)',
             WebkitBackdropFilter: 'blur(14px) saturate(140%)',
-            border: '1px solid rgba(255, 255, 255, 0.75)',
-            color: '#24211D',
+            border: '1px solid rgba(255, 255, 255, 0.90)',
+            color: '#1E1C19',
             fontWeight: 600,
-            boxShadow: 'inset 0 1px 0 rgba(255, 255, 255, 0.70), 0 4px 12px rgba(70, 48, 20, 0.08)'
+            boxShadow: 'inset 0 1px 0 rgba(255, 255, 255, 0.85), 0 4px 14px rgba(41, 39, 34, 0.10)'
           }}
         >
           {categoryBadgeLabel}
@@ -219,69 +215,93 @@ export const PropertyCard: React.FC<PropertyCardProps> = ({ property, priority =
           }}
           aria-label="Save to Favourites"
           style={{
-            width: '34px',
-            height: '34px',
+            width: '38px',
+            height: '38px',
             borderRadius: '50%',
-            background: 'rgba(255, 250, 240, 0.38)',
+            background: 'rgba(255, 250, 240, 0.50)',
             backdropFilter: 'blur(14px) saturate(140%)',
             WebkitBackdropFilter: 'blur(14px) saturate(140%)',
-            border: '1px solid rgba(255, 255, 255, 0.75)',
+            border: '1px solid rgba(255, 255, 255, 0.90)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            color: isFavourited ? '#A87516' : '#24211D',
-            boxShadow: 'inset 0 1px 0 rgba(255, 255, 255, 0.70), 0 4px 12px rgba(70, 48, 20, 0.08)',
+            color: isFavourited ? '#B8831E' : '#1E1C19',
+            boxShadow: 'inset 0 1px 0 rgba(255, 255, 255, 0.85), 0 4px 14px rgba(41, 39, 34, 0.10)',
             cursor: 'pointer',
             transition: 'all 0.2s ease'
           }}
         >
-          <Heart size={15} fill={isFavourited ? '#A87516' : 'none'} strokeWidth={1.8} />
+          <Heart size={16} fill={isFavourited ? '#B8831E' : 'none'} strokeWidth={1.8} />
         </button>
       </div>
 
-      {/* 3. REFINED TRANSLUCENT GLASS INFORMATION PANEL (Integrated Lower Portion) */}
+      {/* 3. FLOATING GLASS INFORMATION PANEL (Elevated Physical Slab) */}
       <div
-        className="glass-panel-integrated"
+        className="glass-panel-integrated floating-glass-panel"
         style={{
           position: 'relative',
           zIndex: 3,
-          margin: '12px',
-          padding: '18px 20px',
+          margin: '0 16px 16px 16px',
+          marginTop: 'auto',
+          padding: '20px 22px',
           display: 'flex',
           flexDirection: 'column',
-          gap: '10px',
-          background: isHovered ? 'rgba(255, 250, 240, 0.32)' : 'rgba(255, 250, 240, 0.24)',
-          backdropFilter: 'blur(18px) saturate(145%)',
-          WebkitBackdropFilter: 'blur(18px) saturate(145%)',
-          border: '1px solid rgba(255, 255, 255, 0.62)',
-          borderRadius: '18px',
-          boxShadow: 'inset 0 1px 0 rgba(255, 255, 255, 0.72), 0 12px 35px rgba(70, 48, 20, 0.12)',
-          transition: 'all 0.35s ease'
+          gap: '11px',
+          borderRadius: '22px',
+          background: isHovered
+            ? 'linear-gradient(135deg, rgba(255, 255, 255, 0.78) 0%, rgba(255, 252, 244, 0.62) 50%, rgba(255, 248, 236, 0.72) 100%)'
+            : 'linear-gradient(135deg, rgba(255, 255, 255, 0.72) 0%, rgba(255, 252, 244, 0.54) 50%, rgba(255, 248, 236, 0.65) 100%)',
+          backdropFilter: 'blur(22px) saturate(170%)',
+          WebkitBackdropFilter: 'blur(22px) saturate(170%)',
+          border: isHovered
+            ? '1.2px solid rgba(255, 255, 255, 0.95)'
+            : '1px solid rgba(255, 255, 255, 0.82)',
+          transform: isHovered && !prefersReducedMotion ? 'translateY(-10px)' : 'translateY(0)',
+          boxShadow: isHovered
+            ? 'inset 0 1.5px 2px 0 rgba(255, 255, 255, 1), inset 0 0 16px 0 rgba(255, 240, 200, 0.35), 0 8px 18px -2px rgba(20, 16, 12, 0.18), 0 28px 56px -6px rgba(20, 16, 12, 0.28), 0 0 32px 2px rgba(212, 163, 59, 0.35)'
+            : 'inset 0 1.5px 2px 0 rgba(255, 255, 255, 0.95), inset 0 0 12px 0 rgba(255, 240, 200, 0.25), 0 4px 12px -2px rgba(20, 16, 12, 0.14), 0 18px 40px -4px rgba(20, 16, 12, 0.20), 0 0 24px 0 rgba(212, 163, 59, 0.22)',
+          transition: 'transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease, background 0.35s ease'
         }}
       >
+        {/* Specular Flare Along Top Edge */}
+        <div
+          style={{
+            position: 'absolute',
+            top: 0,
+            left: '8%',
+            right: '8%',
+            height: '2px',
+            background: 'linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.98) 25%, #FFF0CD 50%, rgba(255, 255, 255, 0.98) 75%, transparent)',
+            pointerEvents: 'none',
+            boxShadow: '0 0 12px rgba(255, 240, 200, 0.85)',
+            opacity: isHovered ? 1 : 0.9,
+            transition: 'opacity 0.35s ease'
+          }}
+        />
+
         {/* Location Line with Pin Icon */}
         <div
           style={{
             display: 'inline-flex',
             alignItems: 'center',
-            gap: '5px',
-            color: '#74644D',
-            fontSize: '11px',
+            gap: '6px',
+            color: '#2C2822',
+            fontSize: '11.5px',
             letterSpacing: '0.04em',
             fontWeight: 500
           }}
         >
-          <MapPin size={12} strokeWidth={2} color="#A87516" />
+          <MapPin size={13} strokeWidth={2.2} color="#B8831E" fill="#B8831E" fillOpacity={0.2} />
           <span>{locationString}</span>
         </div>
 
         {/* Property Name & Explore Arrow Row */}
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '8px' }}>
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '10px' }}>
           <h3
             style={{
-              fontSize: '1.45rem',
+              fontSize: '1.55rem',
               fontFamily: 'var(--font-serif)',
-              color: '#24211D',
+              color: '#151311',
               fontWeight: 500,
               lineHeight: 1.15,
               margin: 0,
@@ -296,7 +316,7 @@ export const PropertyCard: React.FC<PropertyCardProps> = ({ property, priority =
             </Link>
           </h3>
 
-          {/* Circular Glass Explore Action Button -> */}
+          {/* Circular Gold Explore Action Button -> */}
           <Link
             href={`/residence/${property.slug}`}
             aria-label={`View ${property.name}`}
@@ -304,18 +324,19 @@ export const PropertyCard: React.FC<PropertyCardProps> = ({ property, priority =
               display: 'inline-flex',
               alignItems: 'center',
               justifyContent: 'center',
-              width: '32px',
-              height: '32px',
+              width: '38px',
+              height: '38px',
               borderRadius: '50%',
-              background: 'linear-gradient(135deg, #F5E8C7 0%, #D8BD8A 30%, #C99A32 100%)',
-              border: '1px solid rgba(255, 255, 255, 0.8)',
+              background: 'linear-gradient(135deg, #ECC876 0%, #D4A33B 40%, #B07A18 100%)',
+              border: '1.5px solid rgba(255, 255, 255, 0.95)',
               color: '#FFFFFF',
-              boxShadow: '0 4px 12px rgba(168, 117, 22, 0.30)',
+              boxShadow: 'inset 0 1px 1px rgba(255, 255, 255, 0.8), 0 4px 14px rgba(168, 117, 22, 0.45), 0 0 16px rgba(212, 163, 59, 0.40)',
               flexShrink: 0,
-              transition: 'transform 0.25s ease'
+              transform: isHovered ? 'scale(1.06)' : 'scale(1)',
+              transition: 'transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease'
             }}
           >
-            <ArrowRight size={14} strokeWidth={2.4} />
+            <ArrowRight size={16} strokeWidth={2.4} />
           </Link>
         </div>
 
@@ -323,14 +344,14 @@ export const PropertyCard: React.FC<PropertyCardProps> = ({ property, priority =
         <p
           style={{
             fontSize: '12.5px',
-            color: '#514B43',
-            lineHeight: 1.5,
+            color: '#38332C',
+            lineHeight: 1.55,
             margin: 0,
             display: '-webkit-box',
             WebkitLineClamp: 2,
             WebkitBoxOrient: 'vertical',
             overflow: 'hidden',
-            fontWeight: 400
+            fontWeight: 450
           }}
         >
           {property.description || property.tagline}
@@ -342,32 +363,32 @@ export const PropertyCard: React.FC<PropertyCardProps> = ({ property, priority =
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'space-between',
-            paddingTop: '8px',
-            borderTop: '1px solid rgba(216, 189, 138, 0.25)',
-            fontSize: '11px',
-            color: '#514B43',
+            paddingTop: '10px',
+            borderTop: '1px solid rgba(184, 131, 30, 0.25)',
+            fontSize: '11.5px',
+            color: '#2C2822',
             fontWeight: 500
           }}
         >
           <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
             <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
-              <Bed size={13} strokeWidth={1.8} color="#A87516" />
+              <Bed size={14} strokeWidth={1.8} color="#B8831E" />
               <span>{property.bedrooms} Beds</span>
             </span>
 
             <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
-              <Bath size={13} strokeWidth={1.8} color="#A87516" />
+              <Bath size={14} strokeWidth={1.8} color="#B8831E" />
               <span>{property.bathrooms} Baths</span>
             </span>
 
             <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
-              <Maximize2 size={13} strokeWidth={1.8} color="#A87516" />
+              <Maximize2 size={14} strokeWidth={1.8} color="#B8831E" />
               <span>{formattedArea}</span>
             </span>
           </div>
 
           {formattedPrice && (
-            <span style={{ fontWeight: 600, color: '#A87516', letterSpacing: '0.02em' }}>
+            <span style={{ fontWeight: 700, color: '#B8831E', letterSpacing: '0.02em', fontSize: '15px' }}>
               {formattedPrice}
             </span>
           )}

@@ -131,19 +131,34 @@ export const CollectionsShowcaseSection: React.FC = () => {
                 style={{
                   position: 'relative',
                   zIndex: 3,
-                  margin: '14px',
+                  margin: '16px',
                   padding: '18px 22px',
-                  borderRadius: '16px',
-                  background: 'rgba(255, 250, 240, 0.24)',
-                  backdropFilter: 'blur(18px) saturate(145%)',
-                  WebkitBackdropFilter: 'blur(18px) saturate(145%)',
-                  border: '1px solid rgba(255, 255, 255, 0.62)',
-                  boxShadow: 'inset 0 1px 0 rgba(255, 255, 255, 0.72), 0 12px 35px rgba(70, 48, 20, 0.12)',
+                  borderRadius: '20px',
+                  background: 'rgba(255, 248, 238, 0.25)',
+                  backdropFilter: 'blur(18px) saturate(160%)',
+                  WebkitBackdropFilter: 'blur(18px) saturate(160%)',
+                  border: '1px solid rgba(255, 255, 255, 0.78)',
+                  boxShadow:
+                    'inset 0 1.5px 2px 0 rgba(255, 255, 255, 0.95), inset 0 0 12px 0 rgba(216, 189, 138, 0.15), 0 4px 10px -2px rgba(20, 16, 12, 0.16), 0 18px 40px -4px rgba(20, 16, 12, 0.26), 0 0 24px 0 rgba(201, 154, 50, 0.18)',
                   display: 'flex',
                   alignItems: 'center',
-                  justifyContent: 'space-between'
+                  justifyContent: 'space-between',
+                  transition: 'transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease'
                 }}
               >
+                {/* Specular Flare Along Top Edge */}
+                <div
+                  style={{
+                    position: 'absolute',
+                    top: 0,
+                    left: '15%',
+                    right: '15%',
+                    height: '1.5px',
+                    background: 'linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.95) 25%, #FFF0CD 50%, rgba(255, 255, 255, 0.95) 75%, transparent)',
+                    pointerEvents: 'none',
+                    filter: 'blur(0.4px)'
+                  }}
+                />
                 <div>
                   <h3
                     style={{

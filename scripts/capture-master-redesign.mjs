@@ -173,6 +173,29 @@ async function runMasterQA() {
   await delay(1200);
   await captureToFile('05-homepage-featured-residences.png');
 
+  // 5b. Hover State on First Property Card (Lift & Glow Verification)
+  await send('Runtime.evaluate', {
+    expression: `(() => {
+      const card = document.querySelector('.luxury-property-card');
+      if (card) {
+        card.dispatchEvent(new MouseEvent('mouseenter', { bubbles: true }));
+      }
+    })()`
+  });
+  await delay(600);
+  await captureToFile('05b-property-card-hover.png');
+
+  // Reset hover
+  await send('Runtime.evaluate', {
+    expression: `(() => {
+      const card = document.querySelector('.luxury-property-card');
+      if (card) {
+        card.dispatchEvent(new MouseEvent('mouseleave', { bubbles: true }));
+      }
+    })()`
+  });
+  await delay(300);
+
   // 6. Homepage Sections: Collections Showcase on Marble
   await send('Runtime.evaluate', {
     expression: 'document.getElementById("collections-showcase")?.scrollIntoView({ behavior: "instant", block: "start" })'
