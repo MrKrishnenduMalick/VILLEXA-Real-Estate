@@ -585,25 +585,67 @@ a {
   }
 }
 
+/* ==========================================================================
+   4. LUXURY PROPERTY CARDS (Floating Elevated Glass Plaque & Exterior Golden Halo)
+   ========================================================================== */
+
+.luxury-property-card {
+  position: relative;
+  overflow: visible !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 28px;
+  background-color: transparent;
+  transition: transform 400ms cubic-bezier(0.2, 0.75, 0.25, 1);
+}
+
+/* Outer Champagne-Gold Aura extending beyond card border onto marble */
+.luxury-property-card::before {
+  content: '';
+  position: absolute;
+  inset: -10px;
+  border-radius: 36px;
+  background: radial-gradient(ellipse at 50% 50%, rgba(225, 180, 85, 0.45) 0%, rgba(225, 180, 85, 0.20) 45%, transparent 75%);
+  filter: blur(14px);
+  -webkit-filter: blur(14px);
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.85;
+  transition: opacity 400ms ease, filter 400ms ease, inset 400ms ease;
+}
+
+.luxury-property-card:hover::before {
+  opacity: 1;
+  inset: -14px;
+  filter: blur(18px);
+  -webkit-filter: blur(18px);
+  background: radial-gradient(ellipse at 50% 50%, rgba(235, 190, 95, 0.60) 0%, rgba(225, 180, 85, 0.28) 45%, transparent 75%);
+}
+
 /* 4. PROPERTY INFORMATION CARDS (Floating elevated translucent glass plaque transmitting photography) */
 .property-glass-card,
 .glass-property-card,
 .glass-panel-integrated,
 .floating-glass-panel {
-  background: rgba(246, 239, 224, 0.32);
-  backdrop-filter: blur(16px) saturate(125%);
-  -webkit-backdrop-filter: blur(16px) saturate(125%);
+  position: relative;
+  background: rgba(246, 239, 224, 0.24);
+  backdrop-filter: blur(12px) saturate(155%);
+  -webkit-backdrop-filter: blur(12px) saturate(155%);
 
-  border: 1px solid rgba(255, 248, 230, 0.78);
-  border-radius: 26px;
+  border: 1px solid rgba(255, 255, 255, 0.78);
+  border-radius: 24px;
 
   box-shadow:
-    0 16px 32px rgba(45, 32, 20, 0.16),
-    0 5px 12px rgba(45, 32, 20, 0.08),
-    0 0 14px rgba(212, 175, 55, 0.14),
-    inset 0 1px 0 rgba(255, 255, 255, 0.80);
+    0 20px 38px rgba(42, 27, 12, 0.22),
+    0 8px 16px rgba(42, 27, 12, 0.12),
+    0 0 25px rgba(218, 169, 75, 0.30),
+    0 0 50px rgba(218, 169, 75, 0.14),
+    inset 0 1px 0 rgba(255, 255, 255, 0.90),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.20);
 
   color: #1E1C19;
+  transform: translateY(-8px);
   transition:
     transform 400ms cubic-bezier(0.2, 0.75, 0.25, 1),
     box-shadow 400ms ease,
@@ -611,19 +653,21 @@ a {
     background 400ms ease;
 }
 
+.luxury-property-card:hover .floating-glass-panel,
 .property-glass-card:hover,
 .glass-property-card:hover,
 .glass-panel-integrated:hover,
 .floating-glass-panel:hover {
-  transform: translateY(-10px);
-  background: rgba(246, 239, 224, 0.38);
-  border-color: rgba(255, 255, 255, 0.92);
+  transform: translateY(-16px);
+  background: rgba(246, 239, 224, 0.28);
+  border-color: rgba(255, 255, 255, 0.95);
   box-shadow:
-    0 24px 48px rgba(45, 32, 20, 0.22),
-    0 8px 18px rgba(45, 32, 20, 0.12),
-    0 0 24px rgba(212, 175, 55, 0.28),
-    inset 0 1px 0 rgba(255, 255, 255, 0.95),
-    inset 0 -1px 0 rgba(255, 255, 255, 0.25);
+    0 28px 52px rgba(42, 27, 12, 0.28),
+    0 12px 22px rgba(42, 27, 12, 0.16),
+    0 0 35px rgba(218, 169, 75, 0.45),
+    0 0 65px rgba(218, 169, 75, 0.22),
+    inset 0 1.5px 0 rgba(255, 255, 255, 1.0),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.30);
 }
 
 /* 5. COLLECTION CARDS (Photo-backed cards with floating glass plaque) */
