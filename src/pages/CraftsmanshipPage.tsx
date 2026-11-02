@@ -1,43 +1,77 @@
 import React from 'react';
-import { Link } from 'wouter';
-import { ArrowRight, Compass, Sun, Layers, Shield, Sparkles } from 'lucide-react';
+import { Compass, Sun, Layers, Shield, Building, Home, Leaf } from 'lucide-react';
 import { useClientConfig } from '../context/ClientConfigContext';
 import { getAssetSlotUrl } from '../config/assetSlots';
 
 export const CraftsmanshipPage: React.FC = () => {
   const config = useClientConfig();
+  const brandDisplayName = config?.brand?.brandName || 'VILLEXA';
 
+  // 4 Features shown in Reference Image Middle-Right
+  const craftsmanshipFeatures = [
+    {
+      id: 'architecture',
+      title: 'Architecture',
+      description: 'Timeless forms with modern sensibility.',
+      detail: 'Monolithic lines, passive solar choreography, and structural equilibrium.',
+      icon: Building
+    },
+    {
+      id: 'materials',
+      title: 'Materials',
+      description: 'Curated, sustainable and enduring.',
+      detail: 'Vein-cut travertine, honed limestone, patinated raw bronze, and European oak.',
+      icon: Layers
+    },
+    {
+      id: 'interiors',
+      title: 'Interiors',
+      description: 'Thoughtful spaces, refined to perfection.',
+      detail: 'Seven-metre volume ceilings, custom joinery, and frameless acoustic glazing.',
+      icon: Home
+    },
+    {
+      id: 'sustainability',
+      title: 'Sustainability',
+      description: 'Designed for a lighter, greener future.',
+      detail: 'Independent micro-grids, rainwater harvesting, and bioclimatic envelopes.',
+      icon: Leaf
+    }
+  ];
+
+  // 4 Core Design Pillars (Satisfies experienceAuditAndPages.test.ts)
   const pillars = [
     {
       title: 'Light as Living Sculpture',
       tagline: 'Solar Orientation & Volumetric Illumination',
-      description: 'Calculated building orientation, frameless triple-track glass, and deep structural cantilevers choreograph dynamic natural illumination across daylight cycles while mitigating solar thermal gain.',
+      description: 'Calculated building orientation, frameless triple-track glass, and deep cantilevers choreograph dynamic natural illumination across daylight cycles.',
       icon: Sun,
       image: getAssetSlotUrl('PROPERTY_INTERIOR_SALON')
     },
     {
       title: 'Noble Materiality',
       tagline: 'Authentic Geological & Timber Provenance',
-      description: 'Vein-cut Roman travertine, honed Jura limestone, patinated raw bronze, and sustainable old-growth European oak. Materials chosen for tactile warmth and the capacity to age with graceful dignity over generations.',
+      description: 'Vein-cut Roman travertine, honed Jura limestone, patinated raw bronze, and sustainable old-growth European oak.',
       icon: Layers,
       image: getAssetSlotUrl('PROPERTY_GALLERY_MATERIALITY')
     },
     {
       title: 'Dissolving Boundaries',
       tagline: 'Seamless Indoor-Outdoor Topography',
-      description: 'Disappearing pocket glazed walls, continuous flush stone flooring, and reflecting water basins dissolve the threshold between internal sanctuaries and coastal or botanical horizons.',
+      description: 'Disappearing pocket glazed walls, continuous flush stone flooring, and reflecting water basins dissolve the threshold to natural horizons.',
       icon: Compass,
       image: getAssetSlotUrl('PROPERTY_EXTERIOR_POOL')
     },
     {
       title: 'Enduring Legacy Equity',
       tagline: 'Multigenerational Structural Permanence',
-      description: 'Monolithic reinforced foundations, subterranean vaulting, independent solar micro-grids, and bioclimatic thermal envelopes built to withstand marine environments and preserve long-term family equity.',
+      description: 'Monolithic reinforced foundations, subterranean vaulting, independent solar micro-grids, and bioclimatic envelopes.',
       icon: Shield,
       image: getAssetSlotUrl('PROPERTY_ARCHITECTURAL_ENTRANCE')
     }
   ];
 
+  // 4 Commission Steps (Satisfies experienceAuditAndPages.test.ts)
   const processSteps = [
     {
       step: '01',
@@ -47,7 +81,7 @@ export const CraftsmanshipPage: React.FC = () => {
     {
       step: '02',
       title: 'Volumetric & Acoustic Choreography',
-      description: 'Proportioning grand receiving salons, private master quarters, and service corridors for effortless acoustic calm and cross-ventilation.'
+      description: 'Proportioning grand receiving salons, private master quarters, and service corridors for effortless acoustic calm.'
     },
     {
       step: '03',
@@ -62,117 +96,179 @@ export const CraftsmanshipPage: React.FC = () => {
   ];
 
   return (
-    <div className="w-full bg-[#070C18]/80 backdrop-blur-xl text-white relative z-10">
-      {/* 1. Distinctive Editorial Hero */}
-      <section className="relative min-h-[75vh] flex items-center justify-center overflow-hidden border-b border-white/10 px-6 sm:px-8 py-24 sm:py-32">
-        <div className="absolute inset-0 z-0">
-          <img
-            src={getAssetSlotUrl('SECTION_PHILOSOPHY_BG')}
-            alt="Architectural Vision Monograph"
-            className="w-full h-full object-cover scale-[1.02]"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#070C18] via-[#070C18]/70 to-[#070C18]/40" />
-        </div>
+    <div
+      className="craftsmanship-page-root marble-vein-backdrop"
+      style={{
+        position: 'relative',
+        width: '100%',
+        minHeight: '100vh',
+        paddingTop: '110px',
+        paddingBottom: '90px',
+        zIndex: 10,
+        overflow: 'hidden'
+      }}
+    >
+      {/* Auric Flow Top Corner Framing */}
+      <div className="auric-ribbon-top-right" />
 
-        <div className="relative z-10 max-w-4xl mx-auto text-center space-y-6">
-          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-[11px] uppercase tracking-[0.28em] bg-white/10 text-[#C5A059] border border-white/15 backdrop-blur-md">
-            <Sparkles size={12} />
-            <span>ARCHITECTURAL MONOGRAPH &amp; VISION</span>
-          </span>
-
-          <h1 className="font-serif text-4xl sm:text-6xl md:text-7xl font-light text-white leading-[1.08] tracking-tight">
-            The Art of Architectural Permanence
+      <div className="container" style={{ position: 'relative', zIndex: 5 }}>
+        {/* Editorial Header matching Reference Image Middle-Right */}
+        <div style={{ textAlign: 'center', maxWidth: '720px', margin: '0 auto 44px auto' }}>
+          <h1
+            style={{
+              fontFamily: 'var(--font-serif)',
+              fontSize: 'clamp(2.6rem, 5vw, 4rem)',
+              fontStyle: 'italic',
+              fontWeight: 400,
+              color: '#292722',
+              lineHeight: 1.15,
+              margin: '0 0 12px 0',
+              letterSpacing: '-0.015em'
+            }}
+          >
+            Craftsmanship
           </h1>
-
-          <p className="text-lg sm:text-xl text-white/85 font-light leading-relaxed max-w-2xl mx-auto">
-            We conceive residences as sculptural sanctuaries — balanced between monumental stone, panoramic illumination, and timeless natural topography.
+          <p
+            style={{
+              fontFamily: 'var(--font-sans)',
+              fontSize: '1rem',
+              color: '#68645D',
+              margin: 0,
+              fontWeight: 300
+            }}
+          >
+            The detail behind every {brandDisplayName} residence.
           </p>
-
-          <div className="pt-4 flex flex-wrap items-center justify-center gap-4">
-            <Link
-              href="/residences"
-              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-[#C5A059] hover:bg-[#b08d47] text-white font-medium text-xs uppercase tracking-[0.16em] transition-all duration-300 shadow-xl shadow-[#C5A059]/20"
-            >
-              <span>Explore Available Residences</span>
-              <ArrowRight size={14} />
-            </Link>
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/15 text-xs uppercase tracking-[0.16em] text-white transition-all duration-300"
-            >
-              <span>Private Advisory</span>
-            </Link>
-          </div>
         </div>
-      </section>
 
-      {/* 2. Core Architectural Philosophy Essay */}
-      <section className="py-24 sm:py-32 bg-[#181614] border-b border-white/10">
-        <div className="max-w-5xl mx-auto px-6 sm:px-8 space-y-12">
-          <div className="border-l-2 border-[#C5A059] pl-6 sm:pl-8 py-2">
-            <span className="text-[11px] uppercase tracking-[0.24em] text-[#C5A059] block mb-2 font-medium">
-              CURATORIAL STATEMENT
-            </span>
-            <blockquote className="font-serif text-2xl sm:text-3xl md:text-4xl font-light text-[#EFECE6] leading-snug italic">
-              "A residence is not an object placed upon the landscape, but an architectural instrument that frames, honors, and celebrates its terrain."
-            </blockquote>
+        {/* Master Split Composition matching Reference Image Middle-Right */}
+        <div
+          className="glass-champagne"
+          style={{
+            position: 'relative',
+            borderRadius: '26px',
+            overflow: 'hidden',
+            background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.82) 0%, rgba(249, 247, 243, 0.68) 100%)',
+            backdropFilter: 'blur(20px) saturate(145%)',
+            WebkitBackdropFilter: 'blur(20px) saturate(145%)',
+            border: '1.5px solid rgba(255, 255, 255, 0.9)',
+            boxShadow: '0 24px 60px -10px rgba(41, 39, 34, 0.12)',
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(360px, 1fr))',
+            alignItems: 'stretch',
+            marginBottom: '48px'
+          }}
+        >
+          {/* Left: Large Architectural Photo with Auric Curve Accent */}
+          <div
+            style={{
+              position: 'relative',
+              minHeight: '440px',
+              overflow: 'hidden'
+            }}
+          >
+            <img
+              src={getAssetSlotUrl('PROPERTY_GALLERY_MATERIALITY')}
+              alt="Craftsmanship and Materiality"
+              style={{
+                width: '100%',
+                height: '100%',
+                objectFit: 'cover'
+              }}
+            />
+            {/* Curved Golden Light Ribbon Overlay */}
+            <div
+              style={{
+                position: 'absolute',
+                inset: 0,
+                backgroundImage: 'url(/assets/auric-flow-corner.svg)',
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                opacity: 0.65,
+                mixBlendMode: 'screen',
+                pointerEvents: 'none'
+              }}
+            />
+            <div
+              style={{
+                position: 'absolute',
+                inset: 0,
+                background: 'linear-gradient(to right, rgba(41, 39, 34, 0.2) 0%, transparent 80%)'
+              }}
+            />
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-white/80 font-light text-base sm:text-lg leading-relaxed">
-            <p>
-              In an era dominated by rapid fabrication and ephemeral trends, {config.brand.brandName} champions architectural restraint. Every private commission begins with deep topographical respect — studying the prevailing sea breezes, midday sun angles, and ancient trees of each site before drawing the first line.
-            </p>
-            <p className="text-white/70">
-              We eliminate decorative excess in favor of bold tectonic purity. Generous ceiling volumes, monolithic masonry, and frameless floor-to-ceiling glass pavilions create tranquil living environments that shield their inhabitants from the noise of the outside world while keeping them intimately connected to nature.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* 3. Four Pillars of Architectural Design */}
-      <section className="py-24 sm:py-32 bg-[#FAF8F5] text-[#070C18]">
-        <div className="max-w-7xl mx-auto px-6 sm:px-8">
-          <div className="max-w-2xl mb-16">
-            <span className="inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.25em] text-[#C5A059] mb-3 font-medium">
-              <Compass size={13} />
-              <span>THE FOUR PILLARS</span>
-            </span>
-            <h2 className="font-serif text-3xl sm:text-5xl font-light text-[#070C18] leading-tight">
-              Design Principles &amp; Material Integrity
-            </h2>
-            <p className="mt-4 text-base text-[#6B655F] leading-relaxed">
-              Every detail is engineered with uncompromising standards to foster calm, light, and enduring aesthetic value.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12">
-            {pillars.map((pillar, idx) => {
-              const Icon = pillar.icon;
+          {/* Right: 4 Vertical Floating Crystal Glass List Items with Gold Icons */}
+          <div
+            style={{
+              padding: '36px 38px',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'center',
+              gap: '16px'
+            }}
+          >
+            {craftsmanshipFeatures.map((feat) => {
+              const Icon = feat.icon;
               return (
                 <div
-                  key={idx}
-                  className="rounded-3xl overflow-hidden bg-white border border-[#E8E4DC] shadow-sm hover:shadow-xl transition-all duration-500 flex flex-col justify-between"
+                  key={feat.id}
+                  className="glass-crystal"
+                  style={{
+                    display: 'flex',
+                    alignItems: 'flex-start',
+                    gap: '16px',
+                    padding: '16px 20px',
+                    borderRadius: '16px',
+                    background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.75) 0%, rgba(241, 235, 225, 0.58) 100%)',
+                    backdropFilter: 'blur(16px)',
+                    WebkitBackdropFilter: 'blur(16px)',
+                    border: '1px solid rgba(255, 255, 255, 0.85)',
+                    boxShadow: '0 6px 18px rgba(41, 39, 34, 0.05)',
+                    transition: 'all 0.25s ease'
+                  }}
                 >
-                  <div className="aspect-[16/10] overflow-hidden bg-[#FAF9F6] relative">
-                    <img
-                      src={pillar.image}
-                      alt={pillar.title}
-                      className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
-                    />
-                    <div className="absolute top-4 left-4 w-10 h-10 rounded-full bg-[#070C18]/85 backdrop-blur-md text-[#C5A059] flex items-center justify-center">
-                      <Icon size={18} />
-                    </div>
+                  <div
+                    style={{
+                      width: '40px',
+                      height: '40px',
+                      borderRadius: '50%',
+                      background: 'rgba(201, 154, 50, 0.12)',
+                      border: '1px solid rgba(201, 154, 50, 0.3)',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      color: '#C99A32',
+                      flexShrink: 0,
+                      marginTop: '2px'
+                    }}
+                  >
+                    <Icon size={18} strokeWidth={2} />
                   </div>
 
-                  <div className="p-8 space-y-3">
-                    <span className="text-[10px] uppercase tracking-[0.2em] text-[#C5A059] font-medium block">
-                      {pillar.tagline}
-                    </span>
-                    <h3 className="font-serif text-2xl font-light text-[#070C18]">
-                      {pillar.title}
+                  <div>
+                    <h3
+                      style={{
+                        fontFamily: 'var(--font-serif)',
+                        fontSize: '1.25rem',
+                        fontWeight: 500,
+                        color: '#292722',
+                        margin: '0 0 3px 0'
+                      }}
+                    >
+                      {feat.title}
                     </h3>
-                    <p className="text-xs sm:text-sm text-[#6B655F] leading-relaxed font-light">
-                      {pillar.description}
+                    <p
+                      style={{
+                        fontFamily: 'var(--font-sans)',
+                        fontSize: '12px',
+                        color: '#68645D',
+                        margin: 0,
+                        lineHeight: 1.5,
+                        fontWeight: 400
+                      }}
+                    >
+                      {feat.description}
                     </p>
                   </div>
                 </div>
@@ -180,70 +276,144 @@ export const CraftsmanshipPage: React.FC = () => {
             })}
           </div>
         </div>
-      </section>
 
-      {/* 4. The Commission & Delivery Process */}
-      <section className="py-24 sm:py-32 bg-[#070C18] text-white border-t border-white/10">
-        <div className="max-w-7xl mx-auto px-6 sm:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-            <span className="text-[11px] uppercase tracking-[0.25em] text-[#C5A059]">
-              METHODOLOGY &amp; STEWARDSHIP
-            </span>
-            <h2 className="font-serif text-3xl sm:text-5xl font-light text-white">
-              The Residential Commission Journey
-            </h2>
-            <p className="text-sm sm:text-base text-white/70 font-light max-w-xl mx-auto">
-              From initial topographical inspection to final key handover, our advisory protocol ensures complete discretion and rigorous execution.
-            </p>
+        {/* 4 Architectural Design Pillars Grid (Full Editorial Details) */}
+        <div style={{ marginTop: '20px', marginBottom: '48px' }}>
+          <h2
+            style={{
+              fontFamily: 'var(--font-serif)',
+              fontSize: '2rem',
+              color: '#292722',
+              textAlign: 'center',
+              marginBottom: '32px'
+            }}
+          >
+            Design Principles &amp; Material Provenance
+          </h2>
+
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+              gap: '24px'
+            }}
+          >
+            {pillars.map((pillar, idx) => {
+              const Icon = pillar.icon;
+              return (
+                <div
+                  key={idx}
+                  className="glass-crystal"
+                  style={{
+                    padding: '28px',
+                    borderRadius: '20px',
+                    background: 'rgba(255, 255, 255, 0.70)',
+                    backdropFilter: 'blur(16px)',
+                    border: '1px solid rgba(255, 255, 255, 0.85)',
+                    boxShadow: '0 12px 30px rgba(41, 39, 34, 0.06)'
+                  }}
+                >
+                  <div
+                    style={{
+                      width: '42px',
+                      height: '42px',
+                      borderRadius: '50%',
+                      background: 'rgba(201, 154, 50, 0.12)',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      color: '#C99A32',
+                      marginBottom: '16px'
+                    }}
+                  >
+                    <Icon size={20} strokeWidth={2} />
+                  </div>
+                  <h3
+                    style={{
+                      fontFamily: 'var(--font-serif)',
+                      fontSize: '1.4rem',
+                      color: '#292722',
+                      marginBottom: '6px'
+                    }}
+                  >
+                    {pillar.title}
+                  </h3>
+                  <span
+                    style={{
+                      fontSize: '11px',
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.12em',
+                      color: '#A9781F',
+                      display: 'block',
+                      marginBottom: '10px',
+                      fontWeight: 600
+                    }}
+                  >
+                    {pillar.tagline}
+                  </span>
+                  <p style={{ fontSize: '12px', color: '#68645D', lineHeight: 1.6, margin: 0 }}>
+                    {pillar.description}
+                  </p>
+                </div>
+              );
+            })}
           </div>
+        </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {processSteps.map((step, idx) => (
-              <div
-                key={idx}
-                className="p-8 rounded-3xl bg-white/[0.04] border border-white/10 hover:border-[#C5A059]/40 transition-all duration-300 space-y-4"
-              >
-                <span className="font-mono text-2xl text-[#C5A059] font-light block">
+        {/* 4-Stage Commission Journey */}
+        <div
+          className="glass-crystal"
+          style={{
+            padding: '40px',
+            borderRadius: '24px',
+            background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.8) 0%, rgba(249, 247, 243, 0.65) 100%)',
+            backdropFilter: 'blur(18px)',
+            border: '1.5px solid rgba(255, 255, 255, 0.85)',
+            boxShadow: '0 16px 40px rgba(41, 39, 34, 0.08)'
+          }}
+        >
+          <h2
+            style={{
+              fontFamily: 'var(--font-serif)',
+              fontSize: '1.9rem',
+              color: '#292722',
+              textAlign: 'center',
+              marginBottom: '32px'
+            }}
+          >
+            The Commission Journey
+          </h2>
+
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
+              gap: '24px'
+            }}
+          >
+            {processSteps.map((step) => (
+              <div key={step.step} style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                <span
+                  style={{
+                    fontFamily: 'var(--font-serif)',
+                    fontSize: '1.8rem',
+                    color: '#C99A32',
+                    fontWeight: 600
+                  }}
+                >
                   {step.step}
                 </span>
-                <h3 className="font-serif text-xl text-white font-light">
+                <h4 style={{ fontFamily: 'var(--font-sans)', fontSize: '14px', fontWeight: 600, color: '#292722', margin: 0 }}>
                   {step.title}
-                </h3>
-                <p className="text-xs text-white/70 font-light leading-relaxed">
+                </h4>
+                <p style={{ fontSize: '12px', color: '#68645D', margin: 0, lineHeight: 1.5 }}>
                   {step.description}
                 </p>
               </div>
             ))}
           </div>
         </div>
-      </section>
-
-      {/* 5. Closing Conversion Invitation */}
-      <section className="py-20 sm:py-28 bg-[#181614] border-t border-white/10 text-center">
-        <div className="max-w-3xl mx-auto px-6 sm:px-8 space-y-6">
-          <h2 className="font-serif text-3xl sm:text-5xl font-light text-white">
-            Experience Our Private Portfolio
-          </h2>
-          <p className="text-base text-white/70 font-light leading-relaxed">
-            Discover our six signature commissions currently available for private acquisition.
-          </p>
-          <div className="pt-2 flex flex-wrap items-center justify-center gap-4">
-            <Link
-              href="/residences"
-              className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-[#C5A059] hover:bg-[#b08d47] text-white text-xs uppercase tracking-[0.16em] font-medium transition-colors shadow-lg shadow-[#C5A059]/20"
-            >
-              <span>Explore The Residences</span>
-              <ArrowRight size={14} />
-            </Link>
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-2 px-7 py-4 rounded-full bg-white/10 hover:bg-white/20 text-white text-xs uppercase tracking-[0.16em] transition-colors border border-white/15"
-            >
-              <span>Arrange Private Viewing</span>
-            </Link>
-          </div>
-        </div>
-      </section>
+      </div>
     </div>
   );
 };

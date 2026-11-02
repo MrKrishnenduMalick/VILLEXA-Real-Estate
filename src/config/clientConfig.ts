@@ -77,41 +77,41 @@ export interface ClientConfig {
 }
 
 /**
- * DEFAULT BASELINE CONFIGURATION (BILEKSA Master Preset)
+ * DEFAULT BASELINE CONFIGURATION (VILLEXA Master Preset)
  */
 export const defaultClientConfig: ClientConfig = {
   brand: {
-    brandName: 'BILEKSA',
+    brandName: 'VILLEXA',
     tagline: 'Private Residences & Architectural Living',
-    badge: 'BILEKSA PRIVATE RESIDENCES',
+    badge: 'VILLEXA PRIVATE RESIDENCES',
     description: 'Bespoke architectural residences, monolithic proportions, and private luxury living spaces conceived for discerning owners.',
-    logoText: 'BILEKSA',
+    logoText: 'VILLEXA',
     logoSubtext: 'PRIVATE RESIDENCES',
     logoImageUrl: null,
     faviconUrl: null
   },
   contact: {
-    contactEmail: 'concierge@bileksa.com',
+    contactEmail: 'concierge@villexa.com',
     contactPhone: '+91 (800) 482-1980',
     whatsappNumber: '918004821980',
-    whatsappDefaultMessage: 'Hello, I would like to inquire regarding private residential acquisitions at BILEKSA.',
+    whatsappDefaultMessage: 'Hello, I would like to inquire regarding private residential acquisitions at VILLEXA.',
     showroomAddress: 'Pavilion of Architecture, Private Estates Gallery',
     visitingHours: 'Monday – Saturday: 10:00 to 19:00 (By Private Appointment Only)',
-    flagshipLocationName: 'BILEKSA Private Estates Gallery'
+    flagshipLocationName: 'VILLEXA Private Estates Gallery'
   },
   social: {
-    instagramUrl: 'https://instagram.com/bileksaofficial',
-    pinterestUrl: 'https://pinterest.com/bileksaofficial',
-    linkedinUrl: 'https://linkedin.com/company/bileksa',
+    instagramUrl: 'https://instagram.com/villexaofficial',
+    pinterestUrl: 'https://pinterest.com/villexaofficial',
+    linkedinUrl: 'https://linkedin.com/company/villexa',
     twitterUrl: null
   },
   theme: {
-    accentColor: '#c5a059',
-    accentHoverColor: '#b38f48',
-    bgPrimary: '#070c18',
-    bgDark: '#070c18',
-    fontSerif: '"Cormorant Garamond", Georgia, serif',
-    fontSans: '"Outfit", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif'
+    accentColor: '#C99A32',
+    accentHoverColor: '#A9781F',
+    bgPrimary: '#F9F7F3',
+    bgDark: '#141210',
+    fontSerif: 'Playfair Display, serif',
+    fontSans: 'Montserrat, sans-serif'
   },
   features: {
     enable3DViewer: true,
@@ -126,10 +126,10 @@ export const defaultClientConfig: ClientConfig = {
     enableBrochureDownload: true
   },
   seo: {
-    defaultTitle: 'BILEKSA — Private Residences & Architectural Living | Luxury Estates',
-    defaultDescription: 'BILEKSA curates timeless architectural residences and private luxury estates. Monolithic silhouettes, noble materials, and deliberate proportions.',
-    keywords: ['luxury real estate', 'private residences', 'architectural villas', 'luxury penthouses', 'bileksa', 'bespoke architecture'],
-    siteUrl: 'https://bileksa.com'
+    defaultTitle: 'VILLEXA — Private Residences & Architectural Living | Luxury Estates',
+    defaultDescription: 'VILLEXA curates timeless architectural residences and private luxury estates. Monolithic silhouettes, noble materials, and deliberate proportions.',
+    keywords: ['luxury real estate', 'private residences', 'architectural villas', 'luxury penthouses', 'villexa', 'bespoke architecture'],
+    siteUrl: 'https://villexa.com'
   }
 };
 

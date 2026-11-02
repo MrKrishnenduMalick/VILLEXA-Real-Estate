@@ -62,7 +62,7 @@ describe('BILEKSA Experience-Wide Quality & Remaining Pages Audit (Phase 7)', ()
       const config = getClientConfig();
       expect(config.contact.showroomAddress).toBeTruthy();
       expect(config.contact.visitingHours).toBeTruthy();
-      expect(config.contact.contactEmail).toBe('concierge@bileksa.com');
+      expect(config.contact.contactEmail).toBe('concierge@villexa.com');
       expect(config.contact.contactPhone).toBeTruthy();
       expect(config.contact.whatsappNumber).toBe('918004821980');
     });
@@ -123,10 +123,10 @@ describe('BILEKSA Experience-Wide Quality & Remaining Pages Audit (Phase 7)', ()
   describe('SEO & Metadata Integrity', () => {
     it('verifies SEO configuration contains required brand titles and keywords', () => {
       const config = getClientConfig();
-      expect(config.seo.defaultTitle).toContain('BILEKSA');
+      expect(config.seo.defaultTitle).toContain('VILLEXA');
       expect(config.seo.defaultDescription).toBeTruthy();
       expect(config.seo.keywords.length).toBeGreaterThanOrEqual(5);
-      expect(config.seo.siteUrl).toBe('https://bileksa.com');
+      expect(config.seo.siteUrl).toBe('https://villexa.com');
     });
   });
 });

@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'wouter';
-import { ArrowRight, MapPin, Bed, Bath, Maximize2 } from 'lucide-react';
+import { ArrowRight, MapPin, Bed, Bath, Maximize2, Heart } from 'lucide-react';
 import { Property } from '../../types/property';
 import { propertyService } from '../../services/propertyService';
 import { useClientConfig } from '../../context/ClientConfigContext';
@@ -16,6 +16,7 @@ export const PropertyCard: React.FC<PropertyCardProps> = ({ property, priority =
   const videoRef = useRef<HTMLVideoElement | null>(null);
 
   const [isHovered, setIsHovered] = useState(false);
+  const [isFavourited, setIsFavourited] = useState(false);
   const [imageError, setImageError] = useState(false);
   const [videoError, setVideoError] = useState(false);
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
@@ -51,9 +52,7 @@ export const PropertyCard: React.FC<PropertyCardProps> = ({ property, priority =
           video.muted = true;
           const promise = video.play();
           if (promise !== undefined) {
-            promise.catch(() => {
-              // Autoplay policy fallback
-            });
+            promise.catch(() => {});
           }
         } else {
           video.pause();
@@ -68,16 +67,16 @@ export const PropertyCard: React.FC<PropertyCardProps> = ({ property, priority =
 
   const formattedPrice = propertyService.formatPrice(property);
   const formattedArea = propertyService.formatArea(property.carpetArea || property.builtUpArea);
-  
+
   const typologyLabels: Record<string, string> = {
-    villa: 'Architectural Villa',
-    penthouse: 'Sky Penthouse',
-    waterfront: 'Waterfront Residence',
-    estate: 'Private Estate',
-    apartment: 'Luxury Apartment',
-    residential_development: 'Residential Enclave'
+    villa: 'Villa',
+    penthouse: 'Penthouse',
+    waterfront: 'Beachfront',
+    estate: 'Estate',
+    apartment: 'Apartment',
+    residential_development: 'Enclave'
   };
-  const typologyLabel = typologyLabels[property.propertyType] || 'Private Residence';
+  const categoryBadgeLabel = typologyLabels[property.propertyType] || 'Residence';
 
   const locationString = property.location.suburb
     ? `${property.location.suburb}, ${property.location.city}`
@@ -91,20 +90,20 @@ export const PropertyCard: React.FC<PropertyCardProps> = ({ property, priority =
       onMouseLeave={() => setIsHovered(false)}
       style={{
         position: 'relative',
-        borderRadius: '16px',
+        borderRadius: '22px',
         overflow: 'hidden',
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'space-between',
-        minHeight: '540px',
-        border: '1px solid rgba(197, 160, 89, 0.28)',
-        borderColor: isHovered ? 'rgba(197, 160, 89, 0.55)' : 'rgba(197, 160, 89, 0.28)',
+        minHeight: '480px',
+        border: '1.5px solid rgba(255, 255, 255, 0.75)',
+        borderColor: isHovered ? 'rgba(201, 154, 50, 0.55)' : 'rgba(216, 189, 138, 0.35)',
         boxShadow: isHovered
-          ? '0 24px 60px -10px rgba(0, 0, 0, 0.55), inset 0 1px 1px 0 rgba(255, 255, 255, 0.30)'
-          : '0 16px 40px -8px rgba(0, 0, 0, 0.40), inset 0 1px 1px 0 rgba(255, 255, 255, 0.20)',
-        transform: isHovered ? 'translateY(-5px)' : 'translateY(0)',
-        transition: 'transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease, box-shadow 0.45s ease',
-        backgroundColor: '#070C18'
+          ? '0 24px 60px -10px rgba(41, 39, 34, 0.16), 0 0 20px rgba(201, 154, 50, 0.20)'
+          : '0 16px 40px -10px rgba(41, 39, 34, 0.08), inset 0 1px 1px rgba(255, 255, 255, 0.9)',
+        transform: isHovered && !prefersReducedMotion ? 'translateY(-4px)' : 'translateY(0)',
+        transition: 'transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease, box-shadow 0.4s ease',
+        backgroundColor: '#FAF8F5'
       }}
     >
       {/* 1. LARGE ARCHITECTURAL PHOTOGRAPHY (Main Visual Backdrop) */}
@@ -132,7 +131,7 @@ export const PropertyCard: React.FC<PropertyCardProps> = ({ property, priority =
               width: '100%',
               height: '100%',
               objectFit: 'cover',
-              transform: isHovered && !prefersReducedMotion ? 'scale(1.06)' : 'scale(1)',
+              transform: isHovered && !prefersReducedMotion ? 'scale(1.05)' : 'scale(1)',
               transition: 'transform 0.8s cubic-bezier(0.16, 1, 0.3, 1)'
             }}
           />
@@ -146,7 +145,7 @@ export const PropertyCard: React.FC<PropertyCardProps> = ({ property, priority =
               width: '100%',
               height: '100%',
               objectFit: 'cover',
-              transform: isHovered && !prefersReducedMotion ? 'scale(1.06)' : 'scale(1)',
+              transform: isHovered && !prefersReducedMotion ? 'scale(1.05)' : 'scale(1)',
               transition: 'transform 0.8s cubic-bezier(0.16, 1, 0.3, 1)'
             }}
           />
@@ -159,31 +158,28 @@ export const PropertyCard: React.FC<PropertyCardProps> = ({ property, priority =
               flexDirection: 'column',
               alignItems: 'center',
               justifyContent: 'center',
-              backgroundColor: '#0A1124',
-              color: 'var(--color-accent-gold)'
+              backgroundColor: '#F1EBE1',
+              color: '#C99A32'
             }}
           >
-            <span style={{ fontFamily: 'var(--font-serif)', fontSize: '1.4rem', letterSpacing: '0.1em' }}>
+            <span style={{ fontFamily: 'var(--font-serif)', fontSize: '1.4rem' }}>
               {config?.brand?.brandName || 'VILLEXA'}
-            </span>
-            <span style={{ fontSize: '0.72rem', color: '#8A7E72', marginTop: '4px' }}>
-              Architectural Commission
             </span>
           </div>
         )}
 
-        {/* Directional Vignette Gradient to ensure glass transmission contrast */}
+        {/* Subtle Vignette Gradient for Glass Contrast */}
         <div
           style={{
             position: 'absolute',
             inset: 0,
-            background: 'linear-gradient(to top, rgba(6, 11, 24, 0.35) 0%, rgba(6, 11, 24, 0.06) 45%, transparent 100%)',
+            background: 'linear-gradient(to top, rgba(20, 16, 12, 0.20) 0%, transparent 55%)',
             pointerEvents: 'none'
           }}
         />
       </div>
 
-      {/* 2. TOP FLOATING BADGES OVER ARCHITECTURAL PHOTOGRAPHY */}
+      {/* 2. TOP FLOATING BADGES OVER PHOTOGRAPHY: Category Badge & Favourite Heart */}
       <div
         style={{
           position: 'relative',
@@ -191,117 +187,106 @@ export const PropertyCard: React.FC<PropertyCardProps> = ({ property, priority =
           padding: '16px 18px',
           display: 'flex',
           justifyContent: 'space-between',
-          alignItems: 'center',
-          pointerEvents: 'none'
+          alignItems: 'center'
         }}
       >
+        {/* Category Badge Pill */}
         <span
           style={{
-            fontSize: '0.66rem',
-            letterSpacing: '0.16em',
-            textTransform: 'uppercase',
-            padding: '6px 14px',
+            fontSize: '11px',
+            letterSpacing: '0.08em',
+            textTransform: 'capitalize',
+            padding: '5px 14px',
             borderRadius: '9999px',
-            backgroundColor: 'rgba(8, 14, 28, 0.68)',
+            backgroundColor: 'rgba(255, 255, 255, 0.75)',
             backdropFilter: 'blur(12px)',
             WebkitBackdropFilter: 'blur(12px)',
-            border: '1px solid rgba(197, 160, 89, 0.32)',
-            color: '#DFCFA8',
+            border: '1px solid rgba(255, 255, 255, 0.9)',
+            color: '#292722',
             fontWeight: 600,
-            boxShadow: '0 4px 14px rgba(2, 6, 14, 0.35)'
+            boxShadow: '0 4px 12px rgba(41, 39, 34, 0.08)'
           }}
         >
-          {typologyLabel}
+          {categoryBadgeLabel}
         </span>
 
-        {property.signatureEstate ? (
-          <span
-            style={{
-              fontSize: '0.66rem',
-              letterSpacing: '0.14em',
-              textTransform: 'uppercase',
-              padding: '6px 14px',
-              borderRadius: '9999px',
-              backgroundColor: 'var(--color-accent-gold)',
-              color: '#FFFFFF',
-              fontWeight: 600,
-              boxShadow: '0 4px 16px rgba(184, 149, 82, 0.35)'
-            }}
-          >
-            Signature Estate
-          </span>
-        ) : property.status === 'under_construction' ? (
-          <span
-            style={{
-              fontSize: '0.66rem',
-              letterSpacing: '0.12em',
-              textTransform: 'uppercase',
-              padding: '6px 12px',
-              borderRadius: '9999px',
-              backgroundColor: 'rgba(8, 14, 28, 0.68)',
-              backdropFilter: 'blur(12px)',
-              border: '1px solid rgba(255, 255, 255, 0.18)',
-              color: 'rgba(250, 248, 245, 0.85)',
-              fontWeight: 500
-            }}
-          >
-            Completing {property.completionYear || 'Soon'}
-          </span>
-        ) : null}
+        {/* Circular Glass Favourite Heart Button */}
+        <button
+          onClick={(e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            setIsFavourited(!isFavourited);
+          }}
+          aria-label="Save to Favourites"
+          style={{
+            width: '34px',
+            height: '34px',
+            borderRadius: '50%',
+            background: 'rgba(255, 255, 255, 0.75)',
+            backdropFilter: 'blur(12px)',
+            WebkitBackdropFilter: 'blur(12px)',
+            border: '1px solid rgba(255, 255, 255, 0.9)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            color: isFavourited ? '#C99A32' : '#292722',
+            boxShadow: '0 4px 12px rgba(41, 39, 34, 0.08)',
+            cursor: 'pointer',
+            transition: 'all 0.2s ease'
+          }}
+        >
+          <Heart size={15} fill={isFavourited ? '#C99A32' : 'none'} strokeWidth={1.8} />
+        </button>
       </div>
 
       {/* 3. REFINED TRANSLUCENT GLASS INFORMATION PANEL (Integrated Lower Portion) */}
       <div
-        className="glass-panel-integrated glass-royal-sapphire"
+        className="glass-panel-integrated glass-champagne"
         style={{
           position: 'relative',
           zIndex: 3,
-          margin: '14px',
-          padding: '22px 24px',
+          margin: '12px',
+          padding: '18px 20px',
           display: 'flex',
           flexDirection: 'column',
-          gap: '12px',
+          gap: '10px',
           background: isHovered
-            ? 'linear-gradient(145deg, rgba(22, 34, 60, 0.52) 0%, rgba(12, 20, 38, 0.44) 100%)'
-            : 'linear-gradient(145deg, rgba(16, 26, 48, 0.46) 0%, rgba(8, 15, 30, 0.40) 100%)',
-          backdropFilter: 'blur(14px) saturate(135%)',
-          WebkitBackdropFilter: 'blur(14px) saturate(135%)',
-          border: '1px solid rgba(197, 160, 89, 0.32)',
-          borderRadius: '12px',
-          boxShadow: isHovered
-            ? 'inset 0 1px 0 0 rgba(255, 255, 255, 0.52), inset 0 0 0 1px rgba(197, 160, 89, 0.22), 0 20px 48px -4px rgba(2, 6, 16, 0.55)'
-            : 'inset 0 1px 0 0 rgba(255, 255, 255, 0.42), inset 0 0 0 1px rgba(197, 160, 89, 0.14), 0 16px 36px -4px rgba(2, 6, 16, 0.45)',
+            ? 'linear-gradient(135deg, rgba(255, 255, 255, 0.62) 0%, rgba(250, 246, 238, 0.44) 100%)'
+            : 'linear-gradient(135deg, rgba(255, 255, 255, 0.52) 0%, rgba(245, 238, 228, 0.35) 100%)',
+          backdropFilter: 'blur(16px) saturate(150%)',
+          WebkitBackdropFilter: 'blur(16px) saturate(150%)',
+          border: '1.2px solid rgba(255, 255, 255, 0.88)',
+          borderRadius: '18px',
+          boxShadow: 'inset 0 1.5px 2px rgba(255, 255, 255, 0.95), 0 0 0 1px rgba(216, 189, 138, 0.30), 0 16px 36px -8px rgba(41, 39, 34, 0.12)',
           transition: 'all 0.35s ease'
         }}
       >
-        <div>
-          {/* Location Line */}
-          <div
-            style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '6px',
-              color: 'var(--color-accent-gold)',
-              fontSize: '0.72rem',
-              letterSpacing: '0.16em',
-              textTransform: 'uppercase',
-              fontWeight: 600,
-              marginBottom: '6px'
-            }}
-          >
-            <MapPin size={12} strokeWidth={2} />
-            <span>{locationString}</span>
-          </div>
+        {/* Location Line with Pin Icon */}
+        <div
+          style={{
+            display: 'inline-flex',
+            alignItems: 'center',
+            gap: '5px',
+            color: '#8A7A5D',
+            fontSize: '11px',
+            letterSpacing: '0.04em',
+            fontWeight: 500
+          }}
+        >
+          <MapPin size={12} strokeWidth={2} color="#C99A32" />
+          <span>{locationString}</span>
+        </div>
 
-          {/* Property Name */}
+        {/* Property Name & Explore Arrow Row */}
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '8px' }}>
           <h3
             style={{
-              fontSize: '1.65rem',
+              fontSize: '1.45rem',
               fontFamily: 'var(--font-serif)',
-              color: '#FFFFFF',
-              fontWeight: 300,
+              color: '#292722',
+              fontWeight: 500,
               lineHeight: 1.15,
-              margin: '0 0 6px 0',
+              margin: 0,
               letterSpacing: '-0.01em'
             }}
           >
@@ -313,112 +298,81 @@ export const PropertyCard: React.FC<PropertyCardProps> = ({ property, priority =
             </Link>
           </h3>
 
-          {/* Tagline */}
-          <p
-            style={{
-              fontSize: '0.82rem',
-              color: 'rgba(250, 248, 245, 0.80)',
-              lineHeight: 1.55,
-              margin: 0,
-              display: '-webkit-box',
-              WebkitLineClamp: 2,
-              WebkitBoxOrient: 'vertical',
-              overflow: 'hidden',
-              fontWeight: 300
-            }}
-          >
-            {property.tagline}
-          </p>
-        </div>
-
-        {/* Spatial Metrics Row */}
-        <div
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            padding: '10px 0',
-            borderTop: '1px solid rgba(197, 160, 89, 0.22)',
-            borderBottom: '1px solid rgba(197, 160, 89, 0.22)',
-            fontSize: '0.80rem',
-            color: 'rgba(250, 248, 245, 0.88)',
-            fontWeight: 400
-          }}
-        >
-          <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-            <Bed size={13} color="var(--color-accent-gold)" />
-            <span>{property.bedrooms} Beds</span>
-          </div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-            <Bath size={13} color="var(--color-accent-gold)" />
-            <span>{property.bathrooms} Baths</span>
-          </div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-            <Maximize2 size={12} color="var(--color-accent-gold)" />
-            <span>{formattedArea}</span>
-          </div>
-        </div>
-
-        {/* PRICE & CTA ACTION ROW */}
-        <div
-          style={{
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            marginTop: '2px'
-          }}
-        >
-          <div>
-            <span
-              style={{
-                display: 'block',
-                fontSize: '0.64rem',
-                letterSpacing: '0.14em',
-                textTransform: 'uppercase',
-                color: 'var(--color-accent-gold)',
-                fontWeight: 600,
-                marginBottom: '2px'
-              }}
-            >
-              {property.priceDisplayPrefix || 'Guide Price'}
-            </span>
-            <span
-              style={{
-                fontSize: '1.35rem',
-                fontFamily: 'var(--font-serif)',
-                fontWeight: 400,
-                color: '#FAF8F5'
-              }}
-            >
-              {formattedPrice}
-            </span>
-          </div>
-
+          {/* Circular Glass Explore Action Button -> */}
           <Link
             href={`/residence/${property.slug}`}
+            aria-label={`View ${property.name}`}
             style={{
-              padding: '8px 18px',
-              fontSize: '0.74rem',
-              letterSpacing: '0.14em',
-              textTransform: 'uppercase',
-              textDecoration: 'none',
               display: 'inline-flex',
               alignItems: 'center',
-              gap: '6px',
-              background: isHovered ? 'rgba(197, 160, 89, 0.35)' : 'rgba(255, 255, 255, 0.10)',
-              color: '#FAF8F5',
-              border: '1px solid',
-              borderColor: isHovered ? '#C5A059' : 'rgba(197, 160, 89, 0.35)',
-              borderRadius: '9999px',
-              backdropFilter: 'blur(10px)',
-              WebkitBackdropFilter: 'blur(10px)',
-              fontWeight: 500,
-              transition: 'all 0.25s ease'
+              justifyContent: 'center',
+              width: '32px',
+              height: '32px',
+              borderRadius: '50%',
+              background: 'linear-gradient(135deg, #F5E8C7 0%, #D8BD8A 30%, #C99A32 100%)',
+              border: '1px solid rgba(255, 255, 255, 0.8)',
+              color: '#FFFFFF',
+              boxShadow: '0 4px 12px rgba(201, 154, 50, 0.30)',
+              flexShrink: 0,
+              transition: 'transform 0.25s ease'
             }}
           >
-            <span>Inspect</span>
-            <ArrowRight size={12} />
+            <ArrowRight size={14} strokeWidth={2.4} />
           </Link>
+        </div>
+
+        {/* Short Description */}
+        <p
+          style={{
+            fontSize: '12px',
+            color: '#68645D',
+            lineHeight: 1.5,
+            margin: 0,
+            display: '-webkit-box',
+            WebkitLineClamp: 2,
+            WebkitBoxOrient: 'vertical',
+            overflow: 'hidden',
+            fontWeight: 300
+          }}
+        >
+          {property.description || property.tagline}
+        </p>
+
+        {/* Specifications Strip: Beds | Baths | Area | Price */}
+        <div
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            paddingTop: '8px',
+            borderTop: '1px solid rgba(216, 189, 138, 0.25)',
+            fontSize: '11px',
+            color: '#44403C',
+            fontWeight: 500
+          }}
+        >
+          <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
+            <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
+              <Bed size={13} strokeWidth={1.8} color="#C99A32" />
+              <span>{property.bedrooms} Beds</span>
+            </span>
+
+            <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
+              <Bath size={13} strokeWidth={1.8} color="#C99A32" />
+              <span>{property.bathrooms} Baths</span>
+            </span>
+
+            <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
+              <Maximize2 size={13} strokeWidth={1.8} color="#C99A32" />
+              <span>{formattedArea}</span>
+            </span>
+          </div>
+
+          {formattedPrice && (
+            <span style={{ fontWeight: 600, color: '#C99A32', letterSpacing: '0.02em' }}>
+              {formattedPrice}
+            </span>
+          )}
         </div>
       </div>
     </article>

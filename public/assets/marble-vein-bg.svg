@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="100%" height="100%" preserveAspectRatio="none">
+  <defs>
+    <!-- Base marble tones -->
+    <linearGradient id="marbleBase" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FAF8F5" />
+      <stop offset="35%" stop-color="#F4EEE4" />
+      <stop offset="70%" stop-color="#F1EBE1" />
+      <stop offset="100%" stop-color="#EBE3D6" />
+    </linearGradient>
+
+    <radialGradient id="marbleCloud1" cx="20%" cy="30%" r="50%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.8" />
+      <stop offset="60%" stop-color="#F5EFE6" stop-opacity="0.4" />
+      <stop offset="100%" stop-color="#EFE7DC" stop-opacity="0" />
+    </radialGradient>
+
+    <radialGradient id="marbleCloud2" cx="80%" cy="70%" r="60%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.7" />
+      <stop offset="50%" stop-color="#F3ECE1" stop-opacity="0.5" />
+      <stop offset="100%" stop-color="#E8DFD2" stop-opacity="0" />
+    </radialGradient>
+
+    <radialGradient id="marbleCloud3" cx="65%" cy="25%" r="45%">
+      <stop offset="0%" stop-color="#FAF7F2" stop-opacity="0.9" />
+      <stop offset="70%" stop-color="#EFE6DA" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#E8DFD2" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Natural Gold Vein Gradients -->
+    <linearGradient id="goldVein1" x1="0%" y1="0%" x2="100%" y2="80%">
+      <stop offset="0%" stop-color="#DFC89C" stop-opacity="0.1" />
+      <stop offset="20%" stop-color="#C99A32" stop-opacity="0.45" />
+      <stop offset="45%" stop-color="#D8BD8A" stop-opacity="0.65" />
+      <stop offset="70%" stop-color="#A9781F" stop-opacity="0.5" />
+      <stop offset="90%" stop-color="#DFC89C" stop-opacity="0.25" />
+      <stop offset="100%" stop-color="#D8BD8A" stop-opacity="0.05" />
+    </linearGradient>
+
+    <linearGradient id="goldVein2" x1="100%" y1="10%" x2="0%" y2="90%">
+      <stop offset="0%" stop-color="#D8BD8A" stop-opacity="0.15" />
+      <stop offset="30%" stop-color="#C99A32" stop-opacity="0.55" />
+      <stop offset="55%" stop-color="#F1E0B6" stop-opacity="0.75" />
+      <stop offset="80%" stop-color="#B88A28" stop-opacity="0.4" />
+      <stop offset="100%" stop-color="#D8BD8A" stop-opacity="0.1" />
+    </linearGradient>
+
+    <filter id="softVeinBlur" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur stdDeviation="1.2" />
+    </filter>
+
+    <filter id="microGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Background Base -->
+  <rect width="1920" height="1080" fill="url(#marbleBase)" />
+  <rect width="1920" height="1080" fill="url(#marbleCloud1)" />
+  <rect width="1920" height="1080" fill="url(#marbleCloud2)" />
+  <rect width="1920" height="1080" fill="url(#marbleCloud3)" />
+
+  <!-- Organic Calacatta Gold Veins -->
+  <g filter="url(#softVeinBlur)">
+    <!-- Primary Major Vein 1: Sweeps diagonally from upper-left to bottom-center -->
+    <path d="M-50,120 Q240,160 480,290 T880,510 Q1120,620 1340,780 T1720,950 Q1850,1020 1980,1060" 
+          fill="none" stroke="url(#goldVein1)" stroke-width="2.6" stroke-linecap="round" />
+    <!-- Secondary whisper branch from Major Vein 1 -->
+    <path d="M480,290 Q620,240 780,260 T1040,320 Q1220,380 1380,360" 
+          fill="none" stroke="url(#goldVein1)" stroke-width="1.2" stroke-opacity="0.6" stroke-linecap="round" />
+    <path d="M880,510 Q980,440 1140,460 T1420,530" 
+          fill="none" stroke="url(#goldVein2)" stroke-width="1.4" stroke-opacity="0.5" stroke-linecap="round" />
+    <path d="M1120,620 Q1060,720 980,840 T840,1020" 
+          fill="none" stroke="url(#goldVein1)" stroke-width="1.5" stroke-opacity="0.45" stroke-linecap="round" />
+
+    <!-- Major Vein 2: Counter-vein sweeping from top-right downwards -->
+    <path d="M1980,80 Q1680,180 1440,340 T1020,630 Q780,810 520,940 T-40,1040" 
+          fill="none" stroke="url(#goldVein2)" stroke-width="2.2" stroke-linecap="round" />
+    <!-- Delicate branch from Major Vein 2 -->
+    <path d="M1440,340 Q1300,280 1160,250 T890,210" 
+          fill="none" stroke="url(#goldVein2)" stroke-width="1.0" stroke-opacity="0.5" stroke-linecap="round" />
+    <path d="M780,810 Q690,750 560,730 T320,760" 
+          fill="none" stroke="url(#goldVein1)" stroke-width="1.2" stroke-opacity="0.4" stroke-linecap="round" />
+
+    <!-- Subtle Hairline Veins for depth -->
+    <path d="M120,-30 Q320,110 540,190 T920,280" 
+          fill="none" stroke="url(#goldVein1)" stroke-width="0.8" stroke-opacity="0.35" />
+    <path d="M1420,780 Q1590,820 1780,790 T1960,840" 
+          fill="none" stroke="url(#goldVein2)" stroke-width="0.9" stroke-opacity="0.4" />
+    <path d="M60,680 Q220,740 380,860 T640,1050" 
+          fill="none" stroke="url(#goldVein1)" stroke-width="1.1" stroke-opacity="0.3" />
+  </g>
+
+  <!-- Fine Mineral Gold Shimmer accents -->
+  <g filter="url(#microGlow)">
+    <circle cx="510" cy="305" r="1.5" fill="#C99A32" opacity="0.6" />
+    <circle cx="910" cy="525" r="1.8" fill="#D8BD8A" opacity="0.7" />
+    <circle cx="1360" cy="795" r="1.4" fill="#C99A32" opacity="0.6" />
+    <circle cx="1460" cy="355" r="1.6" fill="#F1E0B6" opacity="0.8" />
+  </g>
+</svg>

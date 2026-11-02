@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'wouter';
-import { ArrowRight, Compass, Sparkles, Building, Waves, Mountain, Shield } from 'lucide-react';
+import { ArrowRight, Waves, Building, Mountain, Shield, Compass } from 'lucide-react';
 import { getAssetSlotUrl } from '../config/assetSlots';
 
-interface ResidenceCollection {
+export interface ResidenceCollection {
   id: string;
   name: string;
   categoryFilter: string;
@@ -16,14 +16,14 @@ interface ResidenceCollection {
   icon: React.ComponentType<{ size: number; className?: string }>;
 }
 
-const RESIDENCE_COLLECTIONS: ResidenceCollection[] = [
+export const RESIDENCE_COLLECTIONS: ResidenceCollection[] = [
   {
     id: 'coastal-estates',
-    name: 'Coastal & Clifftop Estates',
+    name: 'Coastal Collection',
     categoryFilter: 'waterfront',
-    headline: 'OCEANFRONT MONOGRAPHS',
+    headline: 'OCEANFRONT LIVING',
     residenceCount: 2,
-    description: 'Dramatic cantilevered limestone pavilions, infinity reflecting pools, and private tidal access directly onto secluded shorelines.',
+    description: 'Oceanfront living at its purest. Dramatic cantilevered limestone pavilions, infinity reflecting pools, and private tidal access.',
     imageUrl: getAssetSlotUrl('PROPERTY_EXTERIOR_PRIMARY'),
     location: 'Goa & Western Coastline',
     priceGuide: 'From ₹38 Crore',
@@ -31,11 +31,11 @@ const RESIDENCE_COLLECTIONS: ResidenceCollection[] = [
   },
   {
     id: 'sky-penthouses',
-    name: 'Metropolitan Sky Penthouses',
+    name: 'Skyline Collection',
     categoryFilter: 'penthouse',
     headline: 'ELEVATED SKY HORIZONS',
-    residenceCount: 1,
-    description: 'Triplex penthouses commanding 360-degree metropolitan skylines, private glass elevators, and double-height entertaining salons.',
+    residenceCount: 2,
+    description: 'Elevated residences in the city. Commanding 360-degree metropolitan skylines, private glass elevators, and double-height entertaining salons.',
     imageUrl: getAssetSlotUrl('PROPERTY_INTERIOR_SALON'),
     location: 'South Mumbai & Prime Metros',
     priceGuide: 'From ₹65 Crore',
@@ -43,13 +43,13 @@ const RESIDENCE_COLLECTIONS: ResidenceCollection[] = [
   },
   {
     id: 'alpine-manors',
-    name: 'Highland Sanctuaries & Manors',
+    name: 'Heritage Collection',
     categoryFilter: 'villa',
-    headline: 'ALPINE RETREATS',
-    residenceCount: 1,
-    description: 'Carved cedar and local stone country estates enveloped by permanent pine buffers, private orchards, and panoramic mountain ridges.',
+    headline: 'TIMELESS HERITAGE',
+    residenceCount: 2,
+    description: 'Timeless design, modern comfort. Carved stone and cedar estates enveloped by lush permanent buffers and serene courtyards.',
     imageUrl: getAssetSlotUrl('PROPERTY_ARCHITECTURAL_ENTRANCE'),
-    location: 'Himalayan Foothills & Kasauli',
+    location: 'Himalayan Foothills & Sanctuaries',
     priceGuide: 'From ₹42 Crore',
     icon: Mountain
   },
@@ -71,7 +71,7 @@ const RESIDENCE_COLLECTIONS: ResidenceCollection[] = [
     categoryFilter: 'apartment',
     headline: 'FULL-FLOOR SANCTUARIES',
     residenceCount: 1,
-    description: 'Single-residence-per-floor architectural apartments featuring frameless panoramic glazing, private staff quarters, and acoustic serenity.',
+    description: 'Single-residence-per-floor architectural apartments featuring frameless panoramic glazing and acoustic serenity.',
     imageUrl: getAssetSlotUrl('PROPERTY_INTERIOR_MASTER_BEDROOM'),
     location: 'Central Capital Districts',
     priceGuide: 'From ₹28 Crore',
@@ -80,193 +80,261 @@ const RESIDENCE_COLLECTIONS: ResidenceCollection[] = [
 ];
 
 export const CollectionsPage: React.FC = () => {
-  const leadCol = RESIDENCE_COLLECTIONS[0];
-  const secondaryCols = RESIDENCE_COLLECTIONS.slice(1, 3);
-  const tertiaryCols = RESIDENCE_COLLECTIONS.slice(3);
+  // 3 Primary collections matching Reference Image Middle-Center
+  const primaryCols = RESIDENCE_COLLECTIONS.slice(0, 3);
+  const secondaryCols = RESIDENCE_COLLECTIONS.slice(3);
 
   return (
-    <div className="w-full bg-[#070C18]/80 backdrop-blur-2xl text-white pt-32 pb-24 sm:pt-36 sm:pb-32 relative z-10">
-      <div className="max-w-7xl mx-auto px-6 sm:px-8">
-        {/* Editorial Header */}
-        <div className="max-w-3xl mb-16 space-y-4">
-          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-[11px] uppercase tracking-[0.25em] bg-white/10 text-[#DFCFA8] border border-white/15 backdrop-blur-md">
-            <Sparkles size={12} className="text-[#C5A059]" />
-            <span>CURATED ARCHITECTURAL PORTFOLIOS</span>
-          </span>
-          <h1 className="font-serif text-4xl sm:text-6xl font-light text-white leading-tight">
-            Curated Residence Collections
+    <div
+      className="collections-page-root marble-vein-backdrop"
+      style={{
+        position: 'relative',
+        width: '100%',
+        minHeight: '100vh',
+        paddingTop: '110px',
+        paddingBottom: '90px',
+        zIndex: 10,
+        overflow: 'hidden'
+      }}
+    >
+      {/* Auric Flow Top Corner Framing */}
+      <div className="auric-ribbon-top-right" />
+
+      <div className="container" style={{ position: 'relative', zIndex: 5 }}>
+        {/* Editorial Header matching Reference */}
+        <div style={{ textAlign: 'center', maxWidth: '720px', margin: '0 auto 48px auto' }}>
+          <h1
+            style={{
+              fontFamily: 'var(--font-serif)',
+              fontSize: 'clamp(2.6rem, 5vw, 4rem)',
+              fontStyle: 'italic',
+              fontWeight: 400,
+              color: '#292722',
+              lineHeight: 1.15,
+              margin: '0 0 12px 0',
+              letterSpacing: '-0.015em'
+            }}
+          >
+            Collections
           </h1>
-          <p className="text-base sm:text-lg text-white/80 font-light leading-relaxed">
-            Distinguished residential portfolios organized by geography, architectural typology, and lifestyle orientation. Engineered for discretion, permanence, and generational legacy.
+          <p
+            style={{
+              fontFamily: 'var(--font-sans)',
+              fontSize: '1rem',
+              color: '#68645D',
+              margin: 0,
+              fontWeight: 300
+            }}
+          >
+            Distinct residential collections, each with its own identity.
           </p>
         </div>
 
-        {/* 1. LEAD ASYMMETRIC MONOGRAPH (Wide Panoramic Showcase with Floating Glass Plaque) */}
-        <div className="mb-12 group relative rounded-3xl overflow-hidden border border-white/15 shadow-2xl min-h-[520px] flex flex-col justify-end">
-          <div className="absolute inset-0 z-0 overflow-hidden">
-            <img
-              src={leadCol.imageUrl}
-              alt={leadCol.name}
-              className="w-full h-full object-cover transition-transform duration-1000 ease-out group-hover:scale-105"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#070C18]/90 via-[#070C18]/40 to-transparent pointer-events-none" />
-          </div>
-
-          <div className="relative z-10 p-6 sm:p-12 max-w-2xl m-4 sm:m-8 rounded-2xl glass-material-smoked border border-[rgba(197,160,89,0.30)] shadow-2xl space-y-4">
-            <div className="flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-[#DFCFA8]">
-              <Waves size={15} className="text-[#C5A059]" />
-              <span>{leadCol.location}</span>
-              <span className="text-white/40">·</span>
-              <span>{leadCol.residenceCount} Residences</span>
-              <span className="text-white/40">·</span>
-              <span className="text-[#C5A059]">{leadCol.priceGuide}</span>
-            </div>
-
-            <h2 className="font-serif text-3xl sm:text-4xl text-white font-light">
-              {leadCol.name}
-            </h2>
-
-            <p className="text-sm sm:text-base text-white/80 font-light leading-relaxed">
-              {leadCol.description}
-            </p>
-
-            <div className="pt-2">
-              <Link
-                href={`/residences?type=${leadCol.categoryFilter}`}
-                className="inline-flex items-center gap-2.5 px-6 py-3 rounded-full bg-[#C5A059] hover:bg-[#b08d47] text-white text-xs uppercase tracking-[0.16em] font-medium transition-all duration-300 shadow-xl shadow-[#C5A059]/20"
+        {/* 3 Primary Collections Row matching Reference Image */}
+        <div
+          style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+            gap: '24px',
+            marginBottom: '40px'
+          }}
+        >
+          {primaryCols.map((col) => (
+            <Link
+              key={col.id}
+              href={`/residences?type=${col.categoryFilter}`}
+              style={{
+                position: 'relative',
+                borderRadius: '24px',
+                overflow: 'hidden',
+                minHeight: '380px',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'flex-end',
+                textDecoration: 'none',
+                border: '1.5px solid rgba(255, 255, 255, 0.85)',
+                boxShadow: '0 18px 44px -10px rgba(41, 39, 34, 0.12)',
+                transition: 'all 0.4s cubic-bezier(0.16, 1, 0.3, 1)'
+              }}
+              className="group"
+            >
+              {/* Image */}
+              <div
+                style={{
+                  position: 'absolute',
+                  inset: 0,
+                  width: '100%',
+                  height: '100%',
+                  overflow: 'hidden',
+                  zIndex: 1
+                }}
               >
-                <span>Explore Coastal Collection</span>
-                <ArrowRight size={13} className="transform group-hover:translate-x-1 transition-transform" />
-              </Link>
-            </div>
-          </div>
+                <img
+                  src={col.imageUrl}
+                  alt={col.name}
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover',
+                    transition: 'transform 0.8s cubic-bezier(0.16, 1, 0.3, 1)'
+                  }}
+                  className="group-hover:scale-105"
+                />
+                <div
+                  style={{
+                    position: 'absolute',
+                    inset: 0,
+                    background: 'linear-gradient(to top, rgba(41, 39, 34, 0.50) 0%, transparent 65%)'
+                  }}
+                />
+              </div>
+
+              {/* Integrated Lower Crystal Glass Panel */}
+              <div
+                className="glass-crystal"
+                style={{
+                  position: 'relative',
+                  zIndex: 3,
+                  margin: '16px',
+                  padding: '20px 24px',
+                  borderRadius: '18px',
+                  background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.78) 0%, rgba(241, 235, 225, 0.62) 100%)',
+                  backdropFilter: 'blur(20px) saturate(145%)',
+                  WebkitBackdropFilter: 'blur(20px) saturate(145%)',
+                  border: '1px solid rgba(255, 255, 255, 0.9)',
+                  boxShadow: 'inset 0 1px 1.5px rgba(255, 255, 255, 0.95), 0 14px 34px rgba(41, 39, 34, 0.10)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'space-between'
+                }}
+              >
+                <div>
+                  <h3
+                    style={{
+                      fontFamily: 'var(--font-serif)',
+                      fontSize: '1.45rem',
+                      fontWeight: 500,
+                      color: '#292722',
+                      margin: '0 0 6px 0',
+                      letterSpacing: '-0.01em'
+                    }}
+                  >
+                    {col.name}
+                  </h3>
+                  <p
+                    style={{
+                      fontFamily: 'var(--font-sans)',
+                      fontSize: '12px',
+                      color: '#68645D',
+                      margin: 0,
+                      fontWeight: 300,
+                      lineHeight: 1.5
+                    }}
+                  >
+                    {col.description}
+                  </p>
+                </div>
+
+                <div
+                  style={{
+                    width: '36px',
+                    height: '36px',
+                    borderRadius: '50%',
+                    background: 'linear-gradient(135deg, #F5E8C7 0%, #D8BD8A 30%, #C99A32 100%)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    color: '#FFFFFF',
+                    flexShrink: 0
+                  }}
+                >
+                  <ArrowRight size={15} strokeWidth={2.4} />
+                </div>
+              </div>
+            </Link>
+          ))}
         </div>
 
-        {/* 2. ASYMMETRIC DIPTYCH (Sky Penthouses + Alpine Manors) */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-12">
-          {secondaryCols.map((col, idx) => {
-            const Icon = col.icon;
-            const isFirst = idx === 0;
-            return (
-              <div
-                key={col.id}
-                className={`group relative rounded-3xl overflow-hidden border border-white/15 shadow-xl min-h-[460px] flex flex-col justify-end ${
-                  isFirst ? 'lg:col-span-7' : 'lg:col-span-5'
-                }`}
-              >
-                <div className="absolute inset-0 z-0 overflow-hidden">
+        {/* Supporting Curated Portfolios (Enclaves & Penthouses) */}
+        {secondaryCols.length > 0 && (
+          <div style={{ marginTop: '20px' }}>
+            <h3
+              style={{
+                fontFamily: 'var(--font-serif)',
+                fontSize: '1.6rem',
+                color: '#292722',
+                textAlign: 'center',
+                marginBottom: '24px'
+              }}
+            >
+              Additional Specialized Enclaves
+            </h3>
+            <div
+              style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+                gap: '24px'
+              }}
+            >
+              {secondaryCols.map((col) => (
+                <Link
+                  key={col.id}
+                  href={`/residences?type=${col.categoryFilter}`}
+                  style={{
+                    position: 'relative',
+                    borderRadius: '20px',
+                    overflow: 'hidden',
+                    minHeight: '260px',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'flex-end',
+                    textDecoration: 'none',
+                    border: '1px solid rgba(255, 255, 255, 0.8)',
+                    boxShadow: '0 12px 30px rgba(41, 39, 34, 0.08)'
+                  }}
+                  className="group"
+                >
                   <img
                     src={col.imageUrl}
                     alt={col.name}
-                    className="w-full h-full object-cover transition-transform duration-1000 ease-out group-hover:scale-105"
+                    style={{
+                      position: 'absolute',
+                      inset: 0,
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'cover'
+                    }}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#070C18]/90 via-[#070C18]/40 to-transparent pointer-events-none" />
-                </div>
-
-                <div className="relative z-10 p-6 sm:p-8 m-4 rounded-2xl glass-material-smoked border border-[rgba(197,160,89,0.30)] shadow-2xl space-y-3">
-                  <div className="flex items-center gap-2 text-[11px] uppercase tracking-wider text-[#DFCFA8]">
-                    <Icon size={14} className="text-[#C5A059]" />
-                    <span>{col.location}</span>
-                    <span className="text-white/40">·</span>
-                    <span className="text-[#C5A059]">{col.priceGuide}</span>
-                  </div>
-
-                  <h3 className="font-serif text-2xl sm:text-3xl text-white font-light">
-                    {col.name}
-                  </h3>
-
-                  <p className="text-xs sm:text-sm text-white/75 font-light leading-relaxed line-clamp-2">
-                    {col.description}
-                  </p>
-
-                  <div className="pt-2">
-                    <Link
-                      href={`/residences?type=${col.categoryFilter}`}
-                      className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.16em] text-[#C5A059] hover:text-white font-medium transition-colors"
-                    >
-                      <span>Explore Collection</span>
-                      <ArrowRight size={13} className="transform group-hover:translate-x-1 transition-transform" />
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            );
-          })}
-        </div>
-
-        {/* 3. TERTIARY HARMONIC SPLIT (Botanical Enclaves + City Residences) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20">
-          {tertiaryCols.map((col) => {
-            const Icon = col.icon;
-            return (
-              <div
-                key={col.id}
-                className="group relative rounded-3xl overflow-hidden border border-white/15 shadow-xl min-h-[420px] flex flex-col justify-end"
-              >
-                <div className="absolute inset-0 z-0 overflow-hidden">
-                  <img
-                    src={col.imageUrl}
-                    alt={col.name}
-                    className="w-full h-full object-cover transition-transform duration-1000 ease-out group-hover:scale-105"
+                  <div
+                    style={{
+                      position: 'absolute',
+                      inset: 0,
+                      background: 'linear-gradient(to top, rgba(41, 39, 34, 0.6) 0%, transparent 60%)'
+                    }}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#070C18]/90 via-[#070C18]/40 to-transparent pointer-events-none" />
-                </div>
-
-                <div className="relative z-10 p-6 sm:p-8 m-4 rounded-2xl glass-material-smoked border border-[rgba(197,160,89,0.30)] shadow-2xl space-y-3">
-                  <div className="flex items-center gap-2 text-[11px] uppercase tracking-wider text-[#DFCFA8]">
-                    <Icon size={14} className="text-[#C5A059]" />
-                    <span>{col.location}</span>
-                    <span className="text-white/40">·</span>
-                    <span className="text-[#C5A059]">{col.priceGuide}</span>
+                  <div
+                    style={{
+                      position: 'relative',
+                      zIndex: 3,
+                      padding: '16px 20px',
+                      background: 'rgba(255, 255, 255, 0.75)',
+                      backdropFilter: 'blur(14px)',
+                      margin: '12px',
+                      borderRadius: '14px'
+                    }}
+                  >
+                    <h4 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.2rem', color: '#292722', margin: '0 0 4px 0' }}>
+                      {col.name}
+                    </h4>
+                    <p style={{ fontSize: '11px', color: '#68645D', margin: 0 }}>
+                      {col.description}
+                    </p>
                   </div>
-
-                  <h3 className="font-serif text-2xl text-white font-light">
-                    {col.name}
-                  </h3>
-
-                  <p className="text-xs sm:text-sm text-white/75 font-light leading-relaxed line-clamp-2">
-                    {col.description}
-                  </p>
-
-                  <div className="pt-2">
-                    <Link
-                      href={`/residences?type=${col.categoryFilter}`}
-                      className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.16em] text-[#C5A059] hover:text-white font-medium transition-colors"
-                    >
-                      <span>Explore Collection</span>
-                      <ArrowRight size={13} className="transform group-hover:translate-x-1 transition-transform" />
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            );
-          })}
-        </div>
-
-        {/* 4. FOOTER ADVISORY BANNER */}
-        <div className="p-8 sm:p-12 rounded-3xl bg-white/[0.06] backdrop-blur-2xl border border-white/20 text-center space-y-6 shadow-2xl">
-          <h2 className="font-serif text-2xl sm:text-4xl font-light text-white">
-            Seeking a Specific Architectural Geography?
-          </h2>
-          <p className="text-sm sm:text-base text-white/75 max-w-xl mx-auto font-light leading-relaxed">
-            Our Private Office coordinates confidential, off-market residential acquisitions and custom land commissions across premier sanctuaries globally.
-          </p>
-          <div className="pt-2 flex flex-wrap items-center justify-center gap-4">
-            <Link
-              href="/residences"
-              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-[#C5A059] hover:bg-[#b08d47] text-white text-xs uppercase tracking-[0.16em] font-medium transition-all duration-300 shadow-xl shadow-[#C5A059]/20"
-            >
-              <span>View Master Portfolio</span>
-              <ArrowRight size={14} />
-            </Link>
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-white/10 hover:bg-white/20 text-white text-xs uppercase tracking-[0.16em] transition-all duration-300 border border-white/20 backdrop-blur-md"
-            >
-              <span>Contact Advisory Desk</span>
-            </Link>
+                </Link>
+              ))}
+            </div>
           </div>
-        </div>
+        )}
       </div>
     </div>
   );

@@ -9,6 +9,6 @@ describe('BILEKSA Site Config Service Foundation', () => {
     expect(config.hero.frameSequence?.frameCount).toBe(240);
     expect(config.showroomMedia.enabled).toBe(false);
     expect(config.showroomMedia.videoUrl).toBeNull();
-    expect(config.brand.brandName).toBe('BILEKSA');
+    expect(config.brand.brandName).toBe('VILLEXA');
   });
 });

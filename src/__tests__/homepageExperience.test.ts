@@ -94,14 +94,14 @@ describe('BILEKSA Signature Homepage Experience (Phase 6)', () => {
   describe('Private Viewing CTA & Concierge Configuration', () => {
     it('uses centralized brand configuration from clientConfig.ts', () => {
       const config = getClientConfig();
-      expect(config.brand.brandName).toBe('BILEKSA');
-      expect(config.contact.contactEmail).toBe('concierge@bileksa.com');
+      expect(config.brand.brandName).toBe('VILLEXA');
+      expect(config.contact.contactEmail).toBe('concierge@villexa.com');
       expect(config.contact.whatsappNumber).toBe('918004821980');
 
-      const message = `Hello ${config.brand.brandName} Concierge,\n\nI would like to schedule a confidential consultation regarding the BILEKSA Private Residences portfolio.`;
+      const message = `Hello ${config.brand.brandName} Concierge,\n\nI would like to schedule a confidential consultation regarding the VILLEXA Private Residences portfolio.`;
       const url = `https://wa.me/${config.contact.whatsappNumber}?text=${encodeURIComponent(message)}`;
       expect(url).toContain('wa.me/918004821980');
-      expect(url).toContain(encodeURIComponent('BILEKSA'));
+      expect(url).toContain(encodeURIComponent('VILLEXA'));
     });
   });
 });

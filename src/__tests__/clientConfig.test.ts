@@ -26,13 +26,13 @@ describe('Client Configuration System (Phase A Reusability)', () => {
     Object.assign(import.meta.env, originalEnv);
   });
 
-  describe('Default Preset Baseline (BILEKSA Master)', () => {
-    it('provides BILEKSA as the default master preset without configuration overrides', () => {
+  describe('Default Preset Baseline (VILLEXA Master)', () => {
+    it('provides VILLEXA as the default master preset without configuration overrides', () => {
       const config = getClientConfig();
-      expect(config.brand.brandName).toBe('BILEKSA');
+      expect(config.brand.brandName).toBe('VILLEXA');
       expect(config.brand.tagline).toBe('Private Residences & Architectural Living');
-      expect(config.brand.logoText).toBe('BILEKSA');
-      expect(config.contact.contactEmail).toBe('concierge@bileksa.com');
+      expect(config.brand.logoText).toBe('VILLEXA');
+      expect(config.contact.contactEmail).toBe('concierge@villexa.com');
       expect(config.contact.whatsappNumber).toBe('918004821980');
     });
 
@@ -53,13 +53,13 @@ describe('Client Configuration System (Phase A Reusability)', () => {
       expect(theme.accentColor).toMatch(/^#([0-9a-fA-F]{3}|[0-9a-fA-F]{6})$/);
       expect(theme.bgPrimary).toMatch(/^#([0-9a-fA-F]{3}|[0-9a-fA-F]{6})$/);
       expect(theme.bgDark).toMatch(/^#([0-9a-fA-F]{3}|[0-9a-fA-F]{6})$/);
-      expect(theme.fontSerif).toContain('Cormorant Garamond');
-      expect(theme.fontSans).toContain('Outfit');
+      expect(theme.fontSerif).toContain('Playfair Display');
+      expect(theme.fontSans).toContain('Montserrat');
     });
 
     it('includes default SEO metadata and keywords for discovery', () => {
       const { seo } = defaultClientConfig;
-      expect(seo.defaultTitle).toContain('BILEKSA');
+      expect(seo.defaultTitle).toContain('VILLEXA');
       expect(seo.defaultDescription.length).toBeGreaterThan(20);
       expect(Array.isArray(seo.keywords)).toBe(true);
       expect(seo.keywords.length).toBeGreaterThan(3);

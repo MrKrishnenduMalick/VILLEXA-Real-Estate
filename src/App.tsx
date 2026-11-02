@@ -90,8 +90,13 @@ export const App: React.FC = () => {
             <Route path="/craftsmanship" component={CraftsmanshipPage} />
             
             {/* Lifestyle & Living (Dual routes) */}
+            <Route path="/experience" component={InspirationPage} />
             <Route path="/lifestyle" component={InspirationPage} />
             <Route path="/inspiration" component={InspirationPage} />
+            
+            {/* The VILLEXA Philosophy / About */}
+            <Route path="/philosophy" component={CraftsmanshipPage} />
+            <Route path="/about" component={CraftsmanshipPage} />
             
             {/* Contact & Private Enquiries */}
             <Route path="/contact" component={ContactPage} />
@@ -112,7 +117,7 @@ export const App: React.FC = () => {
             </Route>
           </Switch>
         </main>
-        <Footer />
+        {location !== '/' && <Footer />}
       </CinematicHeroProvider>
     </ClientConfigProvider>
   );

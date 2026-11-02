@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="100%" height="100%" fill="none">
+  <defs>
+    <linearGradient id="auricCornerGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFF5DE" />
+      <stop offset="25%" stop-color="#E5C788" />
+      <stop offset="50%" stop-color="#C99A32" />
+      <stop offset="75%" stop-color="#8F6312" />
+      <stop offset="100%" stop-color="#D8BD8A" />
+    </linearGradient>
+
+    <linearGradient id="auricCornerGrad2" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#D8BD8A" stop-opacity="0.9" />
+      <stop offset="40%" stop-color="#C99A32" />
+      <stop offset="70%" stop-color="#6E4A07" />
+      <stop offset="100%" stop-color="#FAF4E6" />
+    </linearGradient>
+
+    <linearGradient id="cornerHighlight" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.95" />
+      <stop offset="50%" stop-color="#FFF1D0" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.2" />
+    </linearGradient>
+
+    <filter id="cornerShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="-4" dy="12" stdDeviation="16" flood-color="#3D2905" flood-opacity="0.25" />
+    </filter>
+  </defs>
+
+  <!-- Ambient Golden Glow -->
+  <path d="M-40,-40 C140,80 80,320 280,440 C420,520 540,480 620,580" 
+        stroke="url(#auricCornerGrad1)" stroke-width="48" stroke-opacity="0.14" stroke-linecap="round" filter="blur(14px)" />
+
+  <!-- Outer Deep Ribbon -->
+  <g filter="url(#cornerShadow)">
+    <path d="M-20,-20 C180,90 110,340 320,450 C440,510 520,490 600,560
+             L585,585 C505,515 425,535 305,475 C95,365 165,115 -35,5 Z" 
+          fill="url(#auricCornerGrad2)" opacity="0.9" />
+  </g>
+
+  <!-- Inner Metallic 3D Ribbon -->
+  <g filter="url(#cornerShadow)">
+    <path d="M-40,20 C140,140 90,380 290,480 C400,530 490,520 570,590
+             L550,615 C470,545 380,555 270,505 C70,405 120,165 -60,45 Z" 
+          fill="url(#auricCornerGrad1)" opacity="0.95" />
+    <!-- Highlight Line -->
+    <path d="M-40,20 C140,140 90,380 290,480 C400,530 490,520 570,590" 
+          stroke="url(#cornerHighlight)" stroke-width="1.8" stroke-linecap="round" />
+  </g>
+
+  <!-- Whisper Wave Curves -->
+  <path d="M-20,70 C120,180 80,410 270,510 C370,560 460,550 540,620" 
+        stroke="url(#auricCornerGrad1)" stroke-width="1.2" stroke-opacity="0.6" stroke-linecap="round" />
+  <path d="M-10,120 C100,220 70,440 240,530" 
+        stroke="url(#cornerHighlight)" stroke-width="0.9" stroke-opacity="0.45" stroke-linecap="round" />
+</svg>

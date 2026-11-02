@@ -53,7 +53,7 @@ const warnings = [];
 const notes = [];
 
 // 1. BRAND IDENTITY CHECKS
-const brandName = activeEnv.VITE_CLIENT_BRAND_NAME || 'BILEKSA';
+const brandName = activeEnv.VITE_CLIENT_BRAND_NAME || 'VILLEXA';
 if (!brandName || brandName.trim().length < 2) {
   errors.push('VITE_CLIENT_BRAND_NAME must be at least 2 characters.');
 } else {
@@ -61,7 +61,7 @@ if (!brandName || brandName.trim().length < 2) {
 }
 
 // 2. CONTACT DETAILS CHECKS
-const contactEmail = activeEnv.VITE_CLIENT_CONTACT_EMAIL || 'concierge@bileksa.com';
+const contactEmail = activeEnv.VITE_CLIENT_CONTACT_EMAIL || 'concierge@villexa.com';
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 if (!emailRegex.test(contactEmail)) {
   errors.push(`VITE_CLIENT_CONTACT_EMAIL "${contactEmail}" is not a valid email address.`);

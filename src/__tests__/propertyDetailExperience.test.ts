@@ -179,9 +179,9 @@ describe('BILEKSA Luxury Property Detail Experience (Phase 5)', () => {
   describe('Confidential Client Advisory & WhatsApp Concierge Integration', () => {
     it('validates pre-configured client contact details from clientConfig', () => {
       const config = getClientConfig();
-      expect(config.contact.contactEmail).toBe('concierge@bileksa.com');
+      expect(config.contact.contactEmail).toBe('concierge@villexa.com');
       expect(config.contact.whatsappNumber).toBe('918004821980');
-      expect(config.brand.brandName).toBe('BILEKSA');
+      expect(config.brand.brandName).toBe('VILLEXA');
     });
 
     it('generates valid WhatsApp consultation URL with encoded parameters', () => {

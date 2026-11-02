@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 600" width="100%" height="100%" fill="none" preserveAspectRatio="none">
+  <defs>
+    <!-- Rich metallic gold ribbon gradients -->
+    <linearGradient id="auricMainGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F7EED6" stop-opacity="0.9" />
+      <stop offset="18%" stop-color="#E5C788" />
+      <stop offset="42%" stop-color="#C99A32" />
+      <stop offset="68%" stop-color="#9E6F18" />
+      <stop offset="88%" stop-color="#D8BD8A" />
+      <stop offset="100%" stop-color="#FDFBF7" stop-opacity="0.95" />
+    </linearGradient>
+
+    <linearGradient id="auricSecondaryGrad" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#EED8A1" stop-opacity="0.8" />
+      <stop offset="30%" stop-color="#C99A32" />
+      <stop offset="60%" stop-color="#80570F" />
+      <stop offset="85%" stop-color="#DFC48B" />
+      <stop offset="100%" stop-color="#FAF5E8" />
+    </linearGradient>
+
+    <linearGradient id="auricWhisperGrad" x1="0%" y1="50%" x2="100%" y2="50%">
+      <stop offset="0%" stop-color="#D8BD8A" stop-opacity="0" />
+      <stop offset="20%" stop-color="#C99A32" stop-opacity="0.4" />
+      <stop offset="50%" stop-color="#FFF8E7" stop-opacity="0.8" />
+      <stop offset="80%" stop-color="#A9781F" stop-opacity="0.4" />
+      <stop offset="100%" stop-color="#D8BD8A" stop-opacity="0" />
+    </linearGradient>
+
+    <!-- Specular highlight stroke gradient -->
+    <linearGradient id="auricHighlightStroke" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.1" />
+      <stop offset="30%" stop-color="#FFFFFF" stop-opacity="0.95" />
+      <stop offset="65%" stop-color="#FFF2D6" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.1" />
+    </linearGradient>
+
+    <filter id="auricGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="12" result="blur" />
+      <feColorMatrix type="matrix" values="
+        1 0 0 0 0.8
+        0 0.9 0 0 0.65
+        0 0 0.6 0 0.25
+        0 0 0 0.45 0" />
+      <feMerge>
+        <feMergeNode />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <filter id="auricShadow" x="-15%" y="-15%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="18" stdDeviation="22" flood-color="#4A3408" flood-opacity="0.22" />
+    </filter>
+  </defs>
+
+  <!-- Ambient Glow Behind Ribbons -->
+  <path d="M-80,240 C280,120 540,420 860,260 C1140,120 1340,320 1520,180" 
+        stroke="url(#auricMainGrad)" stroke-width="64" stroke-opacity="0.12" stroke-linecap="round" filter="url(#auricGlow)" />
+
+  <!-- Layer 1: Deep Metallic Foundation Ribbon (Auric Flow Wave) -->
+  <g filter="url(#auricShadow)">
+    <path d="M-60,320 C180,160 480,480 820,290 C1120,130 1360,380 1500,220 
+             L1500,245 C1360,405 1120,155 820,315 C480,505 180,185 -60,345 Z" 
+          fill="url(#auricSecondaryGrad)" opacity="0.85" />
+  </g>
+
+  <!-- Layer 2: Main Sculptural Ribbon with 3D Depth & Specular Twist -->
+  <g filter="url(#auricShadow)">
+    <path d="M-80,260 C220,90 520,430 880,220 C1160,50 1380,310 1520,140
+             L1520,175 C1380,345 1160,85 880,255 C520,465 220,125 -80,295 Z" 
+          fill="url(#auricMainGrad)" opacity="0.95" />
+    
+    <!-- Top Specular Highlight Edge -->
+    <path d="M-80,260 C220,90 520,430 880,220 C1160,50 1380,310 1520,140" 
+          stroke="url(#auricHighlightStroke)" stroke-width="2" stroke-linecap="round" opacity="0.9" />
+
+    <!-- Bottom Under-Rim Glow Edge -->
+    <path d="M-80,295 C220,125 520,465 880,255 C1160,85 1380,345 1520,175" 
+          stroke="url(#auricMainGrad)" stroke-width="1.2" stroke-opacity="0.7" stroke-linecap="round" />
+  </g>
+
+  <!-- Layer 3: Delicate Whisper Ribbons (Fine Organic Curves) -->
+  <path d="M-40,210 C260,60 560,370 940,160 C1220,-10 1420,240 1500,90" 
+        stroke="url(#auricWhisperGrad)" stroke-width="2.5" stroke-linecap="round" />
+  <path d="M0,360 C320,210 620,510 980,330 C1240,180 1440,410 1520,290" 
+        stroke="url(#auricWhisperGrad)" stroke-width="1.8" stroke-linecap="round" opacity="0.75" />
+</svg>
