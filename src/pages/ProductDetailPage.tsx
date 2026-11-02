@@ -125,7 +125,7 @@ export const ProductDetailPage: React.FC = () => {
               fontFamily: 'var(--font-sans)',
               fontSize: '12px',
               fontWeight: 500,
-              color: '#8A7A5D',
+              color: '#74644D',
               textDecoration: 'none',
               transition: 'color 0.2s ease'
             }}
@@ -142,11 +142,11 @@ export const ProductDetailPage: React.FC = () => {
             position: 'relative',
             borderRadius: '26px',
             overflow: 'hidden',
-            background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.85) 0%, rgba(249, 247, 243, 0.70) 100%)',
-            backdropFilter: 'blur(20px) saturate(145%)',
-            WebkitBackdropFilter: 'blur(20px) saturate(145%)',
-            border: '1.5px solid rgba(255, 255, 255, 0.9)',
-            boxShadow: '0 24px 60px -10px rgba(41, 39, 34, 0.12)',
+            background: 'rgba(255, 250, 240, 0.26)',
+            backdropFilter: 'blur(18px) saturate(145%)',
+            WebkitBackdropFilter: 'blur(18px) saturate(145%)',
+            border: '1px solid rgba(255, 255, 255, 0.62)',
+            boxShadow: 'inset 0 1px 0 rgba(255, 255, 255, 0.72), 0 12px 35px rgba(70, 48, 20, 0.12)',
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))',
             alignItems: 'stretch',
@@ -170,13 +170,13 @@ export const ProductDetailPage: React.FC = () => {
                   display: 'inline-flex',
                   alignItems: 'center',
                   gap: '6px',
-                  color: '#8A7A5D',
+                  color: '#74644D',
                   fontSize: '12px',
                   fontWeight: 500,
                   marginBottom: '8px'
                 }}
               >
-                <MapPin size={13} color="#C99A32" />
+                <MapPin size={13} color="#A87516" />
                 <span>{locationString}</span>
               </div>
 
@@ -186,7 +186,7 @@ export const ProductDetailPage: React.FC = () => {
                   fontFamily: 'var(--font-serif)',
                   fontSize: 'clamp(2.2rem, 4vw, 3.2rem)',
                   fontWeight: 400,
-                  color: '#292722',
+                  color: '#24211D',
                   lineHeight: 1.12,
                   margin: '0 0 14px 0',
                   letterSpacing: '-0.015em'
@@ -202,35 +202,36 @@ export const ProductDetailPage: React.FC = () => {
                   alignItems: 'center',
                   gap: '18px',
                   fontSize: '13px',
-                  color: '#44403C',
+                  color: '#514B43',
                   fontWeight: 500,
                   padding: '12px 18px',
                   borderRadius: '12px',
-                  background: 'rgba(255, 255, 255, 0.65)',
-                  border: '1px solid rgba(216, 189, 138, 0.3)',
+                  background: 'rgba(255, 250, 240, 0.35)',
+                  border: '1px solid rgba(255, 255, 255, 0.65)',
+                  boxShadow: 'inset 0 1px 0 rgba(255, 255, 255, 0.70), 0 4px 12px rgba(70, 48, 20, 0.08)',
                   width: 'fit-content',
                   marginBottom: '16px'
                 }}
               >
                 <span style={{ display: 'inline-flex', alignItems: 'center', gap: '5px' }}>
-                  <Bed size={15} color="#C99A32" />
+                  <Bed size={15} color="#A87516" />
                   <span>{property.bedrooms} Beds</span>
                 </span>
                 <span style={{ color: 'rgba(216, 189, 138, 0.6)' }}>|</span>
                 <span style={{ display: 'inline-flex', alignItems: 'center', gap: '5px' }}>
-                  <Bath size={15} color="#C99A32" />
+                  <Bath size={15} color="#A87516" />
                   <span>{property.bathrooms} Baths</span>
                 </span>
                 <span style={{ color: 'rgba(216, 189, 138, 0.6)' }}>|</span>
                 <span style={{ display: 'inline-flex', alignItems: 'center', gap: '5px' }}>
-                  <Maximize2 size={15} color="#C99A32" />
+                  <Maximize2 size={15} color="#A87516" />
                   <span>{formattedArea}</span>
                 </span>
               </div>
 
               {/* Price Display */}
               {formattedPrice && (
-                <div style={{ fontSize: '15px', color: '#A9781F', fontWeight: 600, marginBottom: '6px' }}>
+                <div style={{ fontSize: '15px', color: '#A87516', fontWeight: 600, marginBottom: '6px' }}>
                   {formattedPrice}
                 </div>
               )}
@@ -253,7 +254,7 @@ export const ProductDetailPage: React.FC = () => {
                   fontSize: '13px',
                   fontWeight: 600,
                   border: '1px solid rgba(255, 255, 255, 0.7)',
-                  boxShadow: '0 6px 20px rgba(201, 154, 50, 0.35)',
+                  boxShadow: '0 6px 20px rgba(168, 117, 22, 0.35)',
                   textDecoration: 'none'
                 }}
               >
@@ -268,16 +269,19 @@ export const ProductDetailPage: React.FC = () => {
                   width: '42px',
                   height: '42px',
                   borderRadius: '50%',
-                  background: 'rgba(255, 255, 255, 0.8)',
-                  border: '1px solid rgba(216, 189, 138, 0.4)',
+                  background: 'rgba(255, 250, 240, 0.38)',
+                  backdropFilter: 'blur(14px) saturate(140%)',
+                  WebkitBackdropFilter: 'blur(14px) saturate(140%)',
+                  border: '1px solid rgba(255, 255, 255, 0.75)',
+                  boxShadow: 'inset 0 1px 0 rgba(255, 255, 255, 0.70), 0 4px 12px rgba(70, 48, 20, 0.08)',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  color: isFavourited ? '#C99A32' : '#292722',
+                  color: isFavourited ? '#A87516' : '#24211D',
                   cursor: 'pointer'
                 }}
               >
-                <Heart size={18} fill={isFavourited ? '#C99A32' : 'none'} strokeWidth={1.8} />
+                <Heart size={18} fill={isFavourited ? '#A87516' : 'none'} strokeWidth={1.8} />
               </button>
             </div>
           </div>
@@ -334,11 +338,11 @@ export const ProductDetailPage: React.FC = () => {
                   fontSize: '13px',
                   fontWeight: isActive ? 600 : 500,
                   letterSpacing: '0.04em',
-                  background: isActive ? 'linear-gradient(135deg, #F5E8C7 0%, #D8BD8A 25%, #C99A32 60%, #A9781F 100%)' : 'rgba(255, 255, 255, 0.65)',
-                  color: isActive ? '#FFFFFF' : '#68645D',
-                  border: isActive ? '1px solid rgba(255, 255, 255, 0.6)' : '1px solid rgba(216, 189, 138, 0.35)',
+                  background: isActive ? 'linear-gradient(135deg, #F5E8C7 0%, #D8BD8A 25%, #C99A32 60%, #A9781F 100%)' : 'rgba(255, 250, 240, 0.35)',
+                  color: isActive ? '#FFFFFF' : '#514B43',
+                  border: isActive ? '1px solid rgba(255, 255, 255, 0.6)' : '1px solid rgba(255, 255, 255, 0.65)',
                   cursor: 'pointer',
-                  boxShadow: isActive ? '0 4px 14px rgba(201, 154, 50, 0.30)' : 'none',
+                  boxShadow: isActive ? '0 4px 14px rgba(168, 117, 22, 0.30)' : 'none',
                   whiteSpace: 'nowrap',
                   transition: 'all 0.2s ease'
                 }}
@@ -358,11 +362,11 @@ export const ProductDetailPage: React.FC = () => {
               style={{
                 padding: '36px 40px',
                 borderRadius: '24px',
-                background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.80) 0%, rgba(249, 247, 243, 0.65) 100%)',
-                backdropFilter: 'blur(20px) saturate(140%)',
-                WebkitBackdropFilter: 'blur(20px) saturate(140%)',
-                border: '1.5px solid rgba(255, 255, 255, 0.9)',
-                boxShadow: '0 16px 40px rgba(41, 39, 34, 0.08)',
+                background: 'rgba(255, 250, 240, 0.26)',
+                backdropFilter: 'blur(18px) saturate(145%)',
+                WebkitBackdropFilter: 'blur(18px) saturate(145%)',
+                border: '1px solid rgba(255, 255, 255, 0.62)',
+                boxShadow: 'inset 0 1px 0 rgba(255, 255, 255, 0.72), 0 12px 35px rgba(70, 48, 20, 0.12)',
                 display: 'grid',
                 gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
                 gap: '32px',
@@ -376,18 +380,18 @@ export const ProductDetailPage: React.FC = () => {
                     fontSize: 'clamp(1.8rem, 3.2vw, 2.4rem)',
                     fontStyle: 'italic',
                     fontWeight: 400,
-                    color: '#292722',
+                    color: '#24211D',
                     lineHeight: 1.2,
                     marginBottom: '16px'
                   }}
                 >
                   "A coastal masterpiece of privacy and light."
                 </h2>
-                <p style={{ fontFamily: 'var(--font-sans)', fontSize: '0.96rem', color: '#68645D', lineHeight: 1.7, margin: 0 }}>
+                <p style={{ fontFamily: 'var(--font-sans)', fontSize: '0.96rem', color: '#514B43', lineHeight: 1.7, margin: 0, fontWeight: 400 }}>
                   {property.description}
                 </p>
                 {property.architecturalNarrative && (
-                  <p style={{ fontFamily: 'var(--font-sans)', fontSize: '0.94rem', color: '#68645D', lineHeight: 1.7, marginTop: '14px' }}>
+                  <p style={{ fontFamily: 'var(--font-sans)', fontSize: '0.94rem', color: '#514B43', lineHeight: 1.7, marginTop: '14px', fontWeight: 400 }}>
                     {property.architecturalNarrative}
                   </p>
                 )}

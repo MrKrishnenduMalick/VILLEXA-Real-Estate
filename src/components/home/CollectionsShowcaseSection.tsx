@@ -46,7 +46,7 @@ export const CollectionsShowcaseSection: React.FC = () => {
               fontSize: 'clamp(2.4rem, 4.5vw, 3.4rem)',
               fontStyle: 'italic',
               fontWeight: 400,
-              color: '#292722',
+              color: '#24211D',
               lineHeight: 1.15,
               margin: '0 0 10px 0',
               letterSpacing: '-0.015em'
@@ -58,9 +58,9 @@ export const CollectionsShowcaseSection: React.FC = () => {
             style={{
               fontFamily: 'var(--font-sans)',
               fontSize: '0.96rem',
-              color: '#68645D',
+              color: '#514B43',
               margin: 0,
-              fontWeight: 300
+              fontWeight: 400
             }}
           >
             Distinct residential collections, each with its own identity.
@@ -134,11 +134,11 @@ export const CollectionsShowcaseSection: React.FC = () => {
                   margin: '14px',
                   padding: '18px 22px',
                   borderRadius: '16px',
-                  background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.62) 0%, rgba(250, 246, 238, 0.44) 100%)',
-                  backdropFilter: 'blur(18px) saturate(150%)',
-                  WebkitBackdropFilter: 'blur(18px) saturate(150%)',
-                  border: '1.2px solid rgba(255, 255, 255, 0.88)',
-                  boxShadow: 'inset 0 1.5px 2px rgba(255, 255, 255, 0.95), 0 0 0 1px rgba(216, 189, 138, 0.28), 0 14px 32px rgba(41, 39, 34, 0.10)',
+                  background: 'rgba(255, 250, 240, 0.24)',
+                  backdropFilter: 'blur(18px) saturate(145%)',
+                  WebkitBackdropFilter: 'blur(18px) saturate(145%)',
+                  border: '1px solid rgba(255, 255, 255, 0.62)',
+                  boxShadow: 'inset 0 1px 0 rgba(255, 255, 255, 0.72), 0 12px 35px rgba(70, 48, 20, 0.12)',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'space-between'
@@ -150,7 +150,7 @@ export const CollectionsShowcaseSection: React.FC = () => {
                       fontFamily: 'var(--font-serif)',
                       fontSize: '1.35rem',
                       fontWeight: 500,
-                      color: '#292722',
+                      color: '#24211D',
                       margin: '0 0 4px 0',
                       letterSpacing: '-0.01em'
                     }}
@@ -160,10 +160,10 @@ export const CollectionsShowcaseSection: React.FC = () => {
                   <p
                     style={{
                       fontFamily: 'var(--font-sans)',
-                      fontSize: '12px',
-                      color: '#68645D',
+                      fontSize: '12.5px',
+                      color: '#514B43',
                       margin: 0,
-                      fontWeight: 300
+                      fontWeight: 400
                     }}
                   >
                     {col.description}
@@ -180,6 +180,7 @@ export const CollectionsShowcaseSection: React.FC = () => {
                     alignItems: 'center',
                     justifyContent: 'center',
                     color: '#FFFFFF',
+                    boxShadow: '0 4px 12px rgba(168, 117, 22, 0.30)',
                     flexShrink: 0
                   }}
                 >

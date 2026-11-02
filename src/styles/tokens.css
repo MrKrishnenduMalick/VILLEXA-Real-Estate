@@ -16,24 +16,28 @@
   --color-ivory-marble: #F1EBE1;           /* Warm ivory marble tone */
   --color-soft-marble: #E8DFD2;            /* Soft sandstone marble tone */
   --color-champagne: #D8BD8A;              /* Warm champagne metallic tint */
-  --color-metallic-gold: #C99A32;          /* Pure royal metallic gold */
-  --color-deep-gold: #A9781F;              /* Deep antique architectural gold */
-  --color-warm-charcoal: #292722;          /* Deep warm charcoal for headings & inks */
-  --color-text-secondary: #68645D;         /* Refined secondary metadata & body copy */
+  --color-metallic-gold: #A87516;          /* Pure royal metallic gold / refined emphasis */
+  --color-deep-gold: #A87516;              /* Deep architectural gold */
+  --color-warm-charcoal: #24211D;          /* Deep warm charcoal for headings & primary ink */
+  --color-text-secondary: #665E54;         /* Secondary descriptions */
+  --color-text-body: #514B43;              /* High contrast body text */
+  --color-text-metadata: #74644D;          /* Refined metadata & location ink */
+  --color-footer-heading: #29241D;         /* Master footer column headings */
+  --color-footer-link: #51483D;            /* Master footer navigation links & secondary copy */
 
   /* Semantic UI Base Colors */
   --color-bg-primary: #F9F7F3;
   --color-bg-secondary: #F1EBE1;
   --color-bg-tertiary: #E8DFD2;
   --color-bg-white: #FFFFFF;
-  --color-bg-surface: rgba(255, 255, 255, 0.75);
-  --color-bg-surface-elevated: rgba(255, 255, 255, 0.88);
+  --color-bg-surface: rgba(255, 250, 240, 0.24);
+  --color-bg-surface-elevated: rgba(255, 250, 240, 0.32);
 
   /* Typography Inks */
-  --color-text-primary: #292722;          /* Warm charcoal headline ink */
-  --color-text-muted: #68645D;            /* Secondary body & metadata ink */
+  --color-text-primary: #24211D;          /* High-readability headline ink */
+  --color-text-muted: #514B43;            /* Body & narrative copy ink */
   --color-text-inverse: #FFFFFF;          /* Pure white on dark/gold surfaces */
-  --color-text-gold: #C99A32;
+  --color-text-gold: #A87516;
 
   /* Architectural Accents */
   --color-accent-gold: #C99A32;           /* Pure metallic gold */
@@ -112,49 +116,49 @@
      ============================================================= */
 
   /* 1. LUMINOUS CRYSTAL GLASS (High transparency, natural white & gold reflections, visible background) */
-  --glass-crystal-bg: linear-gradient(135deg, rgba(255, 255, 255, 0.38) 0%, rgba(255, 255, 255, 0.14) 50%, rgba(248, 242, 232, 0.24) 100%);
-  --glass-crystal-border: rgba(255, 255, 255, 0.70);
-  --glass-crystal-highlight: inset 0 2px 3px 0 rgba(255, 255, 255, 0.95), inset 0 0 0 1px rgba(216, 189, 138, 0.30);
-  --glass-crystal-shadow: 0 20px 48px -10px rgba(41, 39, 34, 0.12);
-  --glass-crystal-blur: 22px;
+  --glass-crystal-bg: rgba(255, 250, 240, 0.24);
+  --glass-crystal-border: rgba(255, 255, 255, 0.62);
+  --glass-crystal-highlight: inset 0 1px 0 0 rgba(255, 255, 255, 0.72);
+  --glass-crystal-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.72), 0 12px 35px rgba(70, 48, 20, 0.12);
+  --glass-crystal-blur: 18px;
 
   /* 2. WARM CHAMPAGNE GLASS (Warm champagne tint, transparent surface, refined reflections) */
-  --glass-champagne-bg: linear-gradient(135deg, rgba(255, 250, 240, 0.65) 0%, rgba(250, 244, 234, 0.45) 50%, rgba(245, 238, 226, 0.55) 100%);
-  --glass-champagne-border: rgba(216, 189, 138, 0.55);
-  --glass-champagne-highlight: inset 0 1.5px 2px 0 rgba(255, 255, 255, 0.95), inset 0 0 0 1px rgba(216, 189, 138, 0.25);
-  --glass-champagne-shadow: 0 22px 52px -10px rgba(41, 39, 34, 0.10);
-  --glass-champagne-blur: 22px;
+  --glass-champagne-bg: rgba(255, 250, 240, 0.26);
+  --glass-champagne-border: rgba(255, 255, 255, 0.62);
+  --glass-champagne-highlight: inset 0 1px 0 0 rgba(255, 255, 255, 0.72);
+  --glass-champagne-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.72), 0 12px 35px rgba(70, 48, 20, 0.12);
+  --glass-champagne-blur: 18px;
 
   /* 3. GOLD-EDGE CRYSTAL GLASS (Transparent crystal glass with metallic-gold edge & specular highlights) */
-  --glass-gold-edge-bg: linear-gradient(135deg, rgba(255, 255, 255, 0.40) 0%, rgba(255, 255, 255, 0.16) 50%, rgba(250, 244, 234, 0.26) 100%);
-  --glass-gold-edge-border: rgba(201, 154, 50, 0.55);
-  --glass-gold-edge-highlight: inset 0 2px 3px 0 rgba(255, 255, 255, 0.98), inset 0 0 16px 0 rgba(201, 154, 50, 0.20);
-  --glass-gold-edge-shadow: 0 24px 60px -12px rgba(41, 39, 34, 0.15), 0 0 24px rgba(201, 154, 50, 0.22);
-  --glass-gold-edge-blur: 24px;
+  --glass-gold-edge-bg: rgba(255, 250, 240, 0.28);
+  --glass-gold-edge-border: rgba(201, 154, 50, 0.45);
+  --glass-gold-edge-highlight: inset 0 1px 0 0 rgba(255, 255, 255, 0.85);
+  --glass-gold-edge-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.72), 0 12px 35px rgba(70, 48, 20, 0.14);
+  --glass-gold-edge-blur: 18px;
 
   /* Legacy & compatibility aliases */
   --glass-primary: var(--glass-crystal-bg);
   --glass-strong: var(--glass-gold-edge-bg);
-  --glass-subtle: rgba(255, 255, 255, 0.35);
+  --glass-subtle: rgba(255, 250, 240, 0.20);
   --glass-card: var(--glass-champagne-bg);
   --glass-card-strong: var(--glass-gold-edge-bg);
-  --glass-surface-small: rgba(255, 255, 255, 0.72);
+  --glass-surface-small: rgba(255, 250, 240, 0.35);
   --glass-border: var(--glass-crystal-border);
-  --glass-border-subtle: rgba(216, 189, 138, 0.35);
-  --glass-border-champagne: rgba(216, 189, 138, 0.45);
-  --glass-blur: 20px;
-  --glass-blur-lg: 28px;
+  --glass-border-subtle: rgba(255, 255, 255, 0.45);
+  --glass-border-champagne: rgba(255, 255, 255, 0.62);
+  --glass-blur: 18px;
+  --glass-blur-lg: 22px;
   --glass-shadow: var(--glass-crystal-shadow);
   --glass-shadow-lg: var(--glass-gold-edge-shadow);
 
   --glass-bg-primary: var(--glass-crystal-bg);
   --glass-bg-surface: var(--glass-champagne-bg);
   --glass-bg-surface-elevated: var(--glass-gold-edge-bg);
-  --glass-bg-subtle: rgba(255, 255, 255, 0.38);
+  --glass-bg-subtle: rgba(255, 250, 240, 0.20);
   --glass-bg-dark: rgba(20, 18, 16, 0.75);
   --glass-bg-dark-elevated: rgba(28, 24, 20, 0.85);
-  --glass-bg-pill: rgba(255, 255, 255, 0.45);
-  --glass-bg-pill-hover: rgba(255, 255, 255, 0.65);
+  --glass-bg-pill: rgba(255, 250, 240, 0.28);
+  --glass-bg-pill-hover: rgba(255, 250, 240, 0.40);
 
   --glass-border-medium: var(--glass-champagne-border);
   --glass-border-dark: rgba(255, 255, 255, 0.22);

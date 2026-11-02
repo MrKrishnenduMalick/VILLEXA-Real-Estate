@@ -79,7 +79,7 @@ export const FeaturedResidencesSection: React.FC = () => {
                 fontSize: '11px',
                 letterSpacing: '0.24em',
                 textTransform: 'uppercase',
-                color: '#A9781F',
+                color: '#A87516',
                 fontWeight: 600,
                 display: 'block',
                 marginBottom: '8px'
@@ -92,13 +92,13 @@ export const FeaturedResidencesSection: React.FC = () => {
                 fontFamily: 'var(--font-serif)',
                 fontSize: 'clamp(2.2rem, 4vw, 3.2rem)',
                 fontWeight: 400,
-                color: '#292722',
+                color: '#24211D',
                 lineHeight: 1.15,
                 margin: 0,
                 letterSpacing: '-0.015em'
               }}
             >
-              <span style={{ fontStyle: 'italic', fontWeight: 400, color: '#C99A32' }}>Iconic Homes.</span>{' '}
+              <span style={{ fontStyle: 'italic', fontWeight: 400, color: '#A87516' }}>Iconic Homes.</span>{' '}
               <span>Extraordinary Living.</span>
             </h2>
           </div>
@@ -113,10 +113,11 @@ export const FeaturedResidencesSection: React.FC = () => {
                 gap: '6px',
                 padding: '4px',
                 borderRadius: '9999px',
-                background: 'rgba(255, 255, 255, 0.65)',
-                backdropFilter: 'blur(12px)',
-                WebkitBackdropFilter: 'blur(12px)',
-                border: '1px solid rgba(216, 189, 138, 0.35)'
+                background: 'rgba(255, 250, 240, 0.26)',
+                backdropFilter: 'blur(18px) saturate(145%)',
+                WebkitBackdropFilter: 'blur(18px) saturate(145%)',
+                border: '1px solid rgba(255, 255, 255, 0.62)',
+                boxShadow: 'inset 0 1px 0 rgba(255, 255, 255, 0.72), 0 8px 24px rgba(70, 48, 20, 0.08)'
               }}
             >
               {categories.map((cat) => {
@@ -136,10 +137,10 @@ export const FeaturedResidencesSection: React.FC = () => {
                       fontWeight: isActive ? 600 : 500,
                       letterSpacing: '0.04em',
                       background: isActive ? 'linear-gradient(135deg, #F5E8C7 0%, #D8BD8A 25%, #C99A32 60%, #A9781F 100%)' : 'transparent',
-                      color: isActive ? '#FFFFFF' : '#68645D',
+                      color: isActive ? '#FFFFFF' : '#514B43',
                       border: 'none',
                       cursor: 'pointer',
-                      boxShadow: isActive ? '0 4px 12px rgba(201, 154, 50, 0.30)' : 'none',
+                      boxShadow: isActive ? '0 4px 12px rgba(168, 117, 22, 0.30)' : 'none',
                       transition: 'all 0.2s ease'
                     }}
                   >
@@ -158,15 +159,16 @@ export const FeaturedResidencesSection: React.FC = () => {
                   width: '36px',
                   height: '36px',
                   borderRadius: '50%',
-                  background: 'rgba(255, 255, 255, 0.65)',
-                  backdropFilter: 'blur(12px)',
-                  WebkitBackdropFilter: 'blur(12px)',
-                  border: '1px solid rgba(216, 189, 138, 0.35)',
+                  background: 'rgba(255, 250, 240, 0.35)',
+                  backdropFilter: 'blur(14px) saturate(140%)',
+                  WebkitBackdropFilter: 'blur(14px) saturate(140%)',
+                  border: '1px solid rgba(255, 255, 255, 0.65)',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  color: '#292722',
+                  color: '#24211D',
                   cursor: 'pointer',
+                  boxShadow: 'inset 0 1px 0 rgba(255, 255, 255, 0.70), 0 4px 12px rgba(70, 48, 20, 0.08)',
                   transition: 'all 0.2s ease'
                 }}
               >
@@ -180,15 +182,16 @@ export const FeaturedResidencesSection: React.FC = () => {
                   width: '36px',
                   height: '36px',
                   borderRadius: '50%',
-                  background: 'rgba(255, 255, 255, 0.65)',
-                  backdropFilter: 'blur(12px)',
-                  WebkitBackdropFilter: 'blur(12px)',
-                  border: '1px solid rgba(216, 189, 138, 0.35)',
+                  background: 'rgba(255, 250, 240, 0.35)',
+                  backdropFilter: 'blur(14px) saturate(140%)',
+                  WebkitBackdropFilter: 'blur(14px) saturate(140%)',
+                  border: '1px solid rgba(255, 255, 255, 0.65)',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  color: '#292722',
+                  color: '#24211D',
                   cursor: 'pointer',
+                  boxShadow: 'inset 0 1px 0 rgba(255, 255, 255, 0.70), 0 4px 12px rgba(70, 48, 20, 0.08)',
                   transition: 'all 0.2s ease'
                 }}
               >

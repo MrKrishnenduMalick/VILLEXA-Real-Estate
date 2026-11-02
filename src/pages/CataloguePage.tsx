@@ -140,7 +140,7 @@ export const CataloguePage: React.FC = () => {
               fontSize: '11px',
               letterSpacing: '0.26em',
               textTransform: 'uppercase',
-              color: '#A9781F',
+              color: '#A87516',
               fontWeight: 600,
               display: 'block',
               marginBottom: '10px'
@@ -154,13 +154,13 @@ export const CataloguePage: React.FC = () => {
               fontFamily: 'var(--font-serif)',
               fontSize: 'clamp(2.5rem, 5vw, 4rem)',
               fontWeight: 400,
-              color: '#292722',
+              color: '#24211D',
               lineHeight: 1.12,
               margin: '0 0 14px 0',
               letterSpacing: '-0.015em'
             }}
           >
-            <span style={{ fontStyle: 'italic', fontWeight: 400, color: '#C99A32' }}>Our Signature</span>{' '}
+            <span style={{ fontStyle: 'italic', fontWeight: 400, color: '#A87516' }}>Our Signature</span>{' '}
             <span>Residences</span>
           </h1>
 
@@ -168,10 +168,10 @@ export const CataloguePage: React.FC = () => {
             style={{
               fontFamily: 'var(--font-sans)',
               fontSize: '1rem',
-              color: '#68645D',
+              color: '#514B43',
               lineHeight: 1.65,
               margin: 0,
-              fontWeight: 300
+              fontWeight: 400
             }}
           >
             Discover our exclusive collection of villas, penthouses and estates across India's most sought-after destinations.
@@ -189,11 +189,11 @@ export const CataloguePage: React.FC = () => {
             marginBottom: '36px',
             padding: '12px 20px',
             borderRadius: '9999px',
-            background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.75) 0%, rgba(249, 247, 243, 0.55) 100%)',
-            backdropFilter: 'blur(16px)',
-            WebkitBackdropFilter: 'blur(16px)',
-            border: '1px solid rgba(255, 255, 255, 0.85)',
-            boxShadow: '0 8px 24px rgba(41, 39, 34, 0.06)'
+            background: 'rgba(255, 250, 240, 0.26)',
+            backdropFilter: 'blur(18px) saturate(145%)',
+            WebkitBackdropFilter: 'blur(18px) saturate(145%)',
+            border: '1px solid rgba(255, 255, 255, 0.62)',
+            boxShadow: 'inset 0 1px 0 rgba(255, 255, 255, 0.72), 0 12px 35px rgba(70, 48, 20, 0.12)'
           }}
         >
           {/* Category Filter Pills (All | Villas | Penthouses | Estates) */}
@@ -214,10 +214,10 @@ export const CataloguePage: React.FC = () => {
                     background: isActive
                       ? 'linear-gradient(135deg, #F5E8C7 0%, #D8BD8A 25%, #C99A32 60%, #A9781F 100%)'
                       : 'transparent',
-                    color: isActive ? '#FFFFFF' : '#68645D',
+                    color: isActive ? '#FFFFFF' : '#514B43',
                     border: 'none',
                     cursor: 'pointer',
-                    boxShadow: isActive ? '0 4px 14px rgba(201, 154, 50, 0.35)' : 'none',
+                    boxShadow: isActive ? '0 4px 14px rgba(168, 117, 22, 0.35)' : 'none',
                     transition: 'all 0.2s ease'
                   }}
                 >

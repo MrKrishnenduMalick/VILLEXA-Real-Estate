@@ -64,7 +64,7 @@ export const ExperienceShowcaseSection: React.FC = () => {
               fontSize: 'clamp(2.4rem, 4.5vw, 3.4rem)',
               fontStyle: 'italic',
               fontWeight: 400,
-              color: '#292722',
+              color: '#24211D',
               lineHeight: 1.15,
               margin: '0 0 10px 0',
               letterSpacing: '-0.015em'
@@ -76,9 +76,9 @@ export const ExperienceShowcaseSection: React.FC = () => {
             style={{
               fontFamily: 'var(--font-sans)',
               fontSize: '0.96rem',
-              color: '#68645D',
+              color: '#514B43',
               margin: 0,
-              fontWeight: 300
+              fontWeight: 400
             }}
           >
             A closer look at the VILLEXA way of living.
@@ -170,11 +170,11 @@ export const ExperienceShowcaseSection: React.FC = () => {
                   gap: '14px',
                   padding: '16px 20px',
                   borderRadius: '16px',
-                  background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.72) 0%, rgba(241, 235, 225, 0.55) 100%)',
-                  backdropFilter: 'blur(16px)',
-                  WebkitBackdropFilter: 'blur(16px)',
-                  border: '1px solid rgba(255, 255, 255, 0.85)',
-                  boxShadow: '0 8px 24px rgba(41, 39, 34, 0.06)',
+                  background: 'rgba(255, 250, 240, 0.24)',
+                  backdropFilter: 'blur(18px) saturate(145%)',
+                  WebkitBackdropFilter: 'blur(18px) saturate(145%)',
+                  border: '1px solid rgba(255, 255, 255, 0.62)',
+                  boxShadow: 'inset 0 1px 0 rgba(255, 255, 255, 0.72), 0 12px 35px rgba(70, 48, 20, 0.12)',
                   textDecoration: 'none',
                   transition: 'all 0.25s ease'
                 }}
@@ -184,11 +184,11 @@ export const ExperienceShowcaseSection: React.FC = () => {
                     width: '38px',
                     height: '38px',
                     borderRadius: '50%',
-                    background: 'rgba(201, 154, 50, 0.12)',
+                    background: 'rgba(168, 117, 22, 0.14)',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    color: '#C99A32',
+                    color: '#A87516',
                     flexShrink: 0
                   }}
                 >
@@ -201,7 +201,7 @@ export const ExperienceShowcaseSection: React.FC = () => {
                       fontFamily: 'var(--font-sans)',
                       fontSize: '13px',
                       fontWeight: 600,
-                      color: '#292722'
+                      color: '#24211D'
                     }}
                   >
                     {badge.title}
@@ -210,8 +210,8 @@ export const ExperienceShowcaseSection: React.FC = () => {
                     style={{
                       display: 'block',
                       fontFamily: 'var(--font-sans)',
-                      fontSize: '11px',
-                      color: '#68645D',
+                      fontSize: '11.5px',
+                      color: '#514B43',
                       fontWeight: 400
                     }}
                   >

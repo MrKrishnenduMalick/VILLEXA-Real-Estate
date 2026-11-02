@@ -129,7 +129,7 @@ export const Header: React.FC = () => {
                   fontWeight: 600,
                   letterSpacing: '0.22em',
                   lineHeight: 1,
-                  color: isOverHero ? '#FFFFFF' : '#292722',
+                  color: isOverHero ? '#FFFFFF' : '#24211D',
                   transition: 'color 0.3s ease'
                 }}
               >
@@ -142,7 +142,7 @@ export const Header: React.FC = () => {
                 fontSize: '8px',
                 letterSpacing: '0.34em',
                 textTransform: 'uppercase',
-                color: isOverHero ? '#D8BD8A' : '#8A7A5D',
+                color: isOverHero ? '#D8BD8A' : '#74644D',
                 fontWeight: 600,
                 paddingLeft: '27px',
                 transition: 'color 0.3s ease'
@@ -166,7 +166,7 @@ export const Header: React.FC = () => {
             >
               {navLinks.map((link) => {
                 const isActive = location === link.href;
-                const linkDefaultColor = isOverHero ? 'rgba(255, 255, 255, 0.90)' : '#292722';
+                const linkDefaultColor = isOverHero ? 'rgba(255, 255, 255, 0.90)' : '#24211D';
                 return (
                   <li key={link.href}>
                     <Link
@@ -178,12 +178,12 @@ export const Header: React.FC = () => {
                         fontSize: '13px',
                         fontWeight: isActive ? 600 : 500,
                         letterSpacing: '0.06em',
-                        color: isActive ? '#C99A32' : linkDefaultColor,
+                        color: isActive ? '#A87516' : linkDefaultColor,
                         textDecoration: 'none',
                         padding: '6px 0',
                         transition: 'color 0.25s ease'
                       }}
-                      onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.color = '#C99A32')}
+                      onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.color = '#A87516')}
                       onMouseLeave={(e) => {
                         if (!isActive) (e.currentTarget as HTMLElement).style.color = linkDefaultColor;
                       }}
@@ -198,7 +198,7 @@ export const Header: React.FC = () => {
                             width: '100%',
                             height: '2px',
                             borderRadius: '1px',
-                            background: 'linear-gradient(90deg, #D8BD8A, #C99A32)'
+                            background: 'linear-gradient(90deg, #D8BD8A, #A87516)'
                           }}
                         />
                       )}
@@ -222,9 +222,9 @@ export const Header: React.FC = () => {
                 width: '38px',
                 height: '38px',
                 borderRadius: '50%',
-                background: isOverHero ? 'rgba(255, 255, 255, 0.15)' : 'rgba(255, 255, 255, 0.65)',
-                border: isOverHero ? '1px solid rgba(255, 255, 255, 0.35)' : '1px solid rgba(216, 189, 138, 0.35)',
-                color: isOverHero ? '#FFFFFF' : '#292722',
+                background: isOverHero ? 'rgba(255, 255, 255, 0.15)' : 'rgba(255, 250, 240, 0.35)',
+                border: isOverHero ? '1px solid rgba(255, 255, 255, 0.35)' : '1px solid rgba(255, 255, 255, 0.65)',
+                color: isOverHero ? '#FFFFFF' : '#24211D',
                 backdropFilter: 'blur(10px)',
                 WebkitBackdropFilter: 'blur(10px)',
                 transition: 'all 0.25s ease',

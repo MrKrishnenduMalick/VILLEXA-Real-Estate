@@ -198,13 +198,13 @@ export const PropertyCard: React.FC<PropertyCardProps> = ({ property, priority =
             textTransform: 'capitalize',
             padding: '5px 14px',
             borderRadius: '9999px',
-            backgroundColor: 'rgba(255, 255, 255, 0.75)',
-            backdropFilter: 'blur(12px)',
-            WebkitBackdropFilter: 'blur(12px)',
-            border: '1px solid rgba(255, 255, 255, 0.9)',
-            color: '#292722',
+            backgroundColor: 'rgba(255, 250, 240, 0.38)',
+            backdropFilter: 'blur(14px) saturate(140%)',
+            WebkitBackdropFilter: 'blur(14px) saturate(140%)',
+            border: '1px solid rgba(255, 255, 255, 0.75)',
+            color: '#24211D',
             fontWeight: 600,
-            boxShadow: '0 4px 12px rgba(41, 39, 34, 0.08)'
+            boxShadow: 'inset 0 1px 0 rgba(255, 255, 255, 0.70), 0 4px 12px rgba(70, 48, 20, 0.08)'
           }}
         >
           {categoryBadgeLabel}
@@ -222,26 +222,26 @@ export const PropertyCard: React.FC<PropertyCardProps> = ({ property, priority =
             width: '34px',
             height: '34px',
             borderRadius: '50%',
-            background: 'rgba(255, 255, 255, 0.75)',
-            backdropFilter: 'blur(12px)',
-            WebkitBackdropFilter: 'blur(12px)',
-            border: '1px solid rgba(255, 255, 255, 0.9)',
+            background: 'rgba(255, 250, 240, 0.38)',
+            backdropFilter: 'blur(14px) saturate(140%)',
+            WebkitBackdropFilter: 'blur(14px) saturate(140%)',
+            border: '1px solid rgba(255, 255, 255, 0.75)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            color: isFavourited ? '#C99A32' : '#292722',
-            boxShadow: '0 4px 12px rgba(41, 39, 34, 0.08)',
+            color: isFavourited ? '#A87516' : '#24211D',
+            boxShadow: 'inset 0 1px 0 rgba(255, 255, 255, 0.70), 0 4px 12px rgba(70, 48, 20, 0.08)',
             cursor: 'pointer',
             transition: 'all 0.2s ease'
           }}
         >
-          <Heart size={15} fill={isFavourited ? '#C99A32' : 'none'} strokeWidth={1.8} />
+          <Heart size={15} fill={isFavourited ? '#A87516' : 'none'} strokeWidth={1.8} />
         </button>
       </div>
 
       {/* 3. REFINED TRANSLUCENT GLASS INFORMATION PANEL (Integrated Lower Portion) */}
       <div
-        className="glass-panel-integrated glass-champagne"
+        className="glass-panel-integrated"
         style={{
           position: 'relative',
           zIndex: 3,
@@ -250,14 +250,12 @@ export const PropertyCard: React.FC<PropertyCardProps> = ({ property, priority =
           display: 'flex',
           flexDirection: 'column',
           gap: '10px',
-          background: isHovered
-            ? 'linear-gradient(135deg, rgba(255, 255, 255, 0.62) 0%, rgba(250, 246, 238, 0.44) 100%)'
-            : 'linear-gradient(135deg, rgba(255, 255, 255, 0.52) 0%, rgba(245, 238, 228, 0.35) 100%)',
-          backdropFilter: 'blur(16px) saturate(150%)',
-          WebkitBackdropFilter: 'blur(16px) saturate(150%)',
-          border: '1.2px solid rgba(255, 255, 255, 0.88)',
+          background: isHovered ? 'rgba(255, 250, 240, 0.32)' : 'rgba(255, 250, 240, 0.24)',
+          backdropFilter: 'blur(18px) saturate(145%)',
+          WebkitBackdropFilter: 'blur(18px) saturate(145%)',
+          border: '1px solid rgba(255, 255, 255, 0.62)',
           borderRadius: '18px',
-          boxShadow: 'inset 0 1.5px 2px rgba(255, 255, 255, 0.95), 0 0 0 1px rgba(216, 189, 138, 0.30), 0 16px 36px -8px rgba(41, 39, 34, 0.12)',
+          boxShadow: 'inset 0 1px 0 rgba(255, 255, 255, 0.72), 0 12px 35px rgba(70, 48, 20, 0.12)',
           transition: 'all 0.35s ease'
         }}
       >
@@ -267,13 +265,13 @@ export const PropertyCard: React.FC<PropertyCardProps> = ({ property, priority =
             display: 'inline-flex',
             alignItems: 'center',
             gap: '5px',
-            color: '#8A7A5D',
+            color: '#74644D',
             fontSize: '11px',
             letterSpacing: '0.04em',
             fontWeight: 500
           }}
         >
-          <MapPin size={12} strokeWidth={2} color="#C99A32" />
+          <MapPin size={12} strokeWidth={2} color="#A87516" />
           <span>{locationString}</span>
         </div>
 
@@ -283,7 +281,7 @@ export const PropertyCard: React.FC<PropertyCardProps> = ({ property, priority =
             style={{
               fontSize: '1.45rem',
               fontFamily: 'var(--font-serif)',
-              color: '#292722',
+              color: '#24211D',
               fontWeight: 500,
               lineHeight: 1.15,
               margin: 0,
@@ -312,7 +310,7 @@ export const PropertyCard: React.FC<PropertyCardProps> = ({ property, priority =
               background: 'linear-gradient(135deg, #F5E8C7 0%, #D8BD8A 30%, #C99A32 100%)',
               border: '1px solid rgba(255, 255, 255, 0.8)',
               color: '#FFFFFF',
-              boxShadow: '0 4px 12px rgba(201, 154, 50, 0.30)',
+              boxShadow: '0 4px 12px rgba(168, 117, 22, 0.30)',
               flexShrink: 0,
               transition: 'transform 0.25s ease'
             }}
@@ -324,15 +322,15 @@ export const PropertyCard: React.FC<PropertyCardProps> = ({ property, priority =
         {/* Short Description */}
         <p
           style={{
-            fontSize: '12px',
-            color: '#68645D',
+            fontSize: '12.5px',
+            color: '#514B43',
             lineHeight: 1.5,
             margin: 0,
             display: '-webkit-box',
             WebkitLineClamp: 2,
             WebkitBoxOrient: 'vertical',
             overflow: 'hidden',
-            fontWeight: 300
+            fontWeight: 400
           }}
         >
           {property.description || property.tagline}
@@ -347,29 +345,29 @@ export const PropertyCard: React.FC<PropertyCardProps> = ({ property, priority =
             paddingTop: '8px',
             borderTop: '1px solid rgba(216, 189, 138, 0.25)',
             fontSize: '11px',
-            color: '#44403C',
+            color: '#514B43',
             fontWeight: 500
           }}
         >
           <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
             <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
-              <Bed size={13} strokeWidth={1.8} color="#C99A32" />
+              <Bed size={13} strokeWidth={1.8} color="#A87516" />
               <span>{property.bedrooms} Beds</span>
             </span>
 
             <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
-              <Bath size={13} strokeWidth={1.8} color="#C99A32" />
+              <Bath size={13} strokeWidth={1.8} color="#A87516" />
               <span>{property.bathrooms} Baths</span>
             </span>
 
             <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
-              <Maximize2 size={13} strokeWidth={1.8} color="#C99A32" />
+              <Maximize2 size={13} strokeWidth={1.8} color="#A87516" />
               <span>{formattedArea}</span>
             </span>
           </div>
 
           {formattedPrice && (
-            <span style={{ fontWeight: 600, color: '#C99A32', letterSpacing: '0.02em' }}>
+            <span style={{ fontWeight: 600, color: '#A87516', letterSpacing: '0.02em' }}>
               {formattedPrice}
             </span>
           )}

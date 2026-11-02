@@ -40,14 +40,14 @@ export const PrivateViewingFooterSection: React.FC = () => {
             position: 'relative',
             borderRadius: '28px',
             overflow: 'hidden',
-            border: '1.5px solid rgba(255, 255, 255, 0.95)',
-            boxShadow: 'inset 0 2px 3px rgba(255, 255, 255, 0.98), 0 0 0 1px rgba(216, 189, 138, 0.35), 0 24px 60px -10px rgba(41, 39, 34, 0.12)',
+            border: '1px solid rgba(255, 255, 255, 0.62)',
+            boxShadow: 'inset 0 1px 0 rgba(255, 255, 255, 0.72), 0 12px 35px rgba(70, 48, 20, 0.12)',
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
             alignItems: 'stretch',
-            background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.78) 0%, rgba(250, 246, 238, 0.60) 100%)',
-            backdropFilter: 'blur(24px) saturate(140%)',
-            WebkitBackdropFilter: 'blur(24px) saturate(140%)'
+            background: 'rgba(255, 250, 240, 0.26)',
+            backdropFilter: 'blur(18px) saturate(145%)',
+            WebkitBackdropFilter: 'blur(18px) saturate(145%)'
           }}
         >
           {/* Left Column: Form & Narrative */}
@@ -58,7 +58,7 @@ export const PrivateViewingFooterSection: React.FC = () => {
                 fontSize: '11px',
                 letterSpacing: '0.24em',
                 textTransform: 'uppercase',
-                color: '#A9781F',
+                color: '#A87516',
                 fontWeight: 600,
                 display: 'block',
                 marginBottom: '8px'
@@ -72,7 +72,7 @@ export const PrivateViewingFooterSection: React.FC = () => {
                 fontSize: 'clamp(2rem, 3.6vw, 2.8rem)',
                 fontStyle: 'italic',
                 fontWeight: 400,
-                color: '#292722',
+                color: '#24211D',
                 lineHeight: 1.15,
                 margin: '0 0 10px 0',
                 letterSpacing: '-0.015em'
@@ -84,9 +84,9 @@ export const PrivateViewingFooterSection: React.FC = () => {
               style={{
                 fontFamily: 'var(--font-sans)',
                 fontSize: '0.94rem',
-                color: '#68645D',
+                color: '#514B43',
                 margin: '0 0 28px 0',
-                fontWeight: 300,
+                fontWeight: 400,
                 lineHeight: 1.6
               }}
             >
@@ -385,7 +385,7 @@ export const PrivateViewingFooterSection: React.FC = () => {
                     fontSize: '18px',
                     fontWeight: 600,
                     letterSpacing: '0.22em',
-                    color: '#292722',
+                    color: '#24211D',
                     display: 'block',
                     lineHeight: 1
                   }}
@@ -397,9 +397,10 @@ export const PrivateViewingFooterSection: React.FC = () => {
                     fontSize: '8px',
                     letterSpacing: '0.30em',
                     textTransform: 'uppercase',
-                    color: '#8A7A5D',
+                    color: '#74644D',
                     display: 'block',
-                    marginTop: '3px'
+                    marginTop: '3px',
+                    fontWeight: 500
                   }}
                 >
                   PRIVATE RESIDENCES
@@ -409,22 +410,22 @@ export const PrivateViewingFooterSection: React.FC = () => {
 
             {/* Quick Links */}
             <div style={{ display: 'flex', alignItems: 'center', gap: '24px', flexWrap: 'wrap' }}>
-              <Link href="/" style={{ fontSize: '12px', color: '#68645D', textDecoration: 'none' }}>
+              <Link href="/" style={{ fontSize: '12.5px', color: '#51483D', textDecoration: 'none', fontWeight: 500 }}>
                 Overview
               </Link>
-              <Link href="/residences" style={{ fontSize: '12px', color: '#68645D', textDecoration: 'none' }}>
+              <Link href="/residences" style={{ fontSize: '12.5px', color: '#51483D', textDecoration: 'none', fontWeight: 500 }}>
                 Residences
               </Link>
-              <Link href="/collections" style={{ fontSize: '12px', color: '#68645D', textDecoration: 'none' }}>
+              <Link href="/collections" style={{ fontSize: '12.5px', color: '#51483D', textDecoration: 'none', fontWeight: 500 }}>
                 Collections
               </Link>
-              <Link href="/craftsmanship" style={{ fontSize: '12px', color: '#68645D', textDecoration: 'none' }}>
+              <Link href="/craftsmanship" style={{ fontSize: '12.5px', color: '#51483D', textDecoration: 'none', fontWeight: 500 }}>
                 Craftsmanship
               </Link>
-              <Link href="/experience" style={{ fontSize: '12px', color: '#68645D', textDecoration: 'none' }}>
+              <Link href="/experience" style={{ fontSize: '12.5px', color: '#51483D', textDecoration: 'none', fontWeight: 500 }}>
                 Experience
               </Link>
-              <Link href="/contact" style={{ fontSize: '12px', color: '#68645D', textDecoration: 'none' }}>
+              <Link href="/contact" style={{ fontSize: '12.5px', color: '#51483D', textDecoration: 'none', fontWeight: 500 }}>
                 Private Viewing
               </Link>
             </div>
@@ -437,10 +438,10 @@ export const PrivateViewingFooterSection: React.FC = () => {
               justifyContent: 'space-between',
               flexWrap: 'wrap',
               gap: '12px',
-              fontSize: '11px',
-              color: '#8A7E72',
+              fontSize: '11.5px',
+              color: '#51483D',
               paddingTop: '16px',
-              borderTop: '1px solid rgba(216, 189, 138, 0.18)'
+              borderTop: '1px solid rgba(216, 189, 138, 0.28)'
             }}
           >
             <span>

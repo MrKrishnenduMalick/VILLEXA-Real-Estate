@@ -128,7 +128,7 @@ export const Footer: React.FC = () => {
           <span>
             &copy; {new Date().getFullYear()} {config.brand.brandName} Private Residences Ltd. All rights reserved.
           </span>
-          <span className="text-[10px] text-[#A89E90] tracking-wide">
+          <span className="text-[10.5px] text-[#51483D] tracking-wide">
             Demonstration Portfolio: Fictional architectural commissions conceived for digital luxury presentation.
           </span>
           <span>

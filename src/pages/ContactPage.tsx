@@ -75,7 +75,7 @@ export const ContactPage: React.FC = () => {
               fontSize: 'clamp(2.6rem, 5vw, 4rem)',
               fontStyle: 'italic',
               fontWeight: 400,
-              color: '#292722',
+              color: '#24211D',
               lineHeight: 1.15,
               margin: '0 0 12px 0',
               letterSpacing: '-0.015em'
@@ -87,9 +87,9 @@ export const ContactPage: React.FC = () => {
             style={{
               fontFamily: 'var(--font-sans)',
               fontSize: '1rem',
-              color: '#68645D',
+              color: '#514B43',
               margin: 0,
-              fontWeight: 300
+              fontWeight: 400
             }}
           >
             Experience a {brandDisplayName} residence in person or virtually with a personalized tour.
@@ -103,11 +103,11 @@ export const ContactPage: React.FC = () => {
             position: 'relative',
             borderRadius: '28px',
             overflow: 'hidden',
-            background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.85) 0%, rgba(249, 247, 243, 0.72) 100%)',
-            backdropFilter: 'blur(20px) saturate(145%)',
-            WebkitBackdropFilter: 'blur(20px) saturate(145%)',
-            border: '1.5px solid rgba(255, 255, 255, 0.9)',
-            boxShadow: '0 24px 60px -10px rgba(41, 39, 34, 0.12)',
+            background: 'rgba(255, 250, 240, 0.26)',
+            backdropFilter: 'blur(18px) saturate(145%)',
+            WebkitBackdropFilter: 'blur(18px) saturate(145%)',
+            border: '1px solid rgba(255, 255, 255, 0.62)',
+            boxShadow: 'inset 0 1px 0 rgba(255, 255, 255, 0.72), 0 12px 35px rgba(70, 48, 20, 0.12)',
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fit, minmax(360px, 1fr))',
             alignItems: 'stretch',
@@ -122,7 +122,7 @@ export const ContactPage: React.FC = () => {
                 fontSize: '11px',
                 letterSpacing: '0.24em',
                 textTransform: 'uppercase',
-                color: '#A9781F',
+                color: '#A87516',
                 fontWeight: 600,
                 display: 'block',
                 marginBottom: '8px'

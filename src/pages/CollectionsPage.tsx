@@ -109,7 +109,7 @@ export const CollectionsPage: React.FC = () => {
               fontSize: 'clamp(2.6rem, 5vw, 4rem)',
               fontStyle: 'italic',
               fontWeight: 400,
-              color: '#292722',
+              color: '#24211D',
               lineHeight: 1.15,
               margin: '0 0 12px 0',
               letterSpacing: '-0.015em'
@@ -121,9 +121,9 @@ export const CollectionsPage: React.FC = () => {
             style={{
               fontFamily: 'var(--font-sans)',
               fontSize: '1rem',
-              color: '#68645D',
+              color: '#514B43',
               margin: 0,
-              fontWeight: 300
+              fontWeight: 400
             }}
           >
             Distinct residential collections, each with its own identity.
@@ -198,11 +198,11 @@ export const CollectionsPage: React.FC = () => {
                   margin: '16px',
                   padding: '20px 24px',
                   borderRadius: '18px',
-                  background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.78) 0%, rgba(241, 235, 225, 0.62) 100%)',
-                  backdropFilter: 'blur(20px) saturate(145%)',
-                  WebkitBackdropFilter: 'blur(20px) saturate(145%)',
-                  border: '1px solid rgba(255, 255, 255, 0.9)',
-                  boxShadow: 'inset 0 1px 1.5px rgba(255, 255, 255, 0.95), 0 14px 34px rgba(41, 39, 34, 0.10)',
+                  background: 'rgba(255, 250, 240, 0.24)',
+                  backdropFilter: 'blur(18px) saturate(145%)',
+                  WebkitBackdropFilter: 'blur(18px) saturate(145%)',
+                  border: '1px solid rgba(255, 255, 255, 0.62)',
+                  boxShadow: 'inset 0 1px 0 rgba(255, 255, 255, 0.72), 0 12px 35px rgba(70, 48, 20, 0.12)',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'space-between'
@@ -214,7 +214,7 @@ export const CollectionsPage: React.FC = () => {
                       fontFamily: 'var(--font-serif)',
                       fontSize: '1.45rem',
                       fontWeight: 500,
-                      color: '#292722',
+                      color: '#24211D',
                       margin: '0 0 6px 0',
                       letterSpacing: '-0.01em'
                     }}
@@ -224,10 +224,10 @@ export const CollectionsPage: React.FC = () => {
                   <p
                     style={{
                       fontFamily: 'var(--font-sans)',
-                      fontSize: '12px',
-                      color: '#68645D',
+                      fontSize: '12.5px',
+                      color: '#514B43',
                       margin: 0,
-                      fontWeight: 300,
+                      fontWeight: 400,
                       lineHeight: 1.5
                     }}
                   >

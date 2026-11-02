@@ -120,7 +120,7 @@ export const CraftsmanshipPage: React.FC = () => {
               fontSize: 'clamp(2.6rem, 5vw, 4rem)',
               fontStyle: 'italic',
               fontWeight: 400,
-              color: '#292722',
+              color: '#24211D',
               lineHeight: 1.15,
               margin: '0 0 12px 0',
               letterSpacing: '-0.015em'
@@ -132,9 +132,9 @@ export const CraftsmanshipPage: React.FC = () => {
             style={{
               fontFamily: 'var(--font-sans)',
               fontSize: '1rem',
-              color: '#68645D',
+              color: '#514B43',
               margin: 0,
-              fontWeight: 300
+              fontWeight: 400
             }}
           >
             The detail behind every {brandDisplayName} residence.
@@ -148,11 +148,11 @@ export const CraftsmanshipPage: React.FC = () => {
             position: 'relative',
             borderRadius: '26px',
             overflow: 'hidden',
-            background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.82) 0%, rgba(249, 247, 243, 0.68) 100%)',
-            backdropFilter: 'blur(20px) saturate(145%)',
-            WebkitBackdropFilter: 'blur(20px) saturate(145%)',
-            border: '1.5px solid rgba(255, 255, 255, 0.9)',
-            boxShadow: '0 24px 60px -10px rgba(41, 39, 34, 0.12)',
+            background: 'rgba(255, 250, 240, 0.26)',
+            backdropFilter: 'blur(18px) saturate(145%)',
+            WebkitBackdropFilter: 'blur(18px) saturate(145%)',
+            border: '1px solid rgba(255, 255, 255, 0.62)',
+            boxShadow: 'inset 0 1px 0 rgba(255, 255, 255, 0.72), 0 12px 35px rgba(70, 48, 20, 0.12)',
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fit, minmax(360px, 1fr))',
             alignItems: 'stretch',
@@ -220,11 +220,11 @@ export const CraftsmanshipPage: React.FC = () => {
                     gap: '16px',
                     padding: '16px 20px',
                     borderRadius: '16px',
-                    background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.75) 0%, rgba(241, 235, 225, 0.58) 100%)',
-                    backdropFilter: 'blur(16px)',
-                    WebkitBackdropFilter: 'blur(16px)',
-                    border: '1px solid rgba(255, 255, 255, 0.85)',
-                    boxShadow: '0 6px 18px rgba(41, 39, 34, 0.05)',
+                    background: 'rgba(255, 250, 240, 0.35)',
+                    backdropFilter: 'blur(14px) saturate(140%)',
+                    WebkitBackdropFilter: 'blur(14px) saturate(140%)',
+                    border: '1px solid rgba(255, 255, 255, 0.65)',
+                    boxShadow: 'inset 0 1px 0 rgba(255, 255, 255, 0.70), 0 4px 14px rgba(70, 48, 20, 0.08)',
                     transition: 'all 0.25s ease'
                   }}
                 >
@@ -233,12 +233,12 @@ export const CraftsmanshipPage: React.FC = () => {
                       width: '40px',
                       height: '40px',
                       borderRadius: '50%',
-                      background: 'rgba(201, 154, 50, 0.12)',
-                      border: '1px solid rgba(201, 154, 50, 0.3)',
+                      background: 'rgba(168, 117, 22, 0.14)',
+                      border: '1px solid rgba(168, 117, 22, 0.35)',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
-                      color: '#C99A32',
+                      color: '#A87516',
                       flexShrink: 0,
                       marginTop: '2px'
                     }}
@@ -252,7 +252,7 @@ export const CraftsmanshipPage: React.FC = () => {
                         fontFamily: 'var(--font-serif)',
                         fontSize: '1.25rem',
                         fontWeight: 500,
-                        color: '#292722',
+                        color: '#24211D',
                         margin: '0 0 3px 0'
                       }}
                     >
@@ -261,8 +261,8 @@ export const CraftsmanshipPage: React.FC = () => {
                     <p
                       style={{
                         fontFamily: 'var(--font-sans)',
-                        fontSize: '12px',
-                        color: '#68645D',
+                        fontSize: '12.5px',
+                        color: '#514B43',
                         margin: 0,
                         lineHeight: 1.5,
                         fontWeight: 400
