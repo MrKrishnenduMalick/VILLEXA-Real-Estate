@@ -96,27 +96,65 @@ export const PropertyCard: React.FC<PropertyCardProps> = ({ property, priority =
         flexDirection: 'column',
         justifyContent: 'space-between',
         minHeight: '520px',
-        transform: 'translateY(0)',
-        transition: 'all 0.4s ease'
+        transform: isHovered && !prefersReducedMotion ? 'translateY(-8px)' : 'translateY(0)',
+        boxShadow: isHovered
+          ? '0 30px 60px -10px rgba(45, 32, 20, 0.22), 0 14px 28px rgba(45, 32, 20, 0.12), 0 0 42px rgba(225, 180, 85, 0.50), 0 0 85px rgba(225, 180, 85, 0.25)'
+          : '0 20px 42px -10px rgba(45, 32, 20, 0.16), 0 8px 18px rgba(45, 32, 20, 0.08), 0 0 28px rgba(225, 180, 85, 0.35), 0 0 60px rgba(225, 180, 85, 0.16)',
+        transition: 'transform 400ms cubic-bezier(0.2, 0.75, 0.25, 1), box-shadow 400ms ease'
       }}
     >
-      {/* Outer Border & Subtle Frame Glow (zIndex: 2, non-blocking) */}
+      {/* 1. FULL CARD GLASS FRAME (Translucent Beveled Edge & Exterior Gold Ambient Glow) */}
       <div
         style={{
           position: 'absolute',
           inset: 0,
           borderRadius: '28px',
-          border: isHovered ? '1.5px solid rgba(250, 220, 150, 0.95)' : '1.5px solid rgba(255, 248, 230, 0.90)',
+          border: isHovered ? '1.5px solid rgba(255, 255, 255, 0.98)' : '1.5px solid rgba(255, 250, 235, 0.88)',
           boxShadow: isHovered
-            ? '0 20px 48px rgba(45, 32, 20, 0.16), 0 0 30px rgba(220, 175, 75, 0.45), inset 0 1px 2px rgba(255, 255, 255, 0.95)'
-            : '0 14px 36px rgba(45, 32, 20, 0.12), 0 0 20px rgba(220, 175, 75, 0.30), inset 0 1px 1px rgba(255, 255, 255, 0.90)',
+            ? 'inset 0 2px 2px rgba(255, 255, 255, 0.95), inset 0 -1.5px 2px rgba(255, 255, 255, 0.40), inset 1.5px 0 1.5px rgba(255, 255, 255, 0.45), inset -1.5px 0 1.5px rgba(255, 255, 255, 0.45), 0 0 24px rgba(230, 190, 100, 0.45)'
+            : 'inset 0 1.5px 1.5px rgba(255, 255, 255, 0.90), inset 0 -1px 1px rgba(255, 255, 255, 0.30), inset 1px 0 1px rgba(255, 255, 255, 0.35), inset -1px 0 1px rgba(255, 255, 255, 0.35), 0 0 16px rgba(230, 190, 100, 0.30)',
           pointerEvents: 'none',
-          zIndex: 2,
+          zIndex: 3,
           transition: 'border-color 0.4s ease, box-shadow 0.4s ease'
         }}
       />
 
-      {/* 1. LARGE ARCHITECTURAL PHOTOGRAPHY (Main Visual Backdrop, clipped to 28px radius) */}
+      {/* Top Specular Reflection Line along Card Top Rim */}
+      <div
+        style={{
+          position: 'absolute',
+          top: 0,
+          left: '5%',
+          right: '5%',
+          height: '2px',
+          background: 'linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.95) 20%, #FFF8E8 50%, rgba(255, 255, 255, 0.95) 80%, transparent 100%)',
+          pointerEvents: 'none',
+          boxShadow: isHovered
+            ? '0 0 14px rgba(255, 255, 255, 1), 0 0 26px rgba(235, 195, 110, 0.85)'
+            : '0 0 10px rgba(255, 255, 255, 0.90), 0 0 18px rgba(235, 195, 110, 0.65)',
+          zIndex: 4,
+          transition: 'all 0.35s ease'
+        }}
+      />
+
+      {/* Diagonal Glass Specular Sheen (Subtle glass glare across top corner) */}
+      <div
+        style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          height: '190px',
+          background: 'linear-gradient(145deg, rgba(255, 255, 255, 0.32) 0%, rgba(255, 255, 255, 0.08) 30%, transparent 65%)',
+          borderRadius: '28px 28px 0 0',
+          pointerEvents: 'none',
+          zIndex: 2,
+          opacity: isHovered ? 0.95 : 0.80,
+          transition: 'opacity 0.4s ease'
+        }}
+      />
+
+      {/* 2. LARGE ARCHITECTURAL PHOTOGRAPHY (Dominant, Crisp Visual Backbone) */}
       <div
         style={{
           position: 'absolute',
@@ -242,7 +280,7 @@ export const PropertyCard: React.FC<PropertyCardProps> = ({ property, priority =
         className="property-glass-card glass-panel-integrated floating-glass-panel"
         style={{
           position: 'relative',
-          zIndex: 4,
+          zIndex: 5,
           margin: '0 18px 24px 18px',
           marginTop: 'auto',
           padding: '16px 18px',
@@ -258,7 +296,7 @@ export const PropertyCard: React.FC<PropertyCardProps> = ({ property, priority =
           border: isHovered
             ? '1px solid rgba(255, 255, 255, 0.92)'
             : '1px solid rgba(255, 255, 255, 0.78)',
-          transform: isHovered && !prefersReducedMotion ? 'translateY(-16px)' : 'translateY(-8px)',
+          transform: isHovered && !prefersReducedMotion ? 'translateY(-8px)' : 'translateY(0)',
           boxShadow: isHovered
             ? '0 28px 52px rgba(42, 27, 12, 0.28), 0 12px 22px rgba(42, 27, 12, 0.16), 0 0 35px rgba(218, 169, 75, 0.45), 0 0 65px rgba(218, 169, 75, 0.22), inset 0 1.5px 0 rgba(255, 255, 255, 1.0), inset 0 -1px 0 rgba(255, 255, 255, 0.30)'
             : '0 20px 38px rgba(42, 27, 12, 0.22), 0 8px 16px rgba(42, 27, 12, 0.12), 0 0 25px rgba(218, 169, 75, 0.30), 0 0 50px rgba(218, 169, 75, 0.14), inset 0 1px 0 rgba(255, 255, 255, 0.90), inset 0 -1px 0 rgba(255, 255, 255, 0.20)',
