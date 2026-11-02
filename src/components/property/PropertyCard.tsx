@@ -163,16 +163,6 @@ export const PropertyCard: React.FC<PropertyCardProps> = ({ property, priority =
             </span>
           </div>
         )}
-
-        {/* Extremely Subtle Vignette Gradient for natural contrast without darkening */}
-        <div
-          style={{
-            position: 'absolute',
-            inset: 0,
-            background: 'linear-gradient(to top, rgba(20, 16, 12, 0.10) 0%, transparent 45%)',
-            pointerEvents: 'none'
-          }}
-        />
       </div>
 
       {/* 2. TOP FLOATING BADGES OVER PHOTOGRAPHY: Category Badge & Favourite Heart */}
@@ -235,7 +225,7 @@ export const PropertyCard: React.FC<PropertyCardProps> = ({ property, priority =
         </button>
       </div>
 
-      {/* 3. FLOATING GLASS INFORMATION PANEL (Elevated Physical Slab) */}
+      {/* 3. FLOATING GLASS INFORMATION PANEL (Elevated Translucent Glass Slab) */}
       <div
         className="property-glass-card glass-panel-integrated floating-glass-panel"
         style={{
@@ -249,17 +239,17 @@ export const PropertyCard: React.FC<PropertyCardProps> = ({ property, priority =
           gap: '9px',
           borderRadius: '24px',
           background: isHovered
-            ? 'rgba(246, 239, 224, 0.44)'
-            : 'rgba(246, 239, 224, 0.38)',
-          backdropFilter: 'blur(18px) saturate(135%)',
-          WebkitBackdropFilter: 'blur(18px) saturate(135%)',
+            ? 'rgba(246, 239, 224, 0.26)'
+            : 'rgba(246, 239, 224, 0.20)',
+          backdropFilter: 'blur(12px) saturate(145%)',
+          WebkitBackdropFilter: 'blur(12px) saturate(145%)',
           border: isHovered
-            ? '1px solid rgba(255, 255, 255, 0.90)'
-            : '1px solid rgba(255, 255, 255, 0.72)',
+            ? '1px solid rgba(255, 255, 255, 0.85)'
+            : '1px solid rgba(255, 255, 255, 0.68)',
           transform: isHovered && !prefersReducedMotion ? 'translateY(-6px)' : 'translateY(0)',
           boxShadow: isHovered
-            ? '0 28px 65px rgba(48, 34, 19, 0.28), 0 10px 24px rgba(48, 34, 19, 0.14), 0 0 28px rgba(212, 163, 59, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.95), inset 0 -1px 0 rgba(255, 255, 255, 0.22)'
-            : '0 22px 55px rgba(48, 34, 19, 0.22), 0 6px 18px rgba(48, 34, 19, 0.10), 0 0 20px rgba(212, 163, 59, 0.14), inset 0 1px 0 rgba(255, 255, 255, 0.85), inset 0 -1px 0 rgba(255, 255, 255, 0.18)',
+            ? '0 26px 58px rgba(48, 34, 19, 0.26), 0 10px 22px rgba(48, 34, 19, 0.12), 0 0 24px rgba(212, 163, 59, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.95), inset 0 -1px 0 rgba(255, 255, 255, 0.22)'
+            : '0 20px 48px rgba(48, 34, 19, 0.20), 0 6px 16px rgba(48, 34, 19, 0.10), 0 0 16px rgba(212, 163, 59, 0.10), inset 0 1px 0 rgba(255, 255, 255, 0.85), inset 0 -1px 0 rgba(255, 255, 255, 0.18)',
           transition: 'transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease, background 0.35s ease'
         }}
       >
@@ -285,10 +275,11 @@ export const PropertyCard: React.FC<PropertyCardProps> = ({ property, priority =
             display: 'inline-flex',
             alignItems: 'center',
             gap: '6px',
-            color: '#36322C',
+            color: '#26221C',
             fontSize: '11.5px',
             letterSpacing: '0.04em',
-            fontWeight: 550
+            fontWeight: 550,
+            textShadow: '0 1px 2px rgba(255, 255, 255, 0.7)'
           }}
         >
           <MapPin size={13} strokeWidth={2.2} color="#B8831E" fill="#B8831E" fillOpacity={0.2} />
@@ -301,11 +292,12 @@ export const PropertyCard: React.FC<PropertyCardProps> = ({ property, priority =
             style={{
               fontSize: 'clamp(1.3rem, 3.5vw, 1.48rem)',
               fontFamily: 'var(--font-serif)',
-              color: '#1A1816',
+              color: '#141210',
               fontWeight: 500,
               lineHeight: 1.15,
               margin: 0,
-              letterSpacing: '-0.01em'
+              letterSpacing: '-0.01em',
+              textShadow: '0 1px 2px rgba(255, 255, 255, 0.8)'
             }}
           >
             <Link
@@ -349,14 +341,15 @@ export const PropertyCard: React.FC<PropertyCardProps> = ({ property, priority =
         <p
           style={{
             fontSize: '12px',
-            color: '#2E2A24',
+            color: '#24201A',
             lineHeight: 1.5,
             margin: 0,
             display: '-webkit-box',
             WebkitLineClamp: 2,
             WebkitBoxOrient: 'vertical',
             overflow: 'hidden',
-            fontWeight: 450
+            fontWeight: 450,
+            textShadow: '0 1px 1px rgba(255, 255, 255, 0.6)'
           }}
         >
           {property.description || property.tagline}
@@ -371,9 +364,10 @@ export const PropertyCard: React.FC<PropertyCardProps> = ({ property, priority =
             paddingTop: '9px',
             borderTop: '1px solid rgba(184, 131, 30, 0.22)',
             fontSize: '11px',
-            color: '#2E2A24',
+            color: '#24201A',
             fontWeight: 500,
-            gap: '8px'
+            gap: '8px',
+            textShadow: '0 1px 1px rgba(255, 255, 255, 0.5)'
           }}
         >
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', minWidth: 0, flexWrap: 'nowrap' }}>

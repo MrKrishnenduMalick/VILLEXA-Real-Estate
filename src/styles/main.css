@@ -590,17 +590,17 @@ a {
 .glass-property-card,
 .glass-panel-integrated,
 .floating-glass-panel {
-  background: rgba(246, 239, 224, 0.38);
-  backdrop-filter: blur(18px) saturate(135%);
-  -webkit-backdrop-filter: blur(18px) saturate(135%);
+  background: rgba(246, 239, 224, 0.20);
+  backdrop-filter: blur(12px) saturate(145%);
+  -webkit-backdrop-filter: blur(12px) saturate(145%);
 
-  border: 1px solid rgba(255, 255, 255, 0.72);
-  border-radius: 26px;
+  border: 1px solid rgba(255, 255, 255, 0.68);
+  border-radius: 24px;
 
   box-shadow:
-    0 22px 55px rgba(48, 34, 19, 0.22),
-    0 6px 18px rgba(48, 34, 19, 0.10),
-    0 0 20px rgba(212, 163, 59, 0.14),
+    0 20px 48px rgba(48, 34, 19, 0.20),
+    0 6px 16px rgba(48, 34, 19, 0.10),
+    0 0 16px rgba(212, 163, 59, 0.10),
     inset 0 1px 0 rgba(255, 255, 255, 0.85),
     inset 0 -1px 0 rgba(255, 255, 255, 0.18);
   color: #1E1C19;
@@ -612,12 +612,12 @@ a {
 .glass-panel-integrated:hover,
 .floating-glass-panel:hover {
   transform: translateY(-6px);
-  background: rgba(246, 239, 224, 0.44);
-  border-color: rgba(255, 255, 255, 0.90);
+  background: rgba(246, 239, 224, 0.26);
+  border-color: rgba(255, 255, 255, 0.85);
   box-shadow:
-    0 28px 65px rgba(48, 34, 19, 0.28),
-    0 10px 24px rgba(48, 34, 19, 0.14),
-    0 0 28px rgba(212, 163, 59, 0.22),
+    0 26px 58px rgba(48, 34, 19, 0.26),
+    0 10px 22px rgba(48, 34, 19, 0.12),
+    0 0 24px rgba(212, 163, 59, 0.18),
     inset 0 1px 0 rgba(255, 255, 255, 0.95),
     inset 0 -1px 0 rgba(255, 255, 255, 0.22);
 }
