@@ -96,13 +96,13 @@ export const PropertyCard: React.FC<PropertyCardProps> = ({ property, priority =
         flexDirection: 'column',
         justifyContent: 'space-between',
         minHeight: '510px',
-        border: '1.5px solid rgba(255, 255, 255, 0.85)',
-        borderColor: isHovered ? 'rgba(216, 189, 138, 0.65)' : 'rgba(255, 255, 255, 0.85)',
+        border: '1.5px solid rgba(255, 248, 230, 0.95)',
+        borderColor: isHovered ? 'rgba(245, 215, 140, 1)' : 'rgba(255, 248, 230, 0.95)',
         boxShadow: isHovered
-          ? '0 24px 56px -8px rgba(41, 39, 34, 0.15), 0 0 28px rgba(216, 189, 138, 0.30), inset 0 1px 1.5px rgba(255, 255, 255, 0.95)'
-          : '0 18px 45px -10px rgba(41, 39, 34, 0.12), 0 0 22px rgba(216, 189, 138, 0.20), inset 0 1px 1px rgba(255, 255, 255, 0.9)',
-        transform: isHovered && !prefersReducedMotion ? 'translateY(-2px)' : 'translateY(0)',
-        transition: 'transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease, box-shadow 0.4s ease',
+          ? '0 24px 56px -8px rgba(45, 32, 20, 0.18), 0 0 36px rgba(225, 180, 85, 0.55), 0 0 75px rgba(225, 180, 85, 0.30), inset 0 1px 2px rgba(255, 255, 255, 0.95)'
+          : '0 18px 45px -10px rgba(45, 32, 20, 0.14), 0 0 28px rgba(225, 180, 85, 0.40), 0 0 55px rgba(225, 180, 85, 0.20), inset 0 1px 1px rgba(255, 255, 255, 0.9)',
+        transform: 'translateY(0)',
+        transition: 'border-color 0.4s ease, box-shadow 0.4s ease',
         backgroundColor: '#FAF8F5'
       }}
     >
@@ -184,13 +184,13 @@ export const PropertyCard: React.FC<PropertyCardProps> = ({ property, priority =
             textTransform: 'capitalize',
             padding: '6px 18px',
             borderRadius: '9999px',
-            backgroundColor: 'rgba(255, 250, 240, 0.50)',
-            backdropFilter: 'blur(14px) saturate(140%)',
-            WebkitBackdropFilter: 'blur(14px) saturate(140%)',
-            border: '1px solid rgba(255, 255, 255, 0.90)',
-            color: '#1E1C19',
-            fontWeight: 600,
-            boxShadow: 'inset 0 1px 0 rgba(255, 255, 255, 0.85), 0 4px 14px rgba(41, 39, 34, 0.10)'
+            backgroundColor: 'rgba(255, 255, 255, 0.85)',
+            backdropFilter: 'blur(16px) saturate(140%)',
+            WebkitBackdropFilter: 'blur(16px) saturate(140%)',
+            border: '1px solid rgba(255, 255, 255, 0.95)',
+            color: '#161412',
+            fontWeight: 650,
+            boxShadow: 'inset 0 1px 0 rgba(255, 255, 255, 0.95), 0 4px 16px rgba(41, 39, 34, 0.12)'
           }}
         >
           {categoryBadgeLabel}
@@ -208,15 +208,15 @@ export const PropertyCard: React.FC<PropertyCardProps> = ({ property, priority =
             width: '38px',
             height: '38px',
             borderRadius: '50%',
-            background: 'rgba(255, 250, 240, 0.50)',
-            backdropFilter: 'blur(14px) saturate(140%)',
-            WebkitBackdropFilter: 'blur(14px) saturate(140%)',
-            border: '1px solid rgba(255, 255, 255, 0.90)',
+            background: 'rgba(255, 255, 255, 0.85)',
+            backdropFilter: 'blur(16px) saturate(140%)',
+            WebkitBackdropFilter: 'blur(16px) saturate(140%)',
+            border: '1px solid rgba(255, 255, 255, 0.95)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
             color: isFavourited ? '#B8831E' : '#1E1C19',
-            boxShadow: 'inset 0 1px 0 rgba(255, 255, 255, 0.85), 0 4px 14px rgba(41, 39, 34, 0.10)',
+            boxShadow: 'inset 0 1px 0 rgba(255, 255, 255, 0.95), 0 4px 16px rgba(41, 39, 34, 0.12)',
             cursor: 'pointer',
             transition: 'all 0.2s ease'
           }}
@@ -233,24 +233,24 @@ export const PropertyCard: React.FC<PropertyCardProps> = ({ property, priority =
           zIndex: 3,
           margin: '0 14px 14px 14px',
           marginTop: 'auto',
-          padding: '16px 18px',
+          padding: '16px 16px',
           display: 'flex',
           flexDirection: 'column',
           gap: '9px',
           borderRadius: '24px',
           background: isHovered
-            ? 'rgba(246, 239, 224, 0.26)'
-            : 'rgba(246, 239, 224, 0.20)',
-          backdropFilter: 'blur(12px) saturate(145%)',
-          WebkitBackdropFilter: 'blur(12px) saturate(145%)',
+            ? 'linear-gradient(145deg, rgba(255, 252, 246, 0.52) 0%, rgba(246, 239, 224, 0.38) 100%)'
+            : 'linear-gradient(145deg, rgba(255, 252, 246, 0.46) 0%, rgba(246, 239, 224, 0.32) 100%)',
+          backdropFilter: 'blur(16px) saturate(125%)',
+          WebkitBackdropFilter: 'blur(16px) saturate(125%)',
           border: isHovered
-            ? '1px solid rgba(255, 255, 255, 0.85)'
-            : '1px solid rgba(255, 255, 255, 0.68)',
-          transform: isHovered && !prefersReducedMotion ? 'translateY(-6px)' : 'translateY(0)',
+            ? '1px solid rgba(255, 255, 255, 0.95)'
+            : '1px solid rgba(255, 248, 230, 0.82)',
+          transform: isHovered && !prefersReducedMotion ? 'translateY(-10px)' : 'translateY(0)',
           boxShadow: isHovered
-            ? '0 26px 58px rgba(48, 34, 19, 0.26), 0 10px 22px rgba(48, 34, 19, 0.12), 0 0 24px rgba(212, 163, 59, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.95), inset 0 -1px 0 rgba(255, 255, 255, 0.22)'
-            : '0 20px 48px rgba(48, 34, 19, 0.20), 0 6px 16px rgba(48, 34, 19, 0.10), 0 0 16px rgba(212, 163, 59, 0.10), inset 0 1px 0 rgba(255, 255, 255, 0.85), inset 0 -1px 0 rgba(255, 255, 255, 0.18)',
-          transition: 'transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease, background 0.35s ease'
+            ? '0 24px 50px rgba(45, 32, 20, 0.22), 0 0 35px rgba(225, 180, 75, 0.50), 0 0 70px rgba(225, 180, 75, 0.25), inset 0 1px 1.5px rgba(255, 255, 255, 1), inset 0 -1px 1px rgba(255, 255, 255, 0.35)'
+            : '0 16px 36px rgba(45, 32, 20, 0.16), 0 0 25px rgba(225, 180, 75, 0.35), 0 0 50px rgba(225, 180, 75, 0.18), inset 0 1px 1px rgba(255, 255, 255, 0.92), inset 0 -1px 1px rgba(255, 255, 255, 0.20)',
+          transition: 'transform 400ms cubic-bezier(0.2, 0.75, 0.25, 1), box-shadow 400ms ease, border-color 400ms ease, background 400ms ease'
         }}
       >
         {/* Specular Flare Along Top Edge */}
@@ -258,13 +258,13 @@ export const PropertyCard: React.FC<PropertyCardProps> = ({ property, priority =
           style={{
             position: 'absolute',
             top: 0,
-            left: '10%',
-            right: '10%',
-            height: '1.5px',
-            background: 'linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.95) 25%, rgba(255, 245, 215, 0.9) 50%, rgba(255, 255, 255, 0.95) 75%, transparent)',
+            left: '6%',
+            right: '6%',
+            height: '2.5px',
+            background: 'linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.98) 25%, #FFFBEA 50%, rgba(255, 255, 255, 0.98) 75%, transparent 100%)',
             pointerEvents: 'none',
-            boxShadow: '0 0 8px rgba(255, 245, 215, 0.65)',
-            opacity: isHovered ? 1 : 0.85,
+            boxShadow: '0 0 14px rgba(255, 255, 255, 1), 0 0 24px rgba(240, 200, 110, 0.85)',
+            opacity: isHovered ? 1 : 0.92,
             transition: 'opacity 0.35s ease'
           }}
         />
@@ -275,14 +275,14 @@ export const PropertyCard: React.FC<PropertyCardProps> = ({ property, priority =
             display: 'inline-flex',
             alignItems: 'center',
             gap: '6px',
-            color: '#26221C',
+            color: '#24211C',
             fontSize: '11.5px',
             letterSpacing: '0.04em',
-            fontWeight: 550,
-            textShadow: '0 1px 2px rgba(255, 255, 255, 0.7)'
+            fontWeight: 600,
+            textShadow: '0 1px 1px rgba(255, 255, 255, 0.7)'
           }}
         >
-          <MapPin size={13} strokeWidth={2.2} color="#B8831E" fill="#B8831E" fillOpacity={0.2} />
+          <MapPin size={13} strokeWidth={2.4} color="#B8831E" fill="#B8831E" fillOpacity={0.8} />
           <span>{locationString}</span>
         </div>
 
@@ -290,14 +290,14 @@ export const PropertyCard: React.FC<PropertyCardProps> = ({ property, priority =
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '8px' }}>
           <h3
             style={{
-              fontSize: 'clamp(1.3rem, 3.5vw, 1.48rem)',
+              fontSize: 'clamp(1.35rem, 3.8vw, 1.55rem)',
               fontFamily: 'var(--font-serif)',
-              color: '#141210',
-              fontWeight: 500,
+              color: '#12100E',
+              fontWeight: 550,
               lineHeight: 1.15,
               margin: 0,
               letterSpacing: '-0.01em',
-              textShadow: '0 1px 2px rgba(255, 255, 255, 0.8)'
+              textShadow: '0 1px 1px rgba(255, 255, 255, 0.8)'
             }}
           >
             <Link
@@ -316,24 +316,24 @@ export const PropertyCard: React.FC<PropertyCardProps> = ({ property, priority =
               display: 'inline-flex',
               alignItems: 'center',
               justifyContent: 'center',
-              width: '36px',
-              height: '36px',
+              width: '38px',
+              height: '38px',
               borderRadius: '50%',
               background: isHovered
-                ? 'linear-gradient(135deg, #F3D285 0%, #E0B04A 40%, #BF8924 100%)'
+                ? 'linear-gradient(135deg, #F5D588 0%, #DEAC45 40%, #BA821C 100%)'
                 : 'linear-gradient(135deg, #ECC876 0%, #D4A33B 40%, #B07A18 100%)',
-              border: '1.5px solid rgba(255, 255, 255, 0.95)',
+              border: isHovered ? '1.5px solid #FFFFFF' : '1.5px solid rgba(255, 255, 255, 0.95)',
               color: '#FFFFFF',
               boxShadow: isHovered
-                ? 'inset 0 1px 1px rgba(255, 255, 255, 0.9), 0 6px 18px rgba(168, 117, 22, 0.50), 0 0 16px rgba(212, 163, 59, 0.45)'
-                : 'inset 0 1px 1px rgba(255, 255, 255, 0.8), 0 4px 14px rgba(168, 117, 22, 0.40)',
+                ? 'inset 0 1px 1px rgba(255, 255, 255, 0.95), 0 6px 20px rgba(168, 117, 22, 0.55), 0 0 22px rgba(212, 163, 59, 0.60)'
+                : 'inset 0 1px 1px rgba(255, 255, 255, 0.85), 0 4px 14px rgba(168, 117, 22, 0.40), 0 0 16px rgba(212, 163, 59, 0.45)',
               filter: isHovered ? 'brightness(1.10)' : 'brightness(1)',
               flexShrink: 0,
-              transform: isHovered ? 'scale(1.05)' : 'scale(1)',
-              transition: 'transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, filter 0.35s ease'
+              transform: isHovered ? 'scale(1.06)' : 'scale(1)',
+              transition: 'all 350ms ease'
             }}
           >
-            <ArrowRight size={15} strokeWidth={2.4} />
+            <ArrowRight size={16} strokeWidth={2.4} />
           </Link>
         </div>
 
@@ -341,8 +341,8 @@ export const PropertyCard: React.FC<PropertyCardProps> = ({ property, priority =
         <p
           style={{
             fontSize: '12px',
-            color: '#24201A',
-            lineHeight: 1.5,
+            color: '#28241E',
+            lineHeight: 1.55,
             margin: 0,
             display: '-webkit-box',
             WebkitLineClamp: 2,
@@ -362,27 +362,27 @@ export const PropertyCard: React.FC<PropertyCardProps> = ({ property, priority =
             alignItems: 'center',
             justifyContent: 'space-between',
             paddingTop: '9px',
-            borderTop: '1px solid rgba(184, 131, 30, 0.22)',
+            borderTop: '1px solid rgba(184, 131, 30, 0.28)',
             fontSize: '11px',
-            color: '#24201A',
-            fontWeight: 500,
-            gap: '8px',
-            textShadow: '0 1px 1px rgba(255, 255, 255, 0.5)'
+            color: '#1C1A17',
+            fontWeight: 550,
+            gap: '6px',
+            textShadow: '0 1px 1px rgba(255, 255, 255, 0.6)'
           }}
         >
-          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', minWidth: 0, flexWrap: 'nowrap' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '6px', minWidth: 0, flexWrap: 'nowrap' }}>
             <span style={{ display: 'inline-flex', alignItems: 'center', gap: '3px', whiteSpace: 'nowrap' }}>
-              <Bed size={13} strokeWidth={1.8} color="#B8831E" />
+              <Bed size={13} strokeWidth={2.0} color="#B8831E" />
               <span>{property.bedrooms} Beds</span>
             </span>
 
             <span style={{ display: 'inline-flex', alignItems: 'center', gap: '3px', whiteSpace: 'nowrap' }}>
-              <Bath size={13} strokeWidth={1.8} color="#B8831E" />
+              <Bath size={13} strokeWidth={2.0} color="#B8831E" />
               <span>{property.bathrooms} Baths</span>
             </span>
 
             <span style={{ display: 'inline-flex', alignItems: 'center', gap: '3px', whiteSpace: 'nowrap' }}>
-              <Maximize2 size={13} strokeWidth={1.8} color="#B8831E" />
+              <Maximize2 size={13} strokeWidth={2.0} color="#B8831E" />
               <span>{formattedArea}</span>
             </span>
           </div>
@@ -390,12 +390,14 @@ export const PropertyCard: React.FC<PropertyCardProps> = ({ property, priority =
           {formattedPrice && (
             <span
               style={{
+                fontFamily: 'var(--font-serif)',
                 fontWeight: 700,
                 color: '#B8831E',
-                letterSpacing: '0.02em',
-                fontSize: '13.5px',
+                letterSpacing: '0.01em',
+                fontSize: '14.5px',
                 whiteSpace: 'nowrap',
-                flexShrink: 0
+                flexShrink: 0,
+                textShadow: '0 1px 1px rgba(255, 255, 255, 0.8)'
               }}
             >
               {formattedPrice}
