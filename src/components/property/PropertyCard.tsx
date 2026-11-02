@@ -289,17 +289,17 @@ export const PropertyCard: React.FC<PropertyCardProps> = ({ property, priority =
           gap: '9px',
           borderRadius: '24px',
           background: isHovered
-            ? 'rgba(246, 239, 224, 0.28)'
-            : 'rgba(246, 239, 224, 0.24)',
-          backdropFilter: 'blur(12px) saturate(155%)',
-          WebkitBackdropFilter: 'blur(12px) saturate(155%)',
+            ? 'linear-gradient(135deg, rgba(255, 255, 255, 0.32) 0%, rgba(255, 255, 255, 0.14) 50%, rgba(246, 239, 224, 0.20) 100%)'
+            : 'linear-gradient(135deg, rgba(255, 255, 255, 0.26) 0%, rgba(255, 255, 255, 0.10) 50%, rgba(246, 239, 224, 0.16) 100%)',
+          backdropFilter: 'blur(8px) saturate(160%)',
+          WebkitBackdropFilter: 'blur(8px) saturate(160%)',
           border: isHovered
-            ? '1px solid rgba(255, 255, 255, 0.92)'
-            : '1px solid rgba(255, 255, 255, 0.78)',
+            ? '1.5px solid rgba(255, 255, 255, 0.95)'
+            : '1.5px solid rgba(255, 255, 255, 0.82)',
           transform: isHovered && !prefersReducedMotion ? 'translateY(-8px)' : 'translateY(0)',
           boxShadow: isHovered
-            ? '0 28px 52px rgba(42, 27, 12, 0.28), 0 12px 22px rgba(42, 27, 12, 0.16), 0 0 35px rgba(218, 169, 75, 0.45), 0 0 65px rgba(218, 169, 75, 0.22), inset 0 1.5px 0 rgba(255, 255, 255, 1.0), inset 0 -1px 0 rgba(255, 255, 255, 0.30)'
-            : '0 20px 38px rgba(42, 27, 12, 0.22), 0 8px 16px rgba(42, 27, 12, 0.12), 0 0 25px rgba(218, 169, 75, 0.30), 0 0 50px rgba(218, 169, 75, 0.14), inset 0 1px 0 rgba(255, 255, 255, 0.90), inset 0 -1px 0 rgba(255, 255, 255, 0.20)',
+            ? '0 24px 48px rgba(35, 22, 10, 0.26), 0 12px 22px rgba(35, 22, 10, 0.14), 0 0 35px rgba(218, 169, 75, 0.45), 0 0 65px rgba(218, 169, 75, 0.22), inset 0 2px 2px rgba(255, 255, 255, 1.0), inset 0 -1px 1px rgba(255, 255, 255, 0.40)'
+            : '0 18px 36px rgba(35, 22, 10, 0.20), 0 8px 16px rgba(35, 22, 10, 0.10), 0 0 25px rgba(218, 169, 75, 0.32), 0 0 50px rgba(218, 169, 75, 0.15), inset 0 1.5px 1.5px rgba(255, 255, 255, 0.95), inset 0 -1px 1px rgba(255, 255, 255, 0.30)',
           transition: 'transform 400ms cubic-bezier(0.2, 0.75, 0.25, 1), box-shadow 400ms ease, border-color 400ms ease, background 400ms ease'
         }}
       >
@@ -311,12 +311,12 @@ export const PropertyCard: React.FC<PropertyCardProps> = ({ property, priority =
             left: '6%',
             right: '6%',
             height: '2.5px',
-            background: 'linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.98) 25%, #FFFBEA 50%, rgba(255, 255, 255, 0.98) 75%, transparent 100%)',
+            background: 'linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.98) 25%, #FFFDF2 50%, rgba(255, 255, 255, 0.98) 75%, transparent 100%)',
             pointerEvents: 'none',
             boxShadow: isHovered
               ? '0 0 16px rgba(255, 255, 255, 1), 0 0 28px rgba(245, 215, 130, 0.95)'
-              : '0 0 12px rgba(255, 255, 255, 0.95), 0 0 22px rgba(240, 200, 110, 0.80)',
-            opacity: isHovered ? 1 : 0.88,
+              : '0 0 12px rgba(255, 255, 255, 0.95), 0 0 22px rgba(240, 200, 110, 0.85)',
+            opacity: isHovered ? 1 : 0.92,
             transition: 'opacity 0.35s ease, box-shadow 0.35s ease'
           }}
         />
