@@ -137,26 +137,28 @@ export const PrivateViewingFooterSection: React.FC = () => {
                       style={{
                         width: '100%',
                         height: '48px',
-                        padding: '0 18px 0 44px',
+                        padding: '0 18px 0 50px',
                         borderRadius: '9999px',
-                        border: '1px solid rgba(216, 189, 138, 0.45)',
-                        background: 'rgba(255, 255, 255, 0.75)',
-                        fontSize: '13px',
-                        color: '#292722',
+                        border: '1.5px solid rgba(201, 154, 50, 0.45)',
+                        background: 'rgba(255, 255, 255, 0.92)',
+                        backdropFilter: 'blur(12px)',
+                        fontSize: '13.5px',
+                        color: '#181613',
+                        fontWeight: 500,
                         outline: 'none',
-                        boxShadow: 'inset 0 1px 2px rgba(255, 255, 255, 0.9), 0 2px 8px rgba(41, 39, 34, 0.03)',
+                        boxShadow: 'inset 0 1px 2px rgba(255, 255, 255, 0.95), 0 2px 8px rgba(41, 39, 34, 0.04)',
                         transition: 'border-color 0.2s ease, box-shadow 0.2s ease'
                       }}
                       onFocus={(e) => {
                         e.target.style.borderColor = '#C99A32';
-                        e.target.style.boxShadow = '0 0 0 3px rgba(201, 154, 50, 0.15)';
+                        e.target.style.boxShadow = '0 0 0 3px rgba(201, 154, 50, 0.20)';
                       }}
                       onBlur={(e) => {
-                        e.target.style.borderColor = 'rgba(216, 189, 138, 0.45)';
-                        e.target.style.boxShadow = 'inset 0 1px 2px rgba(255, 255, 255, 0.9), 0 2px 8px rgba(41, 39, 34, 0.03)';
+                        e.target.style.borderColor = 'rgba(201, 154, 50, 0.45)';
+                        e.target.style.boxShadow = 'inset 0 1px 2px rgba(255, 255, 255, 0.95), 0 2px 8px rgba(41, 39, 34, 0.04)';
                       }}
                     />
-                    <User size={15} color="#8A7A5D" style={{ position: 'absolute', left: '16px', top: '50%', transform: 'translateY(-50%)' }} />
+                    <User size={15} color="#A87516" style={{ position: 'absolute', left: '16px', top: '50%', transform: 'translateY(-50%)', pointerEvents: 'none' }} />
                   </div>
 
                   {/* Field 2: Email Address */}
@@ -170,26 +172,28 @@ export const PrivateViewingFooterSection: React.FC = () => {
                       style={{
                         width: '100%',
                         height: '48px',
-                        padding: '0 18px 0 44px',
+                        padding: '0 18px 0 50px',
                         borderRadius: '9999px',
-                        border: '1px solid rgba(216, 189, 138, 0.45)',
-                        background: 'rgba(255, 255, 255, 0.75)',
-                        fontSize: '13px',
-                        color: '#292722',
+                        border: '1.5px solid rgba(201, 154, 50, 0.45)',
+                        background: 'rgba(255, 255, 255, 0.92)',
+                        backdropFilter: 'blur(12px)',
+                        fontSize: '13.5px',
+                        color: '#181613',
+                        fontWeight: 500,
                         outline: 'none',
-                        boxShadow: 'inset 0 1px 2px rgba(255, 255, 255, 0.9), 0 2px 8px rgba(41, 39, 34, 0.03)',
+                        boxShadow: 'inset 0 1px 2px rgba(255, 255, 255, 0.95), 0 2px 8px rgba(41, 39, 34, 0.04)',
                         transition: 'border-color 0.2s ease, box-shadow 0.2s ease'
                       }}
                       onFocus={(e) => {
                         e.target.style.borderColor = '#C99A32';
-                        e.target.style.boxShadow = '0 0 0 3px rgba(201, 154, 50, 0.15)';
+                        e.target.style.boxShadow = '0 0 0 3px rgba(201, 154, 50, 0.20)';
                       }}
                       onBlur={(e) => {
-                        e.target.style.borderColor = 'rgba(216, 189, 138, 0.45)';
-                        e.target.style.boxShadow = 'inset 0 1px 2px rgba(255, 255, 255, 0.9), 0 2px 8px rgba(41, 39, 34, 0.03)';
+                        e.target.style.borderColor = 'rgba(201, 154, 50, 0.45)';
+                        e.target.style.boxShadow = 'inset 0 1px 2px rgba(255, 255, 255, 0.95), 0 2px 8px rgba(41, 39, 34, 0.04)';
                       }}
                     />
-                    <Mail size={15} color="#8A7A5D" style={{ position: 'absolute', left: '16px', top: '50%', transform: 'translateY(-50%)' }} />
+                    <Mail size={15} color="#A87516" style={{ position: 'absolute', left: '16px', top: '50%', transform: 'translateY(-50%)', pointerEvents: 'none' }} />
                   </div>
 
                   {/* Field 3: Phone Number */}
@@ -203,26 +207,28 @@ export const PrivateViewingFooterSection: React.FC = () => {
                       style={{
                         width: '100%',
                         height: '48px',
-                        padding: '0 18px 0 44px',
+                        padding: '0 18px 0 50px',
                         borderRadius: '9999px',
-                        border: '1px solid rgba(216, 189, 138, 0.45)',
-                        background: 'rgba(255, 255, 255, 0.75)',
-                        fontSize: '13px',
-                        color: '#292722',
+                        border: '1.5px solid rgba(201, 154, 50, 0.45)',
+                        background: 'rgba(255, 255, 255, 0.92)',
+                        backdropFilter: 'blur(12px)',
+                        fontSize: '13.5px',
+                        color: '#181613',
+                        fontWeight: 500,
                         outline: 'none',
-                        boxShadow: 'inset 0 1px 2px rgba(255, 255, 255, 0.9), 0 2px 8px rgba(41, 39, 34, 0.03)',
+                        boxShadow: 'inset 0 1px 2px rgba(255, 255, 255, 0.95), 0 2px 8px rgba(41, 39, 34, 0.04)',
                         transition: 'border-color 0.2s ease, box-shadow 0.2s ease'
                       }}
                       onFocus={(e) => {
                         e.target.style.borderColor = '#C99A32';
-                        e.target.style.boxShadow = '0 0 0 3px rgba(201, 154, 50, 0.15)';
+                        e.target.style.boxShadow = '0 0 0 3px rgba(201, 154, 50, 0.20)';
                       }}
                       onBlur={(e) => {
-                        e.target.style.borderColor = 'rgba(216, 189, 138, 0.45)';
-                        e.target.style.boxShadow = 'inset 0 1px 2px rgba(255, 255, 255, 0.9), 0 2px 8px rgba(41, 39, 34, 0.03)';
+                        e.target.style.borderColor = 'rgba(201, 154, 50, 0.45)';
+                        e.target.style.boxShadow = 'inset 0 1px 2px rgba(255, 255, 255, 0.95), 0 2px 8px rgba(41, 39, 34, 0.04)';
                       }}
                     />
-                    <Phone size={15} color="#8A7A5D" style={{ position: 'absolute', left: '16px', top: '50%', transform: 'translateY(-50%)' }} />
+                    <Phone size={15} color="#A87516" style={{ position: 'absolute', left: '16px', top: '50%', transform: 'translateY(-50%)', pointerEvents: 'none' }} />
                   </div>
 
                   {/* Field 4: Select Residence */}
@@ -233,25 +239,27 @@ export const PrivateViewingFooterSection: React.FC = () => {
                       style={{
                         width: '100%',
                         height: '48px',
-                        padding: '0 18px 0 44px',
+                        padding: '0 18px 0 50px',
                         borderRadius: '9999px',
-                        border: '1px solid rgba(216, 189, 138, 0.45)',
-                        background: 'rgba(255, 255, 255, 0.75)',
-                        fontSize: '13px',
-                        color: '#292722',
+                        border: '1.5px solid rgba(201, 154, 50, 0.45)',
+                        background: 'rgba(255, 255, 255, 0.92)',
+                        backdropFilter: 'blur(12px)',
+                        fontSize: '13.5px',
+                        color: '#181613',
+                        fontWeight: 500,
                         outline: 'none',
                         cursor: 'pointer',
-                        boxShadow: 'inset 0 1px 2px rgba(255, 255, 255, 0.9), 0 2px 8px rgba(41, 39, 34, 0.03)',
+                        boxShadow: 'inset 0 1px 2px rgba(255, 255, 255, 0.95), 0 2px 8px rgba(41, 39, 34, 0.04)',
                         appearance: 'none',
                         transition: 'border-color 0.2s ease, box-shadow 0.2s ease'
                       }}
                       onFocus={(e) => {
                         e.target.style.borderColor = '#C99A32';
-                        e.target.style.boxShadow = '0 0 0 3px rgba(201, 154, 50, 0.15)';
+                        e.target.style.boxShadow = '0 0 0 3px rgba(201, 154, 50, 0.20)';
                       }}
                       onBlur={(e) => {
-                        e.target.style.borderColor = 'rgba(216, 189, 138, 0.45)';
-                        e.target.style.boxShadow = 'inset 0 1px 2px rgba(255, 255, 255, 0.9), 0 2px 8px rgba(41, 39, 34, 0.03)';
+                        e.target.style.borderColor = 'rgba(201, 154, 50, 0.45)';
+                        e.target.style.boxShadow = 'inset 0 1px 2px rgba(255, 255, 255, 0.95), 0 2px 8px rgba(41, 39, 34, 0.04)';
                       }}
                     >
                       <option value="The Aurelia Estate">The Aurelia Estate (Vagator Cliffs)</option>
@@ -261,7 +269,7 @@ export const PrivateViewingFooterSection: React.FC = () => {
                       <option value="The Skyline Penthouse">The Skyline Penthouse (Bandra)</option>
                       <option value="The Laguna Estate">The Laguna Estate (Goa South)</option>
                     </select>
-                    <Building size={15} color="#8A7A5D" style={{ position: 'absolute', left: '16px', top: '50%', transform: 'translateY(-50%)' }} />
+                    <Building size={15} color="#A87516" style={{ position: 'absolute', left: '16px', top: '50%', transform: 'translateY(-50%)', pointerEvents: 'none' }} />
                   </div>
 
                   {/* Field 5: Preferred Date */}
@@ -273,26 +281,28 @@ export const PrivateViewingFooterSection: React.FC = () => {
                       style={{
                         width: '100%',
                         height: '48px',
-                        padding: '0 18px 0 44px',
+                        padding: '0 18px 0 50px',
                         borderRadius: '9999px',
-                        border: '1px solid rgba(216, 189, 138, 0.45)',
-                        background: 'rgba(255, 255, 255, 0.75)',
-                        fontSize: '13px',
-                        color: '#292722',
+                        border: '1.5px solid rgba(201, 154, 50, 0.45)',
+                        background: 'rgba(255, 255, 255, 0.92)',
+                        backdropFilter: 'blur(12px)',
+                        fontSize: '13.5px',
+                        color: '#181613',
+                        fontWeight: 500,
                         outline: 'none',
-                        boxShadow: 'inset 0 1px 2px rgba(255, 255, 255, 0.9), 0 2px 8px rgba(41, 39, 34, 0.03)',
+                        boxShadow: 'inset 0 1px 2px rgba(255, 255, 255, 0.95), 0 2px 8px rgba(41, 39, 34, 0.04)',
                         transition: 'border-color 0.2s ease, box-shadow 0.2s ease'
                       }}
                       onFocus={(e) => {
                         e.target.style.borderColor = '#C99A32';
-                        e.target.style.boxShadow = '0 0 0 3px rgba(201, 154, 50, 0.15)';
+                        e.target.style.boxShadow = '0 0 0 3px rgba(201, 154, 50, 0.20)';
                       }}
                       onBlur={(e) => {
-                        e.target.style.borderColor = 'rgba(216, 189, 138, 0.45)';
-                        e.target.style.boxShadow = 'inset 0 1px 2px rgba(255, 255, 255, 0.9), 0 2px 8px rgba(41, 39, 34, 0.03)';
+                        e.target.style.borderColor = 'rgba(201, 154, 50, 0.45)';
+                        e.target.style.boxShadow = 'inset 0 1px 2px rgba(255, 255, 255, 0.95), 0 2px 8px rgba(41, 39, 34, 0.04)';
                       }}
                     />
-                    <Calendar size={15} color="#8A7A5D" style={{ position: 'absolute', left: '16px', top: '50%', transform: 'translateY(-50%)' }} />
+                    <Calendar size={15} color="#A87516" style={{ position: 'absolute', left: '16px', top: '50%', transform: 'translateY(-50%)', pointerEvents: 'none' }} />
                   </div>
 
                   {/* Field 6: Request a Private Viewing CTA */}

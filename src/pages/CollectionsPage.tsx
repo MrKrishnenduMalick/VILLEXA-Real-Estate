@@ -297,53 +297,130 @@ export const CollectionsPage: React.FC = () => {
                   href={`/residences?type=${col.categoryFilter}`}
                   style={{
                     position: 'relative',
-                    borderRadius: '20px',
+                    borderRadius: '22px',
                     overflow: 'hidden',
-                    minHeight: '260px',
+                    minHeight: '280px',
                     display: 'flex',
                     flexDirection: 'column',
                     justifyContent: 'flex-end',
                     textDecoration: 'none',
-                    border: '1px solid rgba(255, 255, 255, 0.8)',
-                    boxShadow: '0 12px 30px rgba(41, 39, 34, 0.08)'
+                    border: '1.5px solid rgba(255, 255, 255, 0.85)',
+                    boxShadow: '0 16px 36px -10px rgba(41, 39, 34, 0.12)',
+                    backgroundColor: '#EAE4D9',
+                    transition: 'all 0.4s cubic-bezier(0.16, 1, 0.3, 1)'
                   }}
                   className="group"
                 >
-                  <img
-                    src={col.imageUrl}
-                    alt={col.name}
+                  {/* Background Architectural Image */}
+                  <div
                     style={{
                       position: 'absolute',
                       inset: 0,
                       width: '100%',
                       height: '100%',
-                      objectFit: 'cover'
+                      overflow: 'hidden',
+                      zIndex: 1,
+                      backgroundColor: '#EAE4D9'
                     }}
-                  />
+                  >
+                    <img
+                      src={col.imageUrl || '/assets/demo/property-exterior-pool-landscape.webp'}
+                      alt={col.name}
+                      onError={(e) => {
+                        const target = e.currentTarget;
+                        if (!target.src.includes('property-exterior-approach.webp')) {
+                          target.src = '/assets/demo/property-exterior-approach.webp';
+                        }
+                      }}
+                      style={{
+                        width: '100%',
+                        height: '100%',
+                        objectFit: 'cover',
+                        transition: 'transform 0.7s cubic-bezier(0.16, 1, 0.3, 1)'
+                      }}
+                      className="group-hover:scale-105"
+                    />
+                    <div
+                      style={{
+                        position: 'absolute',
+                        inset: 0,
+                        background: 'linear-gradient(to top, rgba(30, 24, 18, 0.55) 0%, transparent 65%)'
+                      }}
+                    />
+                  </div>
+
+                  {/* 3D Glass Information Plaque */}
                   <div
-                    style={{
-                      position: 'absolute',
-                      inset: 0,
-                      background: 'linear-gradient(to top, rgba(41, 39, 34, 0.6) 0%, transparent 60%)'
-                    }}
-                  />
-                  <div
+                    className="glass-collection-card"
                     style={{
                       position: 'relative',
                       zIndex: 3,
+                      margin: '14px',
                       padding: '16px 20px',
-                      background: 'rgba(255, 255, 255, 0.75)',
-                      backdropFilter: 'blur(14px)',
-                      margin: '12px',
-                      borderRadius: '14px'
+                      borderRadius: '16px',
+                      background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.32) 0%, rgba(255, 255, 255, 0.14) 50%, rgba(246, 239, 224, 0.18) 100%)',
+                      backdropFilter: 'blur(10px) saturate(150%)',
+                      WebkitBackdropFilter: 'blur(10px) saturate(150%)',
+                      border: '1.5px solid rgba(255, 255, 255, 0.85)',
+                      boxShadow: 'inset 0 1.5px 2px 0 rgba(255, 255, 255, 0.95), 0 8px 24px -4px rgba(20, 16, 12, 0.22), 0 0 20px rgba(201, 154, 50, 0.18)',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'space-between',
+                      gap: '12px'
                     }}
                   >
-                    <h4 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.2rem', color: '#292722', margin: '0 0 4px 0' }}>
-                      {col.name}
-                    </h4>
-                    <p style={{ fontSize: '11px', color: '#68645D', margin: 0 }}>
-                      {col.description}
-                    </p>
+                    {/* Top Specular Highlight */}
+                    <div
+                      style={{
+                        position: 'absolute',
+                        top: 0,
+                        left: '12%',
+                        right: '12%',
+                        height: '1.5px',
+                        background: 'linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.95) 25%, #FFF0CD 50%, rgba(255, 255, 255, 0.95) 75%, transparent)',
+                        pointerEvents: 'none'
+                      }}
+                    />
+                    <div>
+                      <h4
+                        style={{
+                          fontFamily: 'var(--font-serif)',
+                          fontSize: '1.25rem',
+                          color: '#1C1916',
+                          fontWeight: 600,
+                          margin: '0 0 4px 0'
+                        }}
+                      >
+                        {col.name}
+                      </h4>
+                      <p
+                        style={{
+                          fontFamily: 'var(--font-sans)',
+                          fontSize: '11.5px',
+                          color: '#3D3830',
+                          lineHeight: 1.45,
+                          margin: 0
+                        }}
+                      >
+                        {col.description}
+                      </p>
+                    </div>
+
+                    <div
+                      style={{
+                        width: '32px',
+                        height: '32px',
+                        borderRadius: '50%',
+                        background: 'linear-gradient(135deg, #F5E8C7 0%, #D8BD8A 30%, #C99A32 100%)',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        color: '#FFFFFF',
+                        flexShrink: 0
+                      }}
+                    >
+                      <ArrowRight size={14} strokeWidth={2.4} />
+                    </div>
                   </div>
                 </Link>
               ))}

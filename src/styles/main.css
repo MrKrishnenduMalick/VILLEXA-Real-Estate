@@ -623,26 +623,27 @@ a {
   background: radial-gradient(ellipse at 50% 50%, rgba(235, 190, 95, 0.60) 0%, rgba(225, 180, 85, 0.28) 45%, transparent 75%);
 }
 
-/* 4. PROPERTY INFORMATION CARDS (Floating elevated crystal glass plaque transmitting photography) */
+/* 4. PROPERTY INFORMATION CARDS (Ultra-Transparent 3D Crystal Glass Slab) */
 .property-glass-card,
 .glass-property-card,
 .glass-panel-integrated,
 .floating-glass-panel {
   position: relative;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.26) 0%, rgba(255, 255, 255, 0.10) 50%, rgba(246, 239, 224, 0.16) 100%);
-  backdrop-filter: blur(8px) saturate(160%);
-  -webkit-backdrop-filter: blur(8px) saturate(160%);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.36) 0%, rgba(255, 250, 240, 0.15) 45%, rgba(255, 255, 255, 0.26) 100%);
+  backdrop-filter: blur(8px) saturate(140%);
+  -webkit-backdrop-filter: blur(8px) saturate(140%);
 
-  border: 1.5px solid rgba(255, 255, 255, 0.82);
+  border: 1.5px solid rgba(255, 255, 255, 0.95);
   border-radius: 24px;
 
   box-shadow:
-    0 18px 36px rgba(35, 22, 10, 0.20),
-    0 8px 16px rgba(35, 22, 10, 0.10),
-    0 0 25px rgba(218, 169, 75, 0.32),
-    0 0 50px rgba(218, 169, 75, 0.15),
-    inset 0 1.5px 1.5px rgba(255, 255, 255, 0.95),
-    inset 0 -1px 1px rgba(255, 255, 255, 0.30);
+    0 0 24px 2px rgba(245, 210, 120, 0.80),
+    0 0 10px 1px rgba(255, 255, 255, 0.90),
+    0 20px 42px -4px rgba(20, 14, 8, 0.35),
+    0 8px 18px -2px rgba(20, 14, 8, 0.20),
+    inset 0 0 14px rgba(255, 248, 225, 0.45),
+    inset 0 2px 2.5px 0 rgba(255, 255, 255, 0.98),
+    inset 0 -1.5px 2px 0 rgba(255, 255, 255, 0.40);
 
   color: #1E1C19;
   transform: translateY(0);
@@ -658,16 +659,17 @@ a {
 .glass-property-card:hover,
 .glass-panel-integrated:hover,
 .floating-glass-panel:hover {
-  transform: translateY(-8px);
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.32) 0%, rgba(255, 255, 255, 0.14) 50%, rgba(246, 239, 224, 0.20) 100%);
-  border-color: rgba(255, 255, 255, 0.95);
+  transform: translateY(-10px);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.42) 0%, rgba(255, 250, 240, 0.20) 45%, rgba(255, 255, 255, 0.32) 100%);
+  border-color: rgba(255, 255, 255, 1.0);
   box-shadow:
-    0 24px 48px rgba(35, 22, 10, 0.26),
-    0 12px 22px rgba(35, 22, 10, 0.14),
-    0 0 35px rgba(218, 169, 75, 0.45),
-    0 0 65px rgba(218, 169, 75, 0.22),
-    inset 0 2px 2px rgba(255, 255, 255, 1.0),
-    inset 0 -1px 1px rgba(255, 255, 255, 0.40);
+    0 0 35px 4px rgba(245, 215, 130, 0.92),
+    0 0 14px 2px rgba(255, 255, 255, 1.0),
+    0 28px 52px -4px rgba(20, 14, 8, 0.42),
+    0 12px 24px -2px rgba(20, 14, 8, 0.25),
+    inset 0 0 20px rgba(255, 248, 225, 0.55),
+    inset 0 2.5px 3px 0 rgba(255, 255, 255, 1.0),
+    inset 0 -2px 2.5px 0 rgba(255, 255, 255, 0.50);
 }
 
 /* 5. COLLECTION CARDS (Photo-backed cards with floating glass plaque) */
@@ -2660,40 +2662,43 @@ a {
 input[type="text"],
 input[type="email"],
 input[type="tel"],
+input[type="date"],
 select,
 textarea {
   font-family: var(--font-sans);
-  background: rgba(255, 255, 255, 0.08) !important;
-  backdrop-filter: blur(16px) !important;
-  -webkit-backdrop-filter: blur(16px) !important;
-  border: 1px solid rgba(255, 255, 255, 0.22) !important;
-  border-radius: 14px !important;
-  color: #FFFFFF !important;
-  padding: 14px 18px !important;
-  font-size: 14px !important;
-  transition: all 0.25s ease !important;
-  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.15) !important;
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1.5px solid rgba(201, 154, 50, 0.40);
+  border-radius: 9999px;
+  color: #181613 !important;
+  font-size: 13.5px;
+  transition: all 0.25s ease;
+  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.95), 0 2px 8px rgba(41, 39, 34, 0.04);
 }
 
 input[type="text"]:focus,
 input[type="email"]:focus,
 input[type="tel"]:focus,
+input[type="date"]:focus,
 select:focus,
 textarea:focus {
-  background: rgba(255, 255, 255, 0.14) !important;
-  border-color: #C5A059 !important;
-  outline: none !important;
-  box-shadow: 0 0 0 3px rgba(197, 160, 89, 0.28), inset 0 1px 2px rgba(0, 0, 0, 0.15) !important;
+  background: #FFFFFF;
+  border-color: #C99A32;
+  outline: none;
+  color: #181613 !important;
+  box-shadow: 0 0 0 3px rgba(201, 154, 50, 0.22), 0 4px 12px rgba(201, 154, 50, 0.12);
 }
 
 input::placeholder,
 textarea::placeholder {
-  color: rgba(41, 39, 34, 0.45) !important;
+  color: #6B6355 !important;
+  opacity: 1 !important;
 }
 
 select option {
-  background-color: #181614 !important;
-  color: #FFFFFF !important;
+  background-color: #FFFFFF !important;
+  color: #181613 !important;
   padding: 10px;
 }
 

@@ -98,8 +98,8 @@ export const PropertyCard: React.FC<PropertyCardProps> = ({ property, priority =
         minHeight: '520px',
         transform: isHovered && !prefersReducedMotion ? 'translateY(-8px)' : 'translateY(0)',
         boxShadow: isHovered
-          ? '0 30px 60px -10px rgba(45, 32, 20, 0.22), 0 14px 28px rgba(45, 32, 20, 0.12), 0 0 42px rgba(225, 180, 85, 0.50), 0 0 85px rgba(225, 180, 85, 0.25)'
-          : '0 20px 42px -10px rgba(45, 32, 20, 0.16), 0 8px 18px rgba(45, 32, 20, 0.08), 0 0 28px rgba(225, 180, 85, 0.35), 0 0 60px rgba(225, 180, 85, 0.16)',
+          ? '0 0 45px 3px rgba(240, 195, 100, 0.75), 0 30px 60px -10px rgba(45, 32, 20, 0.28), 0 14px 28px rgba(45, 32, 20, 0.14)'
+          : '0 0 35px 2px rgba(235, 190, 95, 0.58), 0 20px 42px -10px rgba(45, 32, 20, 0.20), 0 8px 18px rgba(45, 32, 20, 0.10)',
         transition: 'transform 400ms cubic-bezier(0.2, 0.75, 0.25, 1), box-shadow 400ms ease'
       }}
     >
@@ -109,10 +109,10 @@ export const PropertyCard: React.FC<PropertyCardProps> = ({ property, priority =
           position: 'absolute',
           inset: 0,
           borderRadius: '28px',
-          border: isHovered ? '1.5px solid rgba(255, 255, 255, 0.98)' : '1.5px solid rgba(255, 250, 235, 0.88)',
+          border: isHovered ? '2px solid rgba(255, 255, 255, 1.0)' : '2px solid rgba(255, 250, 235, 0.90)',
           boxShadow: isHovered
-            ? 'inset 0 2px 2px rgba(255, 255, 255, 0.95), inset 0 -1.5px 2px rgba(255, 255, 255, 0.40), inset 1.5px 0 1.5px rgba(255, 255, 255, 0.45), inset -1.5px 0 1.5px rgba(255, 255, 255, 0.45), 0 0 24px rgba(230, 190, 100, 0.45)'
-            : 'inset 0 1.5px 1.5px rgba(255, 255, 255, 0.90), inset 0 -1px 1px rgba(255, 255, 255, 0.30), inset 1px 0 1px rgba(255, 255, 255, 0.35), inset -1px 0 1px rgba(255, 255, 255, 0.35), 0 0 16px rgba(230, 190, 100, 0.30)',
+            ? 'inset 0 2.5px 3px rgba(255, 255, 255, 1.0), inset 0 -2px 3px rgba(255, 235, 180, 0.60), inset 2px 0 2px rgba(255, 255, 255, 0.55), inset -2px 0 2px rgba(255, 255, 255, 0.55), 0 0 30px rgba(240, 200, 110, 0.65)'
+            : 'inset 0 2px 2.5px rgba(255, 255, 255, 0.95), inset 0 -1.5px 2px rgba(255, 235, 180, 0.45), inset 1.5px 0 1.5px rgba(255, 255, 255, 0.45), inset -1.5px 0 1.5px rgba(255, 255, 255, 0.45), 0 0 22px rgba(235, 195, 105, 0.50)',
           pointerEvents: 'none',
           zIndex: 3,
           transition: 'border-color 0.4s ease, box-shadow 0.4s ease'
@@ -275,7 +275,7 @@ export const PropertyCard: React.FC<PropertyCardProps> = ({ property, priority =
         </button>
       </div>
 
-      {/* 3. FLOATING GLASS INFORMATION PANEL (Elevated Translucent Glass Slab) */}
+      {/* 3. FLOATING 3D GLASS INFORMATION PANEL (Ultra-Transparent 3D Crystal Glass Slab) */}
       <div
         className="property-glass-card glass-panel-integrated floating-glass-panel"
         style={{
@@ -289,34 +289,45 @@ export const PropertyCard: React.FC<PropertyCardProps> = ({ property, priority =
           gap: '9px',
           borderRadius: '24px',
           background: isHovered
-            ? 'linear-gradient(135deg, rgba(255, 255, 255, 0.32) 0%, rgba(255, 255, 255, 0.14) 50%, rgba(246, 239, 224, 0.20) 100%)'
-            : 'linear-gradient(135deg, rgba(255, 255, 255, 0.26) 0%, rgba(255, 255, 255, 0.10) 50%, rgba(246, 239, 224, 0.16) 100%)',
-          backdropFilter: 'blur(8px) saturate(160%)',
-          WebkitBackdropFilter: 'blur(8px) saturate(160%)',
-          border: isHovered
-            ? '1.5px solid rgba(255, 255, 255, 0.95)'
-            : '1.5px solid rgba(255, 255, 255, 0.82)',
-          transform: isHovered && !prefersReducedMotion ? 'translateY(-8px)' : 'translateY(0)',
+            ? 'linear-gradient(135deg, rgba(255, 255, 255, 0.42) 0%, rgba(255, 250, 240, 0.20) 45%, rgba(255, 255, 255, 0.32) 100%)'
+            : 'linear-gradient(135deg, rgba(255, 255, 255, 0.36) 0%, rgba(255, 250, 240, 0.15) 45%, rgba(255, 255, 255, 0.26) 100%)',
+          backdropFilter: 'blur(8px) saturate(140%)',
+          WebkitBackdropFilter: 'blur(8px) saturate(140%)',
+          border: '1.5px solid rgba(255, 255, 255, 0.95)',
+          transform: isHovered && !prefersReducedMotion ? 'translateY(-10px)' : 'translateY(0)',
           boxShadow: isHovered
-            ? '0 24px 48px rgba(35, 22, 10, 0.26), 0 12px 22px rgba(35, 22, 10, 0.14), 0 0 35px rgba(218, 169, 75, 0.45), 0 0 65px rgba(218, 169, 75, 0.22), inset 0 2px 2px rgba(255, 255, 255, 1.0), inset 0 -1px 1px rgba(255, 255, 255, 0.40)'
-            : '0 18px 36px rgba(35, 22, 10, 0.20), 0 8px 16px rgba(35, 22, 10, 0.10), 0 0 25px rgba(218, 169, 75, 0.32), 0 0 50px rgba(218, 169, 75, 0.15), inset 0 1.5px 1.5px rgba(255, 255, 255, 0.95), inset 0 -1px 1px rgba(255, 255, 255, 0.30)',
+            ? '0 0 35px 4px rgba(245, 215, 130, 0.92), 0 0 14px 2px rgba(255, 255, 255, 1.0), 0 28px 52px -4px rgba(20, 14, 8, 0.42), inset 0 0 20px rgba(255, 248, 225, 0.55), inset 0 2.5px 3px 0 rgba(255, 255, 255, 1.0), inset 0 -2px 2.5px 0 rgba(255, 255, 255, 0.50)'
+            : '0 0 24px 2px rgba(245, 210, 120, 0.80), 0 0 10px 1px rgba(255, 255, 255, 0.90), 0 20px 42px -4px rgba(20, 14, 8, 0.35), inset 0 0 14px rgba(255, 248, 225, 0.45), inset 0 2px 2.5px 0 rgba(255, 255, 255, 0.98), inset 0 -1.5px 2px 0 rgba(255, 255, 255, 0.40)',
           transition: 'transform 400ms cubic-bezier(0.2, 0.75, 0.25, 1), box-shadow 400ms ease, border-color 400ms ease, background 400ms ease'
         }}
       >
+        {/* 3D Diagonal Glass Glare Reflection */}
+        <div
+          style={{
+            position: 'absolute',
+            inset: 0,
+            borderRadius: '24px',
+            background: 'linear-gradient(125deg, rgba(255, 255, 255, 0.35) 0%, rgba(255, 255, 255, 0.08) 25%, transparent 50%)',
+            pointerEvents: 'none',
+            zIndex: 1
+          }}
+        />
+
         {/* Specular Flare Along Top Edge */}
         <div
           style={{
             position: 'absolute',
             top: 0,
-            left: '6%',
-            right: '6%',
+            left: '5%',
+            right: '5%',
             height: '2.5px',
-            background: 'linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.98) 25%, #FFFDF2 50%, rgba(255, 255, 255, 0.98) 75%, transparent 100%)',
+            background: 'linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 1) 25%, #FFFDF2 50%, rgba(255, 255, 255, 1) 75%, transparent 100%)',
             pointerEvents: 'none',
             boxShadow: isHovered
-              ? '0 0 16px rgba(255, 255, 255, 1), 0 0 28px rgba(245, 215, 130, 0.95)'
-              : '0 0 12px rgba(255, 255, 255, 0.95), 0 0 22px rgba(240, 200, 110, 0.85)',
-            opacity: isHovered ? 1 : 0.92,
+              ? '0 0 18px rgba(255, 255, 255, 1), 0 0 30px rgba(245, 215, 130, 0.95)'
+              : '0 0 14px rgba(255, 255, 255, 1), 0 0 24px rgba(240, 200, 110, 0.90)',
+            opacity: 1,
+            zIndex: 2,
             transition: 'opacity 0.35s ease, box-shadow 0.35s ease'
           }}
         />
@@ -324,14 +335,16 @@ export const PropertyCard: React.FC<PropertyCardProps> = ({ property, priority =
         {/* Location Line with Pin Icon */}
         <div
           style={{
+            position: 'relative',
+            zIndex: 2,
             display: 'inline-flex',
             alignItems: 'center',
             gap: '6px',
-            color: '#201D18',
+            color: '#1A1814',
             fontSize: '11.5px',
             letterSpacing: '0.04em',
-            fontWeight: 600,
-            textShadow: '0 1px 2px rgba(255, 255, 255, 0.85)'
+            fontWeight: 650,
+            textShadow: '0 1px 2px rgba(255, 255, 255, 0.95), 0 0 6px rgba(255, 255, 255, 0.8)'
           }}
         >
           <MapPin size={13} strokeWidth={2.4} color="#B8831E" fill="#B8831E" />
@@ -339,17 +352,17 @@ export const PropertyCard: React.FC<PropertyCardProps> = ({ property, priority =
         </div>
 
         {/* Property Name & Explore Arrow Row */}
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '8px' }}>
+        <div style={{ position: 'relative', zIndex: 2, display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '8px' }}>
           <h3
             style={{
               fontSize: 'clamp(1.35rem, 3.8vw, 1.55rem)',
               fontFamily: 'var(--font-serif)',
-              color: '#110F0D',
-              fontWeight: 600,
+              color: '#0E0C0A',
+              fontWeight: 650,
               lineHeight: 1.15,
               margin: 0,
               letterSpacing: '-0.01em',
-              textShadow: '0 1px 2px rgba(255, 255, 255, 0.90)'
+              textShadow: '0 1px 2px rgba(255, 255, 255, 0.95), 0 0 8px rgba(255, 255, 255, 0.7)'
             }}
           >
             <Link
@@ -392,16 +405,18 @@ export const PropertyCard: React.FC<PropertyCardProps> = ({ property, priority =
         {/* Short Description */}
         <p
           style={{
+            position: 'relative',
+            zIndex: 2,
             fontSize: '12px',
-            color: '#26221C',
+            color: '#181512',
             lineHeight: 1.55,
             margin: 0,
             display: '-webkit-box',
             WebkitLineClamp: 2,
             WebkitBoxOrient: 'vertical',
             overflow: 'hidden',
-            fontWeight: 450,
-            textShadow: '0 1px 2px rgba(255, 255, 255, 0.80)'
+            fontWeight: 500,
+            textShadow: '0 1px 2px rgba(255, 255, 255, 0.95), 0 0 6px rgba(255, 255, 255, 0.8)'
           }}
         >
           {property.description || property.tagline}
@@ -410,31 +425,35 @@ export const PropertyCard: React.FC<PropertyCardProps> = ({ property, priority =
         {/* Specifications Strip: Beds | Baths | Area | Price */}
         <div
           style={{
+            position: 'relative',
+            zIndex: 2,
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'space-between',
+            flexWrap: 'wrap',
+            rowGap: '6px',
+            columnGap: '8px',
             paddingTop: '9px',
-            borderTop: '1px solid rgba(184, 131, 30, 0.30)',
+            borderTop: '1px solid rgba(184, 131, 30, 0.25)',
             fontSize: '11px',
-            color: '#1C1915',
-            fontWeight: 550,
-            gap: '6px',
-            textShadow: '0 1px 1px rgba(255, 255, 255, 0.80)'
+            color: '#181512',
+            fontWeight: 650,
+            textShadow: '0 1px 2px rgba(255, 255, 255, 0.95)'
           }}
         >
-          <div style={{ display: 'flex', alignItems: 'center', gap: '6px', minWidth: 0, flexWrap: 'nowrap' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
             <span style={{ display: 'inline-flex', alignItems: 'center', gap: '3px', whiteSpace: 'nowrap' }}>
-              <Bed size={13} strokeWidth={2.0} color="#B8831E" />
+              <Bed size={13} strokeWidth={2.4} color="#B8831E" />
               <span>{property.bedrooms} Beds</span>
             </span>
 
             <span style={{ display: 'inline-flex', alignItems: 'center', gap: '3px', whiteSpace: 'nowrap' }}>
-              <Bath size={13} strokeWidth={2.0} color="#B8831E" />
+              <Bath size={13} strokeWidth={2.4} color="#B8831E" />
               <span>{property.bathrooms} Baths</span>
             </span>
 
             <span style={{ display: 'inline-flex', alignItems: 'center', gap: '3px', whiteSpace: 'nowrap' }}>
-              <Maximize2 size={13} strokeWidth={2.0} color="#B8831E" />
+              <Maximize2 size={13} strokeWidth={2.4} color="#B8831E" />
               <span>{formattedArea}</span>
             </span>
           </div>
@@ -446,10 +465,11 @@ export const PropertyCard: React.FC<PropertyCardProps> = ({ property, priority =
                 fontWeight: 700,
                 color: '#B8831E',
                 letterSpacing: '0.01em',
-                fontSize: '14.5px',
+                fontSize: formattedPrice.length > 10 ? '12.5px' : '15.5px',
                 whiteSpace: 'nowrap',
                 flexShrink: 0,
-                textShadow: '0 1px 2px rgba(255, 255, 255, 0.90)'
+                marginLeft: 'auto',
+                textShadow: '0 1px 2px rgba(255, 255, 255, 0.95)'
               }}
             >
               {formattedPrice}
